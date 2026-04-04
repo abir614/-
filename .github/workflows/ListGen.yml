@@ -504,6 +504,9 @@ jobs:
               "# ============================================================",
               "# DO NOT EDIT — regenerated automatically on every workflow run.",
               "# To make changes, edit custom_blacklist.txt instead.",
+              "# ============================================================",
+          ]
+          with open("blocklist.txt", "w") as f:
               f.write("\n".join(bl_header) + "\n")
               for d in sorted(wildcard_out):
                   f.write(f"*.{d}\n")
@@ -565,8 +568,8 @@ jobs:
         run: |
           REPO="${{ github.repository }}"
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          STEP="${{ job.status }}"
-          MSG="❌ *Workflow Failed*%0A%0ARepo: \`${REPO}\`%0ARun: [View logs](${RUN_URL})%0ATriggered by: \`${{ github.event_name }}\`"
+          BDT=$(TZ="Asia/Dhaka" date '+%Y-%m-%d %H:%M')
+          MSG="❌ *Workflow Failed*%0A%0ARepo: \`${REPO}\`%0ATime: \`${BDT}\`%0ARun: [View logs](${RUN_URL})%0ATriggered by: \`${{ github.event_name }}\`"
           curl -sSf -X POST \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d "chat_id=${TELEGRAM_CHAT_ID}" \
