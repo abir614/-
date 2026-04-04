@@ -2,8 +2,8 @@ name: Generate Blocklist & Whitelist
 
 on:
   schedule:
-    - cron: '0 18 * * *'  # Daily at 00:00 BDT (Bangladesh Standard Time, UTC+6)
-  workflow_dispatch:       # Manual trigger anytime
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -343,6 +343,9 @@ jobs:
               "# ============================================================",
               "# DO NOT EDIT — regenerated automatically on every workflow run.",
               "# To make changes, edit custom_whitelist.txt instead.",
+              "# ============================================================",
+          ]
+          with open("whitelist.txt", "w") as f:
               f.write("\n".join(wl_header) + "\n")
               for d in sorted(combined_wl):
                   f.write(d + "\n")
