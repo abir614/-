@@ -1,0 +1,412 @@
+# =============================================================================
+# Amar DNS — Whitelist
+# =============================================================================
+# Two sections in this file:
+#   [SECTION 1]  External whitelist URLs  — fetched fresh on every workflow run
+#   [SECTION 2]  Static curated domains   — maintained manually in this file
+#
+# FORMAT RULES (for static entries):
+#   - One root domain per line  (evil.com — not *.evil.com, not sub.evil.com)
+#   - Inline comments allowed   (evil.com  # reason)
+#   - Blank lines and # lines   are ignored
+#
+# The workflow parser handles ALL known formats from external URLs:
+#   Hosts file    :  0.0.0.0 evil.com  /  127.0.0.1 evil.com
+#   AdGuard       :  ||evil.com^  /  @@||evil.com^  /  |evil.com|
+#   uBlock/ABP    :  ##evil.com  /  -evil.com-
+#   Plain domain  :  evil.com
+#   Wildcard      :  *.evil.com
+#   With path     :  evil.com/path  /  evil.com:8080
+#   CSV ranked    :  1,evil.com  /  1,evil.com,category
+# =============================================================================
+
+
+# =============================================================================
+# SECTION 1 — EXTERNAL WHITELIST URLS
+# =============================================================================
+# Add one URL per line between the markers below.
+# The workflow fetches each URL at runtime and parses it with full pattern
+# stripping — any format (hosts, AdGuard, uBlock, plain, CSV) is handled.
+# Lines starting with # are ignored. Leave blank if you have no external URLs.
+# =============================================================================
+
+[WHITELIST_URLS]
+
+# -- Popular community whitelists (uncomment to activate) --
+
+# Anudeep's comprehensive whitelist (well-maintained, widely used)
+# https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt
+
+# Hagezi referral/affiliate allowlist (safe domains that also track referrals)
+# https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/whitelist-referral.txt
+
+# -- Add your own URLs below --
+# https://example.com/my-custom-whitelist.txt
+
+[/WHITELIST_URLS]
+
+
+# =============================================================================
+# SECTION 2 — STATIC CURATED DOMAINS
+# =============================================================================
+# Policy : Only widely-used, essential, infrastructure-grade domains.
+#          Every category has a justification. Do not add personal or niche
+#          entries here — use WHITELIST_URLS section for those instead.
+# =============================================================================
+
+
+# --- DNS & Internet Infrastructure ---
+# Blocking these breaks the internet itself: CDN, edge, routing
+cloudflare.com
+cloudflare.net
+cloudflarestorage.com
+cloudflareinsights.com
+cloudflarestream.com
+fastly.com
+fastly.net
+akamai.com
+akamaiedge.net
+akamaized.net
+edgecastcdn.net
+edgesuite.net
+jsdelivr.net
+unpkg.com
+bootstrapcdn.com
+stackpath.com
+bunnycdn.com
+b-cdn.net
+gstatic.com
+googleusercontent.com
+
+# --- Public DNS Resolvers ---
+# Blocking breaks DNS resolution itself
+dns.google
+one.one.one.one
+opendns.com
+quad9.net
+nextdns.io
+adguard.com
+adguard-dns.io
+controld.com
+
+# --- Certificate Authorities & PKI ---
+# Blocking breaks HTTPS for millions of sites
+letsencrypt.org
+pki.goog
+digicert.com
+sectigo.com
+usertrust.com
+comodoca.com
+entrust.net
+globalsign.com
+identrust.com
+
+# --- OS & Device Updates ---
+# Blocking prevents security patches — actively dangerous
+windowsupdate.com
+microsoft.com
+microsoftonline.com
+live.com
+office.com
+office365.com
+apple.com
+apple-dns.net
+icloud.com
+mzstatic.com
+ubuntu.com
+canonical.com
+debian.org
+fedoraproject.org
+centos.org
+redhat.com
+archlinux.org
+android.com
+google.com
+googleapis.com
+
+# --- Browser Vendors ---
+# Blocking breaks browser updates, sync, extension infrastructure
+mozilla.org
+mozilla.net
+firefox.com
+chrome.com
+chromium.org
+opera.com
+brave.com
+vivaldi.com
+
+# --- Cloud Platforms & Hosting ---
+# Backbone of a large fraction of the web
+amazonaws.com
+awsstatic.com
+cloudfront.net
+azure.com
+azure.net
+azurewebsites.net
+azurefd.net
+trafficmanager.net
+azureedge.net
+digitalocean.com
+linode.com
+vultr.com
+hetzner.com
+ovhcloud.com
+vercel.com
+vercel.app
+netlify.com
+netlify.app
+pages.dev
+workers.dev
+render.com
+fly.io
+railway.app
+heroku.com
+github.com
+github.io
+githubusercontent.com
+githubassets.com
+gitlab.com
+bitbucket.org
+sourceforge.net
+
+# --- Package Registries & Developer Tools ---
+# Blocking breaks builds, CI/CD, developer workflows
+npmjs.com
+npmjs.org
+yarnpkg.com
+pypi.org
+pythonhosted.org
+rubygems.org
+crates.io
+nuget.org
+packagist.org
+docker.com
+docker.io
+gcr.io
+ghcr.io
+quay.io
+
+# --- Security & Threat Intelligence Sources ---
+# These ARE the sources used to build blocklists — must never be blocked
+spamhaus.org
+abuse.ch
+malwarebytes.com
+virustotal.com
+urlvoid.com
+phishtank.org
+openphish.com
+isitphishing.ai
+tranco-list.eu
+majestic.com
+umbrella.com
+
+# --- Identity & Authentication (OAuth / SSO) ---
+# Blocking breaks login flows for millions of services
+auth0.com
+okta.com
+onelogin.com
+identityserver.io
+accountservices.net
+facebook.com
+fbcdn.net
+instagram.com
+
+# --- Payment & Financial Infrastructure ---
+# Blocking breaks checkout — immediate severe user impact
+stripe.com
+stripe.network
+paypal.com
+paypalobjects.com
+braintreegateway.com
+square.com
+squareup.com
+adyen.com
+checkout.com
+razorpay.com
+authorize.net
+2checkout.com
+recurly.com
+paddle.com
+lemonsqueezy.com
+
+# --- Email Infrastructure ---
+# Blocking breaks email delivery and receiving
+sendgrid.net
+sendgrid.com
+mailgun.com
+mailgun.org
+postmarkapp.com
+sparkpostmail.com
+amazonses.com
+mandrillapp.com
+mailchimp.com
+gmail.com
+googlemail.com
+outlook.com
+hotmail.com
+yahoo.com
+protonmail.com
+proton.me
+fastmail.com
+zoho.com
+tutanota.com
+hey.com
+mimecast.com
+barracudanetworks.com
+
+# --- Major Content Delivery & Media ---
+youtube.com
+ytimg.com
+googlevideo.com
+twitch.tv
+twitchsvc.net
+jtvnw.net
+ttvnw.net
+reddit.com
+redd.it
+redditmedia.com
+reddituploads.com
+redditstatic.com
+wikipedia.org
+wikimedia.org
+wikidata.org
+archive.org
+imgur.com
+
+# --- Communication & Collaboration ---
+slack.com
+slack-edge.com
+zoom.us
+zoomgov.com
+discord.com
+discordapp.com
+discordapp.net
+discord.gg
+telegram.org
+whatsapp.com
+whatsapp.net
+signal.org
+skype.com
+webex.com
+goto.com
+jitsi.org
+matrix.org
+
+# --- Developer & Documentation Services ---
+stackoverflow.com
+stackexchange.com
+superuser.com
+serverfault.com
+askubuntu.com
+readthedocs.io
+readthedocs.org
+codepen.io
+jsfiddle.net
+codesandbox.io
+replit.com
+glitch.com
+circleci.com
+travisci.org
+jenkins.io
+jetbrains.com
+
+# --- Observability & Analytics (non-invasive) ---
+sentry.io
+datadoghq.com
+newrelic.com
+grafana.com
+grafana.net
+influxdata.com
+prometheus.io
+plausible.io
+umami.is
+fathom.com
+
+# --- Maps & Location ---
+openstreetmap.org
+mapbox.com
+here.com
+
+# --- Health & Government ---
+# Blocking these causes serious public harm
+who.int
+cdc.gov
+nih.gov
+nhs.uk
+europa.eu
+un.org
+icann.org
+iana.org
+
+# --- Open Source Foundations & Language Runtimes ---
+apache.org
+linux.org
+kernel.org
+gnu.org
+fsf.org
+eff.org
+python.org
+rust-lang.org
+golang.org
+nodejs.org
+php.net
+perl.org
+ruby-lang.org
+java.com
+openjdk.org
+eclipse.org
+postgresql.org
+mysql.com
+mariadb.org
+mongodb.com
+redis.io
+nginx.org
+haproxy.org
+kubernetes.io
+helm.sh
+terraform.io
+hashicorp.com
+ansible.com
+
+# --- Content & Productivity Platforms ---
+wordpress.com
+wordpress.org
+w.org
+wp.com
+wix.com
+squarespace.com
+webflow.com
+ghost.org
+medium.com
+substack.com
+notion.so
+notion.com
+airtable.com
+trello.com
+atlassian.com
+atlassian.net
+jira.com
+confluence.com
+asana.com
+linear.app
+monday.com
+basecamp.com
+figma.com
+canva.com
+loom.com
+dropbox.com
+box.com
+
+# --- AI & ML Platforms ---
+# Fast-growing — many new domains incorrectly trigger blocklists
+openai.com
+anthropic.com
+claude.ai
+huggingface.co
+cohere.com
+mistral.ai
+stability.ai
+replicate.com
+together.ai
+groq.com
+perplexity.ai
