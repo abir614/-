@@ -1,0 +1,461 @@
+# =============================================================================
+# Amar DNS — custom.txt
+# =============================================================================
+# This is the ONLY file you need to edit.
+# The workflow reads this file to know:
+#   - Which URLs to use as BLACKLIST sources  →  feeds blocklist.txt
+#   - Which URLs to use as WHITELIST sources  →  feeds whitelist.txt
+#   - Which static domains to always whitelist
+#
+# RULES:
+#   - Lines starting with # are comments — ignored
+#   - Blank lines are ignored
+#   - URLs must start with http:// or https://
+#   - Static whitelist entries: plain root domain (evil.com), one per line,
+#     only inside the [STATIC_WHITELIST] block
+#   - All list formats are auto-detected & stripped:
+#       hosts, AdGuard, uBlock/ABP, plain domain, wildcard, CSV rank, dnsmasq
+# =============================================================================
+
+
+# =============================================================================
+# BLACKLIST URLS
+# Every URL here is fetched, parsed, and combined.
+# The UNION of all sources forms the raw blocklist (before FP filtering).
+# =============================================================================
+
+[BLACKLIST_URLS]
+
+# ── HaGeZi (primary — wildcard format, highest quality) ────────────────────
+
+# TIF mini — Threat Intelligence Feeds (malware, phishing, scam, spam)
+# Updates every 6h. 142K entries. Core of this blocklist.
+https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.mini.txt
+
+# Ultimate mini — ads, tracking, telemetry, phishing, malware, scam, fake
+# The most aggressive all-in-one mini list from HaGeZi.
+https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/ultimate.mini.txt
+
+# Pro++ mini — slightly less aggressive than Ultimate, fewer FPs
+https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/pro.plus.mini.txt
+
+# ── OISD (zero-false-positive philosophy, wildcard format) ─────────────────
+
+# OISD Big — large, well-maintained, extremely low FP rate
+# Covers ads, phishing, malvertising, malware, spyware, ransomware
+https://big.oisd.nl/domainswild2
+
+# ── Abuse.ch / URLhaus (real-time malware distribution URLs) ──────────────
+
+# URLhaus — malware distribution domains, updated twice daily
+# Operated by abuse.ch, one of the most trusted threat intel sources
+https://urlhaus.abuse.ch/downloads/hostfile/
+
+# ── Phishing Army ─────────────────────────────────────────────────────────
+
+# Phishing Army Extended — comprehensive phishing domain blocklist
+https://phishing.army/download/phishing_army_blocklist_extended.txt
+
+# ── Digital Side (OSINT Italy) ────────────────────────────────────────────
+
+# OSINT.digitalside.it — community threat intel, malware & phishing
+https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt
+
+# ── Dandelion Sprout's Anti-Malware List ──────────────────────────────────
+
+# Recommended by HaGeZi for AdGuard Home users. Malware + PUP focus.
+https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuardHome.txt
+
+# ── RPiList / ShadowWhisperer ─────────────────────────────────────────────
+
+# Malware domains — PUPs, hijackers, malware, phishing
+https://raw.githubusercontent.com/ShadowWhisperer/BlockLists/master/Lists/Malware
+
+# ── Botvrij.eu ────────────────────────────────────────────────────────────
+
+# Domain blocklist from Botvrij threat intelligence (CIRCL Luxembourg)
+https://www.botvrij.eu/data/ioc/domain.txt
+
+# ── Add your own blacklist URLs below ──────────────────────────────────────
+# https://example.com/my-extra-blocklist.txt
+
+[/BLACKLIST_URLS]
+
+
+# =============================================================================
+# WHITELIST URLS
+# Every URL here is fetched, parsed, and combined with the static whitelist.
+# Any domain appearing in ANY whitelist source is removed from the blocklist.
+# =============================================================================
+
+[WHITELIST_URLS]
+
+# Anudeep's whitelist — widely used, well-maintained, essential services
+https://raw.githubusercontent.com/anudeepND/whitelist/master/domains/whitelist.txt
+
+# HaGeZi referral allowlist — safe affiliate/referral domains
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/whitelist-referral.txt
+
+# ── Add your own whitelist URLs below ──────────────────────────────────────
+# https://example.com/my-whitelist.txt
+
+[/WHITELIST_URLS]
+
+
+# =============================================================================
+# STATIC WHITELIST
+# Domains here are ALWAYS whitelisted regardless of any blocklist source.
+# Format: one root domain per line (root.tld — no wildcards, no subdomains).
+# The pipeline protects ALL subdomains of each root automatically.
+# =============================================================================
+
+[STATIC_WHITELIST]
+
+# --- DNS & Internet Infrastructure ---
+cloudflare.com
+cloudflare.net
+cloudflarestorage.com
+cloudflareinsights.com
+cloudflarestream.com
+fastly.com
+fastly.net
+akamai.com
+akamaiedge.net
+akamaized.net
+edgecastcdn.net
+edgesuite.net
+jsdelivr.net
+unpkg.com
+bootstrapcdn.com
+stackpath.com
+bunnycdn.com
+b-cdn.net
+gstatic.com
+googleusercontent.com
+
+# --- Public DNS Resolvers ---
+dns.google
+one.one.one.one
+opendns.com
+quad9.net
+nextdns.io
+adguard.com
+adguard-dns.io
+controld.com
+
+# --- Certificate Authorities & PKI ---
+letsencrypt.org
+pki.goog
+digicert.com
+sectigo.com
+usertrust.com
+comodoca.com
+entrust.net
+globalsign.com
+identrust.com
+
+# --- OS & Device Updates ---
+windowsupdate.com
+microsoft.com
+microsoftonline.com
+live.com
+office.com
+office365.com
+apple.com
+apple-dns.net
+icloud.com
+mzstatic.com
+ubuntu.com
+canonical.com
+debian.org
+fedoraproject.org
+centos.org
+redhat.com
+archlinux.org
+android.com
+google.com
+googleapis.com
+
+# --- Browser Vendors ---
+mozilla.org
+mozilla.net
+firefox.com
+chrome.com
+chromium.org
+opera.com
+brave.com
+vivaldi.com
+
+# --- Cloud Platforms & Hosting ---
+amazonaws.com
+awsstatic.com
+cloudfront.net
+azure.com
+azure.net
+azurewebsites.net
+azurefd.net
+trafficmanager.net
+azureedge.net
+digitalocean.com
+linode.com
+vultr.com
+hetzner.com
+ovhcloud.com
+vercel.com
+vercel.app
+netlify.com
+netlify.app
+pages.dev
+workers.dev
+render.com
+fly.io
+railway.app
+heroku.com
+github.com
+github.io
+githubusercontent.com
+githubassets.com
+gitlab.com
+bitbucket.org
+sourceforge.net
+
+# --- Package Registries ---
+npmjs.com
+npmjs.org
+yarnpkg.com
+pypi.org
+pythonhosted.org
+rubygems.org
+crates.io
+nuget.org
+packagist.org
+docker.com
+docker.io
+gcr.io
+ghcr.io
+quay.io
+
+# --- Security & Threat Intel Sources ---
+spamhaus.org
+abuse.ch
+malwarebytes.com
+virustotal.com
+urlvoid.com
+phishtank.org
+openphish.com
+isitphishing.ai
+tranco-list.eu
+majestic.com
+umbrella.com
+botvrij.eu
+osint.digitalside.it
+
+# --- Identity & Auth (OAuth/SSO) ---
+auth0.com
+okta.com
+onelogin.com
+identityserver.io
+accountservices.net
+facebook.com
+fbcdn.net
+instagram.com
+
+# --- Payment Infrastructure ---
+stripe.com
+stripe.network
+paypal.com
+paypalobjects.com
+braintreegateway.com
+square.com
+squareup.com
+adyen.com
+checkout.com
+razorpay.com
+authorize.net
+2checkout.com
+recurly.com
+paddle.com
+lemonsqueezy.com
+
+# --- Email Infrastructure ---
+sendgrid.net
+sendgrid.com
+mailgun.com
+mailgun.org
+postmarkapp.com
+sparkpostmail.com
+amazonses.com
+mandrillapp.com
+mailchimp.com
+gmail.com
+googlemail.com
+outlook.com
+hotmail.com
+yahoo.com
+protonmail.com
+proton.me
+fastmail.com
+zoho.com
+tutanota.com
+hey.com
+mimecast.com
+barracudanetworks.com
+
+# --- Major Media & Content ---
+youtube.com
+ytimg.com
+googlevideo.com
+twitch.tv
+twitchsvc.net
+jtvnw.net
+ttvnw.net
+reddit.com
+redd.it
+redditmedia.com
+reddituploads.com
+redditstatic.com
+wikipedia.org
+wikimedia.org
+wikidata.org
+archive.org
+imgur.com
+
+# --- Communication & Collaboration ---
+slack.com
+slack-edge.com
+zoom.us
+zoomgov.com
+discord.com
+discordapp.com
+discordapp.net
+discord.gg
+telegram.org
+whatsapp.com
+whatsapp.net
+signal.org
+skype.com
+webex.com
+goto.com
+jitsi.org
+matrix.org
+
+# --- Developer & Documentation ---
+stackoverflow.com
+stackexchange.com
+superuser.com
+serverfault.com
+askubuntu.com
+readthedocs.io
+readthedocs.org
+codepen.io
+jsfiddle.net
+codesandbox.io
+replit.com
+glitch.com
+circleci.com
+travisci.org
+jenkins.io
+jetbrains.com
+
+# --- Observability & Analytics ---
+sentry.io
+datadoghq.com
+newrelic.com
+grafana.com
+grafana.net
+influxdata.com
+prometheus.io
+plausible.io
+umami.is
+fathom.com
+
+# --- Maps & Location ---
+openstreetmap.org
+mapbox.com
+here.com
+
+# --- Health & Government ---
+who.int
+cdc.gov
+nih.gov
+nhs.uk
+europa.eu
+un.org
+icann.org
+iana.org
+
+# --- Open Source Foundations & Runtimes ---
+apache.org
+linux.org
+kernel.org
+gnu.org
+fsf.org
+eff.org
+python.org
+rust-lang.org
+golang.org
+nodejs.org
+php.net
+perl.org
+ruby-lang.org
+java.com
+openjdk.org
+eclipse.org
+postgresql.org
+mysql.com
+mariadb.org
+mongodb.com
+redis.io
+nginx.org
+haproxy.org
+kubernetes.io
+helm.sh
+terraform.io
+hashicorp.com
+ansible.com
+
+# --- Content & Productivity ---
+wordpress.com
+wordpress.org
+w.org
+wp.com
+wix.com
+squarespace.com
+webflow.com
+ghost.org
+medium.com
+substack.com
+notion.so
+notion.com
+airtable.com
+trello.com
+atlassian.com
+atlassian.net
+jira.com
+confluence.com
+asana.com
+linear.app
+monday.com
+basecamp.com
+figma.com
+canva.com
+loom.com
+dropbox.com
+box.com
+
+# --- AI & ML Platforms ---
+openai.com
+anthropic.com
+claude.ai
+huggingface.co
+cohere.com
+mistral.ai
+stability.ai
+replicate.com
+together.ai
+groq.com
+perplexity.ai
+
+# --- Add your own static whitelist domains below ---
+
+[/STATIC_WHITELIST]
