@@ -1,0 +1,573 @@
+name: Generate Blocklist & Whitelist
+
+on:
+  schedule:
+    - cron: '0 18 * * *'  # Daily at 00:00 BDT (Bangladesh Standard Time, UTC+6)
+  workflow_dispatch:       # Manual trigger anytime
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      # ── 1. Checkout ────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: '0'
+
+      # ── 2. Download FP reference lists ────────────────────────────────────
+      - name: Download Tranco Top 1M
+        run: |
+          curl -sSf --retry 3 --retry-delay 5 \
+            "https://tranco-list.eu/top-1m.csv.zip" -o tranco.zip
+          unzip -p tranco.zip | cut -d',' -f2 > tranco.txt
+          echo "Tranco: $(wc -l < tranco.txt) domains"
+
+      - name: Download Umbrella Top 1M
+        run: |
+          curl -sSf --retry 3 --retry-delay 5 \
+            "https://s3-us-west-1.amazonaws.com/umbrella-static/top-1m.csv.zip" -o umbrella.zip
+          unzip -p umbrella.zip | cut -d',' -f2 > umbrella.txt
+          echo "Umbrella: $(wc -l < umbrella.txt) domains"
+
+      - name: Download Majestic Million
+        run: |
+          curl -sSf --retry 3 --retry-delay 5 \
+            "https://downloads.majestic.com/majestic_million.csv" \
+            | tail -n +2 | cut -d',' -f3 > majestic.txt
+          echo "Majestic: $(wc -l < majestic.txt) domains"
+
+      # ── 3. Verify sources ─────────────────────────────────────────────────
+      - name: Verify sources
+        run: |
+          python3 - <<'PYEOF'
+          import re, sys, time, socket, urllib.request, urllib.error
+          from pathlib import Path
+
+          _RE_VALID = re.compile(
+              r'^[a-z0-9]([a-z0-9\-]{0,61}[a-z0-9])?'
+              r'(\.[a-z0-9]([a-z0-9\-]{0,61}[a-z0-9])?)+$'
+          )
+
+          def extract_block(text, tag):
+              m = re.search(rf'\[{tag}\](.*?)\[/{tag}\]', text, re.DOTALL | re.IGNORECASE)
+              return m.group(1) if m else ''
+
+          def block_urls(block_text):
+              return [
+                  l.strip() for l in block_text.splitlines()
+                  if l.strip() and not l.strip().startswith('#')
+                  and (l.strip().startswith('http://') or l.strip().startswith('https://'))
+              ]
+
+          def count_domains(text):
+              count = 0
+              for line in text.splitlines():
+                  line = line.strip().lower()
+                  if not line or line.startswith(('#', '!', ';')):
+                      continue
+                  for pat in [
+                      r'^\s*(?:0\.0\.0\.0|127\.0\.0\.1|::1|::)\s+(\S+)',
+                      r'^\s*(?:@@)?\|\|([^\/\^\|\s\$]+)[\^\|\$]',
+                      r'^\s*\*\.([^\s\/\^\|]+)',
+                      r'^\s*([a-z0-9][a-z0-9.\-]+[a-z0-9])\s*(?:#.*)?$',
+                  ]:
+                      m = re.match(pat, line)
+                      if m:
+                          c = m.group(1).split('/')[0].strip('^|. \t').lstrip('*.')
+                          if c and '.' in c and _RE_VALID.match(c):
+                              count += 1
+                          break
+              return count
+
+          def check(url, timeout=20):
+              try:
+                  req = urllib.request.Request(url, headers={"User-Agent": "DNS-Verifier/1.0"})
+                  t0 = time.time()
+                  with urllib.request.urlopen(req, timeout=timeout) as r:
+                      elapsed = time.time() - t0
+                      data = r.read()
+                      text = data.decode('utf-8', errors='ignore')
+                      domains = count_domains(text)
+                      size_kb = len(data) / 1024
+                      return {"ok": domains > 0, "status": r.status,
+                              "domains": domains, "size_kb": size_kb,
+                              "elapsed": elapsed,
+                              "note": "NO DOMAINS PARSED" if domains == 0 else ""}
+              except urllib.error.HTTPError as e:
+                  return {"ok": False, "status": e.code, "note": f"HTTP {e.code} {e.reason}"}
+              except urllib.error.URLError as e:
+                  return {"ok": False, "status": 0, "note": f"URLError: {e.reason}"}
+              except socket.timeout:
+                  return {"ok": False, "status": 0, "note": "Timeout"}
+              except Exception as e:
+                  return {"ok": False, "status": 0, "note": str(e)}
+
+          bl_raw = Path("custom_blacklist.txt").read_text(errors="ignore") if Path("custom_blacklist.txt").exists() else ""
+          wl_raw = Path("custom_whitelist.txt").read_text(errors="ignore") if Path("custom_whitelist.txt").exists() else ""
+          sources = (
+              [("BL", u) for u in block_urls(extract_block(bl_raw, "BLACKLIST_URLS"))] +
+              [("WL", u) for u in block_urls(extract_block(wl_raw, "WHITELIST_URLS"))]
+          )
+
+          print(f"\n{'='*88}")
+          print(f"  SOURCE VERIFICATION  ({len(sources)} sources)")
+          print(f"{'='*88}")
+          print(f"  {'T':<3} {'ST':>5}  {'DOMAINS':>8}  {'SIZE':>8}  {'TIME':>6}  URL")
+          print(f"  {'-'*3}  {'-'*5}  {'-'*8}  {'-'*8}  {'-'*6}  {'-'*52}")
+
+          failed, warned = [], []
+          for kind, url in sources:
+              r = check(url)
+              short = url.split('//')[-1][:55]
+              if r["ok"]:
+                  flag = f"  <- {r['note']}" if r.get("note") else ""
+                  print(f"  {kind:<3} {'OK '+str(r['status']):>5}  {r['domains']:>8,}  {r['size_kb']:>7.1f}K  {r['elapsed']:>5.1f}s  {short}{flag}")
+              else:
+                  print(f"  {kind:<3} {'FAIL':>5}  {'---':>8}  {'---':>8}  {'---':>6}  {short}")
+                  print(f"  {'':3}  {'':5}  {'':8}  {'':8}  {'':6}  +-- {r['note']}")
+                  if "Timeout" in r.get("note", ""):
+                      warned.append((kind, url, r["note"]))
+                  else:
+                      failed.append((kind, url, r["note"]))
+
+          ok_count = len(sources) - len(failed) - len(warned)
+          print(f"\n{'='*88}")
+          print(f"  OK: {ok_count}  |  WARN (timeout): {len(warned)}  |  FAILED: {len(failed)}")
+          print(f"{'='*88}\n")
+
+          for kind, url, note in warned:
+              print(f"::warning::  [{kind}] {url}  ->  {note} (will skip in pipeline)")
+
+          for kind, url, note in failed:
+              print(f"::warning::  [{kind}] {url}  ->  {note} (will skip in pipeline)")
+          PYEOF
+
+      # ── 4. Run main Python pipeline ───────────────────────────────────────
+      - name: Run pipeline
+        run: |
+          python3 - <<'PYEOF'
+          import re
+          import urllib.request
+          from pathlib import Path
+          from datetime import datetime, timezone
+
+          # ══════════════════════════════════════════════════════════════════
+          # DOMAIN HELPERS
+          # ══════════════════════════════════════════════════════════════════
+
+          _RE_VALID = re.compile(
+              r'^[a-z0-9]([a-z0-9\-]{0,61}[a-z0-9])?'
+              r'(\.[a-z0-9]([a-z0-9\-]{0,61}[a-z0-9])?)+$'
+          )
+
+          # Ordered strip rules — first match wins.
+          _STRIP = [
+              (re.compile(r'^\s*[#!;]'),                                      None),
+              (re.compile(r'^\s*$'),                                           None),
+              (re.compile(r'^\s*(?:0\.0\.0\.0|127\.0\.0\.1|::1|::)\s+(\S+)'), 1),
+              (re.compile(r'^\s*@@\|\|([^\/\^\|\s\$]+)[\^\|\$]'),             1),
+              (re.compile(r'^\s*\|\|([^\/\^\|\s\$]+)[\^\|\$]'),               1),
+              (re.compile(r'^\s*\|([^|]+)\|'),                                 1),
+              (re.compile(r'^\s*##'),                                          None),
+              (re.compile(r'^\s*@+([^@\s\^\|\/]+)'),                          1),
+              (re.compile(r'^\s*(?:address|server)=\/([^\/]+)\/'),             1),
+              (re.compile(r'^\s*([a-z0-9][a-z0-9.\-]+)\s+'
+                          r'(?:IN\s+)?(?:CNAME|A|AAAA)\s+'),                  1),
+              (re.compile(r'^\s*\*\.([^\s\/\^\|]+)'),                          1),
+              (re.compile(r'^\s*\d+,([^,\s]+)'),                               1),
+              (re.compile(r'^\s*([a-z0-9][a-z0-9.\-]+[a-z0-9])'
+                          r'\s*(?:#.*)?$'),                                    1),
+          ]
+
+          def strip_to_domain(raw: str):
+              """Extract a bare domain from any list format. Returns None to skip."""
+              line = raw.strip().lower()
+              candidate = None
+              for pat, grp in _STRIP:
+                  m = pat.match(line)
+                  if m:
+                      if grp is None:
+                          return None
+                      candidate = m.group(grp)
+                      break
+              if candidate is None:
+                  candidate = line
+              candidate = re.sub(r'^https?://', '', candidate)
+              candidate = re.sub(r':\d+$', '', candidate)
+              candidate = candidate.split('/')[0].strip('^|. \t').lstrip('*.')
+              if not candidate or '.' not in candidate:
+                  return None
+              if not _RE_VALID.match(candidate):
+                  return None
+              return candidate
+
+          def to_root(domain: str) -> str:
+              parts = domain.rstrip('.').split('.')
+              return '.'.join(parts[-2:]) if len(parts) >= 2 else domain
+
+          def ancestors(domain: str) -> list:
+              """All proper parent domains of `domain`, from immediate to root.
+              ancestors('a.b.c.com') → ['b.c.com', 'c.com']
+              The domain itself is excluded. The bare TLD is excluded."""
+              parts = domain.split('.')
+              # parts[-2:] is the root (e.g. ['c','com']), don't go past it
+              return ['.'.join(parts[i:]) for i in range(1, len(parts) - 1)]
+
+          # ══════════════════════════════════════════════════════════════════
+          # PARSERS — preserve full domains throughout (no root collapsing)
+          #
+          # Root collapsing (sub.evil.com → evil.com) was the root cause of
+          # two bugs:
+          #   1. Blocking sub.evil.com wildcarded all of evil.com.
+          #   2. Whitelisting good.com silently protected bad.good.com.
+          # All sets in this pipeline hold full domain strings. The decision
+          # of what to emit (wildcard vs exact) happens at output time only.
+          # ══════════════════════════════════════════════════════════════════
+
+          def parse_domains(text: str, label: str) -> set:
+              """Parse list text → set of full domain strings."""
+              domains, skip = set(), 0
+              for raw in text.splitlines():
+                  d = strip_to_domain(raw)
+                  if d is None:
+                      skip += 1
+                      continue
+                  domains.add(d)
+              print(f"    {label}: {len(domains):,} domains  ({skip:,} lines skipped)")
+              return domains
+
+          def fetch_and_parse(url: str, label: str) -> set:
+              try:
+                  req = urllib.request.Request(
+                      url, headers={"User-Agent": "DNS-Builder/1.0"})
+                  with urllib.request.urlopen(req, timeout=20) as r:
+                      text = r.read().decode("utf-8", errors="ignore")
+                  return parse_domains(text, label)
+              except Exception as e:
+                  print(f"    ⚠  WARN: {label} — {e} (skipped)")
+                  return set()
+
+          # ══════════════════════════════════════════════════════════════════
+          # PARSE custom.txt
+          # ══════════════════════════════════════════════════════════════════
+
+          def extract_block(text: str, tag: str) -> str:
+              m = re.search(
+                  rf'\[{tag}\](.*?)\[/{tag}\]',
+                  text, re.DOTALL | re.IGNORECASE)
+              return m.group(1) if m else ''
+
+          def block_urls(block_text: str) -> list:
+              return [
+                  line.strip() for line in block_text.splitlines()
+                  if line.strip() and not line.strip().startswith('#')
+                  and (line.strip().startswith('http://') or
+                       line.strip().startswith('https://'))
+              ]
+
+          print("\n[0/6] Reading custom_blacklist.txt and custom_whitelist.txt...")
+          bl_raw = Path("custom_blacklist.txt").read_text(errors="ignore") \
+              if Path("custom_blacklist.txt").exists() else ""
+          wl_raw = Path("custom_whitelist.txt").read_text(errors="ignore") \
+              if Path("custom_whitelist.txt").exists() else ""
+
+          bl_urls   = block_urls(extract_block(bl_raw, "BLACKLIST_URLS"))
+          wl_urls   = block_urls(extract_block(wl_raw, "WHITELIST_URLS"))
+          st_bl_blk = extract_block(bl_raw, "STATIC_BLACKLIST")
+          st_wl_blk = extract_block(wl_raw, "STATIC_WHITELIST")
+
+          print(f"  Blacklist URLs   : {len(bl_urls)}")
+          print(f"  Whitelist URLs   : {len(wl_urls)}")
+
+          # ══════════════════════════════════════════════════════════════════
+          # STEP 1 — Fetch & union all blacklist sources
+          # ══════════════════════════════════════════════════════════════════
+          print("\n[1/6] Fetching blacklist sources...")
+          raw_block: set = set()
+          for url in bl_urls:
+              raw_block |= fetch_and_parse(url, url.split('/')[-1][:60])
+          print(f"  → Raw union: {len(raw_block):,} unique domains")
+
+          # ══════════════════════════════════════════════════════════════════
+          # STEP 2 — Load FP reference lists
+          # Informational only — NOT used to auto-remove entries.
+          # Only the explicit whitelist removes entries.
+          # ══════════════════════════════════════════════════════════════════
+          print("\n[2/6] Loading FP reference lists (informational only)...")
+          fp_refs: set = set()
+          for fname, label in [("tranco.txt","Tranco"),
+                                ("umbrella.txt","Umbrella"),
+                                ("majestic.txt","Majestic")]:
+              fp_refs |= parse_domains(
+                  Path(fname).read_text(errors="ignore"), label)
+
+          # ══════════════════════════════════════════════════════════════════
+          # STEP 3 — Build whitelist
+          # ══════════════════════════════════════════════════════════════════
+          print("\n[3/6] Building whitelist...")
+          static_wl: set = parse_domains(st_wl_blk, "Static whitelist")
+
+          ext_wl: set = set()
+          for url in wl_urls:
+              ext_wl |= fetch_and_parse(url, url.split('/')[-1][:60])
+          print(f"  External whitelist: {len(ext_wl):,} from {len(wl_urls)} URL(s)")
+
+          combined_wl: set = static_wl | ext_wl
+          print(f"  Combined whitelist: {len(combined_wl):,} domains")
+
+          print("\n  Loading static blacklist...")
+          static_bl: set = parse_domains(st_bl_blk, "Static blacklist")
+          print(f"  Static blacklist  : {len(static_bl):,} domains")
+
+          # ══════════════════════════════════════════════════════════════════
+          # STEP 4 — Write whitelist.txt
+          # ══════════════════════════════════════════════════════════════════
+          print("\n[4/6] Writing whitelist.txt...")
+          now = datetime.now(timezone.utc)
+
+          wl_header = [
+              "# ============================================================",
+              "# Generated Whitelist",
+              "# ============================================================",
+              f"# Generated  : {now.strftime('%Y-%m-%d %H:%M UTC')}",
+              "# Source      : custom_whitelist.txt  [STATIC_WHITELIST] + [WHITELIST_URLS]",
+              f"# Static      : {len(static_wl):,} domains",
+              f"# External    : {len(ext_wl):,} domains  ({len(wl_urls)} URL(s))",
+              f"# Total       : {len(combined_wl):,} unique domains",
+              "# ============================================================",
+              "# DO NOT EDIT — regenerated automatically on every workflow run.",
+              "# To make changes, edit custom_whitelist.txt instead.",
+              f.write("\n".join(wl_header) + "\n")
+              for d in sorted(combined_wl):
+                  f.write(d + "\n")
+          print(f"  ✓ whitelist.txt — {len(combined_wl):,} entries")
+
+          # ══════════════════════════════════════════════════════════════════
+          # STEP 5 — Resolve blocklist with surgical whitelist interaction
+          #
+          # Per-domain decision logic (applied to every domain D to block):
+          #
+          #   A. D is in combined_wl AND not in static_bl
+          #      → DROP completely. Explicitly safe.
+          #
+          #   B. Any ANCESTOR of D is in combined_wl
+          #      (e.g. D=bad.good.com, good.com whitelisted)
+          #      → Emit EXACT `bad.good.com` only.
+          #        Wildcard would also catch good.good.com.
+          #
+          #   C. Any DESCENDANT of D is in combined_wl
+          #      (e.g. D=evil.com, good.evil.com whitelisted)
+          #      → Emit EXACT `evil.com` only.
+          #        Wildcard *.evil.com would catch good.evil.com too.
+          #        (Skipped for static_bl — those always wildcard.)
+          #
+          #   D. No whitelist interference at all
+          #      → Emit WILDCARD `*.D`.
+          #
+          # Static blacklist:
+          #   Rules A and C are skipped (cannot be dropped or downgraded).
+          #   Rule B still applies (ancestor whitelisted → exact).
+          #
+          # Deduplication:
+          #   An exact entry D is redundant only if one of D's OWN ancestors
+          #   is already in wildcard_out. Sharing a root is NOT enough —
+          #   two sibling subdomains are independent.
+          # ══════════════════════════════════════════════════════════════════
+          print("\n[5/6] Resolving blocklist entries...")
+
+          all_domains = raw_block | static_bl
+
+          # Reverse WL ancestor index: set of domains that have ≥1 WL descendant.
+          # Built once up-front to avoid O(n²) per-domain scans (Rule C).
+          wl_ancestor_map: set = set()
+          for w in combined_wl:
+              for a in ancestors(w):
+                  wl_ancestor_map.add(a)
+
+          wildcard_out: set = set()
+          exact_out:    set = set()
+          dropped:      set = set()
+
+          for d in all_domains:
+              in_static_bl = d in static_bl
+
+              # Rule A — domain itself is whitelisted
+              if d in combined_wl and not in_static_bl:
+                  dropped.add(d)
+                  continue
+
+              # Rule B — any ancestor of D is whitelisted → exact
+              if any(a in combined_wl for a in ancestors(d)):
+                  exact_out.add(d)
+                  continue
+
+              # Rule C — D has a whitelisted descendant → downgrade to exact
+              if d in wl_ancestor_map and not in_static_bl:
+                  exact_out.add(d)
+                  continue
+
+              # Rule D — no interference → wildcard
+              wildcard_out.add(d)
+
+          # Dedup: an exact entry D is redundant only if one of D's own
+          # ancestors is already in wildcard_out (caught by a parent wildcard).
+          # Sharing a root with a wildcard sibling is NOT enough.
+          exact_out = {
+              d for d in exact_out
+              if not any(a in wildcard_out for a in ancestors(d))
+              or d in static_bl
+          }
+
+          total_out = len(wildcard_out) + len(exact_out)
+          notable = {
+              d for d in (wildcard_out | exact_out)
+              if to_root(d) in fp_refs and d not in static_bl
+          }
+
+          print(f"  Raw domains          : {len(all_domains):,}")
+          print(f"  Dropped (whitelist)  : {len(dropped):,}")
+          print(f"  Wildcard (*.d)       : {len(wildcard_out):,}")
+          print(f"  Exact (d only)       : {len(exact_out):,}")
+          print(f"  Total output         : {total_out:,}")
+          print(f"  Notable (pop. lists) : {len(notable):,}  (kept — review if FP)")
+
+          if dropped:
+              print(f"\n  Whitelist removal log ({len(dropped)} domains):")
+              for d in sorted(dropped):
+                  src = []
+                  if d in static_wl: src.append("StaticWL")
+                  if d in ext_wl:    src.append("ExtWL")
+                  print(f"    - {d:<52} [{', '.join(src)}]")
+
+          if exact_out:
+              print(f"\n  Exact-only entries ({len(exact_out)}"
+                    f" — WL ancestor or WL descendant detected):")
+              for d in sorted(exact_out)[:50]:
+                  anc_wl = next((a for a in ancestors(d) if a in combined_wl), None)
+                  reason = f"ancestor: {anc_wl}" if anc_wl else \
+                           ("has WL descendant" if d in wl_ancestor_map else "static-bl")
+                  flag = " [static-bl]" if d in static_bl else ""
+                  print(f"    ! {d:<52} [{reason}]{flag}")
+              if len(exact_out) > 50:
+                  print(f"    ... and {len(exact_out)-50} more")
+
+          if notable:
+              print(f"\n  ⚠  Notable: {len(notable)} blocked domains in pop. lists (kept):")
+              for d in sorted(notable)[:30]:
+                  print(f"    ? {d}")
+              if len(notable) > 30:
+                  print(f"    ... and {len(notable)-30} more")
+
+          # Write blocklist.txt
+          bl_header = [
+              "# ============================================================",
+              "# Combined Blocklist",
+              "# ============================================================",
+              f"# Generated  : {now.strftime('%Y-%m-%d %H:%M UTC')}",
+              f"# Sources    : {len(bl_urls)} blacklist URL(s) + "
+              f"{len(static_bl)} static entries",
+              "# FP-filter  : Explicit whitelist only (static + URL-sourced).",
+              "#              Tranco/Umbrella/Majestic are LOGGED, NOT auto-removed.",
+              "#              STATIC_BLACKLIST entries bypass ALL filters.",
+              "#",
+              "# Syntax:",
+              "#   *.root.tld   — wildcard: blocks root.tld + ALL its subdomains.",
+              "#   sub.root.tld — exact: blocks ONLY that specific label.",
+              "#",
+              "# Exact entries occur when:",
+              "#   (a) A PARENT of the blocked domain is whitelisted.",
+              "#       e.g. good.com is WL, bad.good.com blocked → exact bad.good.com.",
+              "#   (b) A CHILD of the blocked domain is whitelisted.",
+              "#       e.g. evil.com blocked, good.evil.com is WL → exact evil.com.",
+              "#       Wildcard *.evil.com would catch good.evil.com too.",
+              "# ============================================================",
+              "# Stats",
+              f"#   Raw domains (all sources)  : {len(all_domains):,}",
+              f"#   Dropped by whitelist        : {len(dropped):,}",
+              f"#   Wildcard entries (*.d)      : {len(wildcard_out):,}",
+              f"#   Exact entries (d only)      : {len(exact_out):,}",
+              f"#   Total output entries        : {total_out:,}",
+              f"#   Notable (pop. lists, kept)  : {len(notable):,}",
+              "# ============================================================",
+              "# Blacklist URL sources:",
+          ] + [f"#   {u}" for u in bl_urls] + [
+              f"# Static blacklist entries : {len(static_bl)}",
+              "# ============================================================",
+              "# DO NOT EDIT — regenerated automatically on every workflow run.",
+              "# To make changes, edit custom_blacklist.txt instead.",
+              f.write("\n".join(bl_header) + "\n")
+              for d in sorted(wildcard_out):
+                  f.write(f"*.{d}\n")
+              if exact_out:
+                  f.write(
+                      "# --- Exact-only entries "
+                      "(evil subdomain of a whitelisted parent) ---\n"
+                  )
+                  for d in sorted(exact_out):
+                      f.write(f"{d}\n")
+
+          print(f"\n  ✓ blocklist.txt — {total_out:,} entries "
+                f"({len(wildcard_out):,} wildcard + {len(exact_out):,} exact)")
+
+          # ══════════════════════════════════════════════════════════════════
+          # STEP 6 — Summary
+          # ══════════════════════════════════════════════════════════════════
+          print("\n[6/6] Done.")
+          print(f"  blocklist.txt : {total_out:,} entries")
+          print(f"  whitelist.txt : {len(combined_wl):,} domains")
+          PYEOF
+
+      # ── 4. Print preview ──────────────────────────────────────────────────
+      - name: Preview outputs
+        run: |
+          echo "════ blocklist.txt (header) ════"
+          head -45 blocklist.txt
+          echo ""
+          echo "════ whitelist.txt (header) ════"
+          head -15 whitelist.txt
+          echo ""
+          echo "════ Counts ════"
+          echo "blocklist wildcard : $(grep -c '^\*\.' blocklist.txt || true)"
+          echo "blocklist exact    : $(grep -cE '^[a-z0-9]' blocklist.txt || true)"
+          echo "whitelist          : $(grep -v '^#' whitelist.txt | grep -c '\.' || true)"
+
+      # ── 5. Commit & push ──────────────────────────────────────────────────
+      - name: Commit outputs
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add blocklist.txt whitelist.txt custom_blacklist.txt custom_whitelist.txt
+          if git diff --cached --quiet; then
+            echo "No changes — skipping commit"
+          else
+            BL=$(grep -c '^\*\.' blocklist.txt || true)
+            EX=$(grep -cE '^[a-z0-9]' blocklist.txt || true)
+            WL=$(grep -v '^#' whitelist.txt | grep -c '\.' || true)
+            git commit -m "chore: update lists — block:${BL}wc+${EX}ex white:${WL} [$(date -u '+%Y-%m-%d')]"
+            git push origin 0
+          fi
+
+      # ── 6. Telegram error notification ────────────────────────────────────
+      - name: Notify Telegram on failure
+        if: failure()
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          REPO="${{ github.repository }}"
+          RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          STEP="${{ job.status }}"
+          MSG="❌ *Workflow Failed*%0A%0ARepo: \`${REPO}\`%0ARun: [View logs](${RUN_URL})%0ATriggered by: \`${{ github.event_name }}\`"
+          curl -sSf -X POST \
+            "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "text=${MSG}" \
+            -d "parse_mode=Markdown" \
+            -d "disable_web_page_preview=true" \
+          || echo "Telegram notification failed (non-fatal)"
