@@ -817,22 +817,12 @@ jobs:
                   key=lambda kv: (-kv[1], _sev_rank[sev(kv[1])])
               )
 
-              run_ts = now.strftime('%Y-%m-%d %H:%M UTC+6')
               out = []
-              out.append(f"\n# {'='*60}")
-              out.append(f"# Run: {run_ts}  |  {len(common_entries)} conflict(s)")
-              out.append(f"# {'='*60}")
-              out.append(f"#")
-              out.append(f"# Scale (relative to this run):")
-              out.append(f"#   max   — top 20% by BL hit count  (>= {thresh_max})")
-              out.append(f"#   warn  — top 50% by BL hit count  (>= {thresh_warn})")
-              out.append(f"#   basic — remaining")
-              out.append(f"#")
+              out.append(f"# Scale  — max: top 20% (>= {thresh_max})  warn: top 50% (>= {thresh_warn})  basic: remaining")
               out.append(f"# Whitelisted root domains (score = BL subdomain hits):")
               for root, count in root_status_list:
                   out.append(f"#   {root:<40} [{count}]  [{sev(count).upper()}]")
               out.append(f"#")
-              out.append(f"# {'='*60}")
               out.append("")  # blank line before entries
 
               for wl_entry, wl_src, match_type, bl_entry, bl_src in common_entries:
