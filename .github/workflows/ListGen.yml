@@ -817,38 +817,33 @@ jobs:
               )
 
               run_ts = now.strftime('%Y-%m-%d %H:%M UTC+6')
-              lines = [
-                  f"\n# {'='*50}\n",
-                  f"# Run: {run_ts}  |  {len(common_entries)} conflict(s)\n",
-                  f"# {'='*50}\n",
-                  f"#\n",
-                  f"# Scale (relative to this run):\n",
-                  f"#   max   — top 20% by BL hit count  (>= {thresh_max})\n",
-                  f"#   warn  — top 50% by BL hit count  (>= {thresh_warn})\n",
-                  f"#   basic — remaining\n",
-                  f"#\n",
-                  f"# Status:\n",
-              ]
+              out = []
+              out.append(f"\n# {'='*60}")
+              out.append(f"# Run: {run_ts}  |  {len(common_entries)} conflict(s)")
+              out.append(f"# {'='*60}")
+              out.append(f"#")
+              out.append(f"# Scale (relative to this run):")
+              out.append(f"#   max   — top 20% by BL hit count  (>= {thresh_max})")
+              out.append(f"#   warn  — top 50% by BL hit count  (>= {thresh_warn})")
+              out.append(f"#   basic — remaining")
+              out.append(f"#")
+              out.append(f"# Status:")
               for wl_entry, count in wl_status:
-                  lines.append(f"#   {wl_entry}  [{count}]  [{sev(count).upper()}]\n")
-              lines.append(f"#\n# {'='*50}\n\n")
+                  out.append(f"#   {wl_entry}  [{count}]  [{sev(count).upper()}]")
+              out.append(f"#")
+              out.append(f"# {'='*60}")
+              out.append("")  # blank line before entries
 
               for wl_entry, wl_src, match_type, bl_entry, bl_src in common_entries:
                   if match_type == "wildcard" and bl_entry != wl_entry.lstrip("*."):
-                      lines.append(
-                          f"  WL : {wl_entry} [{wl_src}]  covers subdomain\n"
-                          f"  BL : {bl_entry} [{bl_src}]\n"
-                          f"\n"
-                      )
+                      out.append(f"  WL : {wl_entry} [{wl_src}]  covers subdomain")
                   else:
-                      lines.append(
-                          f"  WL : {wl_entry} [{wl_src}]\n"
-                          f"  BL : {bl_entry} [{bl_src}]\n"
-                          f"\n"
-                      )
+                      out.append(f"  WL : {wl_entry} [{wl_src}]")
+                  out.append(f"  BL : {bl_entry} [{bl_src}]")
+                  out.append("")  # blank line after each pair
 
               with open("common.txt", "a") as f:
-                  f.writelines(lines)
+                  f.write("\n".join(out) + "\n")
               print(f"\n  ✓ common.txt — appended {len(common_entries)} conflict(s)")
           else:
               print(f"\n  ✓ common.txt — no BL/WL conflicts found")
