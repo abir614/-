@@ -11,7 +11,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
 
     steps:
       # ── 1. Checkout ────────────────────────────────────────────────────────
@@ -662,15 +662,6 @@ jobs:
               if to_root(d) in fp_refs and d not in static_bl
           }
 
-          # ── Efficiency summary ─────────────────────────────────────────────
-          # How many unique domains are actually BLOCKED by the wildcard entries?
-          # Each wildcard *.d covers d itself plus all subdomains found in sources.
-          all_input = raw_block | static_bl  # before any whitelisting
-          wildcard_coverage = sum(
-              1 for d in all_input
-              if any(a in wildcard_out for a in ancestors(d))
-          )
-
           print(f"  Raw domains          : {len(all_domains):,}")
           print(f"  Dropped (whitelist)  : {len(dropped):,}")
           print(f"  Wildcard (*.d)       : {len(wildcard_out):,}  "
@@ -810,7 +801,6 @@ jobs:
                   root_counts[to_root(bl_entry)] += 1
 
               # Relative severity based on percentile of root-domain hit counts.
-              # Relative severity based on percentile of hit counts in this run.
               # Percentile boundaries: top 20% → max, 20–50% → warn, rest → basic.
               # Using sorted unique counts to avoid ties inflating thresholds.
               unique_counts = sorted(set(root_counts.values()), reverse=True)
@@ -864,6 +854,8 @@ jobs:
           # Remove any entry whitelisted (exact or wildcard-covered).
           # Preserves all comments, blank lines, and all other blocks in the file.
           # Rewrites in-place only if something actually changed.
+          _wc_carveouts_set = {d for d, _ in _wc_carveouts}
+
           if Path("custom_blacklist.txt").exists() and bl_raw:
               def clean_static_bl_block(block_text: str) -> tuple:
                   kept_lines, removed = [], []
@@ -876,7 +868,11 @@ jobs:
                       if d is None:
                           kept_lines.append(raw)
                           continue
-                      if is_wl_covered(d, combined_wl, wl_wildcards):
+                      # Skip carve-outs — they were promoted to static_bl intentionally
+                      # to punch through a WL wildcard; do not clean them out.
+                      if d in _wc_carveouts_set:
+                          kept_lines.append(raw)
+                      elif is_wl_covered(d, combined_wl, wl_wildcards):
                           removed.append(d)
                       else:
                           kept_lines.append(raw)
@@ -917,7 +913,7 @@ jobs:
           print(f"  whitelist.txt       : {total_wl_out:,} entries"
                 f" ({len(combined_wl):,} exact + {len(wl_wildcards):,} wildcard)")
           print(f"  total_whitelisted   : {total_wl_str}")
-          print(f"  common.txt          : {len(common_entries)} BL/WL conflict(s) appended")
+          print(f"  common.txt          : {len(common_entries)} BL/WL conflict(s)")
           PYEOF
 
       # ── 4. Print preview ──────────────────────────────────────────────────
@@ -938,7 +934,7 @@ jobs:
           echo "total_whitelisted  : $(cat total_whitelisted.txt)"
           echo ""
           echo "════ common.txt (last run) ════"
-          tail -40 common.txt 2>/dev/null || echo "(none)"
+          head -60 common.txt 2>/dev/null || echo "(none)"
 
       # ── 5. Commit & push ──────────────────────────────────────────────────
       - name: Commit outputs
@@ -965,7 +961,7 @@ jobs:
         run: |
           REPO="${{ github.repository }}"
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          BDT=$(TZ="Asia/Dhaka" date '+%Y-%m-%d %I:%M %p UTC+6')
+          BDT=$(TZ="Asia/Dhaka" date '+%Y-%m-%d %I:%M %p')
           MSG="❌ *Workflow Failed*%0A%0ARepo: \`${REPO}\`%0ATime: \`${BDT}\`%0ARun: [View logs](${RUN_URL})%0ATriggered by: \`${{ github.event_name }}\`"
           curl -sSf -X POST \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
