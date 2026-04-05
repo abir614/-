@@ -783,15 +783,16 @@ jobs:
                   )
 
           if common_entries:
-              # Count hits per WL entry (not collapsed to root domain)
-              wl_counts: dict = defaultdict(int)
-              for wl_entry, _, _, _, _ in common_entries:
-                  wl_counts[wl_entry] += 1
+              # Count BL subdomain hits per ROOT domain of the BL entry.
+              # This shows how "active" each root domain is in the conflict list.
+              root_counts: dict = defaultdict(int)
+              for _, _, _, bl_entry, _ in common_entries:
+                  root_counts[to_root(bl_entry)] += 1
 
-              # Relative severity based on percentile of hit counts in this run.
+              # Relative severity based on percentile of root-domain hit counts.
               # Percentile boundaries: top 20% → max, 20–50% → warn, rest → basic.
               # Using sorted unique counts to avoid ties inflating thresholds.
-              unique_counts = sorted(set(wl_counts.values()), reverse=True)
+              unique_counts = sorted(set(root_counts.values()), reverse=True)
               n = len(unique_counts)
               # index of the value at or above the 20th and 50th percentile boundary
               idx20 = max(0, int(n * 0.20) - 1) if n > 1 else 0
@@ -810,9 +811,19 @@ jobs:
 
               _sev_rank = {"max": 0, "warn": 1, "basic": 2}
 
-              # Status list: one line per unique WL entry, ranked by count desc then sev
-              wl_status = sorted(
-                  wl_counts.items(),
+              # Determine existence status for each root domain:
+              #   BL+WL  — root appears in both blocklist sources and whitelist
+              #   BL     — root appears only in blocklist sources
+              # (all roots here are by definition in BL since they came from common_entries)
+              def root_status(root: str) -> str:
+                  in_wl = (root in combined_wl
+                           or root in wl_wildcards
+                           or any(a in wl_wildcards for a in ancestors(root)))
+                  return "BL+WL" if in_wl else "BL"
+
+              # Status list: one line per unique root domain, ranked by count desc then sev
+              root_status_list = sorted(
+                  root_counts.items(),
                   key=lambda kv: (-kv[1], _sev_rank[sev(kv[1])])
               )
 
@@ -822,19 +833,28 @@ jobs:
               out.append(f"# Run: {run_ts}  |  {len(common_entries)} conflict(s)")
               out.append(f"# {'='*60}")
               out.append(f"#")
-              out.append(f"# Scale (relative to this run):")
-              out.append(f"#   max   — top 20% by BL hit count  (>= {thresh_max})")
-              out.append(f"#   warn  — top 50% by BL hit count  (>= {thresh_warn})")
+              out.append(f"# Scale (relative to this run, scored by root domain):")
+              out.append(f"#   max   — top 20% by BL subdomain hit count  (>= {thresh_max})")
+              out.append(f"#   warn  — top 50% by BL subdomain hit count  (>= {thresh_warn})")
               out.append(f"#   basic — remaining")
               out.append(f"#")
-              out.append(f"# Status:")
-              for wl_entry, count in wl_status:
-                  out.append(f"#   {wl_entry}  [{count}]  [{sev(count).upper()}]")
+              out.append(f"# Root Domain Status:")
+              out.append(f"#   {'ROOT DOMAIN':<40} {'SCORE':>5}  {'SEV':<5}  STATUS")
+              out.append(f"#   {'-'*40}  {'-'*5}  {'-'*5}  {'-'*6}")
+              for root, count in root_status_list:
+                  s = sev(count)
+                  st = root_status(root)
+                  out.append(f"#   {root:<40} {count:>5}  {s.upper():<5}  {st}")
               out.append(f"#")
               out.append(f"# {'='*60}")
               out.append("")  # blank line before entries
 
               for wl_entry, wl_src, match_type, bl_entry, bl_src in common_entries:
+                  root = to_root(bl_entry)
+                  count = root_counts[root]
+                  s = sev(count)
+                  st = root_status(root)
+                  out.append(f"  ROOT: {root}  [score:{count}]  [{s.upper()}]  [{st}]")
                   if match_type == "wildcard" and bl_entry != wl_entry.lstrip("*."):
                       out.append(f"  WL : {wl_entry} [{wl_src}]  covers subdomain")
                   else:
