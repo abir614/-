@@ -296,17 +296,37 @@ jobs:
 
           # ════════════════════════════════════════════════════════════
           # STEP 1b — Wildcard-aware cross-source deduplication
-          # If any ancestor of D is already in the set, D is redundant:
-          # *.evil.com already covers ads.evil.com, track.evil.com, etc.
-          # Single O(n) pass using the ancestors() helper already defined.
+          #
+          # Rule: if any ANCESTOR of D is already in the set, D is
+          # redundant — *.evil.com already covers ads.evil.com,
+          # track.evil.com, sub.ads.evil.com, etc.
+          #
+          # This runs in a single O(n) pass by checking each domain's
+          # ancestor chain against the full set (set lookups = O(1)).
           # ════════════════════════════════════════════════════════════
-          print("  Deduplicating redundant subdomains...")
-          before_dedup = len(raw_block)
-          raw_block = {d for d in raw_block
-                       if not any(a in raw_block for a in ancestors(d))}
-          removed = before_dedup - len(raw_block)
-          print(f"  → After dedup: {len(raw_block):,} unique domains "
-                f"({removed:,} redundant subdomains removed)")
+          def wildcard_dedup(domain_set: set, label: str) -> set:
+              """Remove any domain whose ancestor already exists in the set.
+              Logs removed examples so redundancy is visible in CI output."""
+              before = len(domain_set)
+              kept, removed_examples = set(), []
+              for d in domain_set:
+                  covering = next((a for a in ancestors(d) if a in domain_set), None)
+                  if covering:
+                      if len(removed_examples) < 10:
+                          removed_examples.append((d, covering))
+                  else:
+                      kept.add(d)
+              n_removed = before - len(kept)
+              print(f"  [{label}] before={before:,}  removed={n_removed:,}"
+                    f"  after={len(kept):,}")
+              for sub, parent in removed_examples:
+                  print(f"    skip  {sub}  (covered by *.{parent})")
+              if n_removed > 10:
+                  print(f"    ... and {n_removed - 10} more redundant subdomains")
+              return kept
+
+          print("  Deduplicating redundant subdomains (raw_block)...")
+          raw_block = wildcard_dedup(raw_block, "raw_block")
 
           # ══════════════════════════════════════════════════════════════════
           # STEP 2 — Load FP reference lists
@@ -400,6 +420,28 @@ jobs:
 
           all_domains = raw_block | static_bl
 
+          # ── Re-run wildcard dedup after merging static_bl ──────────────────
+          # Static entries may introduce new parent domains that make some
+          # previously-kept raw_block subdomains redundant (or vice-versa).
+          print("  Re-deduplicating after static_bl merge...")
+          all_domains_before = len(all_domains)
+          all_domains_deduped = wildcard_dedup(all_domains, "all_domains")
+          # Warn if any static_bl entry itself was made redundant by another
+          # static_bl or raw_block wildcard ancestor.
+          redundant_static = {
+              d for d in static_bl
+              if d not in all_domains_deduped
+              and any(a in all_domains_deduped for a in ancestors(d))
+          }
+          if redundant_static:
+              print(f"\n  ⚠  WARNING: {len(redundant_static)} STATIC_BLACKLIST entry(ies) "
+                    f"are already covered by a wildcard ancestor — they are redundant "
+                    f"and were removed from output:")
+              for d in sorted(redundant_static):
+                  covering = next(a for a in ancestors(d) if a in all_domains_deduped)
+                  print(f"    !! {d}  (covered by *.{covering})")
+          all_domains = all_domains_deduped
+
           # Reverse WL ancestor index: set of domains that have ≥1 WL descendant.
           # Built once up-front to avoid O(n²) per-domain scans (Rule C).
           wl_ancestor_map: set = set()
@@ -435,11 +477,16 @@ jobs:
           # Dedup: an exact entry D is redundant only if one of D's own
           # ancestors is already in wildcard_out (caught by a parent wildcard).
           # Sharing a root with a wildcard sibling is NOT enough.
+          exact_out_before = len(exact_out)
           exact_out = {
               d for d in exact_out
               if not any(a in wildcard_out for a in ancestors(d))
               or d in static_bl
           }
+          exact_shadowed = exact_out_before - len(exact_out)
+          if exact_shadowed:
+              print(f"  → {exact_shadowed} exact entries removed "
+                    f"(ancestor wildcard already covers them)")
 
           total_out = len(wildcard_out) + len(exact_out)
           notable = {
@@ -447,11 +494,21 @@ jobs:
               if to_root(d) in fp_refs and d not in static_bl
           }
 
+          # ── Efficiency summary ─────────────────────────────────────────────
+          # How many unique domains are actually BLOCKED by the wildcard entries?
+          # Each wildcard *.d covers d itself plus all subdomains found in sources.
+          all_input = raw_block | static_bl  # before any whitelisting
+          wildcard_coverage = sum(
+              1 for d in all_input
+              if any(a in wildcard_out for a in ancestors(d))
+          )
+
           print(f"  Raw domains          : {len(all_domains):,}")
           print(f"  Dropped (whitelist)  : {len(dropped):,}")
-          print(f"  Wildcard (*.d)       : {len(wildcard_out):,}")
+          print(f"  Wildcard (*.d)       : {len(wildcard_out):,}  "
+                f"(each covers all subdomains implicitly)")
           print(f"  Exact (d only)       : {len(exact_out):,}")
-          print(f"  Total output         : {total_out:,}")
+          print(f"  Total output entries : {total_out:,}")
           print(f"  Notable (pop. lists) : {len(notable):,}  (kept — review if FP)")
 
           if dropped:
@@ -497,6 +554,11 @@ jobs:
               "#   *.root.tld   — wildcard: blocks root.tld + ALL its subdomains.",
               "#   sub.root.tld — exact: blocks ONLY that specific label.",
               "#",
+              "# Wildcard deduplication:",
+              "#   If *.evil.com is emitted, NO subdomain of evil.com will also",
+              "#   appear in this file — they are fully covered. This dedup runs",
+              "#   at three stages: raw fetch, post static_bl merge, and final output.",
+              "#",
               "# Exact entries occur when:",
               "#   (a) A PARENT of the blocked domain is whitelisted.",
               "#       e.g. good.com is WL, bad.good.com blocked → exact bad.good.com.",
@@ -522,12 +584,15 @@ jobs:
           ]
           with open("blocklist.txt", "w") as f:
               f.write("\n".join(bl_header) + "\n")
+              # Wildcards first (sorted), then exact-only entries (sorted).
+              # This ordering makes it easy to audit: wildcards dominate the
+              # file and exact entries are a clearly-separated tail section.
               for d in sorted(wildcard_out):
                   f.write(f"*.{d}\n")
               if exact_out:
                   f.write(
                       "# --- Exact-only entries "
-                      "(evil subdomain of a whitelisted parent) ---\n"
+                      "(evil subdomain of a whitelisted parent, or WL child) ---\n"
                   )
                   for d in sorted(exact_out):
                       f.write(f"{d}\n")
