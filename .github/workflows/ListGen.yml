@@ -438,16 +438,22 @@ jobs:
           # as exact entries — the wildcard already covers them).
           # Exact duplicates between static and external are already collapsed by
           # the set union above.
+          # Only drop an exact entry if it is covered by a wildcard AND was NOT
+          # explicitly added by the user (i.e. not in static_wl or ext_wl directly).
+          # If someone adds both example.com and *.example.com, keep both — the root
+          # exact entry is intentional and must appear in whitelist.txt as-is.
+          _wl_explicit = static_wl | ext_wl   # everything the user added explicitly
           wl_exact_before = len(combined_wl)
           wl_redundant = {
               d for d in combined_wl
-              if d in wl_wildcards                               # exact == wildcard root
-              or any(a in wl_wildcards for a in ancestors(d))   # covered by ancestor wildcard
+              if d not in _wl_explicit          # not explicitly added by user
+              and (d in wl_wildcards            # exact == wildcard root (auto-added)
+                   or any(a in wl_wildcards for a in ancestors(d)))
           }
           combined_wl -= wl_redundant
           if wl_redundant:
               print(f"\n  WL cross-dedup: {len(wl_redundant)} exact entrie(s) dropped"
-                    f" (already covered by a wildcard):")
+                    f" (auto-redundant, covered by wildcard):")
               for d in sorted(wl_redundant)[:20]:
                   covering = next(
                       (w for w in wl_wildcards
@@ -649,7 +655,7 @@ jobs:
           exact_out = {
               d for d in exact_out
               if not any(a in wildcard_out for a in ancestors(d))
-              or d in static_bl
+              or d in static_bl   # always keep explicitly added static BL entries
           }
           exact_shadowed = exact_out_before - len(exact_out)
           if exact_shadowed:
