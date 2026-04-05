@@ -1,8 +1,8 @@
 # ============================================================
 # Combined Blocklist
 # ============================================================
-# Generated  : 2026-04-05 00:12 UTC
-# Sources    : 10 blacklist URL(s) + 0 static entries
+# Generated  : 2026-04-05 00:29 UTC
+# Sources    : 7 blacklist URL(s) + 0 static entries
 # FP-filter  : Explicit whitelist only (static + URL-sourced).
 #              Tranco/Umbrella/Majestic are LOGGED, NOT auto-removed.
 #              STATIC_BLACKLIST entries bypass ALL filters.
@@ -10,6 +10,11 @@
 # Syntax:
 #   *.root.tld   — wildcard: blocks root.tld + ALL its subdomains.
 #   sub.root.tld — exact: blocks ONLY that specific label.
+#
+# Wildcard deduplication:
+#   If *.evil.com is emitted, NO subdomain of evil.com will also
+#   appear in this file — they are fully covered. This dedup runs
+#   at three stages: raw fetch, post static_bl merge, and final output.
 #
 # Exact entries occur when:
 #   (a) A PARENT of the blocked domain is whitelisted.
@@ -19,24 +24,21 @@
 #       Wildcard *.evil.com would catch good.evil.com too.
 # ============================================================
 # Stats
-#   Raw domains (all sources)  : 652,108
+#   Raw domains (all sources)  : 652,107
 #   Dropped by whitelist        : 70
-#   Wildcard entries (*.d)      : 628,808
+#   Wildcard entries (*.d)      : 628,807
 #   Exact entries (d only)      : 23,230
-#   Total output entries        : 652,038
-#   Notable (pop. lists, kept)  : 126,752
+#   Total output entries        : 652,037
+#   Notable (pop. lists, kept)  : 126,751
 # ============================================================
 # Blacklist URL sources:
 #   https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.mini.txt
 #   https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/ultimate.mini.txt
-#   https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/pro.plus.mini.txt
 #   https://big.oisd.nl/domainswild2
 #   https://urlhaus.abuse.ch/downloads/hostfile/
 #   https://phishing.army/download/phishing_army_blocklist_extended.txt
-#   https://osint.digitalside.it/Threat-Intel/lists/latestdomains.txt
 #   https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuardHome.txt
 #   https://raw.githubusercontent.com/ShadowWhisperer/BlockLists/master/Lists/Malware
-#   https://www.botvrij.eu/data/ioclist.domain
 # Static blacklist entries : 0
 # ============================================================
 # DO NOT EDIT — regenerated automatically on every workflow run.
@@ -257333,7 +257335,6 @@
 *.h4df3.cfd
 *.h4dmqp.wiki
 *.h4dnwp.fit
-*.h4g3z1-pro.plus.mini.web.app
 *.h4g3z1-tif.mini.web.app
 *.h4g3z1-ultimate.mini.web.app
 *.h4h412.cfd
@@ -628850,7 +628851,7 @@
 *.zzzperform.com
 *.zzzrukz.studio
 *.zzzz07.top
-# --- Exact-only entries (evil subdomain of a whitelisted parent) ---
+# --- Exact-only entries (evil subdomain of a whitelisted parent, or WL child) ---
 0-0-2day.vercel.app
 0-249.vercel.app
 0-8b.vercel.app
