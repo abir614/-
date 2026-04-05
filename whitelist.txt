@@ -1,13 +1,13 @@
 # ============================================================
 # Generated Whitelist
 # ============================================================
-# Generated  : 2026-04-05 18:21 UTC+6
+# Generated  : 2026-04-05 18:43 UTC+6
 # Source      : custom_whitelist.txt  [STATIC_WHITELIST] + [WHITELIST_URLS]
 # Static      : 305 domains
 # External    : 1,049 domains  (2 URL(s))
-# Exact       : 958 unique domains
-# Wildcard    : 305 (*.domain entries)
-# Total       : 1,263 entries
+# Exact       : 978 unique domains
+# Wildcard    : 286 (*.domain entries)
+# Total       : 1,264 entries
 # ============================================================
 # Syntax:
 #   domain.tld   — exact: allows only that specific domain.
@@ -325,6 +325,7 @@ clkdms.com
 cltr.wargaming.net
 cm.naukri.com
 cmodul.solutenetwork.com
+codesandbox.io
 commander1.com
 commission-junction.com
 connect.intel.com
@@ -430,7 +431,9 @@ gethatch.com
 gfl85trk.com
 gfwsl.geforce.com
 ggopjn.com
+ghost.org
 giphy.com
+github.io
 glnk.io
 globalclicklab.com
 go.admost.com
@@ -471,6 +474,7 @@ healthservices.help
 healthservicesrl.com.au
 help.ui.xboxlive.com
 hermesad.deltaverse-intl.com
+heroku.com
 hls.ted.com
 homeresource.online
 homerl.services
@@ -480,6 +484,7 @@ href.li
 hs.eloqua.com
 hubspotemail.net
 hubspotlinks.com
+huggingface.co
 i.airtel.in
 i.ipromote.com
 iaurl.io
@@ -592,6 +597,8 @@ netbet.gr
 netbet.livepartners.com
 netbetfr.livepartners.com
 netbetit.livepartners.com
+netlify.app
+netlify.com
 network.bazaarvoice.com
 neural17.cdnwebcloud.com
 newsletter2go.com
@@ -625,6 +632,7 @@ opticksprotection.com
 orders.costco.com
 p.nexinsight.com.ua
 p.placed.com
+pages.dev
 partnerlinks.io
 partners.webmasterplan.com
 pepperjamnetwork.com
@@ -678,6 +686,7 @@ r.linksprf.com
 r.niwepa.com
 r.powuta.com
 r.srvtrck.com
+railway.app
 ravn.click
 rdr.wargaming.net
 reachlocal.com
@@ -693,6 +702,8 @@ redirect.viglink.com
 redirector.eservice.emarsys.net
 referrals.bravesoftware.com
 referrer.disqus.com
+render.com
+replit.com
 res.cloudinary.com
 reservationnow.us
 restaurant-information.com
@@ -709,6 +720,7 @@ run.admost.com
 s.bluecore.com
 s.marketwatch.com
 s.sick.com
+s1.wp.com
 sa.symcb.com
 safeads.com.br
 sailthru.com
@@ -752,6 +764,7 @@ sp-trk.com
 spclient.wg.spotify.com
 spgo.io
 spxl.ink
+squarespace.com
 srvto.com
 ssl.hurra.com
 ssl.p.jwpcdn.com
@@ -760,6 +773,7 @@ staticiv.com
 status.plex.tv
 stendia.co.uk
 stvkr.com
+substack.com
 superpages.com
 sv.brand-display.com
 sync-tm.everesttech.net
@@ -939,18 +953,24 @@ userlinx.com
 usrlnx.com
 v.short.gy
 vaudit.com
+vercel.app
 vfo.voyage-prive.co.uk
 videos.vidible.tv
 vidtech.cbsinteractive.com
 view.email.nzz.ch
 voltagesearch.com
 webep1.com
+webflow.com
 webflow.grsm.io
 webpower.eu
 webto.salesforce.com
 wetrack.online
 widget-cdn.rpxnow.com
+wix.com
 wl.spotify.com
+wordpress.com
+workers.dev
+wp.com
 ws.audioscrobbler.com
 www.awin1.com
 www.dataplicity.com
@@ -1033,7 +1053,6 @@ zee.cws.conviva.com
 *.cloudflarestream.com
 *.cloudfront.net
 *.codepen.io
-*.codesandbox.io
 *.cohere.com
 *.comodoca.com
 *.confluence.com
@@ -1070,9 +1089,7 @@ zee.cws.conviva.com
 *.fsf.org
 *.gcr.io
 *.ghcr.io
-*.ghost.org
 *.github.com
-*.github.io
 *.githubassets.com
 *.githubusercontent.com
 *.gitlab.com
@@ -1095,11 +1112,9 @@ zee.cws.conviva.com
 *.hashicorp.com
 *.helm.sh
 *.here.com
-*.heroku.com
 *.hetzner.com
 *.hey.com
 *.hotmail.com
-*.huggingface.co
 *.iana.org
 *.icann.org
 *.icloud.com
@@ -1146,8 +1161,6 @@ zee.cws.conviva.com
 *.mozilla.org
 *.mysql.com
 *.mzstatic.com
-*.netlify.app
-*.netlify.com
 *.newrelic.com
 *.nextdns.io
 *.nginx.org
@@ -1175,7 +1188,6 @@ zee.cws.conviva.com
 *.ovhcloud.com
 *.packagist.org
 *.paddle.com
-*.pages.dev
 *.paypal.com
 *.paypalobjects.com
 *.perl.org
@@ -1194,7 +1206,6 @@ zee.cws.conviva.com
 *.pythonhosted.org
 *.quad9.net
 *.quay.io
-*.railway.app
 *.razorpay.com
 *.readthedocs.io
 *.readthedocs.org
@@ -1206,9 +1217,7 @@ zee.cws.conviva.com
 *.reddituploads.com
 *.redhat.com
 *.redis.io
-*.render.com
 *.replicate.com
-*.replit.com
 *.ruby-lang.org
 *.rubygems.org
 *.rust-lang.org
@@ -1225,7 +1234,6 @@ zee.cws.conviva.com
 *.spamhaus.org
 *.sparkpostmail.com
 *.square.com
-*.squarespace.com
 *.squareup.com
 *.stability.ai
 *.stackexchange.com
@@ -1233,7 +1241,6 @@ zee.cws.conviva.com
 *.stackpath.com
 *.stripe.com
 *.stripe.network
-*.substack.com
 *.superuser.com
 *.telegram.org
 *.terraform.io
@@ -1253,14 +1260,12 @@ zee.cws.conviva.com
 *.unpkg.com
 *.urlvoid.com
 *.usertrust.com
-*.vercel.app
 *.vercel.com
 *.virustotal.com
 *.vivaldi.com
 *.vultr.com
 *.w.org
 *.webex.com
-*.webflow.com
 *.whatsapp.com
 *.whatsapp.net
 *.who.int
@@ -1268,11 +1273,7 @@ zee.cws.conviva.com
 *.wikimedia.org
 *.wikipedia.org
 *.windowsupdate.com
-*.wix.com
-*.wordpress.com
 *.wordpress.org
-*.workers.dev
-*.wp.com
 *.yahoo.com
 *.yarnpkg.com
 *.youtube.com
