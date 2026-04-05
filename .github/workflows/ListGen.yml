@@ -811,16 +811,6 @@ jobs:
 
               _sev_rank = {"max": 0, "warn": 1, "basic": 2}
 
-              # Determine existence status for each root domain:
-              #   BL+WL  — root appears in both blocklist sources and whitelist
-              #   BL     — root appears only in blocklist sources
-              # (all roots here are by definition in BL since they came from common_entries)
-              def root_status(root: str) -> str:
-                  in_wl = (root in combined_wl
-                           or root in wl_wildcards
-                           or any(a in wl_wildcards for a in ancestors(root)))
-                  return "BL+WL" if in_wl else "BL"
-
               # Status list: one line per unique root domain, ranked by count desc then sev
               root_status_list = sorted(
                   root_counts.items(),
@@ -833,28 +823,19 @@ jobs:
               out.append(f"# Run: {run_ts}  |  {len(common_entries)} conflict(s)")
               out.append(f"# {'='*60}")
               out.append(f"#")
-              out.append(f"# Scale (relative to this run, scored by root domain):")
-              out.append(f"#   max   — top 20% by BL subdomain hit count  (>= {thresh_max})")
-              out.append(f"#   warn  — top 50% by BL subdomain hit count  (>= {thresh_warn})")
+              out.append(f"# Scale (relative to this run):")
+              out.append(f"#   max   — top 20% by BL hit count  (>= {thresh_max})")
+              out.append(f"#   warn  — top 50% by BL hit count  (>= {thresh_warn})")
               out.append(f"#   basic — remaining")
               out.append(f"#")
-              out.append(f"# Root Domain Status:")
-              out.append(f"#   {'ROOT DOMAIN':<40} {'SCORE':>5}  {'SEV':<5}  STATUS")
-              out.append(f"#   {'-'*40}  {'-'*5}  {'-'*5}  {'-'*6}")
+              out.append(f"# Whitelisted root domains (score = BL subdomain hits):")
               for root, count in root_status_list:
-                  s = sev(count)
-                  st = root_status(root)
-                  out.append(f"#   {root:<40} {count:>5}  {s.upper():<5}  {st}")
+                  out.append(f"#   {root:<40} [{count}]  [{sev(count).upper()}]")
               out.append(f"#")
               out.append(f"# {'='*60}")
               out.append("")  # blank line before entries
 
               for wl_entry, wl_src, match_type, bl_entry, bl_src in common_entries:
-                  root = to_root(bl_entry)
-                  count = root_counts[root]
-                  s = sev(count)
-                  st = root_status(root)
-                  out.append(f"  ROOT: {root}  [score:{count}]  [{s.upper()}]  [{st}]")
                   if match_type == "wildcard" and bl_entry != wl_entry.lstrip("*."):
                       out.append(f"  WL : {wl_entry} [{wl_src}]  covers subdomain")
                   else:
