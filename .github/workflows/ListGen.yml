@@ -231,7 +231,8 @@ jobs:
           # ══════════════════════════════════════════════════════════════════
 
           def parse_domains(text: str, label: str) -> set:
-              """Parse list text → set of full domain strings."""
+              """Parse list text → set of full domain strings (exact only, wildcards dropped).
+              Used for blacklist sources where wildcard vs exact is decided at output time."""
               domains, skip = set(), 0
               for raw in text.splitlines():
                   d = strip_to_domain(raw)
@@ -242,23 +243,34 @@ jobs:
               print(f"    {label}: {len(domains):,} domains  ({skip:,} lines skipped)")
               return domains
 
-          def parse_wl_wildcards(text: str) -> set:
-              """Extract explicit *.domain entries from whitelist text.
-              Returns a set of bare domains that have a wildcard declared,
-              e.g. '*.cloudflare.com' → 'cloudflare.com' goes into this set.
-              Used separately from parse_domains so wildcard intent is not lost."""
-              wildcards = set()
+          def parse_domains_split(text: str, label: str) -> tuple:
+              """Parse list text → (exact: set, wildcards: set).
+              A line with a *.domain prefix goes into wildcards (bare domain stored).
+              All other valid domain lines go into exact.
+              Both sets hold bare domain strings; the *.  prefix is re-added at write time.
+              This mirrors how the blocklist pipeline decides wildcard vs exact at output,
+              so whitelist sources (static + external URLs) are treated identically."""
+              exact, wildcards, skip = set(), set(), 0
               for raw in text.splitlines():
                   line = raw.strip().lower()
-                  if not line or line.startswith('#'):
+                  if not line or line.startswith(('#', '!', ';')):
+                      skip += 1
                       continue
-                  # Match *.domain lines explicitly
-                  m = re.match(r'^\*\.([a-z0-9][a-z0-9.\-]+[a-z0-9])\s*(?:#.*)?$', line)
-                  if m:
-                      d = m.group(1)
-                      if _RE_VALID.match(d):
-                          wildcards.add(d)
-              return wildcards
+                  # Detect explicit wildcard prefix before strip_to_domain loses it
+                  is_wildcard = bool(re.match(r'^\s*\*\.', line))
+                  d = strip_to_domain(raw)
+                  if d is None:
+                      skip += 1
+                      continue
+                  if is_wildcard:
+                      wildcards.add(d)
+                  else:
+                      exact.add(d)
+              total = len(exact) + len(wildcards)
+              print(f"    {label}: {total:,} entries"
+                    f"  ({len(exact):,} exact + {len(wildcards):,} wildcard,"
+                    f"  {skip:,} lines skipped)")
+              return exact, wildcards
 
           def is_wl_covered(domain: str, combined_wl: set, wl_wildcards: set) -> bool:
               """Return True if domain is protected by the whitelist:
@@ -284,6 +296,18 @@ jobs:
               except Exception as e:
                   print(f"    ⚠  WARN: {label} — {e} (skipped)")
                   return set()
+
+          def fetch_and_parse_wl(url: str, label: str) -> tuple:
+              """Fetch a URL and parse as whitelist source → (exact: set, wildcards: set)."""
+              try:
+                  req = urllib.request.Request(
+                      url, headers={"User-Agent": "DNS-Builder/1.0"})
+                  with urllib.request.urlopen(req, timeout=20) as r:
+                      text = r.read().decode("utf-8", errors="ignore")
+                  return parse_domains_split(text, label)
+              except Exception as e:
+                  print(f"    ⚠  WARN: {label} — {e} (skipped)")
+                  return set(), set()
 
           # ══════════════════════════════════════════════════════════════════
           # PARSE custom.txt
@@ -377,28 +401,19 @@ jobs:
           # STEP 3 — Build whitelist
           # ══════════════════════════════════════════════════════════════════
           print("\n[3/6] Building whitelist...")
-          static_wl: set = parse_domains(st_wl_blk, "Static whitelist")
-
-          # Collect explicit *.domain wildcard declarations from custom_whitelist.txt
-          wl_wildcards: set = parse_wl_wildcards(st_wl_blk)
-          print(f"  Whitelist wildcards: {len(wl_wildcards):,} (*.domain entries in static WL)")
+          static_wl, wl_wildcards = parse_domains_split(st_wl_blk, "Static whitelist")
+          print(f"  Static WL: {len(static_wl):,} exact + {len(wl_wildcards):,} wildcard")
 
           ext_wl: set = set()
           for url in wl_urls:
-              fetched = fetch_and_parse(url, url.split('/')[-1][:60])
-              ext_wl |= fetched
-              # External lists may also contain *.domain lines — capture them
-              try:
-                  req = urllib.request.Request(url, headers={"User-Agent": "DNS-Builder/1.0"})
-                  with urllib.request.urlopen(req, timeout=20) as r:
-                      raw_text = r.read().decode("utf-8", errors="ignore")
-                  wl_wildcards |= parse_wl_wildcards(raw_text)
-              except Exception:
-                  pass  # already warned in fetch_and_parse
-          print(f"  External whitelist: {len(ext_wl):,} from {len(wl_urls)} URL(s)")
+              ex, wc = fetch_and_parse_wl(url, url.split('/')[-1][:60])
+              ext_wl     |= ex
+              wl_wildcards |= wc
+          print(f"  External whitelist: {len(ext_wl):,} exact from {len(wl_urls)} URL(s)")
 
           combined_wl: set = static_wl | ext_wl
-          print(f"  Combined whitelist: {len(combined_wl):,} domains")
+          print(f"  Combined WL: {len(combined_wl):,} exact + {len(wl_wildcards):,} wildcard"
+                f" = {len(combined_wl) + len(wl_wildcards):,} total")
 
           print("\n  Loading static blacklist...")
           static_bl: set = parse_domains(st_bl_blk, "Static blacklist")
@@ -410,6 +425,7 @@ jobs:
           print("\n[4/6] Writing whitelist.txt...")
           now = datetime.now(timezone(timedelta(hours=6)))
 
+          total_wl_out = len(combined_wl) + len(wl_wildcards)
           wl_header = [
               "# ============================================================",
               "# Generated Whitelist",
@@ -418,7 +434,13 @@ jobs:
               "# Source      : custom_whitelist.txt  [STATIC_WHITELIST] + [WHITELIST_URLS]",
               f"# Static      : {len(static_wl):,} domains",
               f"# External    : {len(ext_wl):,} domains  ({len(wl_urls)} URL(s))",
-              f"# Total       : {len(combined_wl):,} unique domains",
+              f"# Exact       : {len(combined_wl):,} unique domains",
+              f"# Wildcard    : {len(wl_wildcards):,} (*.domain entries)",
+              f"# Total       : {total_wl_out:,} entries",
+              "# ============================================================",
+              "# Syntax:",
+              "#   domain.tld   — exact: allows only that specific domain.",
+              "#   *.domain.tld — wildcard: allows domain.tld + ALL its subdomains.",
               "# ============================================================",
               "# DO NOT EDIT — regenerated automatically on every workflow run.",
               "# To make changes, edit custom_whitelist.txt instead.",
@@ -428,7 +450,15 @@ jobs:
               f.write("\n".join(wl_header) + "\n")
               for d in sorted(combined_wl):
                   f.write(d + "\n")
-          print(f"  ✓ whitelist.txt — {len(combined_wl):,} entries")
+              if wl_wildcards:
+                  f.write(
+                      "# --- Wildcard entries"
+                      " (*.domain — allows domain + all subdomains) ---\n"
+                  )
+                  for d in sorted(wl_wildcards):
+                      f.write(f"*.{d}\n")
+          print(f"  ✓ whitelist.txt — {total_wl_out:,} entries"
+                f" ({len(combined_wl):,} exact + {len(wl_wildcards):,} wildcard)")
 
           # ══════════════════════════════════════════════════════════════════
           # STEP 5 — Resolve blocklist with surgical whitelist interaction
@@ -681,12 +711,20 @@ jobs:
               f.write(total_str + "\n")
           print(f"  ✓ total_blocked.txt — {total_str}")
 
+          # Write total_whitelisted.txt — same format as total_blocked.txt
+          total_wl_str = f"{total_wl_out:,}".replace(",", "_")
+          with open("total_whitelisted.txt", "w") as f:
+              f.write(total_wl_str + "\n")
+          print(f"  ✓ total_whitelisted.txt — {total_wl_str}")
+
           # ══════════════════════════════════════════════════════════════════
           # STEP 6 — Summary
           # ══════════════════════════════════════════════════════════════════
           print("\n[6/6] Done.")
-          print(f"  blocklist.txt : {total_out:,} entries")
-          print(f"  whitelist.txt : {len(combined_wl):,} domains")
+          print(f"  blocklist.txt       : {total_out:,} entries")
+          print(f"  whitelist.txt       : {total_wl_out:,} entries"
+                f" ({len(combined_wl):,} exact + {len(wl_wildcards):,} wildcard)")
+          print(f"  total_whitelisted   : {total_wl_str}")
           PYEOF
 
       # ── 4. Print preview ──────────────────────────────────────────────────
@@ -696,20 +734,22 @@ jobs:
           head -45 blocklist.txt
           echo ""
           echo "════ whitelist.txt (header) ════"
-          head -15 whitelist.txt
+          head -20 whitelist.txt
           echo ""
           echo "════ Counts ════"
           echo "blocklist wildcard : $(grep -c '^\*\.' blocklist.txt || true)"
           echo "blocklist exact    : $(grep -cE '^[a-z0-9]' blocklist.txt || true)"
-          echo "whitelist          : $(grep -v '^#' whitelist.txt | grep -c '\.' || true)"
+          echo "whitelist exact    : $(grep -v '^[#*]' whitelist.txt | grep -c '\.' || true)"
+          echo "whitelist wildcard : $(grep -c '^\*\.' whitelist.txt || true)"
           echo "total_blocked      : $(cat total_blocked.txt)"
+          echo "total_whitelisted  : $(cat total_whitelisted.txt)"
 
       # ── 5. Commit & push ──────────────────────────────────────────────────
       - name: Commit outputs
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add blocklist.txt whitelist.txt custom_blacklist.txt custom_whitelist.txt total_blocked.txt
+          git add blocklist.txt whitelist.txt custom_blacklist.txt custom_whitelist.txt total_blocked.txt total_whitelisted.txt
           if git diff --cached --quiet; then
             echo "No changes — skipping commit"
           else
