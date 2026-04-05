@@ -3,7 +3,6 @@ name: Generate Blocklist & Whitelist
 on:
   schedule:
     - cron: '0 0 * * *'
-  workflow_dispatch:
 
 permissions:
   contents: write
@@ -16,7 +15,7 @@ jobs:
     steps:
       # ── 1. Checkout ────────────────────────────────────────────────────────
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4.2.2
         with:
           ref: '0'
 
@@ -294,6 +293,20 @@ jobs:
               raw_block |= fetch_and_parse(url, url.split('/')[-1][:60])
           print(f"  → Raw union: {len(raw_block):,} unique domains")
 
+          # ════════════════════════════════════════════════════════════
+          # STEP 1b — Wildcard-aware cross-source deduplication
+          # If any ancestor of D is already in the set, D is redundant:
+          # *.evil.com already covers ads.evil.com, track.evil.com, etc.
+          # Single O(n) pass using the ancestors() helper already defined.
+          # ════════════════════════════════════════════════════════════
+          print("  Deduplicating redundant subdomains...")
+          before_dedup = len(raw_block)
+          raw_block = {d for d in raw_block
+                       if not any(a in raw_block for a in ancestors(d))}
+          removed = before_dedup - len(raw_block)
+          print(f"  → After dedup: {len(raw_block):,} unique domains "
+                f"({removed:,} redundant subdomains removed)")
+
           # ══════════════════════════════════════════════════════════════════
           # STEP 2 — Load FP reference lists
           # Informational only — NOT used to auto-remove entries.
@@ -568,7 +581,7 @@ jobs:
         run: |
           REPO="${{ github.repository }}"
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          BDT=$(TZ="Asia/Dhaka" date '+%Y-%m-%d %H:%M')
+          BDT=$(TZ="Asia/Dhaka" date '+%Y-%m-%d %I:%M %p BDT')
           MSG="❌ *Workflow Failed*%0A%0ARepo: \`${REPO}\`%0ATime: \`${BDT}\`%0ARun: [View logs](${RUN_URL})%0ATriggered by: \`${{ github.event_name }}\`"
           curl -sSf -X POST \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
