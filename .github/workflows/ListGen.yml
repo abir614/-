@@ -432,6 +432,57 @@ jobs:
 
           combined_wl: set = static_wl | ext_wl
 
+          # ── User-content platforms — remove wildcard, keep root exact ──────
+          # These domains allow anyone to deploy arbitrary subdomains.
+          # Wildcard-whitelisting them would blanket-allow all user-hosted content
+          # including the malicious subdomains that BL sources are catching.
+          # Root domain is kept exact so legitimate apex traffic still passes.
+          _UGC_WILDCARD_STRIP = {
+              "workers.dev",       # Cloudflare Workers
+              "pages.dev",         # Cloudflare Pages
+              "vercel.app",        # Vercel
+              "netlify.app",       # Netlify
+              "netlify.com",       # Netlify alt
+              "github.io",         # GitHub Pages
+              "gitlab.io",         # GitLab Pages
+              "railway.app",       # Railway
+              "replit.dev",        # Replit
+              "replit.com",        # Replit alt
+              "codesandbox.io",    # CodeSandbox
+              "webflow.io",        # Webflow staging
+              "webflow.com",       # Webflow
+              "wix.com",           # Wix
+              "squarespace.com",   # Squarespace
+              "wordpress.com",     # WordPress.com
+              "wp.com",            # WordPress CDN/alt
+              "substack.com",      # Substack
+              "ghost.io",          # Ghost(Pro)
+              "ghost.org",         # Ghost alt
+              "heroku.com",        # Heroku
+              "fly.dev",           # Fly.io
+              "render.com",        # Render
+              "glitch.me",         # Glitch
+              "surge.sh",          # Surge.sh
+              "firebaseapp.com",   # Firebase Hosting
+              "web.app",           # Firebase alt
+              "onrender.com",      # Render alt
+              "pythonanywhere.com",# PythonAnywhere
+              "streamlit.app",     # Streamlit Cloud
+              "huggingface.co",    # HuggingFace Spaces
+          }
+
+          _stripped_wc = []
+          for d in _UGC_WILDCARD_STRIP:
+              if d in wl_wildcards:
+                  wl_wildcards.discard(d)
+                  combined_wl.add(d)          # root stays as exact entry
+                  wl_src_map.setdefault(d, "ugc-demoted")
+                  _stripped_wc.append(d)
+          if _stripped_wc:
+              print(f"\n  UGC wildcard→exact demotion ({len(_stripped_wc)}):")
+              for d in sorted(_stripped_wc):
+                  print(f"    ~ *.{d}  →  {d}  (root kept, wildcard removed)")
+
           # ── WL cross-dedup ─────────────────────────────────────────────────
           # Drop any exact entry whose ancestor is already in wl_wildcards
           # (*.cloudflare.com makes cloudflare.com and cdn.cloudflare.com redundant
@@ -789,6 +840,7 @@ jobs:
                   root_counts[to_root(bl_entry)] += 1
 
               # Relative severity based on percentile of root-domain hit counts.
+              # Relative severity based on percentile of hit counts in this run.
               # Percentile boundaries: top 20% → max, 20–50% → warn, rest → basic.
               # Using sorted unique counts to avoid ties inflating thresholds.
               unique_counts = sorted(set(root_counts.values()), reverse=True)
