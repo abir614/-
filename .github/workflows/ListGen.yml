@@ -432,57 +432,6 @@ jobs:
 
           combined_wl: set = static_wl | ext_wl
 
-          # ── User-content platforms — remove wildcard, keep root exact ──────
-          # These domains allow anyone to deploy arbitrary subdomains.
-          # Wildcard-whitelisting them would blanket-allow all user-hosted content
-          # including the malicious subdomains that BL sources are catching.
-          # Root domain is kept exact so legitimate apex traffic still passes.
-          _UGC_WILDCARD_STRIP = {
-              "workers.dev",       # Cloudflare Workers
-              "pages.dev",         # Cloudflare Pages
-              "vercel.app",        # Vercel
-              "netlify.app",       # Netlify
-              "netlify.com",       # Netlify alt
-              "github.io",         # GitHub Pages
-              "gitlab.io",         # GitLab Pages
-              "railway.app",       # Railway
-              "replit.dev",        # Replit
-              "replit.com",        # Replit alt
-              "codesandbox.io",    # CodeSandbox
-              "webflow.io",        # Webflow staging
-              "webflow.com",       # Webflow
-              "wix.com",           # Wix
-              "squarespace.com",   # Squarespace
-              "wordpress.com",     # WordPress.com
-              "wp.com",            # WordPress CDN/alt
-              "substack.com",      # Substack
-              "ghost.io",          # Ghost(Pro)
-              "ghost.org",         # Ghost alt
-              "heroku.com",        # Heroku
-              "fly.dev",           # Fly.io
-              "render.com",        # Render
-              "glitch.me",         # Glitch
-              "surge.sh",          # Surge.sh
-              "firebaseapp.com",   # Firebase Hosting
-              "web.app",           # Firebase alt
-              "onrender.com",      # Render alt
-              "pythonanywhere.com",# PythonAnywhere
-              "streamlit.app",     # Streamlit Cloud
-              "huggingface.co",    # HuggingFace Spaces
-          }
-
-          _stripped_wc = []
-          for d in _UGC_WILDCARD_STRIP:
-              if d in wl_wildcards:
-                  wl_wildcards.discard(d)
-                  combined_wl.add(d)          # root stays as exact entry
-                  wl_src_map.setdefault(d, "ugc-demoted")
-                  _stripped_wc.append(d)
-          if _stripped_wc:
-              print(f"\n  UGC wildcard→exact demotion ({len(_stripped_wc)}):")
-              for d in sorted(_stripped_wc):
-                  print(f"    ~ *.{d}  →  {d}  (root kept, wildcard removed)")
-
           # ── WL cross-dedup ─────────────────────────────────────────────────
           # Drop any exact entry whose ancestor is already in wl_wildcards
           # (*.cloudflare.com makes cloudflare.com and cdn.cloudflare.com redundant
@@ -520,6 +469,27 @@ jobs:
           # Tag static BL entries in the source map (don't overwrite URL-sourced labels)
           for d in static_bl:
               bl_src_map.setdefault(d, "static")
+
+          # ── Carve out BL domains covered by a WL wildcard → promote to static_bl
+          # *.example.com stays in wl_wildcards (good.example.com remains whitelisted).
+          # evil.example.com is added to static_bl so it punches through the wildcard
+          # and gets blocked as an exact entry. All other subdomains stay whitelisted.
+          all_bl = raw_block | static_bl
+          _wc_carveouts = []
+          for d in all_bl:
+              if d in static_bl:
+                  continue   # already in static_bl, nothing to do
+              covering_wc = next(
+                  (w for w in ([to_root(d)] + ancestors(d)) if w in wl_wildcards), None
+              )
+              if covering_wc is not None:
+                  static_bl.add(d)
+                  bl_src_map.setdefault(d, bl_src_map.get(d, "wc-carveout"))
+                  _wc_carveouts.append((d, covering_wc))
+          if _wc_carveouts:
+              print(f"\n  WL wildcard carve-outs → promoted to static_bl ({len(_wc_carveouts)}):")
+              for d, wc in sorted(_wc_carveouts):
+                  print(f"    + {d}  (punches through *.{wc})")
 
           # ══════════════════════════════════════════════════════════════════
           # STEP 4 — Write whitelist.txt
