@@ -2,15 +2,15 @@
 ######################################################################################################
 https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.mini.txt
 https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/ultimate.mini.txt
-https://big.oisd.nl/domainswild2
+https://big.oisd.nl/domainswild
 https://urlhaus.abuse.ch/downloads/hostfile/
-https://phishing.army/download/phishing_army_blocklist_extended.txt
-https://raw.githubusercontent.com/DandelionSprout/adfilt/master/Alternate%20versions%20Anti-Malware%20List/AntiMalwareAdGuardHome.txt
-https://raw.githubusercontent.com/ShadowWhisperer/BlockLists/master/Lists/Malware
+https://threatfox.abuse.ch/downloads/hostfile/
 #######################################################################################################
 [/BLACKLIST_URLS]
 [STATIC_BLACKLIST]
 #-------------------------------------------Domain Starts----------------------------------------------#
-
+filmzie.com
+mass-net.org
+hiperflixtv.net
 #--------------------------------------------Domain Ends-----------------------------------------------#
 [/STATIC_BLACKLIST]
