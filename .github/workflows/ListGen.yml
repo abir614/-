@@ -155,7 +155,7 @@ jobs:
           import re
           import urllib.request
           from pathlib import Path
-          from datetime import datetime, timezone
+          from datetime import datetime, timezone, timedelta
 
           # ══════════════════════════════════════════════════════════════════
           # DOMAIN HELPERS
@@ -363,13 +363,13 @@ jobs:
           # STEP 4 — Write whitelist.txt
           # ══════════════════════════════════════════════════════════════════
           print("\n[4/6] Writing whitelist.txt...")
-          now = datetime.now(timezone.utc)
+          now = datetime.now(timezone(timedelta(hours=6)))
 
           wl_header = [
               "# ============================================================",
               "# Generated Whitelist",
               "# ============================================================",
-              f"# Generated  : {now.strftime('%Y-%m-%d %H:%M UTC')}",
+              f"# Generated  : {now.strftime('%Y-%m-%d %H:%M UTC+6')}",
               "# Source      : custom_whitelist.txt  [STATIC_WHITELIST] + [WHITELIST_URLS]",
               f"# Static      : {len(static_wl):,} domains",
               f"# External    : {len(ext_wl):,} domains  ({len(wl_urls)} URL(s))",
@@ -543,7 +543,7 @@ jobs:
               "# ============================================================",
               "# Combined Blocklist",
               "# ============================================================",
-              f"# Generated  : {now.strftime('%Y-%m-%d %H:%M UTC')}",
+              f"# Generated  : {now.strftime('%Y-%m-%d %H:%M UTC+6')}",
               f"# Sources    : {len(bl_urls)} blacklist URL(s) + "
               f"{len(static_bl)} static entries",
               "# FP-filter  : Explicit whitelist only (static + URL-sourced).",
@@ -647,7 +647,7 @@ jobs:
         run: |
           REPO="${{ github.repository }}"
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          BDT=$(TZ="Asia/Dhaka" date '+%Y-%m-%d %I:%M %p BDT')
+          BDT=$(TZ="Asia/Dhaka" date '+%Y-%m-%d %I:%M %p')
           MSG="❌ *Workflow Failed*%0A%0ARepo: \`${REPO}\`%0ATime: \`${BDT}\`%0ARun: [View logs](${RUN_URL})%0ATriggered by: \`${{ github.event_name }}\`"
           curl -sSf -X POST \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
