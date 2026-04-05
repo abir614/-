@@ -756,62 +756,93 @@ jobs:
                 f"({len(wildcard_out):,} wildcard + {len(exact_out):,} exact)")
 
           # ── Write common.txt — domains found in both BL and WL ─────────────
-          # Appends to the file each run (never overwrites) so history is kept.
-          # Each match is reported as two lines:
-          #   WL:  <wl_entry>  [<wl_source>]
-          #   BL:  <bl_entry>  [<bl_source>]
-          # where wl_entry is prefixed with *. if it matched as a wildcard.
+          # Appends each run. Never overwrites.
+          # Format:
+          #   Status block — one line per root domain, ranked by count then severity.
+          #   Then the full list of WL/BL pairs, blank line after each combination.
+          from collections import defaultdict
+
           common_entries = []
-          # We scan all_input (raw_block | static_bl before whitelist filtering)
-          # rather than just `dropped`, because `dropped` only has Rule-A hits
-          # (domain itself WL-covered). We also want to surface BL domains that
-          # survived as exact (Rule B/C) because their parent/child is WL'd.
           for d in sorted(raw_block | static_bl):
               bl_label = bl_src_map.get(d, "unknown")
 
               # Case 1: exact WL hit
               if d in combined_wl:
                   wl_label = wl_src_map.get(d, "unknown")
-                  common_entries.append((
-                      d,  # exact match — no wildcard prefix
-                      wl_label, "exact",
-                      d, bl_label
-                  ))
+                  common_entries.append((d, wl_label, "exact", d, bl_label))
                   continue
 
-              # Case 2: wildcard WL hit — d itself or an ancestor is a WL wildcard root
+              # Case 2: wildcard WL hit
               covering_wc = next(
-                  (w for w in ([d] + ancestors(d)) if w in wl_wildcards),
-                  None
+                  (w for w in ([d] + ancestors(d)) if w in wl_wildcards), None
               )
               if covering_wc is not None:
                   wl_label = wl_wc_src_map.get(covering_wc, "unknown")
-                  common_entries.append((
-                      f"*.{covering_wc}", wl_label, "wildcard",
-                      d, bl_label
-                  ))
+                  common_entries.append(
+                      (f"*.{covering_wc}", wl_label, "wildcard", d, bl_label)
+                  )
 
           if common_entries:
-              run_ts = now.strftime('%Y-%m-%d %H:%M UTC+6')
-              header = (
-                  f"\n# {'='*70}\n"
-                  f"# Run: {run_ts}  |  {len(common_entries)} conflict(s)\n"
-                  f"# {'='*70}\n"
+              # Group by root domain for status block
+              root_counts: dict = defaultdict(int)
+              for wl_entry, _, match_type, bl_entry, _ in common_entries:
+                  root = to_root(wl_entry.lstrip("*."))
+                  root_counts[root] += 1
+
+              # Relative severity: thresholds derived from this run's distribution.
+              # top 20% by count → max, next 30% → warn, bottom 50% → basic.
+              counts_sorted = sorted(root_counts.values(), reverse=True)
+              n = len(counts_sorted)
+              top20  = counts_sorted[max(0, int(n * 0.20) - 1)]
+              top50  = counts_sorted[max(0, int(n * 0.50) - 1)]
+              # Guard: if all counts are equal, spread by absolute value
+              if top20 == top50 == counts_sorted[-1]:
+                  top20 = max(counts_sorted) + 1  # nothing hits max naturally
+                  top50 = max(counts_sorted)       # everything is warn or basic
+
+              def sev(count: int) -> str:
+                  if count >= top20: return "max"
+                  if count >= top50: return "warn"
+                  return "basic"
+
+              _sev_rank = {"max": 0, "warn": 1, "basic": 2}
+
+              ranked = sorted(
+                  root_counts.items(),
+                  key=lambda kv: (-kv[1], _sev_rank[sev(kv[1])])
               )
-              lines = [header]
+
+              run_ts = now.strftime('%Y-%m-%d %H:%M UTC+6')
+              lines = [
+                  f"\n# {'='*50}\n",
+                  f"# Run: {run_ts}  |  {len(common_entries)} conflict(s)\n",
+                  f"# {'='*50}\n",
+                  f"#\n",
+                  f"# Scale (relative to this run):\n",
+                  f"#   max   — top 20% by hit count  (>= {top20})\n",
+                  f"#   warn  — top 50% by hit count  (>= {top50})\n",
+                  f"#   basic — remaining\n",
+                  f"#\n",
+                  f"# Status:\n",
+              ]
+              for root, count in ranked:
+                  lines.append(f"#   {root}  [{count}]  [{sev(count).upper()}]\n")
+              lines.append(f"#\n# {'='*50}\n\n")
+
               for wl_entry, wl_src, match_type, bl_entry, bl_src in common_entries:
                   if match_type == "wildcard" and bl_entry != wl_entry.lstrip("*."):
-                      # subdomain hit — show how the wildcard covers it
                       lines.append(
-                          f"  WL : *.{wl_entry.lstrip('*.')} [{wl_src}]"
-                          f"  covers subdomain\n"
+                          f"  WL : {wl_entry} [{wl_src}]  covers subdomain\n"
                           f"  BL : {bl_entry} [{bl_src}]\n"
+                          f"\n"
                       )
                   else:
                       lines.append(
                           f"  WL : {wl_entry} [{wl_src}]\n"
                           f"  BL : {bl_entry} [{bl_src}]\n"
+                          f"\n"
                       )
+
               with open("common.txt", "a") as f:
                   f.writelines(lines)
               print(f"\n  ✓ common.txt — appended {len(common_entries)} conflict(s)")
