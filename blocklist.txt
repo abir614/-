@@ -1,7 +1,7 @@
 # ============================================================
 # Combined Blocklist
 # ============================================================
-# Generated  : 2026-04-05 16:18 UTC+6
+# Generated  : 2026-04-05 16:41 UTC+6
 # Sources    : 4 blacklist URL(s) + 3 static entries
 # FP-filter  : Explicit whitelist only (static + URL-sourced).
 #              Tranco/Umbrella/Majestic are LOGGED, NOT auto-removed.
@@ -24,11 +24,11 @@
 #       Wildcard *.evil.com would catch good.evil.com too.
 # ============================================================
 # Stats
-#   Raw domains (all sources)  : 274,015
+#   Raw domains (all sources)  : 274,014
 #   Dropped by whitelist        : 2,624
-#   Wildcard entries (*.d)      : 271,219
+#   Wildcard entries (*.d)      : 271,218
 #   Exact entries (d only)      : 172
-#   Total output entries        : 271,391
+#   Total output entries        : 271,390
 #   Notable (pop. lists, kept)  : 60,013
 # ============================================================
 # Blacklist URL sources:
@@ -230827,7 +230827,6 @@
 *.tq.z1u2z.ru
 *.tq.zo4n.ru
 *.tq0.g6xt-5n.ru
-*.tq1.2-j695.ru
 *.tq1.5u-zk.ru
 *.tq1.ae-18.ru
 *.tq1.ey-l2q.ru
