@@ -757,9 +757,8 @@ jobs:
                 f"({len(wildcard_out):,} wildcard + {len(exact_out):,} exact)")
 
           # ── Write common.txt — domains found in both BL and WL ─────────────
-          # Appends each run. Never overwrites.
+          # Rewritten from scratch on every run: status summary at top, then list.
           # Scans raw_block_all (pre-dedup) | static_bl so no BL domain is missed.
-          # Groups and counts per WL entry (not per root domain).
           from collections import defaultdict
 
           common_entries = []
@@ -833,9 +832,9 @@ jobs:
                   out.append(f"  BL : {bl_entry} [{bl_src}]")
                   out.append("")  # blank line after each pair
 
-              with open("common.txt", "a") as f:
+              with open("common.txt", "w") as f:
                   f.write("\n".join(out) + "\n")
-              print(f"\n  ✓ common.txt — appended {len(common_entries)} conflict(s)")
+              print(f"\n  ✓ common.txt — {len(common_entries)} conflict(s)")
           else:
               print(f"\n  ✓ common.txt — no BL/WL conflicts found")
 
