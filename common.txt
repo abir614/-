@@ -1181,7 +1181,7 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : alb-vlyby-tracking-prebid-720843281.eu-central-1.elb.amazonaws.com [url:ultimate.mini.txt]
 
-  WL : *.reddit.com [static]  covers subdomain
+  WL : alb.reddit.com [url:whitelist-referral.txt]
   BL : alb.reddit.com [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -2153,7 +2153,7 @@
   WL : c.msn.com [url:whitelist-referral.txt]
   BL : c.msn.com [url:filter_1.txt]
 
-  WL : *.office.com [static]  covers subdomain
+  WL : c.office.com [url:whitelist-referral.txt]
   BL : c.office.com [url:filter_1.txt]
 
   WL : c.webengage.com [url:whitelist-referral.txt]
@@ -2405,7 +2405,7 @@
   WL : click.cptrack.de [url:whitelist-referral.txt]
   BL : click.cptrack.de [url:filter_1.txt]
 
-  WL : *.discord.com [static]  covers subdomain
+  WL : click.discord.com [url:whitelist-referral.txt]
   BL : click.discord.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.zoom.us [static]  covers subdomain
@@ -2504,7 +2504,7 @@
   WL : *.googleapis.com [static]  covers subdomain
   BL : clouderrorreporting.googleapis.com [url:ultimate.mini.txt]
 
-  WL : *.cloudflareinsights.com [static]
+  WL : cloudflareinsights.com [static]
   BL : cloudflareinsights.com [url:ultimate.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -4847,7 +4847,7 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2c7xlmseob604.cloudfront.net [url:ultimate.mini.txt]
 
-  WL : *.cloudfront.net [static]  covers subdomain
+  WL : d2c8v52ll5s99u.cloudfront.net [url:whitelist.txt]
   BL : d2c8v52ll5s99u.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -8918,7 +8918,7 @@
   WL : *.edgesuite.net [static]  covers subdomain
   BL : fastclick.com.edgesuite.net [url:]
 
-  WL : *.fastly-insights.com [static]
+  WL : fastly-insights.com [static]
   BL : fastly-insights.com [url:ultimate.mini.txt]
 
   WL : *.fastly.net [static]  covers subdomain
@@ -9197,7 +9197,7 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : geo-lookup.netlify.app [url:ultimate.mini.txt]
 
-  WL : *.microsoft.com [static]  covers subdomain
+  WL : geo-prod.do.dsp.mp.microsoft.com [url:whitelist.txt]
   BL : geo-prod.do.dsp.mp.microsoft.com [url:ultimate.mini.txt]
 
   WL : *.mattel163.com [static]  covers subdomain
@@ -10694,7 +10694,7 @@
   WL : *.live.com [static]  covers subdomain
   BL : nexus.officeapps.live.com [url:ultimate.mini.txt]
 
-  WL : *.live.com [static]  covers subdomain
+  WL : nexusrules.officeapps.live.com [url:whitelist.txt]
   BL : nexusrules.officeapps.live.com [url:ultimate.mini.txt]
 
   WL : *.azurewebsites.net [static]  covers subdomain
@@ -11999,7 +11999,7 @@
   WL : *.fbsbx.com [static]  covers subdomain
   BL : s.update.fbsbx.com [url:hosts]
 
-  WL : *.youtube.com [static]  covers subdomain
+  WL : s2.youtube.com [url:whitelist.txt]
   BL : s2.youtube.com [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -12830,7 +12830,7 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : tapjoy-com-lb-vpc-332546193.us-east-1.elb.amazonaws.com [url:ultimate.mini.txt]
 
-  WL : *.microsoft.com [static]  covers subdomain
+  WL : target.microsoft.com [url:whitelist-referral.txt]
   BL : target.microsoft.com [url:filter_1.txt]
 
   WL : *.trafficmanager.net [static]  covers subdomain
@@ -13169,7 +13169,7 @@
   WL : *.box.com [static]  covers subdomain
   BL : track.box.com [url:ultimate.mini.txt]
 
-  WL : *.canva.com [static]  covers subdomain
+  WL : track.canva.com [url:whitelist-referral.txt]
   BL : track.canva.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.europa.eu [static]  covers subdomain
@@ -13913,7 +13913,7 @@
   WL : *.fastly.net [static]  covers subdomain
   BL : wkxppshj-qx.global.ssl.fastly.net [url:ultimate.mini.txt]
 
-  WL : *.spotify.com [static]  covers subdomain
+  WL : wl.spotify.com [url:whitelist-referral.txt]
   BL : wl.spotify.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.azurewebsites.net [static]  covers subdomain
