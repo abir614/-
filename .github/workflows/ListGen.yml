@@ -675,6 +675,12 @@ jobs:
           print(f"\n  ✓ blocklist.txt — {total_out:,} entries "
                 f"({len(wildcard_out):,} wildcard + {len(exact_out):,} exact)")
 
+          # Write total_blocked.txt — single line, underscore-separated number
+          total_str = f"{total_out:,}".replace(",", "_")
+          with open("total_blocked.txt", "w") as f:
+              f.write(total_str + "\n")
+          print(f"  ✓ total_blocked.txt — {total_str}")
+
           # ══════════════════════════════════════════════════════════════════
           # STEP 6 — Summary
           # ══════════════════════════════════════════════════════════════════
@@ -696,13 +702,14 @@ jobs:
           echo "blocklist wildcard : $(grep -c '^\*\.' blocklist.txt || true)"
           echo "blocklist exact    : $(grep -cE '^[a-z0-9]' blocklist.txt || true)"
           echo "whitelist          : $(grep -v '^#' whitelist.txt | grep -c '\.' || true)"
+          echo "total_blocked      : $(cat total_blocked.txt)"
 
       # ── 5. Commit & push ──────────────────────────────────────────────────
       - name: Commit outputs
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add blocklist.txt whitelist.txt custom_blacklist.txt custom_whitelist.txt
+          git add blocklist.txt whitelist.txt custom_blacklist.txt custom_whitelist.txt total_blocked.txt
           if git diff --cached --quiet; then
             echo "No changes — skipping commit"
           else
@@ -722,7 +729,7 @@ jobs:
         run: |
           REPO="${{ github.repository }}"
           RUN_URL="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-          BDT=$(TZ="Asia/Dhaka" date '+%Y-%m-%d %I:%M %p')
+          BDT=$(TZ="Asia/Dhaka" date '+%Y-%m-%d %I:%M %p UTC+6')
           MSG="❌ *Workflow Failed*%0A%0ARepo: \`${REPO}\`%0ATime: \`${BDT}\`%0ARun: [View logs](${RUN_URL})%0ATriggered by: \`${{ github.event_name }}\`"
           curl -sSf -X POST \
             "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
