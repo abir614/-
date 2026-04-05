@@ -1,15 +1,49 @@
 [BLACKLIST_URLS]
 ######################################################################################################
+# Primary Security & Malware Lists
 https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.mini.txt
 https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/ultimate.mini.txt
 https://urlhaus.abuse.ch/downloads/hostfile/
 https://threatfox.abuse.ch/downloads/hostfile/
+
+# Additional Tracking & Telemetry (Community Recommended)
+https://small.oisd.nl/
+https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt
+https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext
+https://cdn.jsdelivr.net/gh/bigdargon/hostsVN@master/hosts
 #######################################################################################################
 [/BLACKLIST_URLS]
+
 [STATIC_BLACKLIST]
 #-------------------------------------------Domain Starts----------------------------------------------#
+# User Specified
 filmzie.com
 mass-net.org
 hiperflixtv.net
+
+# Malicious Ad-Networks & Redirects
+*.trafficjunky.net
+*.clickbank.net
+*.top-level-deals.com
+*.p-n.io
+*.popads.net
+*.propellerads.com
+
+# Analytics & Telemetry (Aggressive)
+*.smetrics.com
+*.doubleclick.net
+*.scorecardresearch.com
+*.quantserve.com
+
+# Deceptive & High-Risk
+*.123movies.*
+*.coinhive.com
+*.speed-test.cloud
+*.yts.mx
+*.rarbg.to
+
+# Common Phishing/Botnet TLDs (Use with caution)
+*.zip
+*.mov
 #--------------------------------------------Domain Ends-----------------------------------------------#
 [/STATIC_BLACKLIST]
