@@ -346,8 +346,16 @@ jobs:
           # ══════════════════════════════════════════════════════════════════
           print("\n[1/6] Fetching blacklist sources...")
           raw_block: set = set()
+          # bl_src_map: domain → label of the first BL source it appeared in.
+          # "first wins" is fine — we only need one representative source for
+          # the common.txt report; a domain being in multiple sources is normal.
+          bl_src_map: dict = {}
           for url in bl_urls:
-              raw_block |= fetch_and_parse(url, url.split('/')[-1][:60])
+              label = url.split('/')[-1][:60]
+              fetched = fetch_and_parse(url, label)
+              for d in fetched:
+                  bl_src_map.setdefault(d, f"url:{label}")
+              raw_block |= fetched
           print(f"  → Raw union: {len(raw_block):,} unique domains")
 
           # ════════════════════════════════════════════════════════════
@@ -404,20 +412,62 @@ jobs:
           static_wl, wl_wildcards = parse_domains_split(st_wl_blk, "Static whitelist")
           print(f"  Static WL: {len(static_wl):,} exact + {len(wl_wildcards):,} wildcard")
 
+          # wl_src_map: domain → label for exact WL entries
+          # wl_wc_src_map: domain → label for wildcard WL entries
+          wl_src_map:    dict = {d: "static" for d in static_wl}
+          wl_wc_src_map: dict = {d: "static" for d in wl_wildcards}
+
           ext_wl: set = set()
           for url in wl_urls:
-              ex, wc = fetch_and_parse_wl(url, url.split('/')[-1][:60])
+              label = url.split('/')[-1][:60]
+              ex, wc = fetch_and_parse_wl(url, label)
+              for d in ex:
+                  wl_src_map.setdefault(d, f"url:{label}")
+              for d in wc:
+                  wl_wc_src_map.setdefault(d, f"url:{label}")
               ext_wl     |= ex
               wl_wildcards |= wc
           print(f"  External whitelist: {len(ext_wl):,} exact from {len(wl_urls)} URL(s)")
 
           combined_wl: set = static_wl | ext_wl
-          print(f"  Combined WL: {len(combined_wl):,} exact + {len(wl_wildcards):,} wildcard"
+
+          # ── WL cross-dedup ─────────────────────────────────────────────────
+          # Drop any exact entry whose ancestor is already in wl_wildcards
+          # (*.cloudflare.com makes cloudflare.com and cdn.cloudflare.com redundant
+          # as exact entries — the wildcard already covers them).
+          # Exact duplicates between static and external are already collapsed by
+          # the set union above.
+          wl_exact_before = len(combined_wl)
+          wl_redundant = {
+              d for d in combined_wl
+              if d in wl_wildcards                               # exact == wildcard root
+              or any(a in wl_wildcards for a in ancestors(d))   # covered by ancestor wildcard
+          }
+          combined_wl -= wl_redundant
+          if wl_redundant:
+              print(f"\n  WL cross-dedup: {len(wl_redundant)} exact entrie(s) dropped"
+                    f" (already covered by a wildcard):")
+              for d in sorted(wl_redundant)[:20]:
+                  covering = next(
+                      (w for w in wl_wildcards
+                       if d == w or any(a == w for a in ancestors(d))),
+                      "?"
+                  )
+                  print(f"    - {d}  (covered by *.{covering})")
+              if len(wl_redundant) > 20:
+                  print(f"    ... and {len(wl_redundant)-20} more")
+
+          print(f"  Combined WL: {len(combined_wl):,} exact"
+                f" ({wl_exact_before - len(combined_wl):,} redundant dropped)"
+                f" + {len(wl_wildcards):,} wildcard"
                 f" = {len(combined_wl) + len(wl_wildcards):,} total")
 
           print("\n  Loading static blacklist...")
           static_bl: set = parse_domains(st_bl_blk, "Static blacklist")
           print(f"  Static blacklist  : {len(static_bl):,} domains")
+          # Tag static BL entries in the source map (don't overwrite URL-sourced labels)
+          for d in static_bl:
+              bl_src_map.setdefault(d, "static")
 
           # ══════════════════════════════════════════════════════════════════
           # STEP 4 — Write whitelist.txt
@@ -705,6 +755,106 @@ jobs:
           print(f"\n  ✓ blocklist.txt — {total_out:,} entries "
                 f"({len(wildcard_out):,} wildcard + {len(exact_out):,} exact)")
 
+          # ── Write common.txt — domains found in both BL and WL ─────────────
+          # Appends to the file each run (never overwrites) so history is kept.
+          # Each match is reported as two lines:
+          #   WL:  <wl_entry>  [<wl_source>]
+          #   BL:  <bl_entry>  [<bl_source>]
+          # where wl_entry is prefixed with *. if it matched as a wildcard.
+          common_entries = []
+          # We scan all_input (raw_block | static_bl before whitelist filtering)
+          # rather than just `dropped`, because `dropped` only has Rule-A hits
+          # (domain itself WL-covered). We also want to surface BL domains that
+          # survived as exact (Rule B/C) because their parent/child is WL'd.
+          for d in sorted(raw_block | static_bl):
+              bl_label = bl_src_map.get(d, "unknown")
+
+              # Case 1: exact WL hit
+              if d in combined_wl:
+                  wl_label = wl_src_map.get(d, "unknown")
+                  common_entries.append((
+                      d,  # exact match — no wildcard prefix
+                      wl_label, "exact",
+                      d, bl_label
+                  ))
+                  continue
+
+              # Case 2: wildcard WL hit — d itself or an ancestor is a WL wildcard root
+              covering_wc = next(
+                  (w for w in ([d] + ancestors(d)) if w in wl_wildcards),
+                  None
+              )
+              if covering_wc is not None:
+                  wl_label = wl_wc_src_map.get(covering_wc, "unknown")
+                  common_entries.append((
+                      f"*.{covering_wc}", wl_label, "wildcard",
+                      d, bl_label
+                  ))
+
+          if common_entries:
+              run_ts = now.strftime('%Y-%m-%d %H:%M UTC+6')
+              header = (
+                  f"\n# {'='*70}\n"
+                  f"# Run: {run_ts}  |  {len(common_entries)} conflict(s)\n"
+                  f"# {'='*70}\n"
+              )
+              lines = [header]
+              for wl_entry, wl_src, match_type, bl_entry, bl_src in common_entries:
+                  if match_type == "wildcard" and bl_entry != wl_entry.lstrip("*."):
+                      # subdomain hit — show how the wildcard covers it
+                      lines.append(
+                          f"  WL : *.{wl_entry.lstrip('*.')} [{wl_src}]"
+                          f"  covers subdomain\n"
+                          f"  BL : {bl_entry} [{bl_src}]\n"
+                      )
+                  else:
+                      lines.append(
+                          f"  WL : {wl_entry} [{wl_src}]\n"
+                          f"  BL : {bl_entry} [{bl_src}]\n"
+                      )
+              with open("common.txt", "a") as f:
+                  f.writelines(lines)
+              print(f"\n  ✓ common.txt — appended {len(common_entries)} conflict(s)")
+          else:
+              print(f"\n  ✓ common.txt — no BL/WL conflicts found")
+
+          # ── Clean STATIC_BLACKLIST in custom_blacklist.txt ──────────────────
+          # Remove any entry whitelisted (exact or wildcard-covered).
+          # Preserves all comments, blank lines, and all other blocks in the file.
+          # Rewrites in-place only if something actually changed.
+          if Path("custom_blacklist.txt").exists() and bl_raw:
+              def clean_static_bl_block(block_text: str) -> tuple:
+                  kept_lines, removed = [], []
+                  for raw in block_text.splitlines(keepends=True):
+                      stripped = raw.strip().lower()
+                      if not stripped or stripped.startswith(('#', '!', ';')):
+                          kept_lines.append(raw)
+                          continue
+                      d = strip_to_domain(raw)
+                      if d is None:
+                          kept_lines.append(raw)
+                          continue
+                      if is_wl_covered(d, combined_wl, wl_wildcards):
+                          removed.append(d)
+                      else:
+                          kept_lines.append(raw)
+                  return ''.join(kept_lines), removed
+
+              cleaned_bl_block, bl_removed = clean_static_bl_block(st_bl_blk)
+              if bl_removed:
+                  new_bl_raw = re.sub(
+                      r'(\[STATIC_BLACKLIST\])(.*?)(\[/STATIC_BLACKLIST\])',
+                      lambda m: m.group(1) + cleaned_bl_block + m.group(3),
+                      bl_raw, flags=re.DOTALL | re.IGNORECASE
+                  )
+                  Path("custom_blacklist.txt").write_text(new_bl_raw)
+                  print(f"\n  ✓ custom_blacklist.txt — removed {len(bl_removed)}"
+                        f" whitelisted static entr{'y' if len(bl_removed)==1 else 'ies'}:")
+                  for d in sorted(bl_removed):
+                      print(f"    - {d}")
+              else:
+                  print(f"\n  ✓ custom_blacklist.txt — no whitelisted entries in static block")
+
           # Write total_blocked.txt — single line, underscore-separated number
           total_str = f"{total_out:,}".replace(",", "_")
           with open("total_blocked.txt", "w") as f:
@@ -725,6 +875,7 @@ jobs:
           print(f"  whitelist.txt       : {total_wl_out:,} entries"
                 f" ({len(combined_wl):,} exact + {len(wl_wildcards):,} wildcard)")
           print(f"  total_whitelisted   : {total_wl_str}")
+          print(f"  common.txt          : {len(common_entries)} BL/WL conflict(s) appended")
           PYEOF
 
       # ── 4. Print preview ──────────────────────────────────────────────────
@@ -743,13 +894,16 @@ jobs:
           echo "whitelist wildcard : $(grep -c '^\*\.' whitelist.txt || true)"
           echo "total_blocked      : $(cat total_blocked.txt)"
           echo "total_whitelisted  : $(cat total_whitelisted.txt)"
+          echo ""
+          echo "════ common.txt (last run) ════"
+          tail -40 common.txt 2>/dev/null || echo "(none)"
 
       # ── 5. Commit & push ──────────────────────────────────────────────────
       - name: Commit outputs
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add blocklist.txt whitelist.txt custom_blacklist.txt custom_whitelist.txt total_blocked.txt total_whitelisted.txt
+          git add blocklist.txt whitelist.txt custom_blacklist.txt custom_whitelist.txt total_blocked.txt total_whitelisted.txt common.txt
           if git diff --cached --quiet; then
             echo "No changes — skipping commit"
           else
