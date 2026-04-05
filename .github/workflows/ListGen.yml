@@ -242,6 +242,38 @@ jobs:
               print(f"    {label}: {len(domains):,} domains  ({skip:,} lines skipped)")
               return domains
 
+          def parse_wl_wildcards(text: str) -> set:
+              """Extract explicit *.domain entries from whitelist text.
+              Returns a set of bare domains that have a wildcard declared,
+              e.g. '*.cloudflare.com' → 'cloudflare.com' goes into this set.
+              Used separately from parse_domains so wildcard intent is not lost."""
+              wildcards = set()
+              for raw in text.splitlines():
+                  line = raw.strip().lower()
+                  if not line or line.startswith('#'):
+                      continue
+                  # Match *.domain lines explicitly
+                  m = re.match(r'^\*\.([a-z0-9][a-z0-9.\-]+[a-z0-9])\s*(?:#.*)?$', line)
+                  if m:
+                      d = m.group(1)
+                      if _RE_VALID.match(d):
+                          wildcards.add(d)
+              return wildcards
+
+          def is_wl_covered(domain: str, combined_wl: set, wl_wildcards: set) -> bool:
+              """Return True if domain is protected by the whitelist:
+                 • exact:    domain is in combined_wl, OR
+                 • wildcard: domain itself OR any of its ancestors is in wl_wildcards
+                             (*.cloudflare.com covers cdn.cloudflare.com AND cloudflare.com)
+              Note: wl_wildcards holds the ROOT of each wildcard entry —
+              e.g. '*.cloudflare.com' → 'cloudflare.com' in wl_wildcards."""
+              if domain in combined_wl:
+                  return True
+              # Check domain itself first, then walk up ancestor chain
+              if domain in wl_wildcards:
+                  return True
+              return any(a in wl_wildcards for a in ancestors(domain))
+
           def fetch_and_parse(url: str, label: str) -> set:
               try:
                   req = urllib.request.Request(
@@ -347,9 +379,22 @@ jobs:
           print("\n[3/6] Building whitelist...")
           static_wl: set = parse_domains(st_wl_blk, "Static whitelist")
 
+          # Collect explicit *.domain wildcard declarations from custom_whitelist.txt
+          wl_wildcards: set = parse_wl_wildcards(st_wl_blk)
+          print(f"  Whitelist wildcards: {len(wl_wildcards):,} (*.domain entries in static WL)")
+
           ext_wl: set = set()
           for url in wl_urls:
-              ext_wl |= fetch_and_parse(url, url.split('/')[-1][:60])
+              fetched = fetch_and_parse(url, url.split('/')[-1][:60])
+              ext_wl |= fetched
+              # External lists may also contain *.domain lines — capture them
+              try:
+                  req = urllib.request.Request(url, headers={"User-Agent": "DNS-Builder/1.0"})
+                  with urllib.request.urlopen(req, timeout=20) as r:
+                      raw_text = r.read().decode("utf-8", errors="ignore")
+                  wl_wildcards |= parse_wl_wildcards(raw_text)
+              except Exception:
+                  pass  # already warned in fetch_and_parse
           print(f"  External whitelist: {len(ext_wl):,} from {len(wl_urls)} URL(s)")
 
           combined_wl: set = static_wl | ext_wl
@@ -444,34 +489,55 @@ jobs:
 
           # Reverse WL ancestor index: set of domains that have ≥1 WL descendant.
           # Built once up-front to avoid O(n²) per-domain scans (Rule C).
+          #
+          # Three sources populate this map:
+          #   1. Exact WL entries:    ancestors of each exact domain in combined_wl
+          #   2. Wildcard WL entries: the wildcard root itself + its ancestors
+          #      e.g. *.cloudflare.com → cloudflare.com is already fully covered,
+          #      but its parent domains (if any) are ancestor-holders too.
+          #   3. Nothing else — sibling domains are NOT ancestors.
           wl_ancestor_map: set = set()
           for w in combined_wl:
+              for a in ancestors(w):
+                  wl_ancestor_map.add(a)
+          for w in wl_wildcards:
+              # The wildcard root w (e.g. cloudflare.com from *.cloudflare.com)
+              # is itself a domain with a protected descendant space — mark it.
+              wl_ancestor_map.add(w)
               for a in ancestors(w):
                   wl_ancestor_map.add(a)
 
           wildcard_out: set = set()
           exact_out:    set = set()
-          dropped:      set = set()
+          dropped:      dict = {}   # domain → reason string
 
           for d in all_domains:
               in_static_bl = d in static_bl
 
-              # Rule A — domain itself is whitelisted
-              if d in combined_wl and not in_static_bl:
-                  dropped.add(d)
+              # Rule A — domain itself is whitelisted (exact or wildcard-covered)
+              if not in_static_bl and is_wl_covered(d, combined_wl, wl_wildcards):
+                  reason = "wildcard-WL" if (d not in combined_wl) else "exact-WL"
+                  dropped[d] = reason
                   continue
 
-              # Rule B — any ancestor of D is whitelisted → exact
-              if any(a in combined_wl for a in ancestors(d)):
+              # Rule B — an ancestor of D is whitelisted (exact or wildcard)
+              # → emit exact only; wildcard *.D would also block WL-safe siblings
+              wl_anc = next(
+                  (a for a in ancestors(d)
+                   if is_wl_covered(a, combined_wl, wl_wildcards)),
+                  None
+              )
+              if wl_anc is not None:
                   exact_out.add(d)
                   continue
 
               # Rule C — D has a whitelisted descendant → downgrade to exact
+              # (wildcard *.D would catch that safe descendant too)
               if d in wl_ancestor_map and not in_static_bl:
                   exact_out.add(d)
                   continue
 
-              # Rule D — no interference → wildcard
+              # Rule D — no whitelist interference → full wildcard
               wildcard_out.add(d)
 
           # Dedup: an exact entry D is redundant only if one of D's own
@@ -515,17 +581,26 @@ jobs:
               print(f"\n  Whitelist removal log ({len(dropped)} domains):")
               for d in sorted(dropped):
                   src = []
-                  if d in static_wl: src.append("StaticWL")
-                  if d in ext_wl:    src.append("ExtWL")
-                  print(f"    - {d:<52} [{', '.join(src)}]")
+                  if d in static_wl:   src.append("StaticWL")
+                  if d in ext_wl:      src.append("ExtWL")
+                  if d in wl_wildcards: src.append("WildcardWL")
+                  reason = dropped[d]
+                  print(f"    - {d:<52} [{reason}] [{', '.join(src)}]")
 
           if exact_out:
               print(f"\n  Exact-only entries ({len(exact_out)}"
                     f" — WL ancestor or WL descendant detected):")
               for d in sorted(exact_out)[:50]:
-                  anc_wl = next((a for a in ancestors(d) if a in combined_wl), None)
-                  reason = f"ancestor: {anc_wl}" if anc_wl else \
-                           ("has WL descendant" if d in wl_ancestor_map else "static-bl")
+                  anc_wl = next(
+                      (a for a in ancestors(d)
+                       if is_wl_covered(a, combined_wl, wl_wildcards)),
+                      None
+                  )
+                  if anc_wl:
+                      how = "wildcard-WL" if anc_wl in wl_wildcards else "exact-WL"
+                      reason = f"ancestor {anc_wl} [{how}]"
+                  else:
+                      reason = "has WL descendant" if d in wl_ancestor_map else "static-bl"
                   flag = " [static-bl]" if d in static_bl else ""
                   print(f"    ! {d:<52} [{reason}]{flag}")
               if len(exact_out) > 50:
