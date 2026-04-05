@@ -1,7 +1,7 @@
 # ============================================================
 # Combined Blocklist
 # ============================================================
-# Generated  : 2026-04-05 16:54 UTC+6
+# Generated  : 2026-04-05 16:59 UTC+6
 # Sources    : 4 blacklist URL(s) + 3 static entries
 # FP-filter  : Explicit whitelist only (static + URL-sourced).
 #              Tranco/Umbrella/Majestic are LOGGED, NOT auto-removed.
@@ -24,11 +24,11 @@
 #       Wildcard *.evil.com would catch good.evil.com too.
 # ============================================================
 # Stats
-#   Raw domains (all sources)  : 274,014
+#   Raw domains (all sources)  : 274,013
 #   Dropped by whitelist        : 2,625
-#   Wildcard entries (*.d)      : 271,217
+#   Wildcard entries (*.d)      : 271,216
 #   Exact entries (d only)      : 172
-#   Total output entries        : 271,389
+#   Total output entries        : 271,388
 #   Notable (pop. lists, kept)  : 60,013
 # ============================================================
 # Blacklist URL sources:
@@ -66720,7 +66720,6 @@
 *.coreos.click
 *.coreosgo.help
 *.corepayload.getron.in.net
-*.corepilatesnicaragua.com
 *.corepro.lat
 *.corepulse.fluxnode.in.net
 *.corepulse.metalheart.coupons
