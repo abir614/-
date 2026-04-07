@@ -1,6 +1,6 @@
 # Scale  — max: top 20% (>= 77)  warn: top 50% (>= 32)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1841]  [MAX]
+#   cloudfront.net                           [1840]  [MAX]
 #   amazonaws.com                            [687]  [MAX]
 #   workers.dev                              [113]  [MAX]
 #   cloudflare.net                           [110]  [MAX]
@@ -60,7 +60,6 @@
 #   apple-dns.net                            [6]  [BASIC]
 #   office.com                               [6]  [BASIC]
 #   intel.com                                [6]  [BASIC]
-#   supabase.co                              [6]  [BASIC]
 #   x.com                                    [5]  [BASIC]
 #   mattel163.com                            [5]  [BASIC]
 #   sourceforge.net                          [5]  [BASIC]
@@ -69,6 +68,7 @@
 #   whatsapp.net                             [5]  [BASIC]
 #   ubuntu.com                               [5]  [BASIC]
 #   icloud.com                               [5]  [BASIC]
+#   supabase.co                              [5]  [BASIC]
 #   controld.com                             [4]  [BASIC]
 #   imgur.com                                [4]  [BASIC]
 #   youtube.com                              [4]  [BASIC]
@@ -4643,9 +4643,6 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1x45wsn95e4gp.cloudfront.net [url:]
-
-  WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1x6w5ix3hujbn.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1x7c4wlneyax0.cloudfront.net [url:]
@@ -11207,9 +11204,6 @@
 
   WL : *.facebook.com [static]  covers subdomain
   BL : mqtt-mini.facebook.com [url:ultimate.mini.txt]
-
-  WL : *.supabase.co [static]  covers subdomain
-  BL : mrbejrkjhttmqyqbazmm.supabase.co [url:tif.mini.txt]
 
   WL : *.azureedge.net [static]  covers subdomain
   BL : msadsscale.azureedge.net [url:]
