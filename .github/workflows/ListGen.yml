@@ -108,8 +108,8 @@ jobs:
               except Exception as e:
                   return {"ok": False, "status": 0, "note": str(e)}
 
-          bl_raw = Path("custom_blacklist.txt").read_text(errors="ignore") if Path("custom_blacklist.txt").exists() else ""
-          wl_raw = Path("custom_whitelist.txt").read_text(errors="ignore") if Path("custom_whitelist.txt").exists() else ""
+          bl_raw = Path("build_blocklist.txt").read_text(errors="ignore") if Path("build_blocklist.txt").exists() else ""
+          wl_raw = Path("build_whitelist.txt").read_text(errors="ignore") if Path("build_whitelist.txt").exists() else ""
           sources = (
               [("BL", u) for u in block_urls(extract_block(bl_raw, "BLACKLIST_URLS"))] +
               [("WL", u) for u in block_urls(extract_block(wl_raw, "WHITELIST_URLS"))]
@@ -327,11 +327,11 @@ jobs:
                        line.strip().startswith('https://'))
               ]
 
-          print("\n[0/6] Reading custom_blacklist.txt and custom_whitelist.txt...")
-          bl_raw = Path("custom_blacklist.txt").read_text(errors="ignore") \
-              if Path("custom_blacklist.txt").exists() else ""
-          wl_raw = Path("custom_whitelist.txt").read_text(errors="ignore") \
-              if Path("custom_whitelist.txt").exists() else ""
+          print("\n[0/6] Reading build_blocklist.txt and build_whitelist.txt...")
+          bl_raw = Path("build_blocklist.txt").read_text(errors="ignore") \
+              if Path("build_blocklist.txt").exists() else ""
+          wl_raw = Path("build_whitelist.txt").read_text(errors="ignore") \
+              if Path("build_whitelist.txt").exists() else ""
 
           bl_urls   = block_urls(extract_block(bl_raw, "BLACKLIST_URLS"))
           wl_urls   = block_urls(extract_block(wl_raw, "WHITELIST_URLS"))
@@ -509,7 +509,7 @@ jobs:
               "# Generated Whitelist",
               "# ============================================================",
               f"# Generated  : {now.strftime('%Y-%m-%d %H:%M UTC+6')}",
-              "# Source      : custom_whitelist.txt  [STATIC_WHITELIST] + [WHITELIST_URLS]",
+              "# Source      : build_whitelist.txt  [STATIC_WHITELIST] + [WHITELIST_URLS]",
               f"# Static      : {len(static_wl):,} domains",
               f"# External    : {len(ext_wl):,} domains  ({len(wl_urls)} URL(s))",
               f"# Exact       : {len(combined_wl):,} unique domains",
@@ -521,7 +521,7 @@ jobs:
               "#   *.domain.tld — wildcard: allows domain.tld + ALL its subdomains.",
               "# ============================================================",
               "# DO NOT EDIT — regenerated automatically on every workflow run.",
-              "# To make changes, edit custom_whitelist.txt instead.",
+              "# To make changes, edit build_whitelist.txt instead.",
               "# ============================================================",
           ]
           with open("whitelist.txt", "w") as f:
@@ -725,7 +725,7 @@ jobs:
               f"# Static blacklist entries : {len(static_bl)}",
               "# ============================================================",
               "# DO NOT EDIT — regenerated automatically on every workflow run.",
-              "# To make changes, edit custom_blacklist.txt instead.",
+              "# To make changes, edit build_blocklist.txt instead.",
               "# ============================================================",
           ]
           with open("blocklist.txt", "w") as f:
@@ -828,13 +828,13 @@ jobs:
           else:
               print(f"\n  ✓ common.txt — no BL/WL conflicts found")
 
-          # ── Clean STATIC_BLACKLIST in custom_blacklist.txt ──────────────────
+          # ── Clean STATIC_BLACKLIST in build_blocklist.txt ──────────────────
           # Remove any entry whitelisted (exact or wildcard-covered).
           # Preserves all comments, blank lines, and all other blocks in the file.
           # Rewrites in-place only if something actually changed.
           _wc_carveouts_set = {d for d, _ in _wc_carveouts}
 
-          if Path("custom_blacklist.txt").exists() and bl_raw:
+          if Path("build_blocklist.txt").exists() and bl_raw:
               def clean_static_bl_block(block_text: str) -> tuple:
                   kept_lines, removed = [], []
                   for raw in block_text.splitlines(keepends=True):
@@ -863,13 +863,13 @@ jobs:
                       lambda m: m.group(1) + cleaned_bl_block + m.group(3),
                       bl_raw, flags=re.DOTALL | re.IGNORECASE
                   )
-                  Path("custom_blacklist.txt").write_text(new_bl_raw)
-                  print(f"\n  ✓ custom_blacklist.txt — removed {len(bl_removed)}"
+                  Path("build_blocklist.txt").write_text(new_bl_raw)
+                  print(f"\n  ✓ build_blocklist.txt — removed {len(bl_removed)}"
                         f" whitelisted static entr{'y' if len(bl_removed)==1 else 'ies'}:")
                   for d in sorted(bl_removed):
                       print(f"    - {d}")
               else:
-                  print(f"\n  ✓ custom_blacklist.txt — no whitelisted entries in static block")
+                  print(f"\n  ✓ build_blocklist.txt — no whitelisted entries in static block")
 
           # Write total_blocked.txt — single line, underscore-separated number
           total_str = f"{total_out:,}".replace(",", "_")
@@ -919,7 +919,7 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add blocklist.txt whitelist.txt custom_blacklist.txt custom_whitelist.txt total_blocked.txt total_whitelisted.txt common.txt
+          git add blocklist.txt whitelist.txt build_blocklist.txt build_whitelist.txt total_blocked.txt total_whitelisted.txt common.txt
           if git diff --cached --quiet; then
             echo "No changes — skipping commit"
           else
