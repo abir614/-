@@ -370,48 +370,20 @@ jobs:
           # ancestor chain against the full set (set lookups = O(1)).
           # ════════════════════════════════════════════════════════════
           def wildcard_dedup(domain_set: set, label: str) -> set:
-              """Remove any domain whose ancestor already exists in the set.
-              Logs removed examples so redundancy is visible in CI output."""
-              before = len(domain_set)
-              kept, removed_examples = set(), []
-              for d in domain_set:
-                  def wildcard_dedup(domain_set: set, label: str) -> set:
-                        before = len(domain_set)
-                        kept, removed_examples = set(), []
+    """Remove domains only if covered by a NON-ROOT ancestor.
+    Root domains must NOT eliminate subdomains."""
 
-                        for d in domain_set:
-                            root = to_root(d)
+    before = len(domain_set)
+    kept, removed_examples = set(), []
 
-                            covering = next(
-                                (a for a in ancestors(d)
-                                if a in domain_set and a != root),   # 🚨 KEY FIXdef wildcard_dedup(domain_set: set, label: str) -> set:
-                        before = len(domain_set)
-                        kept, removed_examples = set(), []
+    for d in domain_set:
+        root = to_root(d)
 
-                        for d in domain_set:
-                            root = to_root(d)
-
-                            covering = next(
-                                (a for a in ancestors(d)
-                                if a in domain_set and a != root),   # 🚨 KEY FIX
-                                None
-                            )
-
-                            if covering:
-                                if len(removed_examples) < 10:
-                                    removed_examples.append((d, covering))
-                            else:
-                                kept.add(d)
-
-                        n_removed = before - len(kept)
-                        print(f"  [{label}] before={before:,}  removed={n_removed:,}  after={len(kept):,}")
-
-                        for sub, parent in removed_examples:
-                            print(f"    skip  {sub}  (covered by *.{parent})")
-
-                        return kept
-                                None
-                            )
+        covering = next(
+            (a for a in ancestors(d)
+             if a in domain_set and a != root),
+            None
+        )
 
         if covering:
             if len(removed_examples) < 10:
@@ -425,20 +397,10 @@ jobs:
     for sub, parent in removed_examples:
         print(f"    skip  {sub}  (covered by *.{parent})")
 
+    if n_removed > 10:
+        print(f"    ... and {n_removed - 10} more redundant subdomains")
+
     return kept
-                  if covering:
-                      if len(removed_examples) < 10:
-                          removed_examples.append((d, covering))
-                  else:
-                      kept.add(d)
-              n_removed = before - len(kept)
-              print(f"  [{label}] before={before:,}  removed={n_removed:,}"
-                    f"  after={len(kept):,}")
-              for sub, parent in removed_examples:
-                  print(f"    skip  {sub}  (covered by *.{parent})")
-              if n_removed > 10:
-                  print(f"    ... and {n_removed - 10} more redundant subdomains")
-              return kept
 
           print("  Deduplicating redundant subdomains (raw_block)...")
           raw_block = wildcard_dedup(raw_block, "raw_block")
@@ -634,7 +596,10 @@ jobs:
           redundant_static = {
               d for d in static_bl
               if d not in all_domains_deduped
-              and any(a in all_domains_deduped for a in ancestors(d))
+              and any(
+                  a in all_domains_deduped and a != to_root(d)
+                  for a in ancestors(d)
+              )
           }
           if redundant_static:
               print(f"\n  ⚠  WARNING: {len(redundant_static)} STATIC_BLACKLIST entry(ies) "
@@ -704,11 +669,11 @@ jobs:
           exact_out_before = len(exact_out)
           exact_out = {
               d for d in exact_out
-                if not any(
-                    a in wildcard_out and a != to_root(d)   # 🚨 same protection
-                    for a in ancestors(d)
-                )
-              or d in static_bl   # always keep explicitly added static BL entries
+              if not any(
+                  a in wildcard_out and a != to_root(d)
+                  for a in ancestors(d)
+              )
+              or d in static_bl
           }
           exact_shadowed = exact_out_before - len(exact_out)
           if exact_shadowed:
