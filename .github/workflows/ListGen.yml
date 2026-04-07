@@ -20,29 +20,7 @@ jobs:
         with:
           ref: '0'
 
-      # ── 2. Download FP reference lists ────────────────────────────────────
-      - name: Download Tranco Top 1M
-        run: |
-          curl -sSf --retry 3 --retry-delay 5 \
-            "https://tranco-list.eu/top-1m.csv.zip" -o tranco.zip
-          unzip -p tranco.zip | cut -d',' -f2 > tranco.txt
-          echo "Tranco: $(wc -l < tranco.txt) domains"
-
-      - name: Download Umbrella Top 1M
-        run: |
-          curl -sSf --retry 3 --retry-delay 5 \
-            "https://s3-us-west-1.amazonaws.com/umbrella-static/top-1m.csv.zip" -o umbrella.zip
-          unzip -p umbrella.zip | cut -d',' -f2 > umbrella.txt
-          echo "Umbrella: $(wc -l < umbrella.txt) domains"
-
-      - name: Download Majestic Million
-        run: |
-          curl -sSf --retry 3 --retry-delay 5 \
-            "https://downloads.majestic.com/majestic_million.csv" \
-            | tail -n +2 | cut -d',' -f3 > majestic.txt
-          echo "Majestic: $(wc -l < majestic.txt) domains"
-
-      # ── 3. Verify sources ─────────────────────────────────────────────────
+      # ── 2. Verify sources ─────────────────────────────────────────────────
       - name: Verify sources
         run: |
           python3 - <<'PYEOF'
@@ -164,7 +142,7 @@ jobs:
               print(f"::warning::  [{kind}] {url}  ->  {note} (will skip in pipeline)")
           PYEOF
 
-      # ── 4. Run main Python pipeline ───────────────────────────────────────
+      # ── 3. Run main Python pipeline ───────────────────────────────────────
       - name: Run pipeline
         run: |
           python3 - <<'PYEOF'
@@ -639,14 +617,23 @@ jobs:
           # STEP 2 — Load FP reference lists
           # Informational only — NOT used to auto-remove entries.
           # Only the explicit whitelist removes entries.
+          # URLs are read from the [FP_REF_URLS] block in build_blocklist.txt.
+          # Any file format supported by _sniff_and_decompress works (zip, csv,
+          # gz, plain text, JSON, etc.) — same pipeline as BL URL sources.
           # ══════════════════════════════════════════════════════════════════
           print("\n[2/6] Loading FP reference lists (informational only)...")
           fp_refs: set = set()
-          for fname, label in [("tranco.txt","Tranco"),
-                                ("umbrella.txt","Umbrella"),
-                                ("majestic.txt","Majestic")]:
-              fp_refs |= parse_domains(
-                  Path(fname).read_text(errors="ignore"), label)
+          fp_ref_urls = block_urls(extract_block(bl_raw, "FP_REF_URLS"))
+          print(f"  FP reference URLs: {len(fp_ref_urls)}")
+          for url in fp_ref_urls:
+              label = url.split('/')[-1][:60]
+              raw_fp = fetch_raw(url, label)
+              if raw_fp is None:
+                  continue
+              text_fp = _sniff_and_decompress(raw_fp, url, label)
+              if text_fp:
+                  fp_refs |= parse_domains(text_fp, label)
+          print(f"  FP refs total: {len(fp_refs):,} domains")
 
           # ══════════════════════════════════════════════════════════════════
           # STEP 3 — Build whitelist
