@@ -375,7 +375,57 @@ jobs:
               before = len(domain_set)
               kept, removed_examples = set(), []
               for d in domain_set:
-                  covering = next((a for a in ancestors(d) if a in domain_set), None)
+                  def wildcard_dedup(domain_set: set, label: str) -> set:
+                        before = len(domain_set)
+                        kept, removed_examples = set(), []
+
+                        for d in domain_set:
+                            root = to_root(d)
+
+                            covering = next(
+                                (a for a in ancestors(d)
+                                if a in domain_set and a != root),   # 🚨 KEY FIXdef wildcard_dedup(domain_set: set, label: str) -> set:
+                        before = len(domain_set)
+                        kept, removed_examples = set(), []
+
+                        for d in domain_set:
+                            root = to_root(d)
+
+                            covering = next(
+                                (a for a in ancestors(d)
+                                if a in domain_set and a != root),   # 🚨 KEY FIX
+                                None
+                            )
+
+                            if covering:
+                                if len(removed_examples) < 10:
+                                    removed_examples.append((d, covering))
+                            else:
+                                kept.add(d)
+
+                        n_removed = before - len(kept)
+                        print(f"  [{label}] before={before:,}  removed={n_removed:,}  after={len(kept):,}")
+
+                        for sub, parent in removed_examples:
+                            print(f"    skip  {sub}  (covered by *.{parent})")
+
+                        return kept
+                                None
+                            )
+
+        if covering:
+            if len(removed_examples) < 10:
+                removed_examples.append((d, covering))
+        else:
+            kept.add(d)
+
+    n_removed = before - len(kept)
+    print(f"  [{label}] before={before:,}  removed={n_removed:,}  after={len(kept):,}")
+
+    for sub, parent in removed_examples:
+        print(f"    skip  {sub}  (covered by *.{parent})")
+
+    return kept
                   if covering:
                       if len(removed_examples) < 10:
                           removed_examples.append((d, covering))
@@ -654,7 +704,10 @@ jobs:
           exact_out_before = len(exact_out)
           exact_out = {
               d for d in exact_out
-              if not any(a in wildcard_out for a in ancestors(d))
+                if not any(
+                    a in wildcard_out and a != to_root(d)   # 🚨 same protection
+                    for a in ancestors(d)
+                )
               or d in static_bl   # always keep explicitly added static BL entries
           }
           exact_shadowed = exact_out_before - len(exact_out)
