@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 78)  warn: top 50% (>= 33)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1844]  [MAX]
-#   amazonaws.com                            [688]  [MAX]
+#   amazonaws.com                            [689]  [MAX]
 #   workers.dev                              [113]  [MAX]
 #   cloudflare.net                           [111]  [MAX]
 #   yahoo.com                                [95]  [MAX]
@@ -10744,6 +10744,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : mailmunch.s3.amazonaws.com [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : maiqiaqia1.s3.ap-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : makeup-analytics-1075118270.eu-central-1.elb.amazonaws.com [url:ultimate.mini.txt]
