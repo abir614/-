@@ -764,10 +764,6 @@ jobs:
               for d in sorted(combined_wl):
                   f.write(d + "\n")
               if wl_wildcards:
-                  f.write(
-                      "# --- Wildcard entries"
-                      " (*.domain — allows domain + all subdomains) ---\n"
-                  )
                   for d in sorted(wl_wildcards):
                       f.write(f"*.{d}\n")
           print(f"  ✓ whitelist.txt — {total_wl_out:,} entries"
