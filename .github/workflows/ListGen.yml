@@ -173,7 +173,7 @@ jobs:
               (re.compile(r'^\s*(?:address|server)=\/([^\/]+)\/'),             1),
               (re.compile(r'^\s*([a-z0-9][a-z0-9.\-]+)\s+'
                           r'(?:IN\s+)?(?:CNAME|A|AAAA)\s+'),                  1),
-              (re.compile(r'^\s*\*\.([^\s\/\^\|]+)'),                          1),
+              (re.compile(r'^\s*(\*\.[^\s\/\^\|]+)'),                          1),
               (re.compile(r'^\s*\d+,([^,\s]+)'),                               1),
               (re.compile(r'^\s*([a-z0-9][a-z0-9.\-]+[a-z0-9])'
                           r'\s*(?:#.*)?$'),                                    1),
@@ -197,25 +197,31 @@ jobs:
                   candidate = line
 
               # ── Universal suffix/prefix cleaner ──────────────────────────────
-              # Preserve a leading wildcard label (* or *.) before cleaning.
+              # Strip scheme (http://, https://, ftp://, etc.) and userinfo FIRST
+              # so that https://*.example.com is correctly detected as a wildcard.
+              candidate = re.sub(r'^[a-z][a-z0-9+\-.]*://', '', candidate)
+              candidate = re.sub(r'^[^@/]+@', '', candidate)
+
+              # Detect wildcard prefix AFTER scheme/userinfo are removed.
+              # Require literal *. (dot mandatory) — bare * without dot is not a wildcard.
+              # Normalise **. / ***. etc → *. by consuming all leading stars and the dot.
               wildcard_prefix = ''
-              wc_m = re.match(r'^(\*\.?)', candidate)
+              wc_m = re.match(r'^\*+\.', candidate)
               if wc_m:
                   wildcard_prefix = '*.'
-                  candidate = candidate[wc_m.end():]   # strip the *[.] temporarily
+                  candidate = candidate[wc_m.end():]   # strip all leading *[*]*. forms
 
-              # Strip scheme (http://, https://, ftp://, etc.)
-              candidate = re.sub(r'^[a-z][a-z0-9+\-.]*://', '', candidate)
-              # Strip userinfo (user:pass@)
-              candidate = re.sub(r'^[^@/]+@', '', candidate)
               # Strip port (:1234) — but only after the host, not inside it
               candidate = re.sub(r':\d+(?=[/?#]|$)', '', candidate)
               # Strip path, query string, and fragment
               candidate = re.sub(r'[/?#].*$', '', candidate)
-              # Strip ABP / hosts-file syntax residue: ^, |, $, spaces, tabs
-              candidate = re.sub(r'[\^\|\$\s\t]+', '', candidate)
-              # Strip leading/trailing dots
-              candidate = candidate.strip('.')
+              # Truncate at first ABP terminator (^, |, $).
+              # Everything after the first terminator is filter options/garbage.
+              # Do NOT use a global strip — that would merge surrounding text into
+              # the domain (e.g. "domain^|$important" → "domainimportant").
+              candidate = re.sub(r'[\^\|\$].*$', '', candidate)
+              # Strip residual whitespace and leading/trailing dots
+              candidate = candidate.strip().strip('.')
 
               # Re-attach wildcard prefix if it was present
               if wildcard_prefix and candidate:
