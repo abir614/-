@@ -1,7 +1,7 @@
 # ============================================================
 # Combined Blocklist
 # ============================================================
-# Generated  : 2026-04-08 07:24 UTC+6
+# Generated  : 2026-04-08 08:12 UTC+6
 # Sources    : 8 blacklist URL(s) + 4275 static entries
 # FP-filter  : Explicit whitelist only (static + URL-sourced).
 #              Tranco/Umbrella/Majestic are LOGGED, NOT auto-removed.
@@ -22,12 +22,12 @@
 #   (Wildcard *.evil.com would catch good.evil.com too).
 # ============================================================
 # Stats
-#   Raw domains (all sources)  : 399,787
+#   Raw domains (all sources)  : 399,794
 #   Dropped by whitelist        : 303
-#   Wildcard entries (*.d)      : 399,327
+#   Wildcard entries (*.d)      : 399,334
 #   Exact entries (d only)      : 157
-#   Total output entries        : 399,484
-#   Notable (pop. lists, kept)  : 88,304
+#   Total output entries        : 399,491
+#   Notable (pop. lists, kept)  : 88,207
 # ============================================================
 # Blacklist URL sources:
 #   https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.mini.txt
@@ -54914,6 +54914,7 @@
 *.beijingzhongnanhai.com
 *.beimishoes.com
 *.bein--live.us
+*.being-log.ontofluxion.in.net
 *.being-node.ontologicalflux.in.net
 *.being-node.ontologicstream.in.net
 *.being.xiqek-40-ye-8.ru
@@ -104911,6 +104912,7 @@
 *.drift-core.nanostream.in.net
 *.drift-log.axiologyflux.in.net
 *.drift-safe.com
+*.drift-svc.ontofluxion.in.net
 *.drift-tracker.toolforge.org
 *.drift.click
 *.drift.frost-wilder.ru
@@ -113819,6 +113821,7 @@
 *.entitcigna.rest
 *.entitled.cloud
 *.entity-hub.conceptmatrix.in.net
+*.entity-hub.ontofluxion.in.net
 *.entity-map.ontologicalflux.in.net
 *.entity-map.ontologicstream.in.net
 *.entity-tracker-service.fourkites.com
@@ -126497,6 +126500,7 @@
 *.flux-cdn.com
 *.flux-g.com
 *.flux-gate.axiologyflux.in.net
+*.flux-gate.ontofluxion.in.net
 *.flux-net.fluxbridge.in.net
 *.flux-run.fluxoris.in.net
 *.flux-scan.inductiveflux.in.net
@@ -140998,6 +141002,7 @@
 *.grid-core.epistemegrid.in.net
 *.grid-ledger.com
 *.grid-live.com
+*.grid-portal.epistematrix.in.net
 *.grid-secure.cyberlattice.in.net
 *.grid-spot.com
 *.grid.c2rpyub2n.ru
@@ -148281,7 +148286,6 @@
 *.ha.nqju5.ru
 *.ha.q-len.ru
 *.ha.vakun.ru
-*.ha.xkx0o.ru
 *.ha.xrly8.ru
 *.ha1in.rec1aimswal1.ru
 *.haa3j9plpi-default-cn.rum.aliyuncs.com
@@ -216369,6 +216373,7 @@
 *.mrciga.com
 *.mrcloud.site
 *.mrcru.abbottlyon.com
+*.mrcrystallized-56006.portmap.host
 *.mrcuqjfaneqvv.space
 *.mrcurtain.co.th
 *.mrdaoa.tonerpartner.cz
@@ -264090,6 +264095,7 @@
 *.real-estate-ym-15290.click
 *.real-feedback.toros.daum.net
 *.real-imagination.com
+*.real-io.ontofluxion.in.net
 *.real-time-io.ontologicalflux.in.net
 *.real-time-io.ontologicstream.in.net
 *.real.delovoemesto.ru
@@ -290517,6 +290523,7 @@
 *.shieshan.ydns.eu
 *.shift-ctrl.axiologyflux.in.net
 *.shift-ctrl.infodynamics.in.net
+*.shift-node.ontofluxion.in.net
 *.shift-point.dialecticalgrid.in.net
 *.shift-point.dialecticflux.in.net
 *.shift-profitex.net
@@ -304191,6 +304198,7 @@
 *.sphenespiles.cyou
 *.spheninuma.rest
 *.sphera.tools
+*.sphere-api.axiomaticsphere.in.net
 *.sphere-api.theorematicsphere.in.net
 *.sphere.ad.jp
 *.sphere.com
@@ -359118,7 +359126,6 @@
 *.v2.api.uberflip.com
 *.v2.assistedsuicide.org
 *.v2.australasianzookeeping.org
-*.v2.b-9lyb.ru
 *.v2.barefootblonde.com
 *.v2.bh3i6.ru
 *.v2.bikeboom.info
