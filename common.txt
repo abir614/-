@@ -1,28 +1,28 @@
-# Scale  — max: top 20% (>= 93)  warn: top 50% (>= 23)  basic: remaining
+# Scale  — max: top 20% (>= 94)  warn: top 50% (>= 34)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1855]  [MAX]
-#   amazonaws.com                            [804]  [MAX]
-#   cloudflare.net                           [131]  [MAX]
-#   workers.dev                              [122]  [MAX]
+#   cloudfront.net                           [1862]  [MAX]
+#   amazonaws.com                            [795]  [MAX]
+#   cloudflare.net                           [133]  [MAX]
+#   workers.dev                              [124]  [MAX]
 #   vercel.app                               [108]  [MAX]
 #   yahoo.com                                [95]  [MAX]
-#   b-cdn.net                                [93]  [MAX]
-#   pages.dev                                [93]  [MAX]
+#   b-cdn.net                                [94]  [MAX]
+#   pages.dev                                [93]  [WARN]
 #   azurewebsites.net                        [80]  [WARN]
 #   live.com                                 [80]  [WARN]
 #   microsoft.com                            [73]  [WARN]
 #   googleapis.com                           [72]  [WARN]
 #   trafficmanager.net                       [70]  [WARN]
-#   edgesuite.net                            [63]  [WARN]
-#   azure.com                                [55]  [WARN]
+#   edgesuite.net                            [62]  [WARN]
 #   google.com                               [55]  [WARN]
+#   azure.com                                [53]  [WARN]
 #   apple.com                                [48]  [WARN]
 #   amazon.com                               [40]  [WARN]
 #   akamaized.net                            [38]  [WARN]
 #   azureedge.net                            [38]  [WARN]
 #   netlify.app                              [34]  [WARN]
-#   fastly.net                               [23]  [WARN]
-#   linkedin.com                             [23]  [WARN]
+#   fastly.net                               [23]  [BASIC]
+#   linkedin.com                             [23]  [BASIC]
 #   firebaseio.com                           [22]  [BASIC]
 #   facebook.com                             [22]  [BASIC]
 #   railway.app                              [21]  [BASIC]
@@ -83,6 +83,7 @@
 #   epicgames.com                            [4]  [BASIC]
 #   redditmedia.com                          [4]  [BASIC]
 #   wordpress.com                            [4]  [BASIC]
+#   anthropic.com                            [3]  [BASIC]
 #   crwdcntrl.net                            [3]  [BASIC]
 #   linksynergy.com                          [3]  [BASIC]
 #   gitlab.com                               [3]  [BASIC]
@@ -453,7 +454,6 @@
 #   parsely.com                              [1]  [BASIC]
 #   bellmedia.ca                             [1]  [BASIC]
 #   hey.com                                  [1]  [BASIC]
-#   anthropic.com                            [1]  [BASIC]
 #   stvkr.com                                [1]  [BASIC]
 #   succeedscene.com                         [1]  [BASIC]
 #   sumologic.com                            [1]  [BASIC]
@@ -639,6 +639,12 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 9w2zed1szg.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
+
+  WL : *.anthropic.com [static]  covers subdomain
+  BL : a-api.anthropic.com [url:ultimate.mini.txt]
+
+  WL : *.anthropic.com [static]  covers subdomain
+  BL : a-cdn.anthropic.com [url:ultimate.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : a09ee3dc53f6a9f461a45bac946c5a09ee3dc453f6a9f461a5.pages.dev [url:hostfile]
@@ -1917,6 +1923,9 @@
 
   WL : *.zoho.com [static]  covers subdomain
   BL : analytics.zoho.com [url:ultimate.mini.txt]
+
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : analytics02.aptoide.com.cdn.cloudflare.net [url:ultimate.mini.txt]
 
   WL : *.edgesuite.net [static]  covers subdomain
   BL : analytics16-normal-no1a.tiktokw.eu.edgesuite.net [url:ultimate.mini.txt]
@@ -3241,9 +3250,6 @@
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : constructo-adserver-prod.azurewebsites.net [url:ultimate.mini.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : consulting-2020-tc.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
-
   WL : contactmonkey.com [url:whitelist-referral.txt]
   BL : contactmonkey.com [url:filter_1.txt]
 
@@ -4220,6 +4226,9 @@
   BL : d1hogxc58mhzo9.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1htpt0i4k7m8x.cloudfront.net [url:ultimate.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1hyarjnwqrenh.cloudfront.net [url:ultimate.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -4302,6 +4311,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1jnvfp2m6fzvq.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1jow6p6g37b9u.cloudfront.net [url:ultimate.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1jq9nooxeft24.cloudfront.net [url:]
@@ -4842,6 +4854,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1v373ntykegkp.cloudfront.net [url:hosts]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1v99qnc7usc0g.cloudfront.net [url:ultimate.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1v9u0bgi1uimx.cloudfront.net [url:ultimate.mini.txt]
@@ -7325,6 +7340,9 @@
   BL : d3mt4q5p9blrvc.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3mwhxgzltpnyp.cloudfront.net [url:ultimate.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3mzokty951c5w.cloudfront.net [url:ultimate.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -7670,6 +7688,9 @@
   BL : d3uvwl4wtkgzo1.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3v27wwd40f0xu.cloudfront.net [url:ultimate.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3v3bqdndm4erx.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -7734,6 +7755,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d4ebx5h0p80bx.cloudfront.net [url:ultimate.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d4el4parm0zb3.cloudfront.net [url:ultimate.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d4eqyxjqusvjj.cloudfront.net [url:]
@@ -8340,6 +8364,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dfck9uqiatqhh.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : dff2h0hbfv6w4.cloudfront.net [url:ultimate.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dfh48z16zqvm6.cloudfront.net [url:]
@@ -9394,9 +9421,6 @@
   WL : eacdn.com [url:whitelist-referral.txt]
   BL : eacdn.com [url:ultimate.mini.txt]
 
-  WL : *.azure.com [static]  covers subdomain
-  BL : eastus2-ads.eastus2.cloudapp.azure.com [url:ultimate.mini.txt]
-
   WL : *.railway.app [static]  covers subdomain
   BL : easy-analytics-production.up.railway.app [url:ultimate.mini.txt]
 
@@ -9949,6 +9973,9 @@
   WL : *.akamaized.net [static]  covers subdomain
   BL : freewheel-mtgx-tv.akamaized.net [url:ultimate.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : freq-know-analytics.dhimankeshav201.workers.dev [url:ultimate.mini.txt]
+
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : freshatl.azurewebsites.net [url:ultimate.mini.txt]
 
@@ -10048,12 +10075,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : gate2.pages.dev [url:hostfile]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : gateway-collector-eu-lb-406824233.eu-central-1.elb.amazonaws.com [url:ultimate.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : gateway-collector-prod-lb-603414359.us-east-1.elb.amazonaws.com [url:ultimate.mini.txt]
-
   WL : *.instagram.com [static]  covers subdomain
   BL : gateway.instagram.com [url:ultimate.mini.txt]
 
@@ -10065,6 +10086,9 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : gdprcdn.b-cdn.net [url:ultimate.mini.txt]
+
+  WL : *.b-cdn.net [static]  covers subdomain
+  BL : geenstijl-ads.b-cdn.net [url:ultimate.mini.txt]
 
   WL : *.googleapis.com [static]  covers subdomain
   BL : geller-pa.googleapis.com [url:ultimate.mini.txt]
@@ -10811,9 +10835,6 @@
   BL : k8s-sentryk8-sentry-e14f207f7b-2145498619.us-east-1.elb.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : k8s-umami-umaminex-06896a3d77-1894516666.ap-northeast-1.elb.amazonaws.com [url:ultimate.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : kbox-analytics-backup.s3-accelerate.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -10908,6 +10929,9 @@
 
   WL : *.googleapis.com [static]  covers subdomain
   BL : lamssettings-pa.googleapis.com [url:ultimate.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lastfm-tracker.superhighfives.workers.dev [url:ultimate.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : late-pond-d4f2.david-taylor87.workers.dev [url:hostfile]
@@ -11342,9 +11366,6 @@
   BL : matomo-alb-252610027.us-east-2.elb.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : matomo-analytics-1987453302.us-west-2.elb.amazonaws.com [url:ultimate.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : matomo-lb-1420184415.us-east-1.elb.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -11766,9 +11787,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : nativead.s3.amazonaws.com [url:ultimate.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : naviga-bi-v2-collector-lb-v2-1653659587.us-west-2.elb.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : nba2k25-telemetry-prod-elb-1504653255.us-east-1.elb.amazonaws.com [url:ultimate.mini.txt]
@@ -13798,12 +13816,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : situation-monitor-rose.vercel.app [url:ultimate.mini.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : sk-ads-vva-lg-1902151604.us-east-1.elb.amazonaws.com [url:ultimate.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : sk-ads-vva-upx-702753993.us-east-1.elb.amazonaws.com [url:ultimate.mini.txt]
-
   WL : *.paypal.com [static]  covers subdomain
   BL : slc.stats.paypal.com [url:hosts]
 
@@ -14119,9 +14131,6 @@
   WL : *.cloudflare.net [static]  covers subdomain
   BL : static.ads.triptease.io.cdn.cloudflare.net [url:ultimate.mini.txt]
 
-  WL : *.edgesuite.net [static]  covers subdomain
-  BL : static.clck-analytics.com.edgesuite.net [url:ultimate.mini.txt]
-
   WL : *.cloudflareinsights.com [static]  covers subdomain
   BL : static.cloudflareinsights.com [url:filter_1.txt]
 
@@ -14204,7 +14213,7 @@
   BL : statsfe2.ws.microsoft.com [url:ultimate.mini.txt]
 
   WL : *.anthropic.com [static]  covers subdomain
-  BL : statsig.anthropic.com [url:ultimate.mini.txt]
+  BL : statsig.anthropic.com [url:filter_1.txt]
 
   WL : *.atlassian.net [static]  covers subdomain
   BL : statsig.atlassian.net [url:ultimate.mini.txt]
@@ -14888,9 +14897,6 @@
   BL : trackers-1816877321.us-east-1.elb.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : tracking-1183106232.ap-southeast-1.elb.amazonaws.com [url:ultimate.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : tracking-api-prod-alb-1867888358.us-east-1.elb.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.webex.com [static]  covers subdomain
@@ -15078,9 +15084,6 @@
 
   WL : *.live.com [static]  covers subdomain
   BL : ukc-visio-telemetry.officeapps.live.com [url:ultimate.mini.txt]
-
-  WL : *.azure.com [static]  covers subdomain
-  BL : uksouth-ads.uksouth.cloudapp.azure.com [url:ultimate.mini.txt]
 
   WL : ukw.jp [url:allowlist.txt]
   BL : ukw.jp [url:ultimate.mini.txt]
@@ -15768,6 +15771,9 @@
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : wup-1172d361.ind.v2.we-stats.com.cdn.cloudflare.net [url:ultimate.mini.txt]
+
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : wup-6bb5a42d.eu.v2.we-stats.com.cdn.cloudflare.net [url:ultimate.mini.txt]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : wup-ac77ffef.us.v2.we-stats.com.cdn.cloudflare.net [url:ultimate.mini.txt]
