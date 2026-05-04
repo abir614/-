@@ -1,10 +1,10 @@
 # Scale  — max: top 20% (>= 94)  warn: top 50% (>= 34)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1862]  [MAX]
-#   amazonaws.com                            [795]  [MAX]
+#   cloudfront.net                           [1866]  [MAX]
+#   amazonaws.com                            [794]  [MAX]
 #   cloudflare.net                           [133]  [MAX]
-#   workers.dev                              [124]  [MAX]
-#   vercel.app                               [108]  [MAX]
+#   workers.dev                              [125]  [MAX]
+#   vercel.app                               [114]  [MAX]
 #   yahoo.com                                [95]  [MAX]
 #   b-cdn.net                                [94]  [MAX]
 #   pages.dev                                [93]  [WARN]
@@ -34,8 +34,8 @@
 #   europa.eu                                [15]  [BASIC]
 #   nvidia.com                               [15]  [BASIC]
 #   reddit.com                               [14]  [BASIC]
+#   paypal.com                               [13]  [BASIC]
 #   wikimedia.org                            [12]  [BASIC]
-#   paypal.com                               [12]  [BASIC]
 #   webex.com                                [12]  [BASIC]
 #   mozilla.org                              [11]  [BASIC]
 #   zoho.com                                 [11]  [BASIC]
@@ -56,12 +56,12 @@
 #   zoom.us                                  [7]  [BASIC]
 #   fbsbx.com                                [7]  [BASIC]
 #   amazon-adsystem.com                      [6]  [BASIC]
+#   atlassian.net                            [6]  [BASIC]
 #   twitch.tv                                [6]  [BASIC]
 #   mailchimp.com                            [6]  [BASIC]
 #   apple-dns.net                            [6]  [BASIC]
 #   office.com                               [6]  [BASIC]
 #   intel.com                                [6]  [BASIC]
-#   atlassian.net                            [5]  [BASIC]
 #   x.com                                    [5]  [BASIC]
 #   mattel163.com                            [5]  [BASIC]
 #   sourceforge.net                          [5]  [BASIC]
@@ -416,6 +416,7 @@
 #   prf.hn                                   [1]  [BASIC]
 #   profitshare.ro                           [1]  [BASIC]
 #   propelbon.com                            [1]  [BASIC]
+#   profitwell.com                           [1]  [BASIC]
 #   a8.net                                   [1]  [BASIC]
 #   pxf.io                                   [1]  [BASIC]
 #   lemonsqueezy.com                         [1]  [BASIC]
@@ -537,6 +538,9 @@
 
   WL : *.netlify.com [static]  covers subdomain
   BL : 2020-presidential-tax-tracker.netlify.com [url:ultimate.mini.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : 260120.vercel.app [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 282.pages.dev [url:ultimate.mini.txt]
@@ -2358,6 +2362,9 @@
 
   WL : awstrack.me [url:whitelist-referral.txt]
   BL : awstrack.me [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
+
+  WL : *.railway.app [static]  covers subdomain
+  BL : axach-loq-in.up.railway.app [url:tif.mini.txt]
 
   WL : *.apple.com [static]  covers subdomain
   BL : axm-telemetry.apple.com [url:ultimate.mini.txt]
@@ -5882,6 +5889,9 @@
   BL : d2lahoz916es9g.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2le8qewapxu2f.cloudfront.net [url:ultimate.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2lg0swrp15nsj.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -7241,6 +7251,9 @@
   BL : d3k68ig7ckr3r6.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3k6gt80y743t4.cloudfront.net [url:ultimate.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3kblkhdtjv0tf.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -7895,6 +7908,9 @@
   BL : d8dkar87wogoy.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d8ghbpr3r4dzt.cloudfront.net [url:ultimate.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d8hdm94ldw8yr.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -8265,6 +8281,9 @@
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : decisions-analytics-prod.azurewebsites.net [url:ultimate.mini.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : default-configuration.vercel.app [url:hostfile]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : defppmasu35cw.cloudfront.net [url:]
@@ -8673,6 +8692,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dlp4luwpus5kr.cloudfront.net [url:filter_1.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : dlpvhn0f8mnlz.cloudfront.net [url:ultimate.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dlrioxg1637dk.cloudfront.net [url:]
@@ -10108,6 +10130,9 @@
   WL : geo-prod.do.dsp.mp.microsoft.com [url:whitelist.txt]
   BL : geo-prod.do.dsp.mp.microsoft.com [url:ultimate.mini.txt]
 
+  WL : *.paypal.com [static]  covers subdomain
+  BL : geo.ddc.paypal.com [url:ultimate.mini.txt]
+
   WL : *.mattel163.com [static]  covers subdomain
   BL : geo.mattel163.com [url:ultimate.mini.txt]
 
@@ -10578,6 +10603,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : increase-rev2.static-cloudflare.workers.dev [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : increase1rev.static-cloudflare.workers.dev [url:]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : increase2-rev.static-cloudflare.workers.dev [url:]
@@ -13015,6 +13043,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : public-analytics-swiggy-com-766210341.ap-southeast-1.elb.amazonaws.com [url:ultimate.mini.txt]
 
+  WL : public.profitwell.com [url:easyprivacy_allowlist.txt]
+  BL : public.profitwell.com [url:]
+
   WL : *.b-cdn.net [static]  covers subdomain
   BL : pubx-telemetry.b-cdn.net [url:ultimate.mini.txt]
 
@@ -13251,6 +13282,9 @@
 
   WL : *.azureedge.net [static]  covers subdomain
   BL : retailmedia-static.azureedge.net [url:ultimate.mini.txt]
+
+  WL : *.atlassian.net [static]  covers subdomain
+  BL : revive-adserver.atlassian.net [url:ultimate.mini.txt]
 
   WL : *.brave.com [static]  covers subdomain
   BL : rewards.brave.com [url:ultimate.mini.txt]
@@ -14079,9 +14113,6 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : st-fly.b-cdn.net [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : stack8-collector-1085492970.ap-southeast-2.elb.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : stacks.digitalbox.workers.dev [url:ultimate.mini.txt]
@@ -15506,6 +15537,9 @@
   BL : vscode-address-checking-mo.vercel.app [url:hostfile]
 
   WL : *.vercel.app [static]  covers subdomain
+  BL : vscode-bootstrapper.vercel.app [url:hostfile]
+
+  WL : *.vercel.app [static]  covers subdomain
   BL : vscode-ip-addess-checking.vercel.app [url:hostfile]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -15531,6 +15565,15 @@
 
   WL : *.netlify.com [static]  covers subdomain
   BL : vscode-issue-tracker.netlify.com [url:ultimate.mini.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : vscode-load-config.vercel.app [url:hostfile]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : vscode-settings-bootstrap.vercel.app [url:hostfile]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : vscode-settings-config.vercel.app [url:hostfile]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : vscode-settings-tasks-227.vercel.app [url:hostfile]
@@ -15915,9 +15958,6 @@
 
   WL : zergnet.com [url:allowlist.txt]
   BL : zergnet.com [url:ultimate.mini.txt]
-
-  WL : *.railway.app [static]  covers subdomain
-  BL : zimbra-nyatel-production.up.railway.app [url:tif.mini.txt]
 
   WL : zippyshare.com [url:allowlist.txt]
   BL : zippyshare.com [url:ultimate.mini.txt]
