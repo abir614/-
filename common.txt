@@ -1,26 +1,27 @@
-# Scale  — max: top 20% (>= 93)  warn: top 50% (>= 34)  basic: remaining
+# Scale  — max: top 20% (>= 96)  warn: top 50% (>= 39)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1873]  [MAX]
-#   amazonaws.com                            [830]  [MAX]
+#   amazonaws.com                            [832]  [MAX]
+#   fbcdn.net                                [518]  [MAX]
 #   cloudflare.net                           [138]  [MAX]
-#   workers.dev                              [134]  [MAX]
+#   workers.dev                              [135]  [MAX]
 #   vercel.app                               [128]  [MAX]
 #   pages.dev                                [103]  [MAX]
 #   yahoo.com                                [96]  [MAX]
-#   b-cdn.net                                [93]  [MAX]
+#   b-cdn.net                                [95]  [WARN]
 #   azurewebsites.net                        [84]  [WARN]
 #   live.com                                 [81]  [WARN]
 #   microsoft.com                            [73]  [WARN]
 #   googleapis.com                           [72]  [WARN]
 #   trafficmanager.net                       [70]  [WARN]
 #   edgesuite.net                            [62]  [WARN]
-#   google.com                               [55]  [WARN]
+#   google.com                               [54]  [WARN]
 #   azure.com                                [53]  [WARN]
 #   apple.com                                [49]  [WARN]
 #   amazon.com                               [44]  [WARN]
 #   akamaized.net                            [40]  [WARN]
 #   azureedge.net                            [39]  [WARN]
-#   netlify.app                              [34]  [WARN]
+#   netlify.app                              [35]  [BASIC]
 #   firebaseio.com                           [27]  [BASIC]
 #   fastly.net                               [23]  [BASIC]
 #   linkedin.com                             [23]  [BASIC]
@@ -44,7 +45,6 @@
 #   atlassian.com                            [9]  [BASIC]
 #   redhat.com                               [9]  [BASIC]
 #   malwarebytes.com                         [9]  [BASIC]
-#   fbcdn.net                                [9]  [BASIC]
 #   netlify.com                              [8]  [BASIC]
 #   bing.com                                 [8]  [BASIC]
 #   snapchat.com                             [8]  [BASIC]
@@ -95,6 +95,7 @@
 #   checkout.com                             [3]  [BASIC]
 #   canva.com                                [3]  [BASIC]
 #   cloudflareinsights.com                   [3]  [BASIC]
+#   github.com                               [3]  [BASIC]
 #   githubusercontent.com                    [3]  [BASIC]
 #   authorize.net                            [3]  [BASIC]
 #   monday.com                               [3]  [BASIC]
@@ -133,7 +134,6 @@
 #   tagcommander.com                         [2]  [BASIC]
 #   adyen.com                                [2]  [BASIC]
 #   sitescout.com                            [2]  [BASIC]
-#   github.com                               [2]  [BASIC]
 #   cdn-apple.com                            [2]  [BASIC]
 #   conviva.com                              [2]  [BASIC]
 #   urbanairship.com                         [2]  [BASIC]
@@ -370,6 +370,7 @@
 #   liveperson.net                           [1]  [BASIC]
 #   netsalesmedia.pl                         [1]  [BASIC]
 #   marketingautomation.services             [1]  [BASIC]
+#   maryspecialwatch.com                     [1]  [BASIC]
 #   media01.eu                               [1]  [BASIC]
 #   mediaintelligence.de                     [1]  [BASIC]
 #   mediaplex.com                            [1]  [BASIC]
@@ -617,6 +618,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 7ng6v3lu3c.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : 7nwk3b3g4e4nkot.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.fastly.net [static]  covers subdomain
   BL : 7q1z79gxsi.global.ssl.fastly.net [url:]
@@ -3020,9 +3024,6 @@
 
   WL : *.microsoft.com [static]  covers subdomain
   BL : clarity.microsoft.com [url:ultimate.mini.txt]
-
-  WL : *.akamaized.net [static]  covers subdomain
-  BL : clarity.ms.akamaized.net [url:ultimate.mini.txt]
 
   WL : *.azureedge.net [static]  covers subdomain
   BL : claritystatic.azureedge.net [url:ultimate.mini.txt]
@@ -9972,6 +9973,9 @@
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : ffg-analytics-functionsk3nvxfne4dp4s.azurewebsites.net [url:ultimate.mini.txt]
 
+  WL : *.b-cdn.net [static]  covers subdomain
+  BL : fft-crash-carthrottle.b-cdn.net [url:ultimate.mini.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : fight-logger.vercel.app [url:ultimate.mini.txt]
 
@@ -10549,9 +10553,6 @@
   BL : hoerenjs.b-cdn.net [url:ultimate.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : holdings-412-wp.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : homeq-widget.s3.eu-north-1.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -10712,6 +10713,9 @@
 
   WL : *.live.com [static]  covers subdomain
   BL : inc-visio-telemetry.officeapps.live.com [url:ultimate.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : inc1-rev.static-cloudflare.workers.dev [url:]
 
   WL : *.fastly.net [static]  covers subdomain
   BL : includemodal.global.ssl.fastly.net [url:ultimate.mini.txt]
@@ -11353,6 +11357,9 @@
   BL : logs-insights.eu-central-1.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : logs-insights.eu-south-1.amazonaws.com [url:ultimate.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : logs-insights.eu-west-3.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.cloudflarestorage.com [static]  covers subdomain
@@ -11528,6 +11535,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : mars-logging-uat-838225167328.s3.eu-central-1.amazonaws.com [url:ultimate.mini.txt]
+
+  WL : maryspecialwatch.com [url:allowlist.txt]
+  BL : maryspecialwatch.com [url:tif.mini.txt]
 
   WL : *.azureedge.net [static]  covers subdomain
   BL : masdpanalytics.azureedge.net [url:ultimate.mini.txt]
@@ -11837,6 +11847,9 @@
 
   WL : mmtro.com [url:whitelist-referral.txt]
   BL : mmtro.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : mnbu-9gjwu07k13q4.s3.dualstack.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : moatads.com [url:easylist_allowlist.txt]
   BL : moatads.com [url:ultimate.mini.txt]
@@ -13666,9 +13679,6 @@
   BL : s2.youtube.com [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : s3-external-2.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : s3-use1-epx-d-f1ev1-telemetry-dropbox.s3.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -13679,9 +13689,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : safey11-expense-tracker.vercel.app [url:ultimate.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : saison-api-noreply-fur11pv9kn1b-5.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.zoho.com [static]  covers subdomain
   BL : salesiq.zoho.com [url:hosts]
@@ -13710,9 +13717,6 @@
   WL : sc.omtrdc.net [url:easyprivacy_allowlist.txt]
   BL : sc.omtrdc.net [url:hosts]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : scan00265260121202602026easyclean-fr.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.google.com [static]  covers subdomain
   BL : scone-pa.clients6.google.com [url:ultimate.mini.txt]
 
@@ -13727,6 +13731,9 @@
 
   WL : *.twitter.com [static]  covers subdomain
   BL : scribe.twitter.com [url:ultimate.mini.txt]
+
+  WL : *.akamaized.net [static]  covers subdomain
+  BL : scripts.clarity.ms.akamaized.net [url:ultimate.mini.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : scripts.dkmedia.vercel.app [url:ultimate.mini.txt]
@@ -14058,9 +14065,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : simplicity-w.pages.dev [url:hostfile]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : sipok.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
-
   WL : siteintercept.qualtrics.com [url:allowlist.txt]
   BL : siteintercept.qualtrics.com [url:ultimate.mini.txt]
 
@@ -14172,6 +14176,378 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : solutions-mint-nft.vercel.app [url:ultimate.mini.txt]
 
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-akl1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-amd1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-amd1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ams.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ams2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ams4-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-arn.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-arn2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-atl.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-atl3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-atl3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-atl3-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-baq1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bcn.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bcn1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ber.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ber1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bkk.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bkk1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bkk1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-blr1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-blr1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bog.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bog2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bog2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bom.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bom1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bom2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bom2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bom2-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bom2-4.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bom5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bom5-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bos.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bos5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bru.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bru2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bsb.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-bsb1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ccu.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ccu1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ccu1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ccu2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ccu2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cdg.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cdg4-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cdg4-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cdg4-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cdg6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cgk.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cgk1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cgk1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cgk2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cgk2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cph.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cph2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cpt.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-cpt1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-del.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-del1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-del1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-del2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-del2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-del2-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-del3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-del3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-den.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-den2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-det.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-det1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-dfw.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-dfw5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-dfw5-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-dfw5-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-dfw6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-doh1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-dub4-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-dus.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-dus1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-elp3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-eze.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-eze1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-eze1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-fco.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-fco2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-fml.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-fml1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-fml20-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-for.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-for2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-for2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-fra.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-fra3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-fra3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-fra5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-fra5-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-gig.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-gig4-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-gig4-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-gmp1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-gru.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-gru1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-gru1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-gru2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-gru2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-gua.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-gua1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ham.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ham3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hbe.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hbe1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hbe1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hel.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hel3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hkg.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hkg1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hkg1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hkg4-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hkg4-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hou.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hou1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hyd.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hyd1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-hyd1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
   WL : *.whatsapp.net [static]  covers subdomain
   BL : sonar-iad.cdn.whatsapp.net [url:ultimate.mini.txt]
 
@@ -14184,8 +14560,785 @@
   WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar-iad3-2.xx.fbcdn.net [url:ultimate.mini.txt]
 
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-iad6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-icn.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-icn2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-iev.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-iev1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ist.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ist1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ist1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-itm.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-itm1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-jnb.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-jnb2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-kul.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-kul2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-kul2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-kul3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lax.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lax3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lax3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lax7-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lga.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lga3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lga3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lga3-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lhr.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lhr6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lhr6-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lhr8-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lhr8-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lim.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lim1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lis.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lis1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-lko1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-los2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-los4-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-maa.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-maa2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-maa2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-maa3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-maa3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-maa3-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-maa3-4.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-maa5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-maa5-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mad.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mad1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mad2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-man.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-man2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mba2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mct.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mct1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mct1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mel1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mia.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mia3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mia3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mia3-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mia5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mia5-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mnl.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mnl1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mnl1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mnl3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mnl3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mnl3-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mrs.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mrs2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mrs2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mrs2-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-msp.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-msp1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mty.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mty2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-muc.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-muc2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mxp.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mxp1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-mxp2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-nrt.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-nrt1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-nrt1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-nrt6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ord.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ord5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ord5-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ord5-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-otp.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-otp1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-phl2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-phx.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-phx1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-pmo.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-pmo1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-pnq1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-pnq1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-poa.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-poa1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-prg.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-prg1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-qro.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-qro1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-qro1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-qro3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-scl.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-scl2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-scl3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sea.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sea1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sea5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sin.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sin11-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sin11-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sin2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sin2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sin2-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sin6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sin6-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sin6-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sjc.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sjc3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sjc6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sof.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sof1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-sof1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-ssn1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-syd.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-syd2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-tpe.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-tpe1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-vie.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-vie1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-waw.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-waw2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-waw2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-xxb.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-xxb1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-xxc.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-xxc1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-xxd1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-yyz.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-yyz1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-zrh.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-zrh1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
   WL : sonar.viously.com [url:allowlist.txt]
   BL : sonar.viously.com [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-akl1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-amd1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ams.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ams2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ams4-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-arn.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-arn2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-atl.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-atl3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-atl3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-atl3-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-baq1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bcn.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bcn1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ber.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ber1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bkk1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bkk1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-blr1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-blr1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bog2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bog2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bom.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bom1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bom2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bom2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bom2-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bom2-4.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bom5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bom5-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bos5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bru.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bru2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bsb.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bsb1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ccu.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ccu1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ccu1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ccu2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ccu2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-cdg.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-cdg4-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-cdg4-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-cdg4-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-cdg6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-cgk1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-cgk1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-cgk2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-cgk2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-cph.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-cph2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-cpt1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-del.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-del1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-del1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-del2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-del2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-del2-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-del3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-del3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-den2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-det1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-dfw.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-dfw5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-dfw5-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-dfw5-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-dfw6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-doh1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-dub4-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-dus.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-dus1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-elp3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-eze.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-eze1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-eze1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-fco.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-fco2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-fml1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-fml20-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-for.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-for2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-for2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-fra.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-fra3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-fra3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-fra5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-fra5-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-gig.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-gig4-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-gig4-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-gmp1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-gru.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-gru1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-gru1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-gru2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-gru2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-gua1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ham.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ham3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hbe.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hbe1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hbe1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hel.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hel3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hkg.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hkg1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hkg1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hkg4-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hkg4-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hou.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hou1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hyd.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hyd1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-hyd1-2.xx.fbcdn.net [url:ultimate.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar6-iad.xx.fbcdn.net [url:ultimate.mini.txt]
@@ -14195,6 +15348,384 @@
 
   WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar6-iad3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-iad6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-icn2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-iev.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-iev1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ist1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ist1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-itm.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-itm1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-jnb2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-kul.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-kul2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-kul2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-kul3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lax.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lax3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lax3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lax7-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lga.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lga3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lga3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lga3-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lhr.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lhr6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lhr6-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lhr8-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lhr8-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lim1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lis1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lko1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-los2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-los4-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-maa2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-maa2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-maa3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-maa3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-maa3-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-maa3-4.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-maa5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-maa5-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mad1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mad2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-man2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mba2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mct1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mct1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mel1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mia.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mia3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mia3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mia3-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mia5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mia5-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mnl.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mnl1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mnl1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mnl3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mnl3-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mnl3-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mrs.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mrs2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mrs2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mrs2-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-msp1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mty2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-muc.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-muc2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mxp.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mxp1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-mxp2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-nrt.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-nrt1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-nrt1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-nrt6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ord.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ord5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ord5-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ord5-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-otp.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-otp1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-phl2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-phx1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-pmo.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-pmo1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-pnq1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-pnq1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-poa.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-poa1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-prg.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-prg1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-qro1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-qro1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-qro3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-scl2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-scl3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sea1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sea5-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sin.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sin11-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sin11-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sin2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sin2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sin2-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sin6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sin6-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sin6-3.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sjc.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sjc3-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sjc6-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sof.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sof1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-sof1-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-ssn1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-syd2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-tpe1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-vie.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-vie1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-waw.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-waw2-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-waw2-2.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-xxb1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-xxc1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-xxd1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-yyz.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-yyz1-1.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-zrh.xx.fbcdn.net [url:ultimate.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-zrh1-1.xx.fbcdn.net [url:ultimate.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sosracismjuif2025.pages.dev [url:hostfile]
@@ -14430,6 +15961,9 @@
   WL : stats.g.doubleclick.net [url:allowlist.txt]
   BL : stats.g.doubleclick.net [url:hosts]
 
+  WL : *.github.com [static]  covers subdomain
+  BL : stats.github.com [url:ultimate.mini.txt]
+
   WL : *.paypal.com [static]  covers subdomain
   BL : stats.glb.paypal.com [url:ultimate.mini.txt]
 
@@ -14630,6 +16164,9 @@
 
   WL : *.fastly.net [static]  covers subdomain
   BL : t.wayfair.map.fastly.net [url:ultimate.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : t37y2vok1cuywyu.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.dropbox.com [static]  covers subdomain
   BL : t8.dropbox.com [url:ultimate.mini.txt]
@@ -15192,6 +16729,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : tracking-production-3e47c89e5c807dd5.elb.us-east-1.amazonaws.com [url:ultimate.mini.txt]
 
+  WL : *.netlify.app [static]  covers subdomain
+  BL : tracking-samurai.netlify.app [url:ultimate.mini.txt]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : tracking-scripts.s3.amazonaws.com [url:ultimate.mini.txt]
 
@@ -15311,6 +16851,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : ts-error-translator.vercel.app [url:ultimate.mini.txt]
+
+  WL : *.b-cdn.net [static]  covers subdomain
+  BL : ts-ewe-tracking-prod.b-cdn.net [url:ultimate.mini.txt]
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : ts-wn-log-bmggb9bcacbsd6df.westus-01.azurewebsites.net [url:ultimate.mini.txt]
@@ -15679,9 +17222,6 @@
   BL : video-analytics-193323.firebaseio.com [url:ultimate.mini.txt]
 
   WL : *.google.com [static]  covers subdomain
-  BL : video-analytics.google.com [url:ultimate.mini.txt]
-
-  WL : *.google.com [static]  covers subdomain
   BL : video-analytics.l.google.com [url:ultimate.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
@@ -15740,6 +17280,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : vmax4-prod-tracker-lb-1539806324.ap-southeast-3.elb.amazonaws.com [url:ultimate.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : vmc-logs-irl-prod.s3.eu-west-1.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.azure.com [static]  covers subdomain
   BL : vmss-clarity-ingest-eus-b.eastus.cloudapp.azure.com [url:ultimate.mini.txt]
@@ -16019,6 +17562,12 @@
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : wetracker.azurewebsites.net [url:ultimate.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : wflwr-production-tracking-ingest.s3.eu-west-1.amazonaws.com [url:ultimate.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : wflwr-production-tracking.s3.eu-west-1.amazonaws.com [url:ultimate.mini.txt]
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : wh-api-analytics.azurewebsites.net [url:ultimate.mini.txt]
