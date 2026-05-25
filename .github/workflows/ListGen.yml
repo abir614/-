@@ -73,6 +73,7 @@ jobs:
                   with urllib.request.urlopen(req, timeout=timeout) as r:
                       elapsed = time.time() - t0
                       data = r.read()
+                      # Decompress zip on-the-fly for counting
                       import zipfile, gzip, io as _io
                       text_data = data
                       try:
@@ -134,7 +135,7 @@ jobs:
           print(f"  OK: {ok_count}  |  WARN (timeout): {len(warned)}  |  FAILED: {len(failed)}")
           print(f"{'='*88}\n")
 
-          # Write warnings directly to warn_log.txt instead of using ::warning::
+          # Write warnings directly to warn_log.txt (never use ::warning:: annotations)
           with open("warn_log.txt", "w") as wf:
               for kind, url, note in warned:
                   wf.write(f"[{kind}] {url}  ->  {note} (will skip in pipeline)\n")
@@ -145,7 +146,7 @@ jobs:
           if warn_count:
               print(f"  {warn_count} source issue(s) written to warn_log.txt")
           else:
-              print(f"  No source issues — warn_log.txt is empty")
+              print("  No source issues — warn_log.txt is empty")
           PYEOF
 
       # ── 3. Run main Python pipeline ───────────────────────────────────────
@@ -166,6 +167,7 @@ jobs:
               r'(\.[a-z0-9]([a-z0-9\-]{0,61}[a-z0-9])?)+$'
           )
 
+          # Ordered strip rules — first match wins.
           _STRIP = [
               (re.compile(r'^\s*[#!;]'),                                      None),
               (re.compile(r'^\s*$'),                                           None),
@@ -185,6 +187,10 @@ jobs:
           ]
 
           def strip_to_domain(raw: str):
+              """Extract a bare domain from any list format. Returns None to skip.
+              Wildcards (*.domain) are preserved — the leading *. is kept intact.
+              All other prefixes/suffixes (protocols, ports, paths, query strings,
+              ABP markers, whitespace, trailing dots) are stripped universally."""
               line = raw.strip().lower()
               candidate = None
               for pat, grp in _STRIP:
@@ -197,21 +203,36 @@ jobs:
               if candidate is None:
                   candidate = line
 
+              # ── Universal suffix/prefix cleaner ──────────────────────────────
+              # Strip scheme (http://, https://, ftp://, etc.) and userinfo FIRST
+              # so that https://*.example.com is correctly detected as a wildcard.
               candidate = re.sub(r'^[a-z][a-z0-9+\-.]*://', '', candidate)
               candidate = re.sub(r'^[^@/]+@', '', candidate)
 
+              # Detect wildcard prefix AFTER scheme/userinfo are removed.
+              # Require literal *. (dot mandatory) — bare * without dot is not a wildcard.
+              # Normalise **. / ***. etc → *. by consuming all leading stars and the dot.
               wildcard_prefix = ''
               wc_m = re.match(r'^\*+\.', candidate)
               if wc_m:
                   wildcard_prefix = '*.'
-                  candidate = candidate[wc_m.end():]
+                  candidate = candidate[wc_m.end():]   # strip all leading *[*]*. forms
 
+              # Strip port (:1234) — but only after the host, not inside it
               candidate = re.sub(r':\d+(?=[/?#]|$)', '', candidate)
+              # Strip path, query string, and fragment
               candidate = re.sub(r'[/?#].*$', '', candidate)
+              # Truncate at first ABP terminator (^, |, $).
+              # Everything after the first terminator is filter options/garbage.
+              # Do NOT use a global strip — that would merge surrounding text into
+              # the domain (e.g. "domain^|$important" → "domainimportant").
               candidate = re.sub(r'[\^\|\$].*$', '', candidate)
+              # Strip residual whitespace and leading/trailing dots
               candidate = candidate.strip().strip('.')
 
+              # Re-attach wildcard prefix if it was present
               if wildcard_prefix and candidate:
+                  # Validate the domain part, then return with *. prefix
                   if '.' not in candidate or not _RE_VALID.match(candidate):
                       return None
                   return f'*.{candidate}'
@@ -227,10 +248,29 @@ jobs:
               return '.'.join(parts[-2:]) if len(parts) >= 2 else domain
 
           def ancestors(domain: str) -> list:
+              """All proper parent domains of `domain`, from immediate to root.
+              ancestors('a.b.c.com') → ['b.c.com', 'c.com']
+              The domain itself is excluded. The bare TLD is excluded."""
               parts = domain.split('.')
+              # parts[-2:] is the root (e.g. ['c','com']), don't go past it
               return ['.'.join(parts[i:]) for i in range(1, len(parts) - 1)]
 
+          # ══════════════════════════════════════════════════════════════════
+          # PARSERS — preserve full domains throughout (no root collapsing)
+          #
+          # Root collapsing (sub.evil.com → evil.com) was the root cause of
+          # two bugs:
+          #   1. Blocking sub.evil.com wildcarded all of evil.com.
+          #   2. Whitelisting good.com silently protected bad.good.com.
+          # All sets in this pipeline hold full domain strings. The decision
+          # of what to emit (wildcard vs exact) happens at output time only.
+          # ══════════════════════════════════════════════════════════════════
+
           def parse_domains(text: str, label: str) -> set:
+              """Parse list text → set of full domain strings (exact only, wildcards dropped).
+              Used for blacklist sources where wildcard vs exact is decided at output time.
+              strip_to_domain may return *.domain for wildcard lines; the *. is stripped here
+              so the domain enters the set as a bare string for uniform processing."""
               domains, skip = set(), 0
               for raw in text.splitlines():
                   d = strip_to_domain(raw)
@@ -238,12 +278,18 @@ jobs:
                       skip += 1
                       continue
                   if d.startswith('*.'):
-                      d = d[2:]
+                      d = d[2:]   # wildcard decision deferred to output stage
                   domains.add(d)
               print(f"    {label}: {len(domains):,} domains  ({skip:,} lines skipped)")
               return domains
 
           def parse_domains_split(text: str, label: str) -> tuple:
+              """Parse list text → (exact: set, wildcards: set).
+              A line yielding *.domain from strip_to_domain goes into wildcards (bare domain stored).
+              All other valid domain lines go into exact.
+              Both sets hold bare domain strings; the *.  prefix is re-added at write time.
+              This mirrors how the blocklist pipeline decides wildcard vs exact at output,
+              so whitelist sources (static + external URLs) are treated identically."""
               exact, wildcards, skip = set(), set(), 0
               for raw in text.splitlines():
                   line = raw.strip().lower()
@@ -255,7 +301,7 @@ jobs:
                       skip += 1
                       continue
                   if d.startswith('*.'):
-                      wildcards.add(d[2:])
+                      wildcards.add(d[2:])   # store bare domain; *. re-added at write time
                   else:
                       exact.add(d)
               total = len(exact) + len(wildcards)
@@ -265,12 +311,20 @@ jobs:
               return exact, wildcards
 
           def is_wl_covered(domain: str, combined_wl: set, wl_wildcards: set) -> bool:
+              """Return True if domain is protected by the whitelist:
+                 • exact:    domain is in combined_wl, OR
+                 • wildcard: domain itself OR any of its ancestors is in wl_wildcards
+                             (*.cloudflare.com covers cdn.cloudflare.com AND cloudflare.com)
+              Note: wl_wildcards holds the ROOT of each wildcard entry —
+              e.g. '*.cloudflare.com' → 'cloudflare.com' in wl_wildcards."""
               if domain in combined_wl:
                   return True
+              # Check domain itself first, then walk up ancestor chain
               if domain in wl_wildcards:
                   return True
               return any(a in wl_wildcards for a in ancestors(domain))
 
+          # ── File-type detection & decompression ─────────────────────────────
           import io, zipfile, gzip, tarfile, struct
 
           def _try_lzma(data: bytes) -> bytes | None:
@@ -296,12 +350,31 @@ jobs:
                   return None
 
           def _sniff_and_decompress(data: bytes, url: str, label: str) -> str:
+              """
+              Detect the container/compression format from magic bytes (not URL extension),
+              decompress, and return the first plaintext domain-list file found inside.
+
+              Supported formats
+              ─────────────────
+              zip          — picks the first *.txt / *.csv / *.hosts / *.lst / *.list
+                             inside; falls back to the largest member.
+              gz / gzip    — single-stream gzip (also handles .tar.gz / .tgz).
+              bz2          — bzip2 compressed stream.
+              xz / lzma    — XZ / LZMA compressed stream.
+              zstd         — Zstandard frame (requires `zstandard` package if present).
+              tar (plain)  — uncompressed tar archive.
+              json         — {"domains":[...]} or array-of-strings at top level.
+              csv          — single column of domains or rank,domain pairs.
+              plain text   — hosts, RPZ, ABP/uBlock, plain domain list, newline-separated.
+              """
               url_lower = url.lower().split('?')[0]
 
+              # ── ZIP ─────────────────────────────────────────────────────────
               if data[:2] == b'PK':
                   try:
                       with zipfile.ZipFile(io.BytesIO(data)) as zf:
                           members = zf.namelist()
+                          # Prefer recognisable text-list extensions, then largest file
                           _PREF_EXT = ('.txt', '.csv', '.hosts', '.lst', '.list',
                                        '.conf', '.domain', '.domains', '.rpz', '.dat')
                           candidate = next(
@@ -311,6 +384,7 @@ jobs:
                               None
                           )
                           if candidate is None:
+                              # Fallback: largest member
                               candidate = max(
                                   (m for m in members if not m.startswith('__MACOSX')),
                                   key=lambda m: zf.getinfo(m).file_size,
@@ -324,9 +398,11 @@ jobs:
                       print(f"    ⚠  WARN: {label} — zip error: {e}")
                   return ''
 
+              # ── GZIP / TAR.GZ ───────────────────────────────────────────────
               if data[:2] == b'\x1f\x8b':
                   try:
                       decompressed = gzip.decompress(data)
+                      # Check if the decompressed bytes are themselves a tar archive
                       if decompressed[:5] in (b'ustar', b'\x1f\x8b') or \
                          (len(decompressed) > 257 and decompressed[257:262] == b'ustar'):
                           return _sniff_and_decompress(decompressed, url, label)
@@ -336,6 +412,7 @@ jobs:
                       print(f"    ⚠  WARN: {label} — gzip error: {e}")
                   return ''
 
+              # ── BZIP2 ───────────────────────────────────────────────────────
               if data[:2] == b'BZ':
                   result = _try_bz2(data)
                   if result is not None:
@@ -344,6 +421,7 @@ jobs:
                   print(f"    ⚠  WARN: {label} — bz2 decompression failed")
                   return ''
 
+              # ── XZ / LZMA ───────────────────────────────────────────────────
               if data[:6] in (b'\xfd7zXZ\x00', b'\x5d\x00\x00'):
                   result = _try_lzma(data)
                   if result is not None:
@@ -352,6 +430,7 @@ jobs:
                   print(f"    ⚠  WARN: {label} — xz/lzma decompression failed")
                   return ''
 
+              # ── ZSTD ────────────────────────────────────────────────────────
               if data[:4] == b'\x28\xb5\x2f\xfd':
                   result = _try_zstd(data)
                   if result is not None:
@@ -360,6 +439,7 @@ jobs:
                   print(f"    ⚠  WARN: {label} — zstd decompression failed (zstandard not installed?)")
                   return ''
 
+              # ── TAR (plain / uncompressed) ───────────────────────────────────
               if len(data) > 512 and data[257:262] == b'ustar':
                   try:
                       with tarfile.open(fileobj=io.BytesIO(data)) as tf:
@@ -382,12 +462,15 @@ jobs:
                       print(f"    ⚠  WARN: {label} — tar error: {e}")
                   return ''
 
+              # ── JSON ────────────────────────────────────────────────────────
               text_peek = data[:4096].decode('utf-8', errors='ignore').lstrip()
               if text_peek.startswith(('{', '[')):
                   try:
                       import json
                       obj = json.loads(data.decode('utf-8', errors='ignore'))
                       lines = []
+                      # Common JSON shapes: {"domains":[...]} / {"blocklist":[...]} /
+                      # {"blacklist":[...]} / top-level array of strings
                       if isinstance(obj, list):
                           lines = [str(x) for x in obj if x]
                       elif isinstance(obj, dict):
@@ -397,6 +480,7 @@ jobs:
                                   lines = [str(x) for x in obj[key] if x]
                                   break
                           if not lines:
+                              # Flatten any list value found in the dict
                               for v in obj.values():
                                   if isinstance(v, list):
                                       lines = [str(x) for x in v if x]
@@ -407,8 +491,17 @@ jobs:
                           return '\n'.join(lines)
                   except Exception as e:
                       print(f"    ⚠  WARN: {label} — json parse error: {e}")
+                  # Fall through to plain-text handling
 
+              # ── Plain text (hosts / ABP / RPZ / CSV / domain list) ─────────
+              # This path handles everything that is already text:
+              # • Standard hosts file (0.0.0.0 / 127.0.0.1 prefix)
+              # • AdBlock Plus / uBlock Origin filter syntax (||domain^)
+              # • RPZ zone files (CNAME . entries)
+              # • Simple newline-separated domain lists
+              # • CSV with rank,domain — the strip_to_domain regex set handles all of these.
               text = data.decode('utf-8', errors='ignore')
+              # Detect CSV rank,domain shape and report it
               first_data_line = next(
                   (l.strip() for l in text.splitlines()
                    if l.strip() and not l.strip().startswith('#')), ''
@@ -418,6 +511,7 @@ jobs:
               return text
 
           def fetch_raw(url: str, label: str) -> bytes | None:
+              """Download URL and return raw bytes; None on failure."""
               try:
                   req = urllib.request.Request(
                       url, headers={"User-Agent": "DNS-Builder/1.0"})
@@ -437,6 +531,7 @@ jobs:
               return parse_domains(text, label)
 
           def fetch_and_parse_wl(url: str, label: str) -> tuple:
+              """Fetch a URL and parse as whitelist source → (exact: set, wildcards: set)."""
               raw = fetch_raw(url, label)
               if raw is None:
                   return set(), set()
@@ -444,6 +539,10 @@ jobs:
               if not text:
                   return set(), set()
               return parse_domains_split(text, label)
+
+          # ══════════════════════════════════════════════════════════════════
+          # PARSE custom.txt
+          # ══════════════════════════════════════════════════════════════════
 
           def extract_block(text: str, tag: str) -> str:
               m = re.search(
@@ -475,8 +574,14 @@ jobs:
           print(f"  Blacklist URLs   : {len(bl_urls)}")
           print(f"  Whitelist URLs   : {len(wl_urls)}")
 
+          # ══════════════════════════════════════════════════════════════════
+          # STEP 1 — Fetch & union all blacklist sources
+          # ══════════════════════════════════════════════════════════════════
           print("\n[1/6] Fetching blacklist sources...")
           raw_block: set = set()
+          # bl_src_map: domain → label of the first BL source it appeared in.
+          # "first wins" is fine — we only need one representative source for
+          # the common.txt report; a domain being in multiple sources is normal.
           bl_src_map: dict = {}
           for url in bl_urls:
               label = url.split('/')[-1][:60]
@@ -485,9 +590,21 @@ jobs:
                   bl_src_map.setdefault(d, f"url:{label}")
               raw_block |= fetched
           print(f"  → Raw union: {len(raw_block):,} unique domains")
-          raw_block_all = raw_block.copy()
+          raw_block_all = raw_block.copy()  # pre-dedup snapshot for common.txt
 
+          # ════════════════════════════════════════════════════════════
+          # STEP 1b — Wildcard-aware cross-source deduplication
+          #
+          # Rule: if any ANCESTOR of D is already in the set, D is
+          # redundant — *.evil.com already covers ads.evil.com,
+          # track.evil.com, sub.ads.evil.com, etc.
+          #
+          # This runs in a single O(n) pass by checking each domain's
+          # ancestor chain against the full set (set lookups = O(1)).
+          # ════════════════════════════════════════════════════════════
           def wildcard_dedup(domain_set: set, label: str) -> set:
+              """Remove any domain whose ancestor already exists in the set.
+              Logs removed examples so redundancy is visible in CI output."""
               before = len(domain_set)
               kept, removed_examples = set(), []
               for d in domain_set:
@@ -509,6 +626,14 @@ jobs:
           print("  Deduplicating redundant subdomains (raw_block)...")
           raw_block = wildcard_dedup(raw_block, "raw_block")
 
+          # ══════════════════════════════════════════════════════════════════
+          # STEP 2 — Load FP reference lists
+          # Informational only — NOT used to auto-remove entries.
+          # Only the explicit whitelist removes entries.
+          # URLs are read from the [FP_REF_URLS] block in build_blocklist.txt.
+          # Any file format supported by _sniff_and_decompress works (zip, csv,
+          # gz, plain text, JSON, etc.) — same pipeline as BL URL sources.
+          # ══════════════════════════════════════════════════════════════════
           print("\n[2/6] Loading FP reference lists (informational only)...")
           fp_refs: set = set()
           fp_ref_urls = block_urls(extract_block(bl_raw, "FP_REF_URLS"))
@@ -523,10 +648,15 @@ jobs:
                   fp_refs |= parse_domains(text_fp, label)
           print(f"  FP refs total: {len(fp_refs):,} domains")
 
+          # ══════════════════════════════════════════════════════════════════
+          # STEP 3 — Build whitelist
+          # ══════════════════════════════════════════════════════════════════
           print("\n[3/6] Building whitelist...")
           static_wl, wl_wildcards = parse_domains_split(st_wl_blk, "Static whitelist")
           print(f"  Static WL: {len(static_wl):,} exact + {len(wl_wildcards):,} wildcard")
 
+          # wl_src_map: domain → label for exact WL entries
+          # wl_wc_src_map: domain → label for wildcard WL entries
           wl_src_map:    dict = {d: "static" for d in static_wl}
           wl_wc_src_map: dict = {d: "static" for d in wl_wildcards}
 
@@ -544,12 +674,22 @@ jobs:
 
           combined_wl: set = static_wl | ext_wl
 
-          _wl_explicit = static_wl | ext_wl
+          # ── WL cross-dedup ─────────────────────────────────────────────────
+          # Drop any exact entry whose ancestor is already in wl_wildcards
+          # (*.cloudflare.com makes cloudflare.com and cdn.cloudflare.com redundant
+          # as exact entries — the wildcard already covers them).
+          # Exact duplicates between static and external are already collapsed by
+          # the set union above.
+          # Only drop an exact entry if it is covered by a wildcard AND was NOT
+          # explicitly added by the user (i.e. not in static_wl or ext_wl directly).
+          # If someone adds both example.com and *.example.com, keep both — the root
+          # exact entry is intentional and must appear in whitelist.txt as-is.
+          _wl_explicit = static_wl | ext_wl   # everything the user added explicitly
           wl_exact_before = len(combined_wl)
           wl_redundant = {
               d for d in combined_wl
-              if d not in _wl_explicit
-              and (d in wl_wildcards
+              if d not in _wl_explicit          # not explicitly added by user
+              and (d in wl_wildcards            # exact == wildcard root (auto-added)
                    or any(a in wl_wildcards for a in ancestors(d)))
           }
           combined_wl -= wl_redundant
@@ -574,14 +714,19 @@ jobs:
           print("\n  Loading static blacklist...")
           static_bl: set = parse_domains(st_bl_blk, "Static blacklist")
           print(f"  Static blacklist  : {len(static_bl):,} domains")
+          # Tag static BL entries in the source map (don't overwrite URL-sourced labels)
           for d in static_bl:
               bl_src_map.setdefault(d, "static")
 
+          # ── Carve out BL domains covered by a WL wildcard → promote to static_bl
+          # *.example.com stays in wl_wildcards (good.example.com remains whitelisted).
+          # evil.example.com is added to static_bl so it punches through the wildcard
+          # and gets blocked as an exact entry. All other subdomains stay whitelisted.
           all_bl = raw_block | static_bl
           _wc_carveouts = []
           for d in all_bl:
               if d in static_bl:
-                  continue
+                  continue   # already in static_bl, nothing to do
               covering_wc = next(
                   (w for w in ([to_root(d)] + ancestors(d)) if w in wl_wildcards), None
               )
@@ -594,6 +739,9 @@ jobs:
               for d, wc in sorted(_wc_carveouts):
                   print(f"    + {d}  (punches through *.{wc})")
 
+          # ══════════════════════════════════════════════════════════════════
+          # STEP 4 — Write whitelist.txt
+          # ══════════════════════════════════════════════════════════════════
           print("\n[4/6] Writing whitelist.txt...")
           now = datetime.now(timezone(timedelta(hours=6)))
 
@@ -628,13 +776,43 @@ jobs:
           print(f"  ✓ whitelist.txt — {total_wl_out:,} entries"
                 f" ({len(combined_wl):,} exact + {len(wl_wildcards):,} wildcard)")
 
+          # ══════════════════════════════════════════════════════════════════
+          # STEP 5 — Resolve blocklist with surgical whitelist interaction
+          #
+          # Per-domain decision logic (applied to every domain D to block):
+          #
+          #   A. D is in combined_wl AND not in static_bl
+          #      → DROP completely. Explicitly safe.
+          #
+          #   B. Any DESCENDANT of D is in combined_wl
+          #      (e.g. D=evil.com, good.evil.com whitelisted)
+          #      → Emit EXACT `evil.com` only.
+          #        Wildcard *.evil.com would catch good.evil.com too.
+          #        (Skipped for static_bl — those always wildcard.)
+          #
+          #   C. No whitelist interference at all
+          #      → Emit WILDCARD `*.D`.
+          #
+          # Static blacklist:
+          #   Rules A and B are skipped (cannot be dropped or downgraded).
+          #
+          # Deduplication:
+          #   An exact entry D is redundant only if one of D's OWN ancestors
+          #   is already in wildcard_out. Sharing a root is NOT enough —
+          #   two sibling subdomains are independent.
+          # ══════════════════════════════════════════════════════════════════
           print("\n[5/6] Resolving blocklist entries...")
 
           all_domains = raw_block | static_bl
 
+          # ── Re-run wildcard dedup after merging static_bl ──────────────────
+          # Static entries may introduce new parent domains that make some
+          # previously-kept raw_block subdomains redundant (or vice-versa).
           print("  Re-deduplicating after static_bl merge...")
           all_domains_before = len(all_domains)
           all_domains_deduped = wildcard_dedup(all_domains, "all_domains")
+          # Warn if any static_bl entry itself was made redundant by another
+          # static_bl or raw_block wildcard ancestor.
           redundant_static = {
               d for d in static_bl
               if d not in all_domains_deduped
@@ -649,38 +827,56 @@ jobs:
                   print(f"    !! {d}  (covered by *.{covering})")
           all_domains = all_domains_deduped
 
+          # Reverse WL ancestor index: set of domains that have ≥1 WL descendant.
+          # Built once up-front to avoid O(n²) per-domain scans (Rule C).
+          #
+          # Three sources populate this map:
+          #   1. Exact WL entries:    ancestors of each exact domain in combined_wl
+          #   2. Wildcard WL entries: the wildcard root itself + its ancestors
+          #      e.g. *.cloudflare.com → cloudflare.com is already fully covered,
+          #      but its parent domains (if any) are ancestor-holders too.
+          #   3. Nothing else — sibling domains are NOT ancestors.
           wl_ancestor_map: set = set()
           for w in combined_wl:
               for a in ancestors(w):
                   wl_ancestor_map.add(a)
           for w in wl_wildcards:
+              # The wildcard root w (e.g. cloudflare.com from *.cloudflare.com)
+              # is itself a domain with a protected descendant space — mark it.
               wl_ancestor_map.add(w)
               for a in ancestors(w):
                   wl_ancestor_map.add(a)
 
           wildcard_out: set = set()
           exact_out:    set = set()
-          dropped:      dict = {}
+          dropped:      dict = {}   # domain → reason string
 
           for d in all_domains:
               in_static_bl = d in static_bl
 
+              # Rule A — domain itself is whitelisted (exact or wildcard-covered)
               if not in_static_bl and is_wl_covered(d, combined_wl, wl_wildcards):
                   reason = "wildcard-WL" if (d not in combined_wl) else "exact-WL"
                   dropped[d] = reason
                   continue
 
+              # Rule B (formerly C) — D has a whitelisted descendant → downgrade to exact
+              # (wildcard *.D would catch that safe descendant too)
               if d in wl_ancestor_map and not in_static_bl:
                   exact_out.add(d)
                   continue
 
+              # Rule C (formerly D) — no whitelist interference → full wildcard
               wildcard_out.add(d)
 
+          # Dedup: an exact entry D is redundant only if one of D's own
+          # ancestors is already in wildcard_out (caught by a parent wildcard).
+          # Sharing a root with a wildcard sibling is NOT enough.
           exact_out_before = len(exact_out)
           exact_out = {
               d for d in exact_out
               if not any(a in wildcard_out for a in ancestors(d))
-              or d in static_bl
+              or d in static_bl   # always keep explicitly added static BL entries
           }
           exact_shadowed = exact_out_before - len(exact_out)
           if exact_shadowed:
@@ -728,6 +924,7 @@ jobs:
               if len(notable) > 30:
                   print(f"    ... and {len(notable)-30} more")
 
+          # Write blocklist.txt
           bl_header = [
               "# ============================================================",
               "# Combined Blocklist",
@@ -771,6 +968,9 @@ jobs:
           ]
           with open("blocklist.txt", "w") as f:
               f.write("\n".join(bl_header) + "\n")
+              # Wildcards first (sorted), then exact-only entries (sorted).
+              # This ordering makes it easy to audit: wildcards dominate the
+              # file and exact entries are a clearly-separated tail section.
               for d in sorted(wildcard_out):
                   f.write(f"*.{d}\n")
               if exact_out:
@@ -784,17 +984,22 @@ jobs:
           print(f"\n  ✓ blocklist.txt — {total_out:,} entries "
                 f"({len(wildcard_out):,} wildcard + {len(exact_out):,} exact)")
 
+          # ── Write common.txt — domains found in both BL and WL ─────────────
+          # Rewritten from scratch on every run: status summary at top, then list.
+          # Scans raw_block_all (pre-dedup) | static_bl so no BL domain is missed.
           from collections import defaultdict
 
           common_entries = []
           for d in sorted(raw_block_all | static_bl):
               bl_label = bl_src_map.get(d, "unknown")
 
+              # Case 1: exact WL hit
               if d in combined_wl:
                   wl_label = wl_src_map.get(d, "unknown")
                   common_entries.append((d, wl_label, "exact", d, bl_label))
                   continue
 
+              # Case 2: wildcard WL hit
               covering_wc = next(
                   (w for w in ([d] + ancestors(d)) if w in wl_wildcards), None
               )
@@ -805,19 +1010,26 @@ jobs:
                   )
 
           if common_entries:
+              # Count BL subdomain hits per ROOT domain of the BL entry.
+              # This shows how "active" each root domain is in the conflict list.
               root_counts: dict = defaultdict(int)
               for _, _, _, bl_entry, _ in common_entries:
                   root_counts[to_root(bl_entry)] += 1
 
+              # Relative severity based on percentile of root-domain hit counts.
+              # Percentile boundaries: top 20% → max, 20–50% → warn, rest → basic.
+              # Using sorted unique counts to avoid ties inflating thresholds.
               unique_counts = sorted(set(root_counts.values()), reverse=True)
               n = len(unique_counts)
+              # index of the value at or above the 20th and 50th percentile boundary
               idx20 = max(0, int(n * 0.20) - 1) if n > 1 else 0
               idx50 = max(0, int(n * 0.50) - 1) if n > 1 else 0
               thresh_max  = unique_counts[idx20]
               thresh_warn = unique_counts[idx50]
+              # If all counts are identical there's no spread — assign all basic
               if thresh_max == thresh_warn == unique_counts[-1] and n == 1:
-                  thresh_max  = unique_counts[0] + 1
-                  thresh_warn = unique_counts[0] + 1
+                  thresh_max  = unique_counts[0] + 1   # unreachable → nothing is max
+                  thresh_warn = unique_counts[0] + 1   # unreachable → nothing is warn
 
               def sev(count: int) -> str:
                   if count >= thresh_max:  return "max"
@@ -826,6 +1038,7 @@ jobs:
 
               _sev_rank = {"max": 0, "warn": 1, "basic": 2}
 
+              # Status list: one line per unique root domain, ranked by count desc then sev
               root_status_list = sorted(
                   root_counts.items(),
                   key=lambda kv: (-kv[1], _sev_rank[sev(kv[1])])
@@ -837,7 +1050,7 @@ jobs:
               for root, count in root_status_list:
                   out.append(f"#   {root:<40} [{count}]  [{sev(count).upper()}]")
               out.append(f"#")
-              out.append("")
+              out.append("")  # blank line before entries
 
               for wl_entry, wl_src, match_type, bl_entry, bl_src in common_entries:
                   if match_type == "wildcard" and bl_entry != wl_entry.lstrip("*."):
@@ -845,7 +1058,7 @@ jobs:
                   else:
                       out.append(f"  WL : {wl_entry} [{wl_src}]")
                   out.append(f"  BL : {bl_entry} [{bl_src}]")
-                  out.append("")
+                  out.append("")  # blank line after each pair
 
               with open("common.txt", "w") as f:
                   f.write("\n".join(out) + "\n")
@@ -853,6 +1066,10 @@ jobs:
           else:
               print(f"\n  ✓ common.txt — no BL/WL conflicts found")
 
+          # ── Clean STATIC_BLACKLIST in build_blocklist.txt ──────────────────
+          # Remove any entry whitelisted (exact or wildcard-covered).
+          # Preserves all comments, blank lines, and all other blocks in the file.
+          # Rewrites in-place only if something actually changed.
           _wc_carveouts_set = {d for d, _ in _wc_carveouts}
 
           if Path("build_blocklist.txt").exists() and bl_raw:
@@ -867,6 +1084,8 @@ jobs:
                       if d is None:
                           kept_lines.append(raw)
                           continue
+                      # Skip carve-outs — they were promoted to static_bl intentionally
+                      # to punch through a WL wildcard; do not clean them out.
                       if d in _wc_carveouts_set:
                           kept_lines.append(raw)
                       elif is_wl_covered(d, combined_wl, wl_wildcards):
@@ -890,16 +1109,21 @@ jobs:
               else:
                   print(f"\n  ✓ build_blocklist.txt — no whitelisted entries in static block")
 
+          # Write total_blocked.txt — single line, underscore-separated number
           total_str = f"{total_out:,}".replace(",", "_")
           with open("total_blocked.txt", "w") as f:
               f.write(total_str + "\n")
           print(f"  ✓ total_blocked.txt — {total_str}")
 
+          # Write total_whitelisted.txt — same format as total_blocked.txt
           total_wl_str = f"{total_wl_out:,}".replace(",", "_")
           with open("total_whitelisted.txt", "w") as f:
               f.write(total_wl_str + "\n")
           print(f"  ✓ total_whitelisted.txt — {total_wl_str}")
 
+          # ══════════════════════════════════════════════════════════════════
+          # STEP 6 — Summary
+          # ══════════════════════════════════════════════════════════════════
           print("\n[6/6] Done.")
           print(f"  blocklist.txt       : {total_out:,} entries")
           print(f"  whitelist.txt       : {total_wl_out:,} entries"
@@ -944,40 +1168,50 @@ jobs:
             git push origin 0
           fi
 
-      # ── 6. Ensure warn_log.txt exists (even if verify step was skipped) ───
+      # ── 6. Telegram notifications ─────────────────────────────────────────
+      # Collect source-verification warnings written to warn_log.txt during the
+      # pipeline step, then send a single message that bundles both warnings and
+      # the failure reason (if any) so you never get two pings for one run.
+
       - name: Collect pipeline warnings
+        # Always runs so warn_log.txt exists before the notify steps
         if: always()
         run: |
-          touch warn_log.txt
-          WARN_COUNT=$(wc -l < warn_log.txt | tr -d ' ')
-          echo "warn_log.txt has ${WARN_COUNT} line(s)"
+          # warn_log.txt is written directly by the verify step.
+          # Just ensure the file exists (zero bytes) if verify was skipped/failed.
+          if [ ! -f warn_log.txt ]; then
+            printf "" > warn_log.txt
+          fi
+          WARN_COUNT=$(grep -c '[^[:space:]]' warn_log.txt || true)
+          echo "warn_log.txt has ${WARN_COUNT} non-empty line(s)"
 
-      # ── 7. Telegram notifications ─────────────────────────────────────────
       - name: Notify Telegram — warnings only (success with warnings)
+        # Fire when the workflow succeeded but there were source warnings
         if: success()
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          WARN_COUNT=$(grep -c . warn_log.txt 2>/dev/null || echo 0)
-          if [ "${WARN_COUNT}" -eq 0 ]; then
-            echo "No warnings — skipping Telegram ping"
-            exit 0
-          fi
-
           python3 - <<'PYEOF'
           import os, urllib.request, json
 
           repo    = os.environ["GITHUB_REPOSITORY"]
           run_id  = os.environ["GITHUB_RUN_ID"]
-          token   = os.environ["TELEGRAM_BOT_TOKEN"]
-          chat_id = os.environ["TELEGRAM_CHAT_ID"]
+          token   = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+          chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
           trigger = os.environ["GITHUB_EVENT_NAME"]
           bdt     = os.popen("TZ='Asia/Dhaka' date '+%Y-%m-%d %I:%M %p %Z'").read().strip()
           url     = f"https://github.com/{repo}/actions/runs/{run_id}"
 
-          with open("warn_log.txt") as f:
-              lines = [l.strip() for l in f if l.strip()]
+          try:
+              with open("warn_log.txt") as f:
+                  lines = [l.strip() for l in f if l.strip()]
+          except FileNotFoundError:
+              lines = []
+
+          if not lines:
+              print("No warnings — skipping Telegram ping")
+              exit(0)
 
           warn_lines = "\n".join(f"  • {l}" for l in lines[:10])
           if len(lines) > 10:
@@ -1021,18 +1255,17 @@ jobs:
 
           repo    = os.environ["GITHUB_REPOSITORY"]
           run_id  = os.environ["GITHUB_RUN_ID"]
-          token   = os.environ["TELEGRAM_BOT_TOKEN"]
-          chat_id = os.environ["TELEGRAM_CHAT_ID"]
+          token   = os.environ.get("TELEGRAM_BOT_TOKEN", "")
+          chat_id = os.environ.get("TELEGRAM_CHAT_ID", "")
           trigger = os.environ["GITHUB_EVENT_NAME"]
           bdt     = os.popen("TZ='Asia/Dhaka' date '+%Y-%m-%d %I:%M %p %Z'").read().strip()
           url     = f"https://github.com/{repo}/actions/runs/{run_id}"
 
-          lines = []
           try:
               with open("warn_log.txt") as f:
                   lines = [l.strip() for l in f if l.strip()]
           except FileNotFoundError:
-              pass
+              lines = []
 
           msg_lines = [
               "❌ *Workflow Failed*",
