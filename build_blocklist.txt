@@ -6,15 +6,13 @@ https://downloads.majestic.com/majestic_million.csv
 
 [BLACKLIST_URLS]
 ######################################################################################################
-# Primary Security & Malware Lists
+# Primary Security & Malware Lists (Balanced for high security, low false-positives)
 https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.mini.txt
-https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/ultimate.mini.txt
 https://urlhaus.abuse.ch/downloads/hostfile
 https://threatfox.abuse.ch/downloads/hostfile
 https://codeberg.org/xRuffKez/tif/raw/branch/main/domains.txt
-https://codeberg.org/xRuffKez/tif/raw/branch/main/adblock.txt
 
-# Additional Tracking & Telemetry (Community Recommended)
+# Additional Tracking & Telemetry (Community Recommended & Highly Stable)
 https://small.oisd.nl/
 https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt
 https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext
@@ -37,7 +35,7 @@ hiperflixtv.net
 *.popads.net
 *.propellerads.com
 
-# Analytics & Telemetry (Aggressive)
+# Analytics & Telemetry
 *.smetrics.com
 *.quantserve.com
 
@@ -47,9 +45,5 @@ hiperflixtv.net
 *.speed-test.cloud
 *.yts.mx
 *.rarbg.to
-
-# Common Phishing/Botnet TLDs (Use with caution)
-*.zip
-*.mov
 #--------------------------------------------Domain Ends-----------------------------------------------#
 [/STATIC_BLACKLIST]
