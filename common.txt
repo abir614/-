@@ -1,10 +1,10 @@
-# Scale  — max: top 20% (>= 70)  warn: top 50% (>= 13)  basic: remaining
+# Scale  — max: top 20% (>= 74)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1595]  [MAX]
-#   amazonaws.com                            [168]  [MAX]
-#   workers.dev                              [74]  [MAX]
+#   amazonaws.com                            [169]  [MAX]
+#   workers.dev                              [75]  [MAX]
 #   pages.dev                                [74]  [MAX]
-#   yahoo.com                                [70]  [MAX]
+#   yahoo.com                                [70]  [WARN]
 #   vercel.app                               [47]  [WARN]
 #   b-cdn.net                                [45]  [WARN]
 #   apple.com                                [28]  [WARN]
@@ -611,6 +611,9 @@
 
   WL : ad.linksynergy.com [url:easylist_allowlist.txt]
   BL : ad.linksynergy.com [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : adblocker.prod-blocking.workers.dev [url:]
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : adconfigproxy.azurewebsites.net [url:filter_1.txt]
@@ -8900,6 +8903,9 @@
 
   WL : *.unpkg.com [static]  covers subdomain
   BL : v3.unpkg.com [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : v5codepmj7i5a96nb945.s3.eu-west-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : vaci-cloud.b-cdn.net [url:hostfile]
