@@ -1,10 +1,10 @@
-# Scale  — max: top 20% (>= 73)  warn: top 50% (>= 13)  basic: remaining
+# Scale  — max: top 20% (>= 70)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1595]  [MAX]
 #   amazonaws.com                            [168]  [MAX]
 #   workers.dev                              [74]  [MAX]
-#   pages.dev                                [73]  [MAX]
-#   yahoo.com                                [70]  [WARN]
+#   pages.dev                                [74]  [MAX]
+#   yahoo.com                                [70]  [MAX]
 #   vercel.app                               [47]  [WARN]
 #   b-cdn.net                                [45]  [WARN]
 #   apple.com                                [28]  [WARN]
@@ -331,6 +331,7 @@
 #   ojrq.net                                 [1]  [BASIC]
 #   cbsi.com                                 [1]  [BASIC]
 #   online-metrix.net                        [1]  [BASIC]
+#   onlinestarten.net                        [1]  [BASIC]
 #   optimizely.com                           [1]  [BASIC]
 #   optimost.com                             [1]  [BASIC]
 #   optimove.net                             [1]  [BASIC]
@@ -5694,7 +5695,7 @@
   BL : dby7kx9z9yzse.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dbyxtcim1rhba.cloudfront.net [url:filter_1.txt]
+  BL : dbyxtcim1rhba.cloudfront.net [url:]
 
   WL : *.linkedin.com [static]  covers subdomain
   BL : dc.ads.linkedin.com [url:hosts]
@@ -7151,6 +7152,9 @@
   WL : hubspotlinks.com [url:whitelist-referral.txt]
   BL : hubspotlinks.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : human-verify-second.pages.dev [url:hostfile]
+
   WL : *.akamaized.net [static]  covers subdomain
   BL : hydro-ma-proxy.akamaized.net [url:]
 
@@ -7741,6 +7745,9 @@
 
   WL : online-metrix.net [url:easyprivacy_allowlist.txt]
   BL : online-metrix.net [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
+
+  WL : onlinestarten.net [url:allowlist.txt]
+  BL : onlinestarten.net [url:filter_1.txt]
 
   WL : *.opera.com [static]  covers subdomain
   BL : op-mobile.opera.com [url:]
