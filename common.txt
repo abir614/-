@@ -1,6 +1,6 @@
 # Scale  — max: top 20% (>= 74)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1595]  [MAX]
+#   cloudfront.net                           [1596]  [MAX]
 #   amazonaws.com                            [169]  [MAX]
 #   workers.dev                              [75]  [MAX]
 #   pages.dev                                [74]  [MAX]
@@ -39,6 +39,7 @@
 #   twitch.tv                                [5]  [BASIC]
 #   redhat.com                               [5]  [BASIC]
 #   azure.com                                [5]  [BASIC]
+#   supabase.co                              [5]  [BASIC]
 #   imgur.com                                [4]  [BASIC]
 #   facebook.com                             [4]  [BASIC]
 #   amplitude.com                            [4]  [BASIC]
@@ -51,7 +52,6 @@
 #   cloudflare.com                           [4]  [BASIC]
 #   malwarebytes.com                         [4]  [BASIC]
 #   redditmedia.com                          [4]  [BASIC]
-#   supabase.co                              [4]  [BASIC]
 #   crwdcntrl.net                            [3]  [BASIC]
 #   linksynergy.com                          [3]  [BASIC]
 #   twitter.com                              [3]  [BASIC]
@@ -1901,6 +1901,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d14pdm1b7fi5kh.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d14pwugcs00a42.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d14x46ho6sn9yf.cloudfront.net [url:]
@@ -5898,6 +5901,9 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dg7k1tpeaxzcq.cloudfront.net [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : dg9ap7khcvgko20xxhta.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dg9sw33hxt5i7.cloudfront.net [url:]
 
@@ -7010,9 +7016,6 @@
 
   WL : go2jump.org [url:whitelist-referral.txt]
   BL : go2jump.org [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : gooddybucket444.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : google-analytics.com [url:allowlist.txt]
   BL : google-analytics.com [url:filter_1.txt]
@@ -9074,6 +9077,9 @@
 
   WL : wpnrtnmrewunrtok.xyz [url:allowlist.txt]
   BL : wpnrtnmrewunrtok.xyz [url:hosts]
+
+  WL : *.supabase.co [static]  covers subdomain
+  BL : wuyqsqdloxerrnbojxob.supabase.co [url:tif.mini.txt]
 
   WL : *.google.com [static]  covers subdomain
   BL : www-google-analytics.l.google.com [url:]
