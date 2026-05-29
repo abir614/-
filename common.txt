@@ -1,9 +1,9 @@
 # Scale  — max: top 20% (>= 74)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1596]  [MAX]
-#   amazonaws.com                            [169]  [MAX]
-#   workers.dev                              [75]  [MAX]
-#   pages.dev                                [74]  [MAX]
+#   cloudfront.net                           [1597]  [MAX]
+#   amazonaws.com                            [156]  [MAX]
+#   pages.dev                                [78]  [MAX]
+#   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [WARN]
 #   vercel.app                               [47]  [WARN]
 #   b-cdn.net                                [45]  [WARN]
@@ -669,6 +669,9 @@
   WL : *.x.com [static]  covers subdomain
   BL : ads-api.x.com [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ads-banner.s3.ap-south-1.amazonaws.com [url:]
+
   WL : *.twitter.com [static]  covers subdomain
   BL : ads-bidder-api.twitter.com [url:]
 
@@ -1012,9 +1015,6 @@
   BL : analyticsengine.s3.amazonaws.com [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : anc-media.s3.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : andreasmaschke.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.googleapis.com [static]  covers subdomain
@@ -1190,9 +1190,6 @@
 
   WL : *.unpkg.com [static]  covers subdomain
   BL : backup.unpkg.com [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : ballour.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : bam.nr-data.net [url:allowlist.txt]
   BL : bam.nr-data.net [url:hosts]
@@ -1370,9 +1367,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : cdn-assets.cfworkerzet.workers.dev [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : cdn-chromos.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.akamaized.net [static]  covers subdomain
   BL : cdn-ketchapp.akamaized.net [url:]
@@ -3356,6 +3350,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d28exbmwuav7xa.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d28f9mor59yq2z.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d28g1fhp6rn9w3.cloudfront.net [url:]
@@ -5844,9 +5841,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : devisprox-media.s3-website-eu-west-1.amazonaws.com [url:]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : devscout.s3.amazonaws.com [url:tif.mini.txt]
-
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dew9ckzjyt2gn.cloudfront.net [url:]
 
@@ -6011,9 +6005,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : diziwatchpreroll.pages.dev [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : django-server.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : djf9kh8xi3wrn.cloudfront.net [url:tif.mini.txt]
@@ -6843,6 +6834,15 @@
   WL : fastly-insights.com [static]
   BL : fastly-insights.com [url:filter_1.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : fb-login-acccount-center-helps-meta-verifyesz.pages.dev [url:hostfile]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : fb-login-acccount-center-helps-meta-verifyeszz.pages.dev [url:hostfile]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : fb-login-acccount-center-helps-meta-verifyx.pages.dev [url:hostfile]
+
   WL : fcd.autoads.asia [url:whitelist-referral.txt]
   BL : fcd.autoads.asia [url:hosts]
 
@@ -6932,9 +6932,6 @@
 
   WL : *.azureedge.net [static]  covers subdomain
   BL : g2insights-cdn.azureedge.net [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : gaadhi.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : ganon.yahoo.com [url:]
@@ -7097,9 +7094,6 @@
 
   WL : gsght.com [url:whitelist-referral.txt]
   BL : gsght.com [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : gtisstorage.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : gtrk.s3.amazonaws.com [url:]
@@ -7296,9 +7290,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : jscdnweb.pages.dev [url:]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : kia-almotores.s3.amazonaws.com [url:tif.mini.txt]
-
   WL : *.github.io [static]  covers subdomain
   BL : kilab-gaming.github.io [url:hostfile]
 
@@ -7335,9 +7326,6 @@
   WL : leanplum.com [url:easyprivacy_allowlist.txt]
   BL : leanplum.com [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : levar-viewer.s3.amazonaws.com [url:tif.mini.txt]
-
   WL : *.akamaized.net [static]  covers subdomain
   BL : lgforbes.akamaized.net [url:]
 
@@ -7370,9 +7358,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : little-frog-2e65.kaxij51156.workers.dev [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : live-360.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : live.primis.tech [url:easylist_allowlist.txt]
   BL : live.primis.tech [url:filter_1.txt]
@@ -7517,6 +7502,9 @@
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : mediaserver.gvcaffiliates.com.cdn.cloudflare.net [url:filter_1.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meet-google776846673678.pages.dev [url:hostfile]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : mellowads.b-cdn.net [url:hosts]
@@ -7739,9 +7727,6 @@
 
   WL : om.cbsi.com [url:whitelist.txt]
   BL : om.cbsi.com [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : omnileadzdev.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : omtrdc.net [url:allowlist.txt]
   BL : omtrdc.net [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -8038,9 +8023,6 @@
   BL : proxy-skadnetwork.apple.com [url:hosts]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : pt-pba.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : pub-algeriatenders.s3.eu-central-1.amazonaws.com [url:]
 
   WL : pubads.g.doubleclick.net [url:allowlist.txt]
@@ -8200,6 +8182,9 @@
   BL : rum.us-east-1.amazonaws.com [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : s-25nwagey.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : s-61ljuhklai.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.opera.com [static]  covers subdomain
@@ -8229,9 +8214,6 @@
   WL : *.box.com [static]  covers subdomain
   BL : sanalytics.box.com [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : say2me.s3.amazonaws.com [url:tif.mini.txt]
-
   WL : sc.omtrdc.net [url:easyprivacy_allowlist.txt]
   BL : sc.omtrdc.net [url:hosts]
 
@@ -8243,6 +8225,9 @@
 
   WL : *.opera.com [static]  covers subdomain
   BL : sdklog.tvstore.opera.com [url:hosts]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : sdqbzg43im5fri9w8x-3.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.azureedge.net [static]  covers subdomain
   BL : sdtagging.azureedge.net [url:]
@@ -8400,9 +8385,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : sprocket-ping.s3.amazonaws.com [url:]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : spyne-test.s3.amazonaws.com [url:tif.mini.txt]
-
   WL : *.microsoft.com [static]  covers subdomain
   BL : sqm.df.telemetry.microsoft.com [url:hosts]
 
@@ -8411,9 +8393,6 @@
 
   WL : *.google.com [static]  covers subdomain
   BL : ssl-google-analytics.l.google.com [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : ssl.bapiyat727.workers.dev [url:hostfile]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : ssp.gemini.yahoo.com [url:hosts]
@@ -8646,17 +8625,11 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : tessera-trace-ab.s3.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : the-mentor.s3.amazonaws.com [url:tif.mini.txt]
-
   WL : *.workers.dev [static]  covers subdomain
   BL : tiny-queen-ada8.mowal67825.workers.dev [url:hostfile]
 
   WL : *.webex.com [static]  covers subdomain
   BL : tmetrics.webex.com [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : tnegadge.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : totaladblock.com [url:allowlist.txt]
   BL : totaladblock.com [url:tif.mini.txt]
