@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 73)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1597]  [MAX]
-#   amazonaws.com                            [158]  [MAX]
+#   cloudfront.net                           [1599]  [MAX]
+#   amazonaws.com                            [165]  [MAX]
 #   pages.dev                                [77]  [MAX]
 #   workers.dev                              [73]  [MAX]
 #   yahoo.com                                [70]  [WARN]
@@ -11,6 +11,7 @@
 #   microsoft.com                            [25]  [WARN]
 #   google.com                               [19]  [WARN]
 #   amazon.com                               [14]  [WARN]
+#   cloudflare.net                           [14]  [WARN]
 #   netflix.com                              [13]  [WARN]
 #   fastly.net                               [12]  [BASIC]
 #   opera.com                                [12]  [BASIC]
@@ -28,7 +29,6 @@
 #   snapchat.com                             [7]  [BASIC]
 #   netlify.app                              [7]  [BASIC]
 #   firebaseio.com                           [7]  [BASIC]
-#   cloudflare.net                           [7]  [BASIC]
 #   trafficmanager.net                       [6]  [BASIC]
 #   amazon-adsystem.com                      [6]  [BASIC]
 #   box.com                                  [6]  [BASIC]
@@ -1131,6 +1131,9 @@
 
   WL : *.fastly.net [static]  covers subdomain
   BL : ascpqnj-oam.global.ssl.fastly.net [url:]
+
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : asia.staging.e.cool.qzz.io.cdn.cloudflare.net [url:tif.mini.txt]
 
   WL : atdmt.com [url:allowlist.txt]
   BL : atdmt.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -3608,6 +3611,9 @@
   BL : d2fuc4clr7gvcn.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2fxbo429dllho.cloudfront.net [url:filter_1.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2g2u2795e3fzw.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -5108,6 +5114,9 @@
   BL : d3oyytf0n6db9a.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3p260grk3npik.cloudfront.net [url:filter_1.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3p27nzp3rc51k.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -5734,6 +5743,9 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dczhbhtz52fpi.cloudfront.net [url:]
 
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : dd-student-dash.educationate.space.cdn.cloudflare.net [url:tif.mini.txt]
+
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dd6ym5in4ovm3.cloudfront.net [url:]
 
@@ -5814,6 +5826,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : demkc32bq01ah.cloudfront.net [url:]
+
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : demo.dev.eu.banana.epic.c01.kr.cdn.cloudflare.net [url:tif.mini.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : deprecated-custom-domains.b-cdn.net [url:filter_1.txt]
@@ -6298,6 +6313,9 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : doug1izaerwt3.cloudfront.net [url:hosts]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : downcry.s3.ap-east-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.mozilla.org [static]  covers subdomain
   BL : download-stats.mozilla.org [url:]
 
@@ -6730,6 +6748,9 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : effulgent-stroopwafel-efb9ce.netlify.app [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : eitvjpnah-23c2.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.onelogin.com [static]  covers subdomain
   BL : eloqua.onelogin.com [url:filter_1.txt]
 
@@ -7138,6 +7159,9 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : hoerenjs.b-cdn.net [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : holdings-412-wp.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
+
   WL : href.li [url:whitelist-referral.txt]
   BL : href.li [url:filter_1.txt]
 
@@ -7224,6 +7248,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : inne22tull90mse.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : instructure-api.sylu.net.cdn.cloudflare.net [url:tif.mini.txt]
 
   WL : *.wikimedia.org [static]  covers subdomain
   BL : intake-analytics.wikimedia.org [url:]
@@ -7326,6 +7353,9 @@
 
   WL : leanplum.com [url:easyprivacy_allowlist.txt]
   BL : leanplum.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : level-oasis.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.akamaized.net [static]  covers subdomain
   BL : lgforbes.akamaized.net [url:]
@@ -7966,6 +7996,9 @@
   WL : *.whatsapp.net [static]  covers subdomain
   BL : privatestats.whatsapp.net [url:]
 
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : pro.pro.pro.pro.c01.kr.cdn.cloudflare.net [url:tif.mini.txt]
+
   WL : *.workers.dev [static]  covers subdomain
   BL : probe-worker.hugebigballs87.workers.dev [url:hostfile]
 
@@ -8188,9 +8221,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : s-25nwagey.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : s-61ljuhklai.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
-
   WL : *.opera.com [static]  covers subdomain
   BL : s-adx.op-mobile.opera.com [url:filter_1.txt]
 
@@ -8212,6 +8242,9 @@
   WL : safeframe.googlesyndication.com [url:allowlist.txt]
   BL : safeframe.googlesyndication.com [url:filter_1.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : saison-api-noreply-fur11pv9kn1b-5.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.zoho.com [static]  covers subdomain
   BL : salesiq.zoho.com [url:hosts]
 
@@ -8220,6 +8253,9 @@
 
   WL : sc.omtrdc.net [url:easyprivacy_allowlist.txt]
   BL : sc.omtrdc.net [url:hosts]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : scan00265260121202602026easyclean-fr.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : scorecardresearch.com [url:allowlist.txt]
   BL : scorecardresearch.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -8320,6 +8356,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : simplicity-w.pages.dev [url:hostfile]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : sipok.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
+
   WL : siteintercept.qualtrics.com [url:allowlist.txt]
   BL : siteintercept.qualtrics.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
@@ -8349,6 +8388,9 @@
 
   WL : *.redhat.com [static]  covers subdomain
   BL : smtrcs.redhat.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : snap-quanta-agate.s3.ap-northeast-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.licdn.com [static]  covers subdomain
   BL : snap.licdn.com [url:hosts]
@@ -9030,6 +9072,12 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : white-art.neutralwild.workers.dev [url:hostfile]
+
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : whm.app.mink-monk.pro.c01.kr.cdn.cloudflare.net [url:tif.mini.txt]
+
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : whm.update.comgaming-the-best.pro.c01.kr.cdn.cloudflare.net [url:tif.mini.txt]
 
   WL : widgets.outbrain.com [url:allowlist.txt]
   BL : widgets.outbrain.com [url:]
