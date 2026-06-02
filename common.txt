@@ -1,8 +1,8 @@
 # Scale  — max: top 20% (>= 73)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1599]  [MAX]
-#   amazonaws.com                            [168]  [MAX]
-#   pages.dev                                [78]  [MAX]
+#   amazonaws.com                            [172]  [MAX]
+#   pages.dev                                [77]  [MAX]
 #   workers.dev                              [73]  [MAX]
 #   yahoo.com                                [70]  [WARN]
 #   vercel.app                               [47]  [WARN]
@@ -459,6 +459,9 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : 1wincdn.b-cdn.net [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : 1yhxpzqnpg9uhb2.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : 260120.vercel.app [url:hostfile]
 
@@ -503,9 +506,6 @@
 
   WL : *.fastly.net [static]  covers subdomain
   BL : 7q1z79gxsi.global.ssl.fastly.net [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : 8ysx3nvwmkfsycpm.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 91ep978-nmeqmxy5soii1ep7f.s3.eu-west-2.amazonaws.com [url:tif.mini.txt]
@@ -891,6 +891,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : alphaupsell.s3.ap-northeast-2.amazonaws.com [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : altair-nail.s3.ap-south-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : amajubadm.azurewebsites.net [url:hostfile]
 
@@ -1274,6 +1277,9 @@
 
   WL : bluekai.com [url:whitelist-referral.txt]
   BL : bluekai.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : bn-lift-quorum-beryl.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.apple.com [static]  covers subdomain
   BL : books-analytics-events.apple.com [url:]
@@ -7941,6 +7947,9 @@
   WL : pleisty.com [url:allowlist.txt]
   BL : pleisty.com [url:filter_1.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : plinth-brief-prism.s3.ap-northeast-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.yahoo.com [static]  covers subdomain
   BL : pn.ybp.yahoo.com [url:]
 
@@ -8403,9 +8412,6 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : soft-dns.sejilod7488888.workers.dev [url:hostfile]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : sosracismjuif2025.pages.dev [url:hostfile]
-
   WL : sp-trk.com [url:whitelist-referral.txt]
   BL : sp-trk.com [url:filter_1.txt]
 
@@ -8504,6 +8510,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : still-sound-5eea.utkulukkar1982.workers.dev [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : stitch-pb-helm-lyric.s3.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.firebaseio.com [static]  covers subdomain
   BL : stockbook-ads.firebaseio.com [url:]
