@@ -1,9 +1,9 @@
-# Scale  — max: top 20% (>= 72)  warn: top 50% (>= 13)  basic: remaining
+# Scale  — max: top 20% (>= 71)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1599]  [MAX]
-#   amazonaws.com                            [171]  [MAX]
+#   amazonaws.com                            [181]  [MAX]
 #   pages.dev                                [77]  [MAX]
-#   workers.dev                              [72]  [MAX]
+#   workers.dev                              [71]  [MAX]
 #   yahoo.com                                [70]  [WARN]
 #   vercel.app                               [47]  [WARN]
 #   b-cdn.net                                [45]  [WARN]
@@ -39,7 +39,6 @@
 #   twitch.tv                                [5]  [BASIC]
 #   redhat.com                               [5]  [BASIC]
 #   azure.com                                [5]  [BASIC]
-#   supabase.co                              [5]  [BASIC]
 #   imgur.com                                [4]  [BASIC]
 #   facebook.com                             [4]  [BASIC]
 #   amplitude.com                            [4]  [BASIC]
@@ -52,6 +51,7 @@
 #   cloudflare.com                           [4]  [BASIC]
 #   malwarebytes.com                         [4]  [BASIC]
 #   redditmedia.com                          [4]  [BASIC]
+#   supabase.co                              [4]  [BASIC]
 #   crwdcntrl.net                            [3]  [BASIC]
 #   linksynergy.com                          [3]  [BASIC]
 #   twitter.com                              [3]  [BASIC]
@@ -459,6 +459,9 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : 1wincdn.b-cdn.net [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : 244eac011af63a9080fb074ee.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : 260120.vercel.app [url:hostfile]
 
@@ -499,10 +502,16 @@
   BL : 74.45.23.34.bc.googleusercontent.com [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : 760-wm-xenon-temper.s3.eu-west-2.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : 7ng6v3lu3c.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
 
   WL : *.fastly.net [static]  covers subdomain
   BL : 7q1z79gxsi.global.ssl.fastly.net [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : 829d-vexel-chisel-fuse-hm.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 91ep978-nmeqmxy5soii1ep7f.s3.eu-west-2.amazonaws.com [url:tif.mini.txt]
@@ -5829,6 +5838,9 @@
   WL : *.cloudflare.net [static]  covers subdomain
   BL : demo.dev.eu.banana.epic.c01.kr.cdn.cloudflare.net [url:tif.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : dent-cirrus.s3.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
+
   WL : *.b-cdn.net [static]  covers subdomain
   BL : deprecated-custom-domains.b-cdn.net [url:filter_1.txt]
 
@@ -6756,6 +6768,9 @@
   WL : *.onelogin.com [static]  covers subdomain
   BL : eloqua.onelogin.com [url:filter_1.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : em-patch-thin-blade.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.substack.com [static]  covers subdomain
   BL : email.mg1.substack.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
@@ -6837,11 +6852,20 @@
   WL : evyy.net [url:whitelist-referral.txt]
   BL : evyy.net [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : exam-board-for-all.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
+
   WL : exoclick.com [url:allowlist.txt]
   BL : exoclick.com [url:]
 
   WL : exponential.com [url:easylist_allowlist.txt]
   BL : exponential.com [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : expressway-admin.s3.ap-northeast-2.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : expressway-toll-payment.s3.ap-northeast-2.amazonaws.com [url:tif.mini.txt]
 
   WL : f-tra.com [url:allowlist.txt]
   BL : f-tra.com [url:filter_1.txt]
@@ -7020,6 +7044,9 @@
   WL : *.yahoo.com [static]  covers subdomain
   BL : global.adserver.yahoo.com [url:hosts]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : gn-winch-wisteria-cloak.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
+
   WL : go-mpulse.net [url:easyprivacy_allowlist.txt]
   BL : go-mpulse.net [url:filter_1.txt]
 
@@ -7136,6 +7163,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : hb8uu38hbx872bv28dbh29.pages.dev [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : health-management-checkup-list.s3.ap-northeast-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : heartbeat-pearl.vercel.app [url:]
@@ -8226,9 +8256,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : rum.us-east-1.amazonaws.com [url:]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : s-25nwagey.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
-
   WL : *.opera.com [static]  covers subdomain
   BL : s-adx.op-mobile.opera.com [url:filter_1.txt]
 
@@ -8357,6 +8384,9 @@
 
   WL : sharethis.com [url:allowlist.txt]
   BL : sharethis.com [url:hosts]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : shellcloud12.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : shiny-darkness-5096.hrmcxaeel.workers.dev [url:hostfile]
@@ -8675,9 +8705,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : tessera-trace-ab.s3.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : tiny-queen-ada8.mowal67825.workers.dev [url:hostfile]
 
   WL : *.webex.com [static]  covers subdomain
   BL : tmetrics.webex.com [url:filter_1.txt]
@@ -9113,9 +9140,6 @@
 
   WL : wpnrtnmrewunrtok.xyz [url:allowlist.txt]
   BL : wpnrtnmrewunrtok.xyz [url:hosts]
-
-  WL : *.supabase.co [static]  covers subdomain
-  BL : wuyqsqdloxerrnbojxob.supabase.co [url:tif.mini.txt]
 
   WL : *.google.com [static]  covers subdomain
   BL : www-google-analytics.l.google.com [url:]
