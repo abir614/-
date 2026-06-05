@@ -69,6 +69,7 @@
 #   mailchimp.com                            [3]  [BASIC]
 #   googleadservices.com                     [3]  [BASIC]
 #   googlesyndication.com                    [3]  [BASIC]
+#   webex.com                                [3]  [BASIC]
 #   adform.net                               [2]  [BASIC]
 #   atdmt.com                                [2]  [BASIC]
 #   conde.digital                            [2]  [BASIC]
@@ -111,7 +112,6 @@
 #   wargaming.net                            [2]  [BASIC]
 #   wordpress.com                            [2]  [BASIC]
 #   co.uk                                    [2]  [BASIC]
-#   webex.com                                [2]  [BASIC]
 #   webgains.com                             [2]  [BASIC]
 #   fbcdn.net                                [2]  [BASIC]
 #   2o7.net                                  [1]  [BASIC]
@@ -512,9 +512,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 829d-vexel-chisel-fuse-hm.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : 91ep978-nmeqmxy5soii1ep7f.s3.eu-west-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 9w2zed1szg.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
@@ -7323,6 +7320,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : j0v36abmdj.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : j9z49v9ypsvaud3evc9n.s3.eu-central-2.amazonaws.com [url:tif.mini.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : javsenpai.pages.dev [url:hostfile]
 
@@ -8031,6 +8031,9 @@
   WL : prf.hn [url:whitelist-referral.txt]
   BL : prf.hn [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : prime-4s-fulcrum.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
+
   WL : *.whatsapp.net [static]  covers subdomain
   BL : privatestats.whatsapp.net [url:]
 
@@ -8384,9 +8387,6 @@
 
   WL : sharethis.com [url:allowlist.txt]
   BL : sharethis.com [url:hosts]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : shellcloud12.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : shiny-darkness-5096.hrmcxaeel.workers.dev [url:hostfile]
@@ -8846,6 +8846,9 @@
 
   WL : *.opera.com [static]  covers subdomain
   BL : try.opera.com [url:]
+
+  WL : *.webex.com [static]  covers subdomain
+  BL : tsa.webex.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.nvidia.com [static]  covers subdomain
   BL : tt.nvidia.com [url:filter_1.txt]
