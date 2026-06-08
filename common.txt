@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 73)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1600]  [MAX]
-#   amazonaws.com                            [185]  [MAX]
+#   cloudfront.net                           [1598]  [MAX]
+#   amazonaws.com                            [184]  [MAX]
 #   pages.dev                                [77]  [MAX]
 #   workers.dev                              [73]  [MAX]
 #   yahoo.com                                [70]  [WARN]
@@ -90,7 +90,6 @@
 #   petametrics.com                          [2]  [BASIC]
 #   polarbyte.com                            [2]  [BASIC]
 #   tagcommander.com                         [2]  [BASIC]
-#   nhs.uk                                   [2]  [BASIC]
 #   sitescout.com                            [2]  [BASIC]
 #   github.com                               [2]  [BASIC]
 #   conviva.com                              [2]  [BASIC]
@@ -210,6 +209,7 @@
 #   coinadster.com                           [1]  [BASIC]
 #   commander1.com                           [1]  [BASIC]
 #   commission-junction.com                  [1]  [BASIC]
+#   nhs.uk                                   [1]  [BASIC]
 #   connatix.com                             [1]  [BASIC]
 #   telstrawholesale.com                     [1]  [BASIC]
 #   contactmonkey.com                        [1]  [BASIC]
@@ -488,6 +488,9 @@
 
   WL : *.trafficmanager.net [static]  covers subdomain
   BL : 51tongji.trafficmanager.net [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : 571-ac-eucalyptus-kindle.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 5z8xi2rj04jyh302fd.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
@@ -1421,9 +1424,6 @@
 
   WL : ch0p.darty.com [url:whitelist-referral.txt]
   BL : ch0p.darty.com [url:filter_1.txt]
-
-  WL : *.nhs.uk [static]  covers subdomain
-  BL : change-your-address.account.nhs.uk [url:tif.mini.txt]
 
   WL : *.firebaseio.com [static]  covers subdomain
   BL : chh1-ac0a3-default-rtdb.firebaseio.com [url:hostfile]
@@ -3874,9 +3874,6 @@
   BL : d2n5v45616cm6u.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2n9osbflux4k6.cloudfront.net [url:tif.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2na2p72vtqyok.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -5986,9 +5983,6 @@
   BL : di2xwvxz1jrvu.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : di6y7cb0tkbww.cloudfront.net [url:tif.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
   BL : dic9vgwbkxd8r.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -6800,9 +6794,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : entrecard.s3.amazonaws.com [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : epibucketdata.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.europa.eu [static]  covers subdomain
   BL : epwa.europarl.europa.eu [url:filter_1.txt]
@@ -8045,9 +8036,6 @@
 
   WL : *.nvidia.com [static]  covers subdomain
   BL : prod.otel.kaizen.nvidia.com [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : production-gb-vjson.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : profitshare.ro [url:whitelist-referral.txt]
   BL : profitshare.ro [url:filter_1.txt]
