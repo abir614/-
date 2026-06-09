@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 73)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1598]  [MAX]
-#   amazonaws.com                            [184]  [MAX]
+#   amazonaws.com                            [180]  [MAX]
 #   pages.dev                                [77]  [MAX]
 #   workers.dev                              [73]  [MAX]
 #   yahoo.com                                [70]  [WARN]
@@ -15,9 +15,9 @@
 #   fastly.net                               [12]  [BASIC]
 #   opera.com                                [12]  [BASIC]
 #   googleapis.com                           [11]  [BASIC]
-#   azurewebsites.net                        [11]  [BASIC]
 #   spotify.com                              [11]  [BASIC]
 #   akamaized.net                            [11]  [BASIC]
+#   azurewebsites.net                        [10]  [BASIC]
 #   reddit.com                               [10]  [BASIC]
 #   paypal.com                               [9]  [BASIC]
 #   unpkg.com                                [9]  [BASIC]
@@ -6718,28 +6718,13 @@
   BL : eacdn.com [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : ec2-13-127-179-170.ap-south-1.compute.amazonaws.com [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : ec2-13-233-119-235.ap-south-1.compute.amazonaws.com [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ec2-18-208-244-120.compute-1.amazonaws.com [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : ec2-44-221-166-160.compute-1.amazonaws.com [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : ec2-44-233-143-239.us-west-2.compute.amazonaws.com [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : ec2-44-233-42-62.us-west-2.compute.amazonaws.com [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : ec2-44-242-17-237.us-west-2.compute.amazonaws.com [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : ec2-52-37-0-89.us-west-2.compute.amazonaws.com [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ec2-54-208-233-16.compute-1.amazonaws.com [url:tif.mini.txt]
@@ -6761,6 +6746,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : em-patch-thin-blade.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : email-ionos-mx-portal-appsuite-app-mailbox.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.substack.com [static]  covers subdomain
   BL : email.mg1.substack.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -6791,6 +6779,9 @@
 
   WL : ensighten.com [url:easyprivacy_allowlist.txt]
   BL : ensighten.com [url:filter_1.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : enterprise1.pages.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : entrecard.s3.amazonaws.com [url:]
@@ -7632,9 +7623,6 @@
   WL : monitor.fraudblocker.com [url:whitelist-referral.txt]
   BL : monitor.fraudblocker.com [url:filter_1.txt]
 
-  WL : *.azurewebsites.net [static]  covers subdomain
-  BL : montirid.azurewebsites.net [url:hostfile]
-
   WL : *.imgur.com [static]  covers subdomain
   BL : mp.imgur.com [url:]
 
@@ -7982,9 +7970,6 @@
 
   WL : polarbyte.com [url:allowlist.txt]
   BL : polarbyte.com [url:hosts]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : pop-ad.pages.dev [url:filter_1.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : popcashjs.b-cdn.net [url:]
