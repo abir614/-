@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 73)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1598]  [MAX]
-#   amazonaws.com                            [180]  [MAX]
+#   amazonaws.com                            [182]  [MAX]
 #   pages.dev                                [77]  [MAX]
 #   workers.dev                              [73]  [MAX]
 #   yahoo.com                                [70]  [WARN]
@@ -8178,11 +8178,17 @@
   WL : referrer.disqus.com [url:whitelist-referral.txt]
   BL : referrer.disqus.com [url:filter_1.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : refinedland.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.google.com [static]  covers subdomain
   BL : region1.analytics.google.com [url:hosts]
 
   WL : *.redhat.com [static]  covers subdomain
   BL : register.redhat.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : relay-brief-cube.s3.ap-south-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : removeads.workers.dev [url:]
