@@ -602,18 +602,12 @@ jobs:
           # This runs in a single O(n) pass by checking each domain's
           # ancestor chain against the full set (set lookups = O(1)).
           # ════════════════════════════════════════════════════════════
-          def wildcard_dedup(domain_set: set, label: str,
-                             protected: set = None) -> set:
+          def wildcard_dedup(domain_set: set, label: str) -> set:
               """Remove any domain whose ancestor already exists in the set.
-              Entries in `protected` are never removed regardless of ancestors.
               Logs removed examples so redundancy is visible in CI output."""
-              _protected = protected or set()
               before = len(domain_set)
               kept, removed_examples = set(), []
               for d in domain_set:
-                  if d in _protected:
-                      kept.add(d)
-                      continue
                   covering = next((a for a in ancestors(d) if a in domain_set), None)
                   if covering:
                       if len(removed_examples) < 10:
@@ -718,9 +712,8 @@ jobs:
                 f" = {len(combined_wl) + len(wl_wildcards):,} total")
 
           print("\n  Loading static blacklist...")
-          static_bl_exact, static_bl_wildcards = parse_domains_split(st_bl_blk, "Static blacklist")
-          static_bl: set = static_bl_exact | static_bl_wildcards  # combined for membership tests
-          print(f"  Static blacklist  : {len(static_bl_exact):,} exact + {len(static_bl_wildcards):,} wildcard")
+          static_bl: set = parse_domains(st_bl_blk, "Static blacklist")
+          print(f"  Static blacklist  : {len(static_bl):,} domains")
           # Tag static BL entries in the source map (don't overwrite URL-sourced labels)
           for d in static_bl:
               bl_src_map.setdefault(d, "static")
@@ -858,31 +851,18 @@ jobs:
           exact_out:    set = set()
           dropped:      dict = {}   # domain → reason string
 
-          # Pre-seed static BL entries with their original intent preserved.
-          # Static wildcard entries (*.somedomain.any) go straight to wildcard_out;
-          # static exact entries (somedomain.any) go straight to exact_out.
-          # Neither is subject to Rule A (drop) or Rule C (wildcard promotion) below.
-          for d in static_bl_wildcards:
-              wildcard_out.add(d)
-          for d in static_bl_exact:
-              exact_out.add(d)
-
           for d in all_domains:
               in_static_bl = d in static_bl
 
-              # Static entries were already seeded above — skip re-processing them.
-              if in_static_bl:
-                  continue
-
               # Rule A — domain itself is whitelisted (exact or wildcard-covered)
-              if is_wl_covered(d, combined_wl, wl_wildcards):
+              if not in_static_bl and is_wl_covered(d, combined_wl, wl_wildcards):
                   reason = "wildcard-WL" if (d not in combined_wl) else "exact-WL"
                   dropped[d] = reason
                   continue
 
               # Rule B (formerly C) — D has a whitelisted descendant → downgrade to exact
               # (wildcard *.D would catch that safe descendant too)
-              if d in wl_ancestor_map:
+              if d in wl_ancestor_map and not in_static_bl:
                   exact_out.add(d)
                   continue
 
