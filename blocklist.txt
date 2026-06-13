@@ -1,8 +1,8 @@
 # ============================================================
 # Combined Blocklist
 # ============================================================
-# Generated  : 2026-06-13 09:57 UTC+6
-# Sources    : 8 blacklist URL(s) + 3896 static entries
+# Generated  : 2026-06-13 10:24 UTC+6
+# Sources    : 8 blacklist URL(s) + 3897 static entries
 # FP-filter  : Explicit whitelist only (static + URL-sourced).
 #              Tranco/Umbrella/Majestic are LOGGED, NOT auto-removed.
 #              STATIC_BLACKLIST entries bypass ALL filters.
@@ -22,12 +22,12 @@
 #   (Wildcard *.evil.com would catch good.evil.com too).
 # ============================================================
 # Stats
-#   Raw domains (all sources)  : 278,405
+#   Raw domains (all sources)  : 278,408
 #   Dropped by whitelist        : 292
-#   Wildcard entries (*.d)      : 274,073
-#   Exact entries (d only)      : 157
-#   Total output entries        : 274,230
-#   Notable (pop. lists, kept)  : 76,793
+#   Wildcard entries (*.d)      : 274,075
+#   Exact entries (d only)      : 158
+#   Total output entries        : 274,233
+#   Notable (pop. lists, kept)  : 76,792
 # ============================================================
 # Blacklist URL sources:
 #   https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/pro.plus.mini.txt
@@ -38,7 +38,7 @@
 #   https://adguardteam.github.io/HostlistsRegistry/assets/filter_1.txt
 #   https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext
 #   https://cdn.jsdelivr.net/gh/bigdargon/hostsVN@latest/hosts
-# Static blacklist entries : 3896
+# Static blacklist entries : 3897
 # ============================================================
 # DO NOT EDIT — regenerated automatically on every workflow run.
 # To make changes, edit build_blocklist.txt instead.
@@ -4588,6 +4588,7 @@
 *.2i7bgqa2.bi8otz1on.ru
 *.2i87bpcbf.de
 *.2idvzxbwvzbxhuniw7kfaimcvtqazmn7nmuw7codg65cshwwsvnpz7id.onion
+*.2igj4kg6.shartbandifootballkade.online
 *.2ihjjahguz.data.adobedc.net
 *.2iiyrxk0.com
 *.2imon4qar.de
@@ -14754,6 +14755,7 @@
 *.9ff1a25009.com
 *.9flash.com
 *.9flq9e2q5bgjn5u9m2.cfd
+*.9fmgmj87.garatequran.xyz
 *.9fum.ifeng.com
 *.9fvaco8b.t0rchbasil.ru
 *.9fzkfyhbtr.localto.net
@@ -15415,7 +15417,6 @@
 *.a0952372725d.site
 *.a098607063c30903.top
 *.a09861247b.com
-*.a0a.hi8hmu1berry.ru
 *.a0ay5.top
 *.a0b5779711.com
 *.a0be2a7d71.b3bdc7e743.com
@@ -85439,6 +85440,7 @@
 *.ezra-il.com
 *.ezrcd.uniforms4healthcare.com
 *.ezrqqa.gocar.be
+*.ezrzb.downloadquran.xyz
 *.ezsbhlpchu.com
 *.ezsjmzeb.com
 *.ezsjpjbsyiyhx.com
@@ -105640,7 +105642,6 @@
 *.h80sb.top
 *.h80uv.top
 *.h80zj.top
-*.h819.hi8hmu1berry.ru
 *.h81jf.top
 *.h81jr.top
 *.h81jt.top
@@ -109508,7 +109509,6 @@
 *.horizon-united-cherry.com
 *.horizon.believein41fant.coupons
 *.horizon.globo.com
-*.horizon.nvms9000updates.su
 *.horizon.plon6var1ty.ru
 *.horizoncresttech.com
 *.horizoneurope.ukri.org
@@ -161323,6 +161323,7 @@
 *.nwk.munsitex.com.lk
 *.nwk.skjeelancipla.com.lk
 *.nwkcdv.pandapiac.hu
+*.nwklhlmm.hugugmadani6.xyz
 *.nwlnml.megaknihy.sk
 *.nwlogtgbemzts.site
 *.nwlwuftczocnqh.com
@@ -161372,7 +161373,6 @@
 *.nwzjbkoxktjuk.site
 *.nwzutgomlrtdv.website
 *.nwzvnahvynvik.online
-*.nx.hi8hmu1berry.ru
 *.nx.nav.com
 *.nx.nxtmarts.com
 *.nx1.thekanaa.com
@@ -167142,6 +167142,7 @@
 *.p4jx.top
 *.p4l3fctz.bitter-salty.digital
 *.p4p.sina.com.cn
+*.p4pav6zh.garatequran.xyz
 *.p4r24.eu
 *.p4rce9-loop.raxmi8vel.in.net
 *.p4rcel-grid.bejont.in.net
@@ -258580,6 +258581,7 @@
 *.wgsaralfncvvb.online
 *.wgscgs.worldsgreatestshave.com
 *.wgtn.cc
+*.wgtpfakz.akhlagvaahkam.xyz
 *.wgtsvv.store-direct.fr
 *.wgtyvqbfkxg.com
 *.wgvmzdmasfoyu.store
@@ -274229,6 +274231,7 @@ nexinsight.com.ua
 niwepa.com
 nr-data.net
 nrich.ai
+nvms9000updates.su
 omgt3.com
 omguk.com
 onthe.io
