@@ -602,12 +602,18 @@ jobs:
           # This runs in a single O(n) pass by checking each domain's
           # ancestor chain against the full set (set lookups = O(1)).
           # ════════════════════════════════════════════════════════════
-          def wildcard_dedup(domain_set: set, label: str) -> set:
+          def wildcard_dedup(domain_set: set, label: str,
+                             protected: set = None) -> set:
               """Remove any domain whose ancestor already exists in the set.
+              Entries in `protected` are never removed regardless of ancestors.
               Logs removed examples so redundancy is visible in CI output."""
+              _protected = protected or set()
               before = len(domain_set)
               kept, removed_examples = set(), []
               for d in domain_set:
+                  if d in _protected:
+                      kept.add(d)
+                      continue
                   covering = next((a for a in ancestors(d) if a in domain_set), None)
                   if covering:
                       if len(removed_examples) < 10:
