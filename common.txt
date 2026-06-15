@@ -1,25 +1,25 @@
-# Scale  — max: top 20% (>= 83)  warn: top 50% (>= 29)  basic: remaining
+# Scale  — max: top 20% (>= 81)  warn: top 50% (>= 31)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1700]  [MAX]
-#   fbcdn.net                                [412]  [MAX]
-#   amazonaws.com                            [397]  [MAX]
-#   yahoo.com                                [91]  [MAX]
+#   cloudfront.net                           [1696]  [MAX]
+#   fbcdn.net                                [421]  [MAX]
+#   amazonaws.com                            [399]  [MAX]
+#   yahoo.com                                [92]  [MAX]
 #   pages.dev                                [85]  [MAX]
-#   cloudflare.net                           [85]  [MAX]
-#   workers.dev                              [83]  [MAX]
+#   workers.dev                              [82]  [MAX]
+#   cloudflare.net                           [81]  [MAX]
 #   microsoft.com                            [76]  [WARN]
 #   vercel.app                               [70]  [WARN]
-#   live.com                                 [62]  [WARN]
-#   b-cdn.net                                [60]  [WARN]
-#   trafficmanager.net                       [60]  [WARN]
-#   edgesuite.net                            [53]  [WARN]
-#   azure.com                                [42]  [WARN]
+#   trafficmanager.net                       [63]  [WARN]
+#   b-cdn.net                                [61]  [WARN]
+#   edgesuite.net                            [55]  [WARN]
+#   live.com                                 [50]  [WARN]
+#   azure.com                                [43]  [WARN]
 #   google.com                               [39]  [WARN]
-#   azurewebsites.net                        [36]  [WARN]
 #   apple.com                                [36]  [WARN]
-#   googleapis.com                           [33]  [WARN]
-#   amazon.com                               [32]  [WARN]
-#   akamaized.net                            [29]  [WARN]
+#   azurewebsites.net                        [35]  [WARN]
+#   googleapis.com                           [31]  [WARN]
+#   amazon.com                               [30]  [BASIC]
+#   akamaized.net                            [30]  [BASIC]
 #   azureedge.net                            [19]  [BASIC]
 #   fastly.net                               [18]  [BASIC]
 #   linkedin.com                             [18]  [BASIC]
@@ -30,34 +30,34 @@
 #   nvidia.com                               [13]  [BASIC]
 #   reddit.com                               [12]  [BASIC]
 #   wikimedia.org                            [12]  [BASIC]
+#   brave.com                                [10]  [BASIC]
 #   mozilla.org                              [10]  [BASIC]
 #   paypal.com                               [10]  [BASIC]
-#   brave.com                                [9]  [BASIC]
 #   azurefd.net                              [9]  [BASIC]
 #   europa.eu                                [9]  [BASIC]
 #   unpkg.com                                [9]  [BASIC]
+#   firebaseio.com                           [9]  [BASIC]
 #   facebook.com                             [8]  [BASIC]
 #   snapchat.com                             [8]  [BASIC]
 #   redhat.com                               [8]  [BASIC]
 #   zoho.com                                 [8]  [BASIC]
-#   railway.app                              [8]  [BASIC]
-#   firebaseio.com                           [8]  [BASIC]
 #   bing.com                                 [7]  [BASIC]
 #   doubleclick.net                          [7]  [BASIC]
 #   twitter.com                              [7]  [BASIC]
+#   railway.app                              [7]  [BASIC]
 #   cloudflare.com                           [7]  [BASIC]
-#   webex.com                                [7]  [BASIC]
 #   amazon-adsystem.com                      [6]  [BASIC]
+#   omtrdc.net                               [6]  [BASIC]
 #   atlassian.com                            [6]  [BASIC]
 #   box.com                                  [6]  [BASIC]
 #   dropbox.com                              [6]  [BASIC]
 #   zoom.us                                  [6]  [BASIC]
 #   github.io                                [6]  [BASIC]
+#   webex.com                                [6]  [BASIC]
 #   fbsbx.com                                [6]  [BASIC]
 #   x.com                                    [5]  [BASIC]
 #   mattel163.com                            [5]  [BASIC]
 #   twitch.tv                                [5]  [BASIC]
-#   omtrdc.net                               [5]  [BASIC]
 #   mailchimp.com                            [5]  [BASIC]
 #   apple-dns.net                            [5]  [BASIC]
 #   malwarebytes.com                         [5]  [BASIC]
@@ -129,7 +129,6 @@
 #   globalsign.com                           [2]  [BASIC]
 #   disqus.com                               [2]  [BASIC]
 #   mozilla.net                              [2]  [BASIC]
-#   docker.com                               [2]  [BASIC]
 #   line.me                                  [2]  [BASIC]
 #   outbrain.com                             [2]  [BASIC]
 #   wp.com                                   [2]  [BASIC]
@@ -411,6 +410,7 @@
 #   segmentify.com                           [1]  [BASIC]
 #   matrix.org                               [1]  [BASIC]
 #   nrich.ai                                 [1]  [BASIC]
+#   docker.com                               [1]  [BASIC]
 #   adyen.com                                [1]  [BASIC]
 #   shareasale-analytics.com                 [1]  [BASIC]
 #   shareasale.com                           [1]  [BASIC]
@@ -425,6 +425,7 @@
 #   viously.com                              [1]  [BASIC]
 #   sp-trk.com                               [1]  [BASIC]
 #   2checkout.com                            [1]  [BASIC]
+#   un.org                                   [1]  [BASIC]
 #   ads-twitter.com                          [1]  [BASIC]
 #   parsely.com                              [1]  [BASIC]
 #   hey.com                                  [1]  [BASIC]
@@ -650,6 +651,9 @@
   BL : ad-instantpage.tiktokv.us.edgesuite.net [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : ad-interactions-prod-lb-10-2060687827.ap-south-1.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : ad-interactions-prod-lb-1098649440.eu-central-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -665,10 +669,37 @@
   BL : ad-interactions-prod-lb-1606894468.us-east-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : ad-interactions-prod-lb-2-493934652.ap-south-1.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ad-interactions-prod-lb-3-676417269.ap-south-1.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ad-interactions-prod-lb-335339883.ap-south-1.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ad-interactions-prod-lb-4-969060157.ap-south-1.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ad-interactions-prod-lb-5-767829407.ap-south-1.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ad-interactions-prod-lb-6-1189850172.ap-south-1.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ad-interactions-prod-lb-7-457706752.ap-south-1.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : ad-interactions-prod-lb-773417274.us-east-2.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ad-interactions-prod-lb-799516835.ap-southeast-2.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ad-interactions-prod-lb-8-576600591.ap-south-1.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ad-interactions-prod-lb-9-669216920.ap-south-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : ad-maven.com [url:allowlist.txt]
   BL : ad-maven.com [url:pro.plus.mini.txt]
@@ -785,7 +816,7 @@
   BL : adncdnend.azureedge.net [url:pro.plus.mini.txt]
 
   WL : *.auth0.com [static]  covers subdomain
-  BL : adobemetrics.auth0.com [url:pro.plus.mini.txt]
+  BL : adobemetrics.auth0.com [url:filter_1.txt]
 
   WL : *.okta.com [static]  covers subdomain
   BL : adobemetrics.okta.com [url:pro.plus.mini.txt]
@@ -826,6 +857,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ads-banner.s3.ap-south-1.amazonaws.com [url:pro.plus.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ads-banners.s3.us-east-2.amazonaws.com [url:pro.plus.mini.txt]
+
   WL : *.twitter.com [static]  covers subdomain
   BL : ads-bidder-api.twitter.com [url:]
 
@@ -842,13 +876,7 @@
   BL : ads-inmobi-comtm.trafficmanager.net [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : ads-meta-logo.s3.amazonaws.com [url:pro.plus.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : ads-mspremium-io-1878973238.us-east-1.elb.amazonaws.com [url:pro.plus.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : ads-prod-narrowcasting.s3.us-west-2.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ads-production-public.s3.amazonaws.com [url:pro.plus.mini.txt]
@@ -873,9 +901,6 @@
 
   WL : *.edgesuite.net [static]  covers subdomain
   BL : ads.adctv.com.edgesuite.net [url:pro.plus.mini.txt]
-
-  WL : *.amazon.com [static]  covers subdomain
-  BL : ads.amazon.com [url:pro.plus.mini.txt]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : ads.auctions.yahoo.com [url:]
@@ -1261,6 +1286,9 @@
   WL : *.fastly.net [static]  covers subdomain
   BL : amplitude.map.fastly.net [url:pro.plus.mini.txt]
 
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : amplitude.thepure.app.cdn.cloudflare.net [url:pro.plus.mini.txt]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ams-pageview-public.s3.amazonaws.com [url:pro.plus.mini.txt]
 
@@ -1336,6 +1364,12 @@
   WL : *.atlassian.net [static]  covers subdomain
   BL : analytics-docs.atlassian.net [url:pro.plus.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : analytics-gameservices-prod-403338407028.s3.us-west-2.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.trafficmanager.net [static]  covers subdomain
+  BL : analytics-gateway-fallguys.trafficmanager.net [url:pro.plus.mini.txt]
+
   WL : *.azurefd.net [static]  covers subdomain
   BL : analytics-gvgjgjd0b6bjekfj.z01.azurefd.net [url:pro.plus.mini.txt]
 
@@ -1361,13 +1395,13 @@
   BL : analytics-router-872826384.us-east-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : analytics-santander-co-uk-378667789.eu-west-1.elb.amazonaws.com [url:pro.plus.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : analytics-service-prod-698719594.us-east-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : analytics-tracker.thescore.com.cdn.cloudflare.net [url:pro.plus.mini.txt]
+
+  WL : *.edgesuite.net [static]  covers subdomain
+  BL : analytics-ttp2.tiktokw.eu.edgesuite.net [url:pro.plus.mini.txt]
 
   WL : *.edgesuite.net [static]  covers subdomain
   BL : analytics-ttp2.us.tiktok.com.edgesuite.net [url:pro.plus.mini.txt]
@@ -1411,20 +1445,11 @@
   WL : *.brave.com [static]  covers subdomain
   BL : analytics.brave.com [url:pro.plus.mini.txt]
 
-  WL : *.cloudflare.net [static]  covers subdomain
-  BL : analytics.cambiumast.com.cdn.cloudflare.net [url:pro.plus.mini.txt]
-
   WL : *.redhat.com [static]  covers subdomain
   BL : analytics.console.redhat.com [url:pro.plus.mini.txt]
 
-  WL : *.cloudflare.net [static]  covers subdomain
-  BL : analytics.credible.com.cdn.cloudflare.net [url:pro.plus.mini.txt]
-
   WL : *.azure.com [static]  covers subdomain
   BL : analytics.dev.azure.com [url:pro.plus.mini.txt]
-
-  WL : *.cloudflare.net [static]  covers subdomain
-  BL : analytics.efa.michigan.gov.cdn.cloudflare.net [url:pro.plus.mini.txt]
 
   WL : *.europa.eu [static]  covers subdomain
   BL : analytics.efsa.europa.eu [url:pro.plus.mini.txt]
@@ -1479,9 +1504,6 @@
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : analytics.query.yahoo.com [url:pro.plus.mini.txt]
-
-  WL : *.cloudflare.net [static]  covers subdomain
-  BL : analytics.qumucloud.com.cdn.cloudflare.net [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : analytics.s3.amazonaws.com [url:]
@@ -1825,9 +1847,6 @@
   WL : *.cloudflare.net [static]  covers subdomain
   BL : au12-tracker.inside-graph.com.cdn.cloudflare.net [url:pro.plus.mini.txt]
 
-  WL : *.live.com [static]  covers subdomain
-  BL : auc-visio-telemetry.officeapps.live.com [url:pro.plus.mini.txt]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : audiencelab-sdk-backend-1051822917.eu-central-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
@@ -1849,9 +1868,6 @@
   WL : awin1.com [url:allowlist.txt]
   BL : awin1.com [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : aws-serverless-tools-telemetry.us-west-2.amazonaws.com [url:pro.plus.mini.txt]
-
   WL : awstrack.me [url:whitelist-referral.txt]
   BL : awstrack.me [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
@@ -1863,6 +1879,9 @@
 
   WL : *.paypal.com [static]  covers subdomain
   BL : b.stats.paypal.com [url:hosts]
+
+  WL : *.azure.com [static]  covers subdomain
+  BL : b5e38edc-3042-4118-ad09-617ed576a886.ods.opinsights.azure.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : babes-mansion.s3.amazonaws.com [url:]
@@ -1900,9 +1919,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : bannersweb.s3.amazonaws.com [url:]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : banno-sentry-production.s3.amazonaws.com [url:pro.plus.mini.txt]
-
   WL : *.bing.com [static]  covers subdomain
   BL : bat.bing.com [url:pro.plus.mini.txt]
 
@@ -1926,6 +1942,9 @@
 
   WL : *.dropbox.com [static]  covers subdomain
   BL : beacon.dropbox.com [url:pro.plus.mini.txt]
+
+  WL : *.yahoo.com [static]  covers subdomain
+  BL : beacon.fantasysports.yahoo.com [url:pro.plus.mini.txt]
 
   WL : *.mailchimp.com [static]  covers subdomain
   BL : beacon.mailchimp.com [url:pro.plus.mini.txt]
@@ -2002,9 +2021,6 @@
   WL : *.microsoft.com [static]  covers subdomain
   BL : bingads.microsoft.com [url:pro.plus.mini.txt]
 
-  WL : *.trafficmanager.net [static]  covers subdomain
-  BL : bingads.trafficmanager.net [url:pro.plus.mini.txt]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : biowebb-data.s3.amazonaws.com [url:filter_1.txt]
 
@@ -2035,9 +2051,6 @@
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : borsvarlden-banners.azurewebsites.net [url:filter_1.txt]
 
-  WL : *.live.com [static]  covers subdomain
-  BL : brc-visio-telemetry.officeapps.live.com [url:pro.plus.mini.txt]
-
   WL : *.b-cdn.net [static]  covers subdomain
   BL : broadstreet.b-cdn.net [url:pro.plus.mini.txt]
 
@@ -2061,6 +2074,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : btf-analytics.s3.dualstack.us-east-1.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : bugly-prod-android-1521420252.us-west-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : bugsnag.com [url:easyprivacy_allowlist.txt]
   BL : bugsnag.com [url:pro.plus.mini.txt]
@@ -2110,9 +2126,6 @@
   WL : *.apple.com [static]  covers subdomain
   BL : ca.iadsdk.apple.com [url:hosts]
 
-  WL : *.live.com [static]  covers subdomain
-  BL : cac-visio-telemetry.officeapps.live.com [url:pro.plus.mini.txt]
-
   WL : *.fastly.net [static]  covers subdomain
   BL : calameo-beacon.global.ssl.fastly.net [url:pro.plus.mini.txt]
 
@@ -2148,9 +2161,6 @@
 
   WL : cc-dt.com [url:whitelist-referral.txt]
   BL : cc-dt.com [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : ccc-observability-sentry-alb-1254898660.us-west-2.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : cd-ladsp-com.s3.amazonaws.com [url:pro.plus.mini.txt]
@@ -2392,9 +2402,6 @@
   WL : *.box.com [static]  covers subdomain
   BL : client-log.box.com [url:pro.plus.mini.txt]
 
-  WL : *.cloudflare.net [static]  covers subdomain
-  BL : client-metrics.ft.com.cdn.cloudflare.net [url:pro.plus.mini.txt]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : client-telemetry.us-east-1.amazonaws.com [url:pro.plus.mini.txt]
 
@@ -2491,6 +2498,9 @@
   WL : *.nhs.uk [static]  covers subdomain
   BL : comms.supplychain.nhs.uk [url:filter_1.txt]
 
+  WL : *.akamaized.net [static]  covers subdomain
+  BL : conf-sg-dc.heytapdl.com.akamaized.net [url:pro.plus.mini.txt]
+
   WL : *.fastly.net [static]  covers subdomain
   BL : confiant-integrations.global.ssl.fastly.net [url:pro.plus.mini.txt]
 
@@ -2504,19 +2514,13 @@
   BL : connect.telstrawholesale.com [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : connectio.s3.amazonaws.com [url:pro.plus.mini.txt]
+  BL : connectio.s3.amazonaws.com [url:filter_1.txt]
 
   WL : *.azureedge.net [static]  covers subdomain
   BL : connext-cdn.azureedge.net [url:]
 
   WL : contactmonkey.com [url:whitelist-referral.txt]
   BL : contactmonkey.com [url:filter_1.txt]
-
-  WL : *.googleapis.com [static]  covers subdomain
-  BL : content-analyticsadmin.googleapis.com [url:pro.plus.mini.txt]
-
-  WL : *.googleapis.com [static]  covers subdomain
-  BL : content-analyticsdata.googleapis.com [url:pro.plus.mini.txt]
 
   WL : content.ingbank.pl [url:easyprivacy_allowlist.txt]
   BL : content.ingbank.pl [url:]
@@ -2543,7 +2547,7 @@
   BL : convertexperiments.com [url:pro.plus.mini.txt]
 
   WL : *.azurewebsites.net [static]  covers subdomain
-  BL : cookiemon-analytics.azurewebsites.net [url:pro.plus.mini.txt]
+  BL : cookiemon-analytics.azurewebsites.net [url:]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : cookiex.ngd.yahoo.com [url:pro.plus.mini.txt]
@@ -2675,7 +2679,7 @@
   BL : d.dropbox.com [url:pro.plus.mini.txt]
 
   WL : *.reddit.com [static]  covers subdomain
-  BL : d.reddit.com [url:pro.plus.mini.txt]
+  BL : d.reddit.com [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d108nnfn2eigw4.cloudfront.net [url:]
@@ -3185,7 +3189,7 @@
   BL : d1cr9zxt7u0sgu.cloudfront.net [url:pro.plus.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1crfzlys5jsn1.cloudfront.net [url:]
+  BL : d1crfzlys5jsn1.cloudfront.net [url:pro.plus.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1crt12zco2cvf.cloudfront.net [url:]
@@ -3536,9 +3540,6 @@
   BL : d1lo4oi08ke2ex.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1lu3pmaz2ilpx.cloudfront.net [url:pro.plus.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1lxhc4jvstzrp.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -3680,7 +3681,7 @@
   BL : d1ou8n65t6oyh4.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1owuvqs9tkert.cloudfront.net [url:]
+  BL : d1owuvqs9tkert.cloudfront.net [url:pro.plus.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1oykxszdrgjgl.cloudfront.net [url:]
@@ -5552,9 +5553,6 @@
   BL : d32zx4lhje2crr.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d330aiyvva2oww.cloudfront.net [url:pro.plus.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
   BL : d333p98mzatwjz.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -5729,9 +5727,6 @@
   BL : d38goz54x5g9rw.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d38hmgjgf0kofx.cloudfront.net [url:pro.plus.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
   BL : d38itq6vdv6gr9.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -5855,7 +5850,7 @@
   BL : d3cesrg5igdcgt.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3cgm8py10hi0z.cloudfront.net [url:pro.plus.mini.txt]
+  BL : d3cgm8py10hi0z.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3ciks47fhh9wv.cloudfront.net [url:]
@@ -5960,7 +5955,7 @@
   BL : d3f1wcxz2rdrik.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3f4nuq5dskrej.cloudfront.net [url:pro.plus.mini.txt]
+  BL : d3f4nuq5dskrej.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3f4u3khr0ycep.cloudfront.net [url:pro.plus.mini.txt]
@@ -5987,7 +5982,7 @@
   BL : d3g5ovfngjw9bw.cloudfront.net [url:pro.plus.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3gaegctu6cvoa.cloudfront.net [url:]
+  BL : d3gaegctu6cvoa.cloudfront.net [url:pro.plus.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3gi4w10ruedfh.cloudfront.net [url:]
@@ -6287,9 +6282,6 @@
   BL : d3p2b5qewrnsyv.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3p2sbqdc8hreb.cloudfront.net [url:pro.plus.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3p8w7to4066sy.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -6422,13 +6414,16 @@
   BL : d3s7ggfq1s6jlj.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3sbxpiag177w8.cloudfront.net [url:pro.plus.mini.txt]
+  BL : d3sbxpiag177w8.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3sdfpysdncs72.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3sdg6egu48sqx.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3sh7inoi83mn7.cloudfront.net [url:pro.plus.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3skqyr7uryv9z.cloudfront.net [url:]
@@ -6528,9 +6523,6 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3vgkjyuhp91nc.cloudfront.net [url:pro.plus.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3vk40ihlliju7.cloudfront.net [url:pro.plus.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3vnm1492fpnm2.cloudfront.net [url:]
@@ -7105,9 +7097,6 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dew9ckzjyt2gn.cloudfront.net [url:]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : dex-analytics.pages.dev [url:pro.plus.mini.txt]
-
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dezf3o8j9jdt6.cloudfront.net [url:hosts]
 
@@ -7343,7 +7332,7 @@
   BL : dktr03lf4tq7h.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dkupaw9ae63a8.cloudfront.net [url:pro.plus.mini.txt]
+  BL : dkupaw9ae63a8.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dkvtbjavjme96.cloudfront.net [url:]
@@ -7376,7 +7365,7 @@
   BL : dlem1deojpcg7.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dlh8c15zw7vfn.cloudfront.net [url:]
+  BL : dlh8c15zw7vfn.cloudfront.net [url:pro.plus.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dlk457skl57zp.cloudfront.net [url:]
@@ -7526,7 +7515,7 @@
   BL : dnxlgencstz4.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dnzedhceh7nim.cloudfront.net [url:pro.plus.mini.txt]
+  BL : dnzedhceh7nim.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : do0digwedphcm.cloudfront.net [url:]
@@ -7595,7 +7584,7 @@
   BL : downcry.s3.ap-east-1.amazonaws.com [url:hostfile]
 
   WL : *.mozilla.org [static]  covers subdomain
-  BL : download-stats.mozilla.org [url:pro.plus.mini.txt]
+  BL : download-stats.mozilla.org [url:]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : download.logltech.workers.dev [url:hostfile]
@@ -7644,6 +7633,9 @@
 
   WL : dpm.demdex.net [url:allowlist.txt]
   BL : dpm.demdex.net [url:hosts]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : dpndczlul8yjf.cloudfront.net [url:pro.plus.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dppaivsn6f9dy.cloudfront.net [url:]
@@ -7887,9 +7879,6 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dvmdwmnyj3u4h.cloudfront.net [url:]
-
-  WL : *.cloudfront.net [static]  covers subdomain
-  BL : dvqigh9b7wa32.cloudfront.net [url:pro.plus.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dvv009j588zal.cloudfront.net [url:]
@@ -8219,7 +8208,7 @@
   BL : event-collector-prod-use1-1328100352.us-east-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : eventcollectorv2-1131000179.us-east-1.elb.amazonaws.com [url:]
+  BL : eventcollectorv2-1131000179.us-east-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : events-server.fermatcommerce.workers.dev [url:pro.plus.mini.txt]
@@ -8482,6 +8471,9 @@
   WL : *.malwarebytes.com [static]  covers subdomain
   BL : genesis.malwarebytes.com [url:]
 
+  WL : *.trafficmanager.net [static]  covers subdomain
+  BL : geo-analytics-data.trafficmanager.net [url:pro.plus.mini.txt]
+
   WL : *.mattel163.com [static]  covers subdomain
   BL : geo.mattel163.com [url:pro.plus.mini.txt]
 
@@ -8729,7 +8721,7 @@
   BL : i.paypal.com [url:pro.plus.mini.txt]
 
   WL : *.apple.com [static]  covers subdomain
-  BL : iad.apple.com [url:]
+  BL : iad.apple.com [url:pro.plus.mini.txt]
 
   WL : *.apple.com [static]  covers subdomain
   BL : iadcontent.apple.com [url:pro.plus.mini.txt]
@@ -8832,9 +8824,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : inneractive-assets.s3-eu-west-1.amazonaws.com [url:pro.plus.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : innertrends.s3.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.microsoft.com [static]  covers subdomain
   BL : inputsuggestions.msdxcdn.microsoft.com [url:pro.plus.mini.txt]
@@ -9181,6 +9170,9 @@
   WL : *.zoom.us [static]  covers subdomain
   BL : logfiles.zoom.us [url:pro.plus.mini.txt]
 
+  WL : *.edgesuite.net [static]  covers subdomain
+  BL : logger.ireaderm.net.edgesuite.net [url:pro.plus.mini.txt]
+
   WL : *.googleapis.com [static]  covers subdomain
   BL : logging-alv.googleapis.com [url:pro.plus.mini.txt]
 
@@ -9195,9 +9187,6 @@
 
   WL : *.netflix.com [static]  covers subdomain
   BL : logs.netflix.com [url:pro.plus.mini.txt]
-
-  WL : *.webex.com [static]  covers subdomain
-  BL : logs.o.webex.com [url:pro.plus.mini.txt]
 
   WL : *.zoho.com [static]  covers subdomain
   BL : logsapi.zoho.com [url:pro.plus.mini.txt]
@@ -9300,9 +9289,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : matchbin-assets.s3.amazonaws.com [url:pro.plus.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : matomo-lb-1420184415.us-east-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : matomo-wpmudev-analytics1-925643958.us-east-2.elb.amazonaws.com [url:pro.plus.mini.txt]
@@ -9433,9 +9419,6 @@
   WL : metric.picodi.com [url:whitelist-referral.txt]
   BL : metric.picodi.com [url:hosts]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : metrics-awsvpnclient.us-east-1.amazonaws.com [url:pro.plus.mini.txt]
-
   WL : *.icloud.com [static]  covers subdomain
   BL : metrics-config.icloud.com [url:pro.plus.mini.txt]
 
@@ -9547,17 +9530,14 @@
   WL : monitor.fraudblocker.com [url:whitelist-referral.txt]
   BL : monitor.fraudblocker.com [url:pro.plus.mini.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : motel-rum-production-145699633.us-east-1.elb.amazonaws.com [url:pro.plus.mini.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : motherduck-wasm-analytics-quickstart.vercel.app [url:pro.plus.mini.txt]
 
   WL : *.imgur.com [static]  covers subdomain
   BL : mp.imgur.com [url:pro.plus.mini.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : mplab-metrics.s3-website-us-west-2.amazonaws.com [url:pro.plus.mini.txt]
+  WL : *.pages.dev [static]  covers subdomain
+  BL : mp4-js.pages.dev [url:pro.plus.mini.txt]
 
   WL : *.azureedge.net [static]  covers subdomain
   BL : msadsscale.azureedge.net [url:]
@@ -9571,8 +9551,8 @@
   WL : *.redhat.com [static]  covers subdomain
   BL : mtrcs.redhat.com [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : muon-collector-kube-1510719261.ca-central-1.elb.amazonaws.com [url:pro.plus.mini.txt]
+  WL : mtvnetworks.tt.omtrdc.net [url:allowlist.txt]
+  BL : mtvnetworks.tt.omtrdc.net [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : mvchallenges.s3-website-eu-west-1.amazonaws.com [url:]
@@ -9620,7 +9600,7 @@
   BL : nessainy.net [url:pro.plus.mini.txt]
 
   WL : *.netlify.app [static]  covers subdomain
-  BL : netlify-rum.netlify.app [url:pro.plus.mini.txt]
+  BL : netlify-rum.netlify.app [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : new-adtest.pages.dev [url:filter_1.txt]
@@ -9696,9 +9676,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : nothing-phone-log-india.s3.ap-south-1.amazonaws.com [url:pro.plus.mini.txt]
-
-  WL : *.docker.com [static]  covers subdomain
-  BL : notify-bugsnag.docker.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : nouvelobs.s3-website-eu-west-1.amazonaws.com [url:]
@@ -9787,9 +9764,6 @@
   WL : onlinestarten.net [url:allowlist.txt]
   BL : onlinestarten.net [url:pro.plus.mini.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : onstuimig-tag-manager.s3.eu-central-1.amazonaws.com [url:pro.plus.mini.txt]
-
   WL : *.opera.com [static]  covers subdomain
   BL : op-mobile.opera.com [url:pro.plus.mini.txt]
 
@@ -9861,6 +9835,9 @@
 
   WL : p11.techlab-cdn.com [url:easyprivacy_allowlist.txt]
   BL : p11.techlab-cdn.com [url:hosts]
+
+  WL : *.brave.com [static]  covers subdomain
+  BL : p3a-creative.brave.com [url:pro.plus.mini.txt]
 
   WL : *.brave.com [static]  covers subdomain
   BL : p3a-json.brave.com [url:pro.plus.mini.txt]
@@ -10067,9 +10044,6 @@
   BL : pgtus1-word-telemetry-vip.officeapps.live.com [url:pro.plus.mini.txt]
 
   WL : *.live.com [static]  covers subdomain
-  BL : pgtus2-word-telemetry-vip.officeapps.live.com [url:pro.plus.mini.txt]
-
-  WL : *.live.com [static]  covers subdomain
   BL : pgtus3-excel-telemetry-vip.officeapps.live.com [url:pro.plus.mini.txt]
 
   WL : *.live.com [static]  covers subdomain
@@ -10077,15 +10051,6 @@
 
   WL : *.live.com [static]  covers subdomain
   BL : pgtus3-word-telemetry-vip.officeapps.live.com [url:pro.plus.mini.txt]
-
-  WL : *.live.com [static]  covers subdomain
-  BL : pgtus4-word-telemetry-vip.officeapps.live.com [url:pro.plus.mini.txt]
-
-  WL : *.live.com [static]  covers subdomain
-  BL : pgtus5-word-telemetry-vip.officeapps.live.com [url:pro.plus.mini.txt]
-
-  WL : *.live.com [static]  covers subdomain
-  BL : pgtus6-word-telemetry-vip.officeapps.live.com [url:pro.plus.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : phishing.quiet-disk-62f9.hrmcxaeel.workers.dev [url:hostfile]
@@ -10205,7 +10170,7 @@
   BL : player.ex.co [url:pro.plus.mini.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
-  BL : playgap.b-cdn.net [url:]
+  BL : playgap.b-cdn.net [url:pro.plus.mini.txt]
 
   WL : pleisty.com [url:allowlist.txt]
   BL : pleisty.com [url:filter_1.txt]
@@ -10252,15 +10217,6 @@
   WL : *.trafficmanager.net [static]  covers subdomain
   BL : powerpoint-telemetry.wac.trafficmanager.net [url:pro.plus.mini.txt]
 
-  WL : *.live.com [static]  covers subdomain
-  BL : ppc-excel-telemetry.officeapps.live.com [url:pro.plus.mini.txt]
-
-  WL : *.live.com [static]  covers subdomain
-  BL : ppc-powerpoint-telemetry.officeapps.live.com [url:pro.plus.mini.txt]
-
-  WL : *.live.com [static]  covers subdomain
-  BL : ppc-word-telemetry.officeapps.live.com [url:pro.plus.mini.txt]
-
   WL : ppcprotect.com [url:whitelist-referral.txt]
   BL : ppcprotect.com [url:filter_1.txt]
 
@@ -10272,6 +10228,9 @@
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : pr.comet.yahoo.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : prd-dvc-pod1-telemetry-alb-podlb-1839613386.us-west-2.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : prd-dvc-pod3-telemetry-alb-podlb-2098002532.us-east-1.elb.amazonaws.com [url:pro.plus.mini.txt]
@@ -10308,6 +10267,9 @@
 
   WL : *.whatsapp.net [static]  covers subdomain
   BL : privatestats.whatsapp.net [url:]
+
+  WL : *.firebaseio.com [static]  covers subdomain
+  BL : prj-tof-analytics-default-rtdb.firebaseio.com [url:pro.plus.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : probe-worker.hugebigballs87.workers.dev [url:hostfile]
@@ -10448,7 +10410,7 @@
   BL : push-sdk.mattel163.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : pushd-android-logs.s3.amazonaws.com [url:]
+  BL : pushd-android-logs.s3.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : puzzles-games-api.gp-prod.conde.digital [url:allowlist.txt]
   BL : puzzles-games-api.gp-prod.conde.digital [url:filter_1.txt]
@@ -10511,7 +10473,7 @@
   BL : r.jakuli.com [url:pro.plus.mini.txt]
 
   WL : r.lafamo.com [url:whitelist-referral.txt]
-  BL : r.lafamo.com [url:pro.plus.mini.txt]
+  BL : r.lafamo.com [url:filter_1.txt]
 
   WL : r.linksprf.com [url:whitelist-referral.txt]
   BL : r.linksprf.com [url:hosts]
@@ -10534,8 +10496,11 @@
   WL : *.yahoo.com [static]  covers subdomain
   BL : rd.yahoo.com [url:pro.plus.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : rdk-secure-crashes.s3.dualstack.us-east-1.amazonaws.com [url:pro.plus.mini.txt]
+
   WL : rdr.wargaming.net [url:whitelist-referral.txt]
-  BL : rdr.wargaming.net [url:filter_1.txt]
+  BL : rdr.wargaming.net [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : reachableads-av.s3.ap-southeast-1.amazonaws.com [url:pro.plus.mini.txt]
@@ -10634,7 +10599,7 @@
   BL : rum-collector.leaderint.workers.dev [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : rum.af-south-1.amazonaws.com [url:pro.plus.mini.txt]
+  BL : rum-dataway-1663807852.eu-central-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : rum.ap-northeast-1.amazonaws.com [url:pro.plus.mini.txt]
@@ -10724,6 +10689,9 @@
   BL : saphi-ads-images.s3.eu-north-1.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : sas-ads-v3-load-balancer-1210673451.us-west-2.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : sas-ads-v3-load-balancer-1340544848.eu-west-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -10749,9 +10717,6 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : sdads-img.b-cdn.net [url:pro.plus.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : sdk-collector-prod-723125464.eu-central-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : sdk.fra-01.braze.eu.cdn.cloudflare.net [url:pro.plus.mini.txt]
@@ -10870,9 +10835,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : sentry-ssl-462500017.us-east-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
-  WL : *.amazon.com [static]  covers subdomain
-  BL : sentry.amazon.com [url:pro.plus.mini.txt]
-
   WL : *.matrix.org [static]  covers subdomain
   BL : sentry.matrix.org [url:pro.plus.mini.txt]
 
@@ -10887,9 +10849,6 @@
 
   WL : servedby.o2.co.uk [url:whitelist-referral.txt]
   BL : servedby.o2.co.uk [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : server-side-tagging-alb-1532029273.eu-central-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.microsoft.com [static]  covers subdomain
   BL : server.events.data.microsoft.com [url:pro.plus.mini.txt]
@@ -10929,6 +10888,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : sgp-mobile-sec-heytapmobi-pubgw-1205822126.ap-southeast-1.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : sgp-opush-heytapmobile-pubgw-2070388785.ap-southeast-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.adyen.com [static]  covers subdomain
   BL : sgtm.adyen.com [url:pro.plus.mini.txt]
@@ -11474,6 +11436,9 @@
   BL : sonar-mad2-1.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-man.xx.fbcdn.net [url:pro.plus.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar-man2-1.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
@@ -11618,6 +11583,9 @@
   BL : sonar-qro3-1.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar-scl.xx.fbcdn.net [url:pro.plus.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar-scl3-1.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
@@ -11729,6 +11697,9 @@
   BL : sonar6-arn2-1.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-atl.xx.fbcdn.net [url:pro.plus.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar6-atl3-1.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
@@ -11787,6 +11758,9 @@
 
   WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar6-bru2-1.xx.fbcdn.net [url:pro.plus.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-bsb.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar6-bsb1-1.xx.fbcdn.net [url:pro.plus.mini.txt]
@@ -11855,6 +11829,9 @@
   BL : sonar6-det1-1.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-dfw.xx.fbcdn.net [url:pro.plus.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar6-dfw5-1.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
@@ -11892,6 +11869,9 @@
 
   WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar6-fml20-1.xx.fbcdn.net [url:pro.plus.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-for.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar6-for2-1.xx.fbcdn.net [url:pro.plus.mini.txt]
@@ -11975,6 +11955,9 @@
   BL : sonar6-hyd1-2.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-iad.xx.fbcdn.net [url:pro.plus.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar6-iad3-1.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
@@ -12018,6 +12001,9 @@
 
   WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar6-lax7-1.xx.fbcdn.net [url:pro.plus.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-lga.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar6-lga3-1.xx.fbcdn.net [url:pro.plus.mini.txt]
@@ -12176,6 +12162,9 @@
   BL : sonar6-pmo1-1.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
+  BL : sonar6-poa.xx.fbcdn.net [url:pro.plus.mini.txt]
+
+  WL : *.fbcdn.net [static]  covers subdomain
   BL : sonar6-poa1-1.xx.fbcdn.net [url:pro.plus.mini.txt]
 
   WL : *.fbcdn.net [static]  covers subdomain
@@ -12308,9 +12297,6 @@
   BL : sponsored-ads.amazon.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : sprocket-assets.s3.amazonaws.com [url:pro.plus.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : sprocket-ping.s3.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.microsoft.com [static]  covers subdomain
@@ -12327,6 +12313,9 @@
 
   WL : *.azureedge.net [static]  covers subdomain
   BL : sr-cdn.azureedge.net [url:pro.plus.mini.txt]
+
+  WL : *.b-cdn.net [static]  covers subdomain
+  BL : ss-mndsrv.b-cdn.net [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ssc-prod-collector-lb-2088113435.eu-north-1.elb.amazonaws.com [url:pro.plus.mini.txt]
@@ -12376,6 +12365,12 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : starbytes.pages.dev [url:hostfile]
 
+  WL : *.un.org [static]  covers subdomain
+  BL : stat-confluence.escap.un.org [url:pro.plus.mini.txt]
+
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : stat.doglobal.net.cdn.cloudflare.net [url:pro.plus.mini.txt]
+
   WL : *.cloudflare.net [static]  covers subdomain
   BL : stat.made-in-china.com.cdn.cloudflare.net [url:pro.plus.mini.txt]
 
@@ -12411,6 +12406,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : stats-1485643985.eu-west-1.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.trafficmanager.net [static]  covers subdomain
+  BL : stats-partner.trafficmanager.net [url:pro.plus.mini.txt]
 
   WL : *.europa.eu [static]  covers subdomain
   BL : stats.euipo.europa.eu [url:pro.plus.mini.txt]
@@ -12468,9 +12466,6 @@
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : stp-tracker.inside-graph.com.cdn.cloudflare.net [url:pro.plus.mini.txt]
-
-  WL : *.cloudflare.net [static]  covers subdomain
-  BL : stpa-tracker.inside-graph.com.cdn.cloudflare.net [url:pro.plus.mini.txt]
 
   WL : *.nvidia.com [static]  covers subdomain
   BL : stt.nvidia.com [url:filter_1.txt]
@@ -12668,9 +12663,6 @@
   BL : telemetry-ext.observability.commbank.com.au.cdn.cloudflare.net [url:pro.plus.mini.txt]
 
   WL : *.trafficmanager.net [static]  covers subdomain
-  BL : telemetry-geo.wac.trafficmanager.net [url:pro.plus.mini.txt]
-
-  WL : *.trafficmanager.net [static]  covers subdomain
   BL : telemetry-lcp.trafficmanager.net [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -12759,6 +12751,12 @@
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : telemetry.sgp.pvp.net.cdn.cloudflare.net [url:pro.plus.mini.txt]
+
+  WL : *.trafficmanager.net [static]  covers subdomain
+  BL : telemetry.southafricanorth.ame.arcdataservices.trafficmanager.net [url:pro.plus.mini.txt]
+
+  WL : *.trafficmanager.net [static]  covers subdomain
+  BL : telemetry.southcentralus.ame.arcdataservices.trafficmanager.net [url:pro.plus.mini.txt]
 
   WL : *.dropbox.com [static]  covers subdomain
   BL : telemetry.v.dropbox.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -12941,7 +12939,7 @@
   BL : tracking.twelveapp.sh.cdn.cloudflare.net [url:pro.plus.mini.txt]
 
   WL : *.umbrella.com [static]  covers subdomain
-  BL : tracking.umbrella.com [url:pro.plus.mini.txt]
+  BL : tracking.umbrella.com [url:filter_1.txt]
 
   WL : tradedoubler.com [url:whitelist-referral.txt]
   BL : tradedoubler.com [url:filter_1.txt]
@@ -13063,9 +13061,6 @@
   WL : *.trafficmanager.net [static]  covers subdomain
   BL : uk.events.data.trafficmanager.net [url:pro.plus.mini.txt]
 
-  WL : *.live.com [static]  covers subdomain
-  BL : ukc-visio-telemetry.officeapps.live.com [url:pro.plus.mini.txt]
-
   WL : ukw.jp [url:allowlist.txt]
   BL : ukw.jp [url:pro.plus.mini.txt]
 
@@ -13074,9 +13069,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : umami-eight-henna.vercel.app [url:pro.plus.mini.txt]
-
-  WL : *.railway.app [static]  covers subdomain
-  BL : umami-production-1904.up.railway.app [url:pro.plus.mini.txt]
 
   WL : *.railway.app [static]  covers subdomain
   BL : umami-production-286d.up.railway.app [url:pro.plus.mini.txt]
@@ -13169,6 +13161,9 @@
   BL : usdclog-1571272846.us-east-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : usdclog-nginx-guardingvision-us-1408101518.us-east-1.elb.amazonaws.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : usdclog-nginx-hik-connect-eu-1428162561.eu-west-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -13178,7 +13173,7 @@
   BL : usdclog-nginx-hik-connect-us-237022769.us-east-1.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.hetzner.com [static]  covers subdomain
-  BL : use.hetzner.com [url:pro.plus.mini.txt]
+  BL : use.hetzner.com [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : userlike-cdn-widgets.s3-eu-west-1.amazonaws.com [url:pro.plus.mini.txt]
@@ -13258,9 +13253,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : vaytinviet.vercel.app [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : vbc-telemetry-prod.s3.amazonaws.com [url:pro.plus.mini.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : vebo-vast.pages.dev [url:hosts]
 
@@ -13294,9 +13286,6 @@
   WL : viglink.com [url:allowlist.txt]
   BL : viglink.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
-  WL : *.live.com [static]  covers subdomain
-  BL : visio-telemetry.officeapps.live.com [url:pro.plus.mini.txt]
-
   WL : *.yahoo.com [static]  covers subdomain
   BL : visit.webhosting.yahoo.com [url:filter_1.txt]
 
@@ -13305,6 +13294,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : vmailnewwqmwe.vercel.app [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : vmax4-prod-tracker-lb-1539806324.ap-southeast-3.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.azure.com [static]  covers subdomain
   BL : vmss-clarity-ingest-eus-b.eastus.cloudapp.azure.com [url:pro.plus.mini.txt]
@@ -13481,7 +13473,7 @@
   BL : web-security-reports.services.atlassian.com [url:pro.plus.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : web-vitals-script.leaderint.workers.dev [url:pro.plus.mini.txt]
+  BL : web-vitals-script.leaderint.workers.dev [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : webanalytics-1823844529.ap-southeast-2.elb.amazonaws.com [url:pro.plus.mini.txt]
@@ -13498,9 +13490,6 @@
   WL : webgains.com [url:allowlist.txt]
   BL : webgains.com [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : webinsight.s3.amazonaws.com [url:pro.plus.mini.txt]
-
   WL : *.workers.dev [static]  covers subdomain
   BL : webstat-backend.mgr-9c1.workers.dev [url:pro.plus.mini.txt]
 
@@ -13515,9 +13504,6 @@
 
   WL : *.microsoft.com [static]  covers subdomain
   BL : wes.df.telemetry.microsoft.com [url:hosts]
-
-  WL : *.azurewebsites.net [static]  covers subdomain
-  BL : wetracker.azurewebsites.net [url:pro.plus.mini.txt]
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : wh-api-analytics.azurewebsites.net [url:pro.plus.mini.txt]
@@ -13551,9 +13537,6 @@
 
   WL : wl.spotify.com [url:whitelist-referral.txt]
   BL : wl.spotify.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : wol-user-analytics.infoplaza.workers.dev [url:pro.plus.mini.txt]
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : wompanalytics.azurewebsites.net [url:pro.plus.mini.txt]
@@ -13635,6 +13618,9 @@
 
   WL : xtremetop100.com [url:allowlist.txt]
   BL : xtremetop100.com [url:pro.plus.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : xxgame-sentry-alb-2091599632.us-east-2.elb.amazonaws.com [url:pro.plus.mini.txt]
 
   WL : *.atlassian.com [static]  covers subdomain
   BL : xxid.atlassian.com [url:pro.plus.mini.txt]
