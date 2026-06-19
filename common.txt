@@ -1,9 +1,9 @@
-# Scale  — max: top 20% (>= 72)  warn: top 50% (>= 13)  basic: remaining
+# Scale  — max: top 20% (>= 73)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1599]  [MAX]
-#   amazonaws.com                            [196]  [MAX]
+#   cloudfront.net                           [1598]  [MAX]
+#   amazonaws.com                            [194]  [MAX]
 #   pages.dev                                [80]  [MAX]
-#   workers.dev                              [72]  [MAX]
+#   workers.dev                              [73]  [MAX]
 #   yahoo.com                                [70]  [WARN]
 #   vercel.app                               [47]  [WARN]
 #   b-cdn.net                                [45]  [WARN]
@@ -29,11 +29,11 @@
 #   netlify.app                              [7]  [BASIC]
 #   azure.com                                [7]  [BASIC]
 #   firebaseio.com                           [7]  [BASIC]
+#   github.io                                [7]  [BASIC]
 #   cloudflare.net                           [7]  [BASIC]
 #   trafficmanager.net                       [6]  [BASIC]
 #   amazon-adsystem.com                      [6]  [BASIC]
 #   box.com                                  [6]  [BASIC]
-#   github.io                                [6]  [BASIC]
 #   fbsbx.com                                [6]  [BASIC]
 #   mozilla.org                              [5]  [BASIC]
 #   bing.com                                 [5]  [BASIC]
@@ -465,9 +465,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : 260120.vercel.app [url:hostfile]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : 2c236979-b1bb-4c7a-915c-df74dbad0d8c.s3.ap-northeast-2.amazonaws.com [url:tif.mini.txt]
-
   WL : 2o7.net [url:allowlist.txt]
   BL : 2o7.net [url:filter_1.txt]
 
@@ -490,9 +487,6 @@
   BL : 51tongji.trafficmanager.net [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : 530-verbena-calyx-hook-nr.s3.ca-central-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : 571-ac-eucalyptus-kindle.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -506,9 +500,6 @@
 
   WL : *.googleusercontent.com [static]  covers subdomain
   BL : 74.45.23.34.bc.googleusercontent.com [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : 760-wm-xenon-temper.s3.eu-west-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 7ng6v3lu3c.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
@@ -1722,9 +1713,6 @@
   WL : cxense.com [url:allowlist.txt]
   BL : cxense.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : cybermicto768jubileejhsye6yt6543.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
-
   WL : d.agkn.com [url:whitelist-referral.txt]
   BL : d.agkn.com [url:hosts]
 
@@ -1861,7 +1849,7 @@
   BL : d13k7prax1yi04.cloudfront.net [url:filter_1.txt]
 
   WL : d13nu0oomnx5ti.cloudfront.net [url:allowlist.txt]
-  BL : d13nu0oomnx5ti.cloudfront.net [url:tif.mini.txt]
+  BL : d13nu0oomnx5ti.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d13pxqgp3ixdbh.cloudfront.net [url:]
@@ -2707,9 +2695,6 @@
   BL : d1pozdfelzfhyt.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1pplo45p828lj.cloudfront.net [url:tif.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1pvpz0cs1cjk8.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -3289,6 +3274,9 @@
   BL : d24rtvkqjwgutp.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d259p54wqxi9ep.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d25dfknw9ghxs6.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -3323,6 +3311,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d26e5rmb2qzuo3.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d26hpdecvhwn5s.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d26p9ecwyy9zqv.cloudfront.net [url:]
@@ -4568,9 +4559,6 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d370hf5nfmhbjy.cloudfront.net [url:]
-
-  WL : *.cloudfront.net [static]  covers subdomain
-  BL : d373n2hi69hqg3.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d379fkejtn2clk.cloudfront.net [url:]
@@ -5950,9 +5938,6 @@
   BL : dgrkrt.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dgu9g3a2kzqx2.cloudfront.net [url:tif.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
   BL : dgw7ae5vrovs7.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -6425,6 +6410,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : drf8e429z5jzt.cloudfront.net [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : drift-agate-douse-young.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : driftt.com [url:whitelist.txt]
   BL : driftt.com [url:filter_1.txt]
@@ -7761,6 +7749,9 @@
   WL : *.apple-dns.net [static]  covers subdomain
   BL : notes-analytics-events.news.apple-dns.net [url:]
 
+  WL : *.github.io [static]  covers subdomain
+  BL : notificacionesfiscalescol.github.io [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : nouvelobs.s3-website-eu-west-1.amazonaws.com [url:]
 
@@ -8433,6 +8424,9 @@
   WL : *.paypal.com [static]  covers subdomain
   BL : slc.stats.paypal.com [url:hosts]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : small-morning-8be0.fsocietyandtools.workers.dev [url:hostfile]
+
   WL : *.microsoft.com [static]  covers subdomain
   BL : smetric.ads.microsoft.com [url:filter_1.txt]
 
@@ -8897,6 +8891,9 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : ttse.b-cdn.net [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : tuck-nr-glaze-slim-oasis.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : tw.adserver.yahoo.com [url:hosts]
