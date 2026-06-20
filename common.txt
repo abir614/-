@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 73)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1598]  [MAX]
-#   amazonaws.com                            [194]  [MAX]
+#   cloudfront.net                           [1599]  [MAX]
+#   amazonaws.com                            [193]  [MAX]
 #   pages.dev                                [80]  [MAX]
 #   workers.dev                              [73]  [MAX]
 #   yahoo.com                                [70]  [WARN]
@@ -5809,6 +5809,9 @@
   BL : de5zarwna0j2q.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : de6jvomfbm0af.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : dea9webxhb7gu.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -6899,9 +6902,6 @@
 
   WL : flashtalking.com [url:allowlist.txt]
   BL : flashtalking.com [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : flirtationless.s3.ap-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : fls.doubleclick.net [url:allowlist.txt]
   BL : fls.doubleclick.net [url:]
