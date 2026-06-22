@@ -1,9 +1,9 @@
-# Scale  — max: top 20% (>= 73)  warn: top 50% (>= 13)  basic: remaining
+# Scale  — max: top 20% (>= 74)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1590]  [MAX]
-#   amazonaws.com                            [171]  [MAX]
+#   cloudfront.net                           [1597]  [MAX]
+#   amazonaws.com                            [190]  [MAX]
 #   pages.dev                                [80]  [MAX]
-#   workers.dev                              [73]  [MAX]
+#   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [WARN]
 #   vercel.app                               [47]  [WARN]
 #   b-cdn.net                                [45]  [WARN]
@@ -289,7 +289,6 @@
 #   mparticle.com                            [1]  [BASIC]
 #   iljmp.com                                [1]  [BASIC]
 #   imrworldwide.com                         [1]  [BASIC]
-#   inspsearchapi.com                        [1]  [BASIC]
 #   intercom-clicks.com                      [1]  [BASIC]
 #   peerius.com                              [1]  [BASIC]
 #   jdoqocy.com                              [1]  [BASIC]
@@ -904,6 +903,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ams-pageview-public.s3.amazonaws.com [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : amz-recover-sign.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.facebook.com [static]  covers subdomain
   BL : an.facebook.com [url:]
 
@@ -1011,6 +1013,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : analyticsengine.s3.amazonaws.com [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : andreasmaschke.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.googleapis.com [static]  covers subdomain
   BL : androidtvchannels-pa.googleapis.com [url:filter_1.txt]
@@ -1156,6 +1161,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : aws-practical-frontend.s3.dualstack.ap-south-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : awsgouu.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
+
   WL : awstrack.me [url:whitelist-referral.txt]
   BL : awstrack.me [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
@@ -1228,8 +1236,14 @@
   WL : *.yahoo.com [static]  covers subdomain
   BL : beap.gemini.yahoo.com [url:filter_1.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : bee-apps.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
+
   WL : belgium.wolterskluwer.com [url:allowlist.txt]
   BL : belgium.wolterskluwer.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : bernabenicole.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : bestbuy.7tiv.net [url:whitelist-referral.txt]
   BL : bestbuy.7tiv.net [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -3005,6 +3019,9 @@
   BL : d1ygczx880h5yu.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1yh10k4hi0fgx.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1yt8zt4633tzi.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -3093,6 +3110,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d20nuqz94uw3np.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d20pfv8rjbr1n6.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d20tam5f2v19bf.cloudfront.net [url:]
@@ -3330,6 +3350,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d27x9po2cfinm5.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d27zo25ndi7m0e.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d28bcu8ltt2bxh.cloudfront.net [url:]
@@ -3693,6 +3716,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2j74sjmqqyf26.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2j9wbvtre3hpn.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2jgbcah46jjed.cloudfront.net [url:]
@@ -5189,6 +5215,9 @@
   BL : d3rhktq8uy839j.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3riqarbejqwzm.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3rjndf2qggsna.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -5632,6 +5661,9 @@
   WL : *.unpkg.com [static]  covers subdomain
   BL : data.unpkg.com [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : datafluxworker.system-telemetry.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : datum-level-cf-mallet-crimp-d3ab.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
 
@@ -5774,6 +5806,9 @@
   BL : de5zarwna0j2q.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : de6jvomfbm0af.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : dea9webxhb7gu.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -5895,6 +5930,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dgpp7fq3iorb.cloudfront.net [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : dgrkrt.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dgw7ae5vrovs7.cloudfront.net [url:]
@@ -6653,6 +6691,9 @@
   BL : dzt3uyxd69um2.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : dztww0ddy4n2.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : dzu5p9pd5q24b.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -6950,6 +6991,9 @@
   BL : geoiplookup.wikimedia.org [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : geonedgia-parquet-files.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : get-analytics-repository.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
@@ -7198,6 +7242,9 @@
   WL : *.digicert.com [static]  covers subdomain
   BL : img.response.digicert.com [url:filter_1.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : imnotproudof.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
+
   WL : imrworldwide.com [url:allowlist.txt]
   BL : imrworldwide.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
@@ -7215,9 +7262,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : inne22tull90mse.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : inspsearchapi.com [url:allowlist.txt]
-  BL : inspsearchapi.com [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : instaread-ads.s3.amazonaws.com [url:]
@@ -7639,6 +7683,18 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : new-bucket-b3bd7e78.s3.dualstack.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : newevusd.s3.ap-northeast-3.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : newkste01a8f.s3.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : newkste05836.s3.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : newkste4a144.s3.amazonaws.com [url:tif.mini.txt]
+
   WL : *.apple.com [static]  covers subdomain
   BL : news-app-events.apple.com [url:]
 
@@ -7716,6 +7772,9 @@
 
   WL : odb.outbrain.com [url:allowlist.txt]
   BL : odb.outbrain.com [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ofkzeokbv.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.google.com [static]  covers subdomain
   BL : ogads-pa.clients6.google.com [url:]
@@ -8227,6 +8286,9 @@
   WL : s2.youtube.com [url:whitelist.txt]
   BL : s2.youtube.com [url:filter_1.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : safe-recover.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
+
   WL : safeframe.googlesyndication.com [url:allowlist.txt]
   BL : safeframe.googlesyndication.com [url:filter_1.txt]
 
@@ -8524,6 +8586,9 @@
   WL : *.apple.com [static]  covers subdomain
   BL : supportmetrics.apple.com [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : supportrecover.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
+
   WL : survey.g.doubleclick.net [url:easylist_allowlist.txt]
   BL : survey.g.doubleclick.net [url:hosts]
 
@@ -8622,6 +8687,9 @@
 
   WL : target.microsoft.com [url:whitelist-referral.txt]
   BL : target.microsoft.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : tbiodpt0-spsksjd33.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.mattel163.com [static]  covers subdomain
   BL : tc-log.mattel163.com [url:]
@@ -9025,6 +9093,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : vscodesettingtask.vercel.app [url:hostfile]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : vssris8yu8f2lyxenfoxeacjm26fun.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.fastly.net [static]  covers subdomain
   BL : vwonwkaqvq-a.global.ssl.fastly.net [url:]
 
@@ -9169,6 +9240,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : yoke-merge-lupine.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : yyupdats.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
+
   WL : zenaps.com [url:allowlist.txt]
   BL : zenaps.com [url:hosts]
 
@@ -9180,4 +9254,7 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : zoom-in.pages.dev [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : zwbufziw6o4q92.s3.amazonaws.com [url:tif.mini.txt]
 
