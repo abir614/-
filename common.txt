@@ -1,8 +1,8 @@
 # Scale  — max: top 20% (>= 74)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1597]  [MAX]
-#   amazonaws.com                            [190]  [MAX]
-#   pages.dev                                [80]  [MAX]
+#   cloudfront.net                           [1598]  [MAX]
+#   amazonaws.com                            [188]  [MAX]
+#   pages.dev                                [78]  [MAX]
 #   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [WARN]
 #   vercel.app                               [47]  [WARN]
@@ -459,9 +459,6 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : 1wincdn.b-cdn.net [url:]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : 244eac011af63a9080fb074ee.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : 260120.vercel.app [url:hostfile]
 
@@ -494,9 +491,6 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : 682a5845.b-cdn.net [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : 73ahgytpvpjfhxq5v.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.googleusercontent.com [static]  covers subdomain
   BL : 74.45.23.34.bc.googleusercontent.com [url:hostfile]
@@ -4363,6 +4357,9 @@
   BL : d313lzv9559yp9.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d318g7p3azvr44.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d31bfnnwekbny6.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -6957,9 +6954,6 @@
   WL : *.yahoo.com [static]  covers subdomain
   BL : ganon.yahoo.com [url:]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : gate2.pages.dev [url:hostfile]
-
   WL : *.unpkg.com [static]  covers subdomain
   BL : gatex.unpkg.com [url:hostfile]
 
@@ -7796,9 +7790,6 @@
 
   WL : *.azure.com [static]  covers subdomain
   BL : onetasknext.eastasia.cloudapp.azure.com [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : onetools.pages.dev [url:hostfile]
 
   WL : online-metrix.net [url:easyprivacy_allowlist.txt]
   BL : online-metrix.net [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
