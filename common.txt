@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 74)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1598]  [MAX]
-#   amazonaws.com                            [188]  [MAX]
+#   cloudfront.net                           [1595]  [MAX]
+#   amazonaws.com                            [186]  [MAX]
 #   pages.dev                                [78]  [MAX]
 #   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [WARN]
@@ -31,10 +31,10 @@
 #   firebaseio.com                           [7]  [BASIC]
 #   github.io                                [7]  [BASIC]
 #   cloudflare.net                           [7]  [BASIC]
-#   trafficmanager.net                       [6]  [BASIC]
 #   amazon-adsystem.com                      [6]  [BASIC]
 #   box.com                                  [6]  [BASIC]
 #   fbsbx.com                                [6]  [BASIC]
+#   trafficmanager.net                       [5]  [BASIC]
 #   mozilla.org                              [5]  [BASIC]
 #   bing.com                                 [5]  [BASIC]
 #   twitch.tv                                [5]  [BASIC]
@@ -146,6 +146,7 @@
 #   bstatic.com                              [1]  [BASIC]
 #   affiliatefuture.com                      [1]  [BASIC]
 #   affilired.com                            [1]  [BASIC]
+#   airfind.com                              [1]  [BASIC]
 #   alitems.co                               [1]  [BASIC]
 #   alitems.site                             [1]  [BASIC]
 #   analysys.cn                              [1]  [BASIC]
@@ -505,9 +506,6 @@
   BL : 829d-vexel-chisel-fuse-hm.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : 8x-jab-cf-ridgeway-reed-raw.s3.ca-central-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : 9w2zed1szg.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -854,6 +852,9 @@
 
   WL : *.netflix.com [static]  covers subdomain
   BL : aidsvc.netflix.com [url:filter_1.txt]
+
+  WL : airfind.com [url:allowlist.txt]
+  BL : airfind.com [url:filter_1.txt]
 
   WL : alb.reddit.com [url:whitelist-referral.txt]
   BL : alb.reddit.com [url:filter_1.txt]
@@ -1322,9 +1323,6 @@
 
   WL : c.webengage.com [url:whitelist-referral.txt]
   BL : c.webengage.com [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : c0utr1d0c8te3pb5a02.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : c2shb.pubgw.yahoo.com [url:]
@@ -5976,9 +5974,6 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : di2xwvxz1jrvu.cloudfront.net [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : dial-dw-hazel-parlor-halt.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dic9vgwbkxd8r.cloudfront.net [url:]
 
@@ -6017,9 +6012,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : diziwatchpreroll.pages.dev [url:]
-
-  WL : *.cloudfront.net [static]  covers subdomain
-  BL : djf9kh8xi3wrn.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : djgnqo9p1icyr.cloudfront.net [url:]
@@ -6242,9 +6234,6 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dnre5xkn2r25r.cloudfront.net [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : dns-monitoring-target.amazonaws.com [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dnxlgencstz4.cloudfront.net [url:]
@@ -6535,9 +6524,6 @@
   BL : dv0uonokej56p.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dv25cfe4fmu5k.cloudfront.net [url:tif.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
   BL : dv663fc06d35i.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -6719,6 +6705,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ec2-18-208-244-120.compute-1.amazonaws.com [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ec2-18-209-168-198.compute-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ec2-44-233-143-239.us-west-2.compute.amazonaws.com [url:]
@@ -6930,9 +6919,6 @@
   WL : *.supabase.co [static]  covers subdomain
   BL : frygzjyhtiunvhvnacif.supabase.co [url:tif.mini.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : ftefmti876.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : fuck-ads.vercel.app [url:]
 
@@ -7121,9 +7107,6 @@
 
   WL : guce.advertising.com [url:whitelist-referral.txt]
   BL : guce.advertising.com [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : gvaridioll.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.nvidia.com [static]  covers subdomain
   BL : gx-target-experiments-frontend-api.gx.nvidia.com [url:]
@@ -7415,6 +7398,9 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : llmometrics.b-cdn.net [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : lm-supple-heron-4879.s3.sa-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : lndata.com [url:whitelist-referral.txt]
   BL : lndata.com [url:filter_1.txt]
@@ -7908,9 +7894,6 @@
   WL : pings.conviva.com [url:whitelist.txt]
   BL : pings.conviva.com [url:hosts]
 
-  WL : *.trafficmanager.net [static]  covers subdomain
-  BL : pipe.dev.trafficmanager.net [url:tif.mini.txt]
-
   WL : *.reddit.com [static]  covers subdomain
   BL : pixel-config.reddit.com [url:]
 
@@ -8262,6 +8245,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : s-14billmondy.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : s-1s10hnb.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
+
   WL : *.opera.com [static]  covers subdomain
   BL : s-adx.op-mobile.opera.com [url:filter_1.txt]
 
@@ -8276,6 +8262,9 @@
 
   WL : s2.youtube.com [url:whitelist.txt]
   BL : s2.youtube.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : s3-external-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : safe-recover.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
@@ -9173,9 +9162,6 @@
 
   WL : *.cloudflareinsights.com [static]  covers subdomain
   BL : www.cloudflareinsights.com [url:hosts]
-
-  WL : *.cloudfront.net [static]  covers subdomain
-  BL : www.d16ss8y2j4y0ni.cloudfront.net [url:tif.mini.txt]
 
   WL : www.googleadservices.com [url:whitelist-referral.txt]
   BL : www.googleadservices.com [url:filter_1.txt]
