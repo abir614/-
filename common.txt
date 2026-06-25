@@ -1,8 +1,8 @@
 # Scale  — max: top 20% (>= 74)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1595]  [MAX]
-#   amazonaws.com                            [186]  [MAX]
-#   pages.dev                                [78]  [MAX]
+#   amazonaws.com                            [187]  [MAX]
+#   pages.dev                                [79]  [MAX]
 #   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [WARN]
 #   vercel.app                               [47]  [WARN]
@@ -27,12 +27,12 @@
 #   doubleclick.net                          [7]  [BASIC]
 #   snapchat.com                             [7]  [BASIC]
 #   netlify.app                              [7]  [BASIC]
-#   azure.com                                [7]  [BASIC]
 #   firebaseio.com                           [7]  [BASIC]
 #   github.io                                [7]  [BASIC]
 #   cloudflare.net                           [7]  [BASIC]
 #   amazon-adsystem.com                      [6]  [BASIC]
 #   box.com                                  [6]  [BASIC]
+#   azure.com                                [6]  [BASIC]
 #   fbsbx.com                                [6]  [BASIC]
 #   trafficmanager.net                       [5]  [BASIC]
 #   mozilla.org                              [5]  [BASIC]
@@ -878,6 +878,9 @@
   BL : alitems.site [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : allianz-minicamera.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : aloe-veer-wm-lance.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -1542,6 +1545,9 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : cloud-file-explorer.netlify.app [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : cloud-storage-allgeos.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : clouderrorreporting.googleapis.com [url:easyprivacy_allowlist.txt]
   BL : clouderrorreporting.googleapis.com [url:]
@@ -8173,6 +8179,9 @@
   WL : *.yahoo.com [static]  covers subdomain
   BL : real.sp.analytics.yahoo.com [url:hosts]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : reef-swan-lagoon.pages.dev [url:hostfile]
+
   WL : *.wordpress.com [static]  covers subdomain
   BL : refer.wordpress.com [url:]
 
@@ -8262,9 +8271,6 @@
 
   WL : s2.youtube.com [url:whitelist.txt]
   BL : s2.youtube.com [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : s3-external-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : safe-recover.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
@@ -8448,9 +8454,6 @@
 
   WL : *.twitch.tv [static]  covers subdomain
   BL : spade.twitch.tv [url:filter_1.txt]
-
-  WL : *.azure.com [static]  covers subdomain
-  BL : spectra.uaenorth.cloudapp.azure.com [url:hostfile]
 
   WL : *.akamaized.net [static]  covers subdomain
   BL : speee-ad.akamaized.net [url:]
