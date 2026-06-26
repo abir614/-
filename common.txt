@@ -1,6 +1,6 @@
 # Scale  — max: top 20% (>= 74)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1595]  [MAX]
+#   cloudfront.net                           [1598]  [MAX]
 #   amazonaws.com                            [187]  [MAX]
 #   pages.dev                                [79]  [MAX]
 #   workers.dev                              [74]  [MAX]
@@ -290,6 +290,7 @@
 #   mparticle.com                            [1]  [BASIC]
 #   iljmp.com                                [1]  [BASIC]
 #   imrworldwide.com                         [1]  [BASIC]
+#   inspsearchapi.com                        [1]  [BASIC]
 #   intercom-clicks.com                      [1]  [BASIC]
 #   peerius.com                              [1]  [BASIC]
 #   jdoqocy.com                              [1]  [BASIC]
@@ -1141,9 +1142,6 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : atex.silent-frog-4440.hrmcxaeel.workers.dev [url:hostfile]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : athome-srw.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : auto-deploy.pages.dev [url:]
 
@@ -1155,6 +1153,9 @@
 
   WL : awin1.com [url:allowlist.txt]
   BL : awin1.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : aws-backup-e9ec7f79ad980725.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : aws-practical-frontend.s3.dualstack.ap-south-1.amazonaws.com [url:tif.mini.txt]
@@ -2795,6 +2796,9 @@
   BL : d1s5n6wuwgnxf4.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1s8vtutufck9t.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1sboz88tkttfp.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -3647,6 +3651,9 @@
   BL : d2glav2919q4cw.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2gt2ux04o03l1.cloudfront.net [url:filter_1.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2gt9oovykfp1z.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -4455,6 +4462,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d33gmheck9s2xl.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d33nluofm5criy.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d33otidwg56k90.cloudfront.net [url:]
@@ -7245,6 +7255,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : inne22tull90mse.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : inspsearchapi.com [url:allowlist.txt]
+  BL : inspsearchapi.com [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : instaread-ads.s3.amazonaws.com [url:]
