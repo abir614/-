@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 74)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1598]  [MAX]
-#   amazonaws.com                            [187]  [MAX]
+#   amazonaws.com                            [188]  [MAX]
 #   pages.dev                                [79]  [MAX]
 #   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [WARN]
@@ -52,6 +52,7 @@
 #   malwarebytes.com                         [4]  [BASIC]
 #   redditmedia.com                          [4]  [BASIC]
 #   supabase.co                              [4]  [BASIC]
+#   webex.com                                [4]  [BASIC]
 #   crwdcntrl.net                            [3]  [BASIC]
 #   linksynergy.com                          [3]  [BASIC]
 #   twitter.com                              [3]  [BASIC]
@@ -69,7 +70,6 @@
 #   mailchimp.com                            [3]  [BASIC]
 #   googleadservices.com                     [3]  [BASIC]
 #   googlesyndication.com                    [3]  [BASIC]
-#   webex.com                                [3]  [BASIC]
 #   adform.net                               [2]  [BASIC]
 #   atdmt.com                                [2]  [BASIC]
 #   conde.digital                            [2]  [BASIC]
@@ -290,7 +290,6 @@
 #   mparticle.com                            [1]  [BASIC]
 #   iljmp.com                                [1]  [BASIC]
 #   imrworldwide.com                         [1]  [BASIC]
-#   inspsearchapi.com                        [1]  [BASIC]
 #   intercom-clicks.com                      [1]  [BASIC]
 #   peerius.com                              [1]  [BASIC]
 #   jdoqocy.com                              [1]  [BASIC]
@@ -2796,9 +2795,6 @@
   BL : d1s5n6wuwgnxf4.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1s8vtutufck9t.cloudfront.net [url:tif.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1sboz88tkttfp.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -2806,6 +2802,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1sjz3r2x2vk2u.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1smhlexuyv537.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1snv67wdds0p2.cloudfront.net [url:]
@@ -7256,9 +7255,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : inne22tull90mse.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
-  WL : inspsearchapi.com [url:allowlist.txt]
-  BL : inspsearchapi.com [url:]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : instaread-ads.s3.amazonaws.com [url:]
 
@@ -7276,6 +7272,9 @@
 
   WL : *.snapchat.com [static]  covers subdomain
   BL : intg.snapchat.com [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ionoshelpionos.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : ip-address-check-mo.vercel.app [url:hostfile]
@@ -8869,6 +8868,9 @@
 
   WL : *.opera.com [static]  covers subdomain
   BL : try.opera.com [url:]
+
+  WL : *.webex.com [static]  covers subdomain
+  BL : tsa-f.webex.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.webex.com [static]  covers subdomain
   BL : tsa.webex.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
