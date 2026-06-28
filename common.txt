@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 74)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1598]  [MAX]
-#   amazonaws.com                            [188]  [MAX]
+#   cloudfront.net                           [1599]  [MAX]
+#   amazonaws.com                            [187]  [MAX]
 #   pages.dev                                [79]  [MAX]
 #   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [WARN]
@@ -2795,6 +2795,9 @@
   BL : d1s5n6wuwgnxf4.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1s8vtutufck9t.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1sboz88tkttfp.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -2802,9 +2805,6 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1sjz3r2x2vk2u.cloudfront.net [url:]
-
-  WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1smhlexuyv537.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1snv67wdds0p2.cloudfront.net [url:]
@@ -6539,6 +6539,9 @@
   BL : dv0uonokej56p.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : dv25cfe4fmu5k.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : dv663fc06d35i.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -7494,9 +7497,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : mailmunch.s3.amazonaws.com [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : main-direct.s3.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.spotify.com [static]  covers subdomain
   BL : malware.open.spotify.com [url:hostfile]
