@@ -274,6 +274,7 @@
 #   ezodn.com                                [1]  [BASIC]
 #   icann.org                                [1]  [BASIC]
 #   redirectingat.com                        [1]  [BASIC]
+#   go2cloud.org                             [1]  [BASIC]
 #   go2jump.org                              [1]  [BASIC]
 #   google-analytics.com                     [1]  [BASIC]
 #   gopjn.com                                [1]  [BASIC]
@@ -7035,6 +7036,9 @@
 
   WL : go.redirectingat.com [url:whitelist-referral.txt]
   BL : go.redirectingat.com [url:filter_1.txt]
+
+  WL : go2cloud.org [url:whitelist-referral.txt]
+  BL : go2cloud.org [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : go2jump.org [url:whitelist-referral.txt]
   BL : go2jump.org [url:filter_1.txt]
