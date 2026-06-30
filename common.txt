@@ -1,9 +1,9 @@
-# Scale  — max: top 20% (>= 74)  warn: top 50% (>= 13)  basic: remaining
+# Scale  — max: top 20% (>= 73)  warn: top 50% (>= 13)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1599]  [MAX]
+#   cloudfront.net                           [1600]  [MAX]
 #   amazonaws.com                            [187]  [MAX]
 #   pages.dev                                [79]  [MAX]
-#   workers.dev                              [74]  [MAX]
+#   workers.dev                              [73]  [MAX]
 #   yahoo.com                                [70]  [WARN]
 #   vercel.app                               [47]  [WARN]
 #   b-cdn.net                                [45]  [WARN]
@@ -504,9 +504,6 @@
   BL : 7q1z79gxsi.global.ssl.fastly.net [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : 829d-vexel-chisel-fuse-hm.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : 9w2zed1szg.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -622,9 +619,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : adinplay-venatus.workers.dev [url:filter_1.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : adinplay.workers.dev [url:filter_1.txt]
 
   WL : adj.st [url:whitelist-referral.txt]
   BL : adj.st [url:hosts]
@@ -1123,6 +1117,9 @@
 
   WL : appmetrica.yandex.com [url:allowlist.txt]
   BL : appmetrica.yandex.com [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : appsuiteionoshelpcentre.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.fastly.net [static]  covers subdomain
   BL : ascpqnj-oam.global.ssl.fastly.net [url:]
@@ -5992,6 +5989,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dic9vgwbkxd8r.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : dieyw83levyc2.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dig8srs7dv7t5.cloudfront.net [url:tif.mini.txt]
