@@ -1,20 +1,20 @@
-# Scale  — max: top 20% (>= 73)  warn: top 50% (>= 13)  basic: remaining
+# Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1600]  [MAX]
 #   amazonaws.com                            [190]  [MAX]
 #   pages.dev                                [79]  [MAX]
 #   workers.dev                              [73]  [MAX]
-#   yahoo.com                                [70]  [WARN]
-#   vercel.app                               [47]  [WARN]
+#   yahoo.com                                [70]  [MAX]
+#   vercel.app                               [48]  [WARN]
 #   b-cdn.net                                [45]  [WARN]
 #   apple.com                                [28]  [WARN]
 #   microsoft.com                            [25]  [WARN]
 #   google.com                               [19]  [WARN]
+#   opera.com                                [15]  [WARN]
 #   amazon.com                               [14]  [WARN]
-#   netflix.com                              [13]  [WARN]
+#   netflix.com                              [13]  [BASIC]
 #   fastly.net                               [12]  [BASIC]
 #   azurewebsites.net                        [12]  [BASIC]
-#   opera.com                                [12]  [BASIC]
 #   googleapis.com                           [11]  [BASIC]
 #   spotify.com                              [11]  [BASIC]
 #   akamaized.net                            [11]  [BASIC]
@@ -481,6 +481,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 4hfvbao1ea.execute-api.ap-northeast-2.amazonaws.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : 4ma0hzvkuhjdicwvx9yy.s3.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.trafficmanager.net [static]  covers subdomain
   BL : 51tongji.trafficmanager.net [url:filter_1.txt]
@@ -1152,9 +1155,6 @@
   BL : awin1.com [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : aws-backup-e9ec7f79ad980725.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : aws-practical-frontend.s3.dualstack.ap-south-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -1165,6 +1165,15 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : aznude.workers.dev [url:]
+
+  WL : *.opera.com [static]  covers subdomain
+  BL : b-eu.adx.opera.com [url:hosts]
+
+  WL : *.opera.com [static]  covers subdomain
+  BL : b-sg.adx.opera.com [url:hosts]
+
+  WL : *.opera.com [static]  covers subdomain
+  BL : b-us.adx.opera.com [url:hosts]
 
   WL : *.paypal.com [static]  covers subdomain
   BL : b.stats.paypal.com [url:hosts]
@@ -5675,9 +5684,6 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : datafluxworker.system-telemetry.workers.dev [url:hostfile]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : datum-level-cf-mallet-crimp-d3ab.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dax3x3wqpt2q3.cloudfront.net [url:]
 
@@ -6926,6 +6932,12 @@
   WL : *.microsoft.com [static]  covers subdomain
   BL : fp.advertising.microsoft.com [url:hosts]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : freedomservicingmano.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : freedomtenskiwebmailrvss.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.akamaized.net [static]  covers subdomain
   BL : freewheel-mtgx-tv.akamaized.net [url:filter_1.txt]
 
@@ -6958,6 +6970,9 @@
 
   WL : *.azureedge.net [static]  covers subdomain
   BL : g2insights-cdn.azureedge.net [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : g71c7g3-ou9wh835ca-1.s3.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : ganon.yahoo.com [url:]
@@ -7904,6 +7919,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ph2-cc-pages.s3.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.vercel.app [static]  covers subdomain
+  BL : phileweb-amzrank.vercel.app [url:]
+
   WL : *.workers.dev [static]  covers subdomain
   BL : phishing.quiet-disk-62f9.hrmcxaeel.workers.dev [url:hostfile]
 
@@ -8162,9 +8180,6 @@
   WL : query.petametrics.com [url:allowlist.txt]
   BL : query.petametrics.com [url:hosts]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : quiet-023-holly.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
-
   WL : *.workers.dev [static]  covers subdomain
   BL : quiet-disk-62f9.hrmcxaeel.workers.dev [url:hostfile]
 
@@ -8404,9 +8419,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : shiny-darkness-5096.hrmcxaeel.workers.dev [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : sigil-flute-brief.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : simplicity-w.pages.dev [url:hostfile]
