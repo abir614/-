@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1600]  [MAX]
-#   amazonaws.com                            [190]  [MAX]
+#   amazonaws.com                            [191]  [MAX]
 #   pages.dev                                [79]  [MAX]
 #   workers.dev                              [73]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -39,6 +39,7 @@
 #   bing.com                                 [5]  [BASIC]
 #   twitch.tv                                [5]  [BASIC]
 #   redhat.com                               [5]  [BASIC]
+#   supabase.co                              [5]  [BASIC]
 #   imgur.com                                [4]  [BASIC]
 #   facebook.com                             [4]  [BASIC]
 #   amplitude.com                            [4]  [BASIC]
@@ -51,7 +52,6 @@
 #   cloudflare.com                           [4]  [BASIC]
 #   malwarebytes.com                         [4]  [BASIC]
 #   redditmedia.com                          [4]  [BASIC]
-#   supabase.co                              [4]  [BASIC]
 #   webex.com                                [4]  [BASIC]
 #   crwdcntrl.net                            [3]  [BASIC]
 #   linksynergy.com                          [3]  [BASIC]
@@ -92,6 +92,7 @@
 #   tagcommander.com                         [2]  [BASIC]
 #   sitescout.com                            [2]  [BASIC]
 #   github.com                               [2]  [BASIC]
+#   githubusercontent.com                    [2]  [BASIC]
 #   conviva.com                              [2]  [BASIC]
 #   railway.app                              [2]  [BASIC]
 #   whatsapp.net                             [2]  [BASIC]
@@ -179,7 +180,6 @@
 #   bizx.info                                [1]  [BASIC]
 #   browser-intake-datadoghq.com             [1]  [BASIC]
 #   msn.com                                  [1]  [BASIC]
-#   adobe.com                                [1]  [BASIC]
 #   cc-dt.com                                [1]  [BASIC]
 #   trackonomics.net                         [1]  [BASIC]
 #   advertserve.com                          [1]  [BASIC]
@@ -219,7 +219,6 @@
 #   kochava.com                              [1]  [BASIC]
 #   conversantmedia.com                      [1]  [BASIC]
 #   convertexperiments.com                   [1]  [BASIC]
-#   githubusercontent.com                    [1]  [BASIC]
 #   cqcounter.com                            [1]  [BASIC]
 #   chausport.com                            [1]  [BASIC]
 #   cxpublic.com                             [1]  [BASIC]
@@ -1355,9 +1354,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : campaign-uploads.s3.amazonaws.com [url:]
 
-  WL : campaign.adobe.com [url:whitelist-referral.txt]
-  BL : campaign.adobe.com [url:hosts]
-
   WL : *.workers.dev [static]  covers subdomain
   BL : campanha1-api.ef971a42.workers.dev [url:hostfile]
 
@@ -1657,6 +1653,9 @@
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : cookiex.ngd.yahoo.com [url:]
+
+  WL : *.githubusercontent.com [static]  covers subdomain
+  BL : copilot-telemetry-service.githubusercontent.com [url:hosts]
 
   WL : *.githubusercontent.com [static]  covers subdomain
   BL : copilot-telemetry.githubusercontent.com [url:]
@@ -6116,6 +6115,9 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dl5ft52dtazxd.cloudfront.net [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : dl5hpvhoqtlwzhd535ge.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dlem1deojpcg7.cloudfront.net [url:]
 
@@ -7339,6 +7341,9 @@
 
   WL : jdoqocy.com [url:whitelist-referral.txt]
   BL : jdoqocy.com [url:filter_1.txt]
+
+  WL : *.supabase.co [static]  covers subdomain
+  BL : jgpsmeydnemtihfmgtxt.supabase.co [url:tif.mini.txt]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : jill.fc.yahoo.com [url:filter_1.txt]
