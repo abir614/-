@@ -3,7 +3,7 @@
 #   cloudfront.net                           [1600]  [MAX]
 #   amazonaws.com                            [191]  [MAX]
 #   pages.dev                                [79]  [MAX]
-#   workers.dev                              [73]  [MAX]
+#   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [MAX]
 #   vercel.app                               [48]  [WARN]
 #   b-cdn.net                                [45]  [WARN]
@@ -1350,6 +1350,9 @@
 
   WL : *.firebaseio.com [static]  covers subdomain
   BL : call-history-ecc1e-default-rtdb.firebaseio.com [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : camads.workers.dev [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : campaign-uploads.s3.amazonaws.com [url:]
