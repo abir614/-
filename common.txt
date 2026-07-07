@@ -564,6 +564,9 @@
   WL : accaii.com [url:allowlist.txt]
   BL : accaii.com [url:filter_1.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : access-authority-2faa9bb814.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
+
   WL : accesstrade.net [url:whitelist-referral.txt]
   BL : accesstrade.net [url:filter_1.txt]
 
@@ -812,9 +815,6 @@
 
   WL : advise.gallup.com [url:whitelist-referral.txt]
   BL : advise.gallup.com [url:filter_1.txt]
-
-  WL : *.apple.com [static]  covers subdomain
-  BL : advp.apple.com [url:]
 
   WL : adx.io [url:whitelist-referral.txt]
   BL : adx.io [url:filter_1.txt]
@@ -7404,9 +7404,6 @@
   WL : leanplum.com [url:easyprivacy_allowlist.txt]
   BL : leanplum.com [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : level-oasis.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.akamaized.net [static]  covers subdomain
   BL : lgforbes.akamaized.net [url:]
 
@@ -8129,6 +8126,9 @@
 
   WL : *.apple.com [static]  covers subdomain
   BL : proxy-skadnetwork.apple.com [url:hosts]
+
+  WL : *.apple.com [static]  covers subdomain
+  BL : proxy.advp.apple.com [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : pub-algeriatenders.s3.eu-central-1.amazonaws.com [url:]
