@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1600]  [MAX]
-#   amazonaws.com                            [191]  [MAX]
+#   amazonaws.com                            [185]  [MAX]
 #   pages.dev                                [79]  [MAX]
 #   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -238,7 +238,6 @@
 #   demdex.net                               [1]  [BASIC]
 #   driftt.com                               [1]  [BASIC]
 #   dt51.net                                 [1]  [BASIC]
-#   customeriomail.com                       [1]  [BASIC]
 #   akamaiedge.net                           [1]  [BASIC]
 #   eacdn.com                                [1]  [BASIC]
 #   onelogin.com                             [1]  [BASIC]
@@ -1583,9 +1582,6 @@
 
   WL : *.trafficmanager.net [static]  covers subdomain
   BL : cnzz.trafficmanager.net [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : cognito-identity.amazonaws.com [url:tif.mini.txt]
 
   WL : coinadster.com [url:allowlist.txt]
   BL : coinadster.com [url:]
@@ -6720,9 +6716,6 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dzxr711a4yw31.cloudfront.net [url:]
 
-  WL : e.customeriomail.com [url:whitelist-referral.txt]
-  BL : e.customeriomail.com [url:filter_1.txt]
-
   WL : *.b-cdn.net [static]  covers subdomain
   BL : e045f561.b-cdn.net [url:]
 
@@ -7292,9 +7285,6 @@
 
   WL : *.wikimedia.org [static]  covers subdomain
   BL : intake-logging.wikimedia.org [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : inteldocs.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
 
   WL : intercom-clicks.com [url:whitelist-referral.txt]
   BL : intercom-clicks.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -8118,9 +8108,6 @@
   WL : propelbon.com [url:whitelist-referral.txt]
   BL : propelbon.com [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : proposaldocs-eu.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
-
   WL : *.b-cdn.net [static]  covers subdomain
   BL : propsid.b-cdn.net [url:]
 
@@ -8246,9 +8233,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : removeads.workers.dev [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : report-cdn-426.s3.eu-west-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.microsoft.com [static]  covers subdomain
   BL : reports.wes.df.telemetry.microsoft.com [url:hosts]
@@ -8757,9 +8741,6 @@
   WL : *.webex.com [static]  covers subdomain
   BL : tmetrics.webex.com [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : tmpdrop.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
-
   WL : *.yahoo.com [static]  covers subdomain
   BL : tp.ads.yahoo.com [url:hosts]
 
@@ -9050,9 +9031,6 @@
 
   WL : vgwort.de [url:allowlist.txt]
   BL : vgwort.de [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : vibrbucket.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.google.com [static]  covers subdomain
   BL : video-stats.video.google.com [url:]
