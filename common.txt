@@ -1,8 +1,8 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1600]  [MAX]
-#   amazonaws.com                            [185]  [MAX]
-#   pages.dev                                [79]  [MAX]
+#   amazonaws.com                            [188]  [MAX]
+#   pages.dev                                [78]  [MAX]
 #   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [MAX]
 #   vercel.app                               [48]  [WARN]
@@ -1216,6 +1216,9 @@
 
   WL : bcp.crwdcntrl.net [url:whitelist-referral.txt]
   BL : bcp.crwdcntrl.net [url:hosts]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : bcvbnww.s3.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : bdtt.b-cdn.net [url:hosts]
@@ -6791,9 +6794,6 @@
   WL : ensighten.com [url:easyprivacy_allowlist.txt]
   BL : ensighten.com [url:filter_1.txt]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : enterprise1.pages.dev [url:hostfile]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : entrecard.s3.amazonaws.com [url:]
 
@@ -8280,6 +8280,9 @@
   BL : rum.us-east-1.amazonaws.com [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : rwqsssd.s3.ap-northeast-3.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : s-14billmondy.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.opera.com [static]  covers subdomain
@@ -9037,6 +9040,9 @@
 
   WL : viglink.com [url:allowlist.txt]
   BL : viglink.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : viiew00.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : visit.webhosting.yahoo.com [url:filter_1.txt]
