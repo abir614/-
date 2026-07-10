@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1600]  [MAX]
-#   amazonaws.com                            [188]  [MAX]
+#   amazonaws.com                            [176]  [MAX]
 #   pages.dev                                [78]  [MAX]
 #   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -19,9 +19,9 @@
 #   spotify.com                              [11]  [BASIC]
 #   akamaized.net                            [11]  [BASIC]
 #   reddit.com                               [10]  [BASIC]
+#   nvidia.com                               [10]  [BASIC]
 #   paypal.com                               [9]  [BASIC]
 #   unpkg.com                                [9]  [BASIC]
-#   nvidia.com                               [9]  [BASIC]
 #   azureedge.net                            [8]  [BASIC]
 #   linkedin.com                             [8]  [BASIC]
 #   doubleclick.net                          [7]  [BASIC]
@@ -873,9 +873,6 @@
   BL : alitems.site [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : allianz-minicamera.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : aloe-veer-wm-lance.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -1217,9 +1214,6 @@
   WL : bcp.crwdcntrl.net [url:whitelist-referral.txt]
   BL : bcp.crwdcntrl.net [url:hosts]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : bcvbnww.s3.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
-
   WL : *.b-cdn.net [static]  covers subdomain
   BL : bdtt.b-cdn.net [url:hosts]
 
@@ -1552,9 +1546,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : cloud-file-explorer.netlify.app [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : cloud-storage-allgeos.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : clouderrorreporting.googleapis.com [url:easyprivacy_allowlist.txt]
   BL : clouderrorreporting.googleapis.com [url:]
@@ -6761,9 +6752,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : em-patch-thin-blade.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : email-ionos-mx-portal-appsuite-app-mailbox.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.substack.com [static]  covers subdomain
   BL : email.mg1.substack.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
@@ -6887,9 +6875,6 @@
   WL : *.googleapis.com [static]  covers subdomain
   BL : federatedcompute-pa.googleapis.com [url:]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : filesharee76.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
-
   WL : fingerprintjs.com [url:easylist_allowlist.txt]
   BL : fingerprintjs.com [url:]
 
@@ -6928,12 +6913,6 @@
 
   WL : *.microsoft.com [static]  covers subdomain
   BL : fp.advertising.microsoft.com [url:hosts]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : freedomservicingmano.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : freedomtenskiwebmailrvss.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.akamaized.net [static]  covers subdomain
   BL : freewheel-mtgx-tv.akamaized.net [url:filter_1.txt]
@@ -7187,9 +7166,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : hosting-5985-io.s3.ca-central-1.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : hqrieta.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
-
   WL : href.li [url:whitelist-referral.txt]
   BL : href.li [url:filter_1.txt]
 
@@ -7273,9 +7249,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : init-static.seccheckclod.workers.dev [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : inne22tull90mse.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : instaread-ads.s3.amazonaws.com [url:]
@@ -8151,7 +8124,7 @@
   BL : pxf.io [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.supabase.co [static]  covers subdomain
-  BL : qaomekspdjfbdeixxjky.supabase.co [url:tif.mini.txt]
+  BL : qaomekspdjfbdeixxjky.supabase.co [url:hostfile]
 
   WL : qksrv.net [url:whitelist-referral.txt]
   BL : qksrv.net [url:filter_1.txt]
@@ -8453,9 +8426,6 @@
   WL : *.redhat.com [static]  covers subdomain
   BL : smtrcs.redhat.com [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : snap-quanta-agate.s3.ap-northeast-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.licdn.com [static]  covers subdomain
   BL : snap.licdn.com [url:hosts]
 
@@ -8621,9 +8591,6 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : system-debug-1.b-cdn.net [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : systems-cdn-2024.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.opera.com [static]  covers subdomain
   BL : t-odx.op-mobile.opera.com [url:filter_1.txt]
 
@@ -8710,6 +8677,9 @@
 
   WL : *.canva.com [static]  covers subdomain
   BL : telemetry.canva.com [url:]
+
+  WL : *.nvidia.com [static]  covers subdomain
+  BL : telemetry.data.nvidia.com [url:]
 
   WL : *.dropbox.com [static]  covers subdomain
   BL : telemetry.dropbox.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -9040,9 +9010,6 @@
 
   WL : viglink.com [url:allowlist.txt]
   BL : viglink.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : viiew00.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : visit.webhosting.yahoo.com [url:filter_1.txt]
