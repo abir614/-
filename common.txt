@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1600]  [MAX]
-#   amazonaws.com                            [176]  [MAX]
+#   cloudfront.net                           [1601]  [MAX]
+#   amazonaws.com                            [180]  [MAX]
 #   pages.dev                                [78]  [MAX]
 #   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -873,6 +873,9 @@
   BL : alitems.site [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : allianz-minicamera.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : aloe-veer-wm-lance.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -1271,9 +1274,6 @@
   WL : bluekai.com [url:whitelist-referral.txt]
   BL : bluekai.com [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : bn-lift-quorum-beryl.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
-
   WL : *.apple.com [static]  covers subdomain
   BL : books-analytics-events.apple.com [url:]
 
@@ -1546,6 +1546,9 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : cloud-file-explorer.netlify.app [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : cloud-storage-allgeos.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : clouderrorreporting.googleapis.com [url:easyprivacy_allowlist.txt]
   BL : clouderrorreporting.googleapis.com [url:]
@@ -3480,7 +3483,7 @@
   BL : d2camyomzxmxme.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2cgumzzqhgmdu.cloudfront.net [url:]
+  BL : d2cgumzzqhgmdu.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2cli4kgl5uxre.cloudfront.net [url:]
@@ -5325,6 +5328,9 @@
   BL : d3u0wd7ppfhcxv.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3u1re909noqg0.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3u598arehftfk.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -6752,6 +6758,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : em-patch-thin-blade.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : email-ionos-mx-portal-appsuite-app-mailbox.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.substack.com [static]  covers subdomain
   BL : email.mg1.substack.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
@@ -6874,6 +6883,9 @@
 
   WL : *.googleapis.com [static]  covers subdomain
   BL : federatedcompute-pa.googleapis.com [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : filesharee76.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : fingerprintjs.com [url:easylist_allowlist.txt]
   BL : fingerprintjs.com [url:]
@@ -7166,6 +7178,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : hosting-5985-io.s3.ca-central-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : hqrieta.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
+
   WL : href.li [url:whitelist-referral.txt]
   BL : href.li [url:filter_1.txt]
 
@@ -7251,6 +7266,9 @@
   BL : init-static.seccheckclod.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : inne22tull90mse.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : instaread-ads.s3.amazonaws.com [url:]
 
   WL : *.wikimedia.org [static]  covers subdomain
@@ -7291,9 +7309,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : j0v36abmdj.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : j9z49v9ypsvaud3evc9n.s3.eu-central-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : jackal-chestnut-cube-wm-worn.s3.ap-northeast-1.amazonaws.com [url:tif.mini.txt]
@@ -8495,7 +8510,7 @@
   WL : static.ads-twitter.com [url:allowlist.txt]
   BL : static.ads-twitter.com [url:hosts]
 
-  WL : *.cloudflareinsights.com [static]  covers subdomain
+  WL : static.cloudflareinsights.com [url:allowlist.txt]
   BL : static.cloudflareinsights.com [url:filter_1.txt]
 
   WL : static.parsely.com [url:allowlist.txt]
@@ -8679,7 +8694,7 @@
   BL : telemetry.canva.com [url:]
 
   WL : *.nvidia.com [static]  covers subdomain
-  BL : telemetry.data.nvidia.com [url:]
+  BL : telemetry.data.nvidia.com [url:filter_1.txt]
 
   WL : *.dropbox.com [static]  covers subdomain
   BL : telemetry.dropbox.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
