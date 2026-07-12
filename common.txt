@@ -1,8 +1,8 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1601]  [MAX]
-#   amazonaws.com                            [180]  [MAX]
-#   pages.dev                                [78]  [MAX]
+#   cloudfront.net                           [1600]  [MAX]
+#   amazonaws.com                            [182]  [MAX]
+#   pages.dev                                [76]  [MAX]
 #   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [MAX]
 #   vercel.app                               [48]  [WARN]
@@ -289,6 +289,7 @@
 #   mparticle.com                            [1]  [BASIC]
 #   iljmp.com                                [1]  [BASIC]
 #   imrworldwide.com                         [1]  [BASIC]
+#   inspsearchapi.com                        [1]  [BASIC]
 #   intercom-clicks.com                      [1]  [BASIC]
 #   peerius.com                              [1]  [BASIC]
 #   jdoqocy.com                              [1]  [BASIC]
@@ -899,6 +900,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : amz-recover-sign.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : amzo-s.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.facebook.com [static]  covers subdomain
   BL : an.facebook.com [url:]
 
@@ -1114,6 +1118,9 @@
 
   WL : *.digicert.com [static]  covers subdomain
   BL : app.updates.digicert.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : apply-pncgrant-regional-claim.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
 
   WL : appmetrica.yandex.com [url:allowlist.txt]
   BL : appmetrica.yandex.com [url:]
@@ -1436,9 +1443,6 @@
   WL : *.canva.com [static]  covers subdomain
   BL : cl.canva.com [url:]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : clabrmercur.pages.dev [url:hostfile]
-
   WL : *.fastly.net [static]  covers subdomain
   BL : clarium.global.ssl.fastly.net [url:]
 
@@ -1456,9 +1460,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : claufua.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : clavgood.pages.dev [url:hostfile]
 
   WL : clb.yahoo.co.jp [url:allowlist.txt]
   BL : clb.yahoo.co.jp [url:]
@@ -5328,9 +5329,6 @@
   BL : d3u0wd7ppfhcxv.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3u1re909noqg0.cloudfront.net [url:tif.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3u598arehftfk.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -5896,6 +5894,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dfck9uqiatqhh.cloudfront.net [url:]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : dfdghfhddhdhfhdfhdfyhdfdfh.pages.dev [url:hostfile]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dfh48z16zqvm6.cloudfront.net [url:]
@@ -7268,6 +7269,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : inne22tull90mse.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : inspsearchapi.com [url:allowlist.txt]
+  BL : inspsearchapi.com [url:]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : instaread-ads.s3.amazonaws.com [url:]
 
@@ -8554,9 +8558,6 @@
 
   WL : *.apple-dns.net [static]  covers subdomain
   BL : stocks-analytics-events.news.apple-dns.net [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : storgvkam.pages.dev [url:hostfile]
 
   WL : *.nvidia.com [static]  covers subdomain
   BL : stt.nvidia.com [url:filter_1.txt]
