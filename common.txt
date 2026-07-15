@@ -1,11 +1,11 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1603]  [MAX]
-#   amazonaws.com                            [285]  [MAX]
+#   amazonaws.com                            [272]  [MAX]
 #   pages.dev                                [76]  [MAX]
 #   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [MAX]
-#   vercel.app                               [48]  [WARN]
+#   vercel.app                               [47]  [WARN]
 #   b-cdn.net                                [45]  [WARN]
 #   apple.com                                [28]  [WARN]
 #   microsoft.com                            [25]  [WARN]
@@ -463,13 +463,7 @@
   BL : 1927784483.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : 19l-o819ke4y8liuqplr.s3.eu-central-2.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : 1ljft17gwl.execute-api.ap-southeast-1.amazonaws.com [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : 1qtyuiokhbdge678ueyehe89364649hfgb.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : 1wincdn.b-cdn.net [url:]
@@ -560,9 +554,6 @@
 
   WL : a1.adform.net [url:whitelist-referral.txt]
   BL : a1.adform.net [url:hosts]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : a36.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : a46e0368.forwarding-request-consent.pages.dev [url:filter_1.txt]
@@ -958,9 +949,6 @@
   BL : amazon-adsystem.com [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : amazonaws-assets-secure-nodes-assets-view.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : amhv-hug-1kilo.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -968,15 +956,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : amz-recover-sign.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : amz36rd.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : amzn-ionos-sso.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : amzn-zone-ionos.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : amzo-s.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
@@ -1395,9 +1374,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : btexee3dc53f6dc453f6a9f461a5hfamd.pages.dev [url:hostfile]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : bvnmaaa.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.openai.com [static]  covers subdomain
   BL : bzr.openai.com [url:]
 
@@ -1763,9 +1739,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : cqddswpwncsxrqfcdxffyvvetxjbdc.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : cr-bind-fenix.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.googleapis.com [static]  covers subdomain
   BL : crashlyticsreports-pa.googleapis.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -4552,6 +4525,9 @@
   BL : d32t6p7tldxil2.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d32yelvf3fh72e.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d32z5ni8t5127x.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -5722,9 +5698,6 @@
   BL : dal9hkyfi0m0n.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dam64p5y4r7q5.cloudfront.net [url:tif.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
   BL : danv01ao0kdr2.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -5732,9 +5705,6 @@
 
   WL : *.netflix.com [static]  covers subdomain
   BL : darnuid.netflix.com [url:filter_1.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : dashboard2-cqhtfds57-cihan-katircis-projects.vercel.app [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : data-ghana.s3.af-south-1.amazonaws.com [url:tif.mini.txt]
@@ -7051,9 +7021,6 @@
   BL : federatedcompute-pa.googleapis.com [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : ferrule-active.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : filesharee76.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : fingerprintjs.com [url:easylist_allowlist.txt]
@@ -7173,6 +7140,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : get-analytics-repository.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : gfihomesfile.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
+
   WL : *.b-cdn.net [static]  covers subdomain
   BL : gg-ads.b-cdn.net [url:hosts]
 
@@ -7193,9 +7163,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : gl29jadw0dm8x9f.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : glaze-douse-oval.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.youngjoygame.com [static]  covers subdomain
   BL : global-report.ml.youngjoygame.com [url:]
@@ -7548,9 +7515,6 @@
   WL : *.github.io [static]  covers subdomain
   BL : kilab-gaming.github.io [url:hostfile]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : kiln-heron.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.railway.app [static]  covers subdomain
   BL : kiwi.railway.app [url:]
 
@@ -7667,9 +7631,6 @@
 
   WL : *.netflix.com [static]  covers subdomain
   BL : logs.netflix.com [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : londonfribasecoi.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : lp-apne1-3pk5xpkx.s3.ap-northeast-1.amazonaws.com [url:tif.mini.txt]
@@ -8067,9 +8028,6 @@
   WL : *.live.com [static]  covers subdomain
   BL : outlookads.live.com [url:]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : ozona-north-1010-amazon.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.controld.com [static]  covers subdomain
   BL : p.controld.com [url:filter_1.txt]
 
@@ -8432,9 +8390,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : rcallbsuibuibevir.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : rdr-nu1x2cr7-gustngale.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : rdr.wargaming.net [url:whitelist-referral.txt]
   BL : rdr.wargaming.net [url:filter_1.txt]
@@ -9285,6 +9240,9 @@
   WL : valuecommerce.com [url:easylist_allowlist.txt]
   BL : valuecommerce.com [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : vav5zt1csp9hzgg.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : vay24h.vercel.app [url:filter_1.txt]
 
@@ -9305,6 +9263,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : verifycaptchaservice-a09ee3dc53f6a9f461a45.pages.dev [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : verifyy-account-887855-0201bb8f.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : verisuccessrate.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
@@ -9536,9 +9497,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : yoke-merge-lupine.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : yunasd-qewhd-suwre.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : yyupdats.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
