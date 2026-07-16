@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1603]  [MAX]
-#   amazonaws.com                            [272]  [MAX]
+#   amazonaws.com                            [271]  [MAX]
 #   pages.dev                                [76]  [MAX]
 #   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -470,6 +470,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : 260120.vercel.app [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : 2d4e5f6-7a8b-4c2d-9e1f-3b5a7c8d9e0fc.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : 2o7.net [url:allowlist.txt]
   BL : 2o7.net [url:filter_1.txt]
@@ -5020,7 +5023,7 @@
   BL : d3iz6lralvg77g.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3j1weegxvu8ns.cloudfront.net [url:]
+  BL : d3j1weegxvu8ns.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3j3yrurxcqogk.cloudfront.net [url:filter_1.txt]
@@ -5827,7 +5830,7 @@
   BL : dc8na2hxrj29i.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dc8xl0ndzn2cb.cloudfront.net [url:]
+  BL : dc8xl0ndzn2cb.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dcai7bdiz5toz.cloudfront.net [url:]
@@ -7599,9 +7602,6 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : llmometrics.b-cdn.net [url:]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : lm-supple-heron-4879.s3.sa-east-1.amazonaws.com [url:tif.mini.txt]
-
   WL : lndata.com [url:whitelist-referral.txt]
   BL : lndata.com [url:filter_1.txt]
 
@@ -7939,7 +7939,7 @@
   BL : o.update.fbsbx.com [url:hosts]
 
   WL : *.trafficmanager.net [static]  covers subdomain
-  BL : o365diagtelemetry.trafficmanager.net [url:]
+  BL : o365diagtelemetry.trafficmanager.net [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : o9tt6h08li.execute-api.eu-west-1.amazonaws.com [url:filter_1.txt]
@@ -8951,9 +8951,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : tempo-client-metric-prod.s3.amazonaws.com [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : tessera-trace-ab.s3.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : thin-wade-grail-loom.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
