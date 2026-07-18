@@ -1203,9 +1203,6 @@
   WL : *.digicert.com [static]  covers subdomain
   BL : app.updates.digicert.com [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : apply-pncgrant-regional-claim.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
-
   WL : appmetrica.yandex.com [url:allowlist.txt]
   BL : appmetrica.yandex.com [url:]
 
@@ -6249,9 +6246,6 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dl5ft52dtazxd.cloudfront.net [url:]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : dl5hpvhoqtlwzhd535ge.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dlem1deojpcg7.cloudfront.net [url:]
 
@@ -6928,6 +6922,9 @@
   BL : email-verlification-notice-129196-8db9565a.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : email-verlification-notice-129227-f4681364.s3.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : email-verlification-notice-129233-7c0b1e80.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.substack.com [static]  covers subdomain
@@ -7217,6 +7214,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : globalbusinesspoint-4nhhzuh6.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : glue-tp-needle.s3.ap-northeast-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : gn-winch-wisteria-cloak.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
@@ -8536,9 +8536,6 @@
   BL : rwacbzxkynlfy8a.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : rwqsssd.s3.ap-northeast-3.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : s-14billmondy.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.opera.com [static]  covers subdomain
@@ -8840,6 +8837,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : still-sound-5eea.utkulukkar1982.workers.dev [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : stmtsecure-docs.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.firebaseio.com [static]  covers subdomain
   BL : stockbook-ads.firebaseio.com [url:]
