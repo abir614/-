@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1603]  [MAX]
-#   amazonaws.com                            [290]  [MAX]
+#   cloudfront.net                           [1605]  [MAX]
+#   amazonaws.com                            [288]  [MAX]
 #   pages.dev                                [76]  [MAX]
 #   workers.dev                              [74]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -37,13 +37,13 @@
 #   trafficmanager.net                       [5]  [BASIC]
 #   mozilla.org                              [5]  [BASIC]
 #   bing.com                                 [5]  [BASIC]
-#   twitch.tv                                [5]  [BASIC]
 #   redhat.com                               [5]  [BASIC]
 #   supabase.co                              [5]  [BASIC]
 #   imgur.com                                [4]  [BASIC]
 #   facebook.com                             [4]  [BASIC]
 #   amplitude.com                            [4]  [BASIC]
 #   live.com                                 [4]  [BASIC]
+#   twitch.tv                                [4]  [BASIC]
 #   europa.eu                                [4]  [BASIC]
 #   digicert.com                             [4]  [BASIC]
 #   dropbox.com                              [4]  [BASIC]
@@ -770,9 +770,6 @@
 
   WL : *.snapchat.com [static]  covers subdomain
   BL : ads.snapchat.com [url:hosts]
-
-  WL : *.twitch.tv [static]  covers subdomain
-  BL : ads.twitch.tv [url:]
 
   WL : ads.twitter.com [url:easylist_allowlist.txt]
   BL : ads.twitter.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -3724,6 +3721,9 @@
   BL : d2fuc4clr7gvcn.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2fw3s7rfepszt.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2fxbo429dllho.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -5733,9 +5733,6 @@
   WL : *.netflix.com [static]  covers subdomain
   BL : darnuid.netflix.com [url:filter_1.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : data-ghana.s3.af-south-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.paypal.com [static]  covers subdomain
   BL : data.account.paypal.com [url:filter_1.txt]
 
@@ -6643,6 +6640,9 @@
   BL : dtxtngytz5im1.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : dty0ycn35t4d2.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : dtyrqq5w0qdc8.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -6895,7 +6895,7 @@
   BL : ecommstats.s3.amazonaws.com [url:]
 
   WL : *.twitch.tv [static]  covers subdomain
-  BL : edge.ads.twitch.tv [url:filter_1.txt]
+  BL : edge.ads.twitch.tv [url:]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : effulgent-stroopwafel-efb9ce.netlify.app [url:]
@@ -8837,9 +8837,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : still-sound-5eea.utkulukkar1982.workers.dev [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : stmtsecure-docs.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.firebaseio.com [static]  covers subdomain
   BL : stockbook-ads.firebaseio.com [url:]
