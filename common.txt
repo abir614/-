@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1608]  [MAX]
-#   amazonaws.com                            [273]  [MAX]
+#   amazonaws.com                            [275]  [MAX]
 #   pages.dev                                [76]  [MAX]
 #   workers.dev                              [75]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -332,6 +332,7 @@
 #   ojrq.net                                 [1]  [BASIC]
 #   cbsi.com                                 [1]  [BASIC]
 #   online-metrix.net                        [1]  [BASIC]
+#   spsglobal.com                            [1]  [BASIC]
 #   onlinestarten.net                        [1]  [BASIC]
 #   optimizely.com                           [1]  [BASIC]
 #   optimost.com                             [1]  [BASIC]
@@ -2806,7 +2807,7 @@
   BL : d1qk9ujrmkucbl.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1qmrxg9gbf226.cloudfront.net [url:filter_1.txt]
+  BL : d1qmrxg9gbf226.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1qnmu4nrib73p.cloudfront.net [url:]
@@ -3415,7 +3416,7 @@
   BL : d26ynmm8jhmv6r.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d27623md02evp.cloudfront.net [url:filter_1.txt]
+  BL : d27623md02evp.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d27genukseznht.cloudfront.net [url:]
@@ -4678,7 +4679,7 @@
   BL : d37d9zbli5ytch.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d37l98t2r94go6.cloudfront.net [url:filter_1.txt]
+  BL : d37l98t2r94go6.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d37npefr9ifq11.cloudfront.net [url:tif.mini.txt]
@@ -7101,6 +7102,9 @@
   WL : *.supabase.co [static]  covers subdomain
   BL : frygzjyhtiunvhvnacif.supabase.co [url:tif.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ftefmti876.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : fuck-ads.vercel.app [url:]
 
@@ -7160,9 +7164,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : get-analytics-repository.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : gfihomesfile.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : gg-ads.b-cdn.net [url:hosts]
@@ -7990,7 +7991,7 @@
   BL : ofrrrosh-357651219741-us-east-1-an.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.google.com [static]  covers subdomain
-  BL : ogads-pa.clients6.google.com [url:]
+  BL : ogads-pa.clients6.google.com [url:filter_1.txt]
 
   WL : *.googleapis.com [static]  covers subdomain
   BL : ogads-pa.googleapis.com [url:]
@@ -8018,6 +8019,9 @@
 
   WL : online-metrix.net [url:easyprivacy_allowlist.txt]
   BL : online-metrix.net [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
+
+  WL : online.spsglobal.com [url:allowlist.txt]
+  BL : online.spsglobal.com [url:filter_1.txt]
 
   WL : onlinestarten.net [url:allowlist.txt]
   BL : onlinestarten.net [url:filter_1.txt]
@@ -9484,6 +9488,9 @@
   BL : xg4ken.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : xintongss.s3.ap-east-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : xp2023-pix.s3.amazonaws.com [url:]
 
   WL : xtremetop100.com [url:allowlist.txt]
@@ -9518,6 +9525,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : yyupdats.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : zapier-logos.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : zenaps.com [url:allowlist.txt]
   BL : zenaps.com [url:hosts]
