@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1608]  [MAX]
-#   amazonaws.com                            [275]  [MAX]
+#   amazonaws.com                            [276]  [MAX]
 #   pages.dev                                [76]  [MAX]
 #   workers.dev                              [75]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -545,6 +545,9 @@
   BL : 8ynyg5w9vfbdb1s.s3-website-us-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : 9b1dd2f1-ce89-4596-be46-ba511a89cad6.s3.dualstack.us-west-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : 9w2zed1szg.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -950,9 +953,6 @@
   BL : amazon-adsystem.com [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : amhv-hug-1kilo.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : ams-pageview-public.s3.amazonaws.com [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -1344,6 +1344,9 @@
 
   WL : bluekai.com [url:whitelist-referral.txt]
   BL : bluekai.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : bokamalas.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.apple.com [static]  covers subdomain
   BL : books-analytics-events.apple.com [url:]
@@ -7688,9 +7691,6 @@
   BL : m.yap.yahoo.com [url:hosts]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : m0z01s25e0a3e.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : m4vt1m0f1f28jiwwlk6u.s3.eu-south-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -9171,6 +9171,9 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : unibotscdn.b-cdn.net [url:hosts]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : unilayer4598.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : update-kaspersky.workers.dev [url:hostfile]
