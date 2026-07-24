@@ -2,7 +2,7 @@
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1608]  [MAX]
 #   amazonaws.com                            [276]  [MAX]
-#   pages.dev                                [76]  [MAX]
+#   pages.dev                                [77]  [MAX]
 #   workers.dev                              [75]  [MAX]
 #   yahoo.com                                [70]  [MAX]
 #   vercel.app                               [47]  [WARN]
@@ -246,6 +246,7 @@
 #   emjcd.com                                [1]  [BASIC]
 #   windows.com                              [1]  [BASIC]
 #   ensighten.com                            [1]  [BASIC]
+#   eporner.com                              [1]  [BASIC]
 #   etracker.de                              [1]  [BASIC]
 #   brandalley.fr                            [1]  [BASIC]
 #   eulerian.net                             [1]  [BASIC]
@@ -334,6 +335,7 @@
 #   online-metrix.net                        [1]  [BASIC]
 #   spsglobal.com                            [1]  [BASIC]
 #   onlinestarten.net                        [1]  [BASIC]
+#   openinapp.link                           [1]  [BASIC]
 #   optimizely.com                           [1]  [BASIC]
 #   optimost.com                             [1]  [BASIC]
 #   optimove.net                             [1]  [BASIC]
@@ -462,9 +464,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 1927784483.s3.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : 1ljft17gwl.execute-api.ap-southeast-1.amazonaws.com [url:hostfile]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : 1wincdn.b-cdn.net [url:]
@@ -6955,6 +6954,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : entrecard.s3.amazonaws.com [url:]
 
+  WL : eporner.com [url:allowlist.txt]
+  BL : eporner.com [url:domains.txt]
+
   WL : *.europa.eu [static]  covers subdomain
   BL : epwa.europarl.europa.eu [url:filter_1.txt]
 
@@ -7558,6 +7560,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : kjkgsi-gsjgkan-wintersga.pages.dev [url:hostfile]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : kpptgup.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
+
   WL : kqzyfj.com [url:whitelist-referral.txt]
   BL : kqzyfj.com [url:hosts]
 
@@ -8029,6 +8034,9 @@
   WL : *.opera.com [static]  covers subdomain
   BL : op-mobile.opera.com [url:]
 
+  WL : openinapp.link [url:whitelist-referral.txt]
+  BL : openinapp.link [url:domains.txt]
+
   WL : *.google.com [static]  covers subdomain
   BL : optimize.google.com [url:hosts]
 
@@ -8385,6 +8393,9 @@
 
   WL : *.unpkg.com [static]  covers subdomain
   BL : quantri.unpkg.com [url:hostfile]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : quantum-auth.pages.dev [url:hostfile]
 
   WL : query.petametrics.com [url:allowlist.txt]
   BL : query.petametrics.com [url:hosts]
