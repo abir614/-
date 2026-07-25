@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1608]  [MAX]
-#   amazonaws.com                            [276]  [MAX]
+#   amazonaws.com                            [274]  [MAX]
 #   pages.dev                                [77]  [MAX]
 #   workers.dev                              [75]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -33,12 +33,12 @@
 #   amazon-adsystem.com                      [6]  [BASIC]
 #   box.com                                  [6]  [BASIC]
 #   azure.com                                [6]  [BASIC]
+#   supabase.co                              [6]  [BASIC]
 #   fbsbx.com                                [6]  [BASIC]
 #   trafficmanager.net                       [5]  [BASIC]
 #   mozilla.org                              [5]  [BASIC]
 #   bing.com                                 [5]  [BASIC]
 #   redhat.com                               [5]  [BASIC]
-#   supabase.co                              [5]  [BASIC]
 #   imgur.com                                [4]  [BASIC]
 #   facebook.com                             [4]  [BASIC]
 #   amplitude.com                            [4]  [BASIC]
@@ -59,6 +59,7 @@
 #   x.com                                    [3]  [BASIC]
 #   mattel163.com                            [3]  [BASIC]
 #   youtube.com                              [3]  [BASIC]
+#   archive.org                              [3]  [BASIC]
 #   office.com                               [3]  [BASIC]
 #   intel.com                                [3]  [BASIC]
 #   ex.co                                    [3]  [BASIC]
@@ -79,7 +80,6 @@
 #   adjust.io                                [2]  [BASIC]
 #   net.in                                   [2]  [BASIC]
 #   adjust.world                             [2]  [BASIC]
-#   archive.org                              [2]  [BASIC]
 #   brave.com                                [2]  [BASIC]
 #   webengage.com                            [2]  [BASIC]
 #   appsflyer.com                            [2]  [BASIC]
@@ -942,9 +942,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : alphaupsell.s3.ap-northeast-2.amazonaws.com [url:]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : altair-nail.s3.ap-south-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.amazon.com [static]  covers subdomain
   BL : amazon-adsystem.amazon.com [url:hosts]
 
@@ -1205,6 +1202,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : atex.silent-frog-4440.hrmcxaeel.workers.dev [url:hostfile]
+
+  WL : *.archive.org [static]  covers subdomain
+  BL : athena.archive.org [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : atoofre.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
@@ -6492,6 +6492,9 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dpeqm8xv96fuc.cloudfront.net [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : dpfamilylawfirm.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
+
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dpirwgljl6cjp.cloudfront.net [url:]
 
@@ -7008,11 +7011,11 @@
   WL : exponential.com [url:easylist_allowlist.txt]
   BL : exponential.com [url:]
 
+  WL : *.supabase.co [static]  covers subdomain
+  BL : eykrqioydzqaehcektgd.supabase.co [url:tif.mini.txt]
+
   WL : f-tra.com [url:allowlist.txt]
   BL : f-tra.com [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : f421f7b11af48bef2d.s3.ap-south-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : f65f92dc-28ab-4274-8d71-f77a2bd0f786.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
@@ -8456,9 +8459,6 @@
 
   WL : *.redhat.com [static]  covers subdomain
   BL : register.redhat.com [url:filter_1.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : relay-brief-cube.s3.ap-south-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : removeads.workers.dev [url:]
