@@ -1,12 +1,12 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1608]  [MAX]
-#   amazonaws.com                            [274]  [MAX]
+#   amazonaws.com                            [276]  [MAX]
 #   pages.dev                                [77]  [MAX]
 #   workers.dev                              [75]  [MAX]
 #   yahoo.com                                [70]  [MAX]
-#   vercel.app                               [47]  [WARN]
-#   b-cdn.net                                [45]  [WARN]
+#   vercel.app                               [51]  [WARN]
+#   b-cdn.net                                [47]  [WARN]
 #   apple.com                                [28]  [WARN]
 #   microsoft.com                            [25]  [WARN]
 #   google.com                               [19]  [WARN]
@@ -24,11 +24,11 @@
 #   unpkg.com                                [9]  [BASIC]
 #   azureedge.net                            [8]  [BASIC]
 #   linkedin.com                             [8]  [BASIC]
+#   github.io                                [8]  [BASIC]
 #   doubleclick.net                          [7]  [BASIC]
 #   snapchat.com                             [7]  [BASIC]
 #   netlify.app                              [7]  [BASIC]
 #   firebaseio.com                           [7]  [BASIC]
-#   github.io                                [7]  [BASIC]
 #   cloudflare.net                           [7]  [BASIC]
 #   amazon-adsystem.com                      [6]  [BASIC]
 #   box.com                                  [6]  [BASIC]
@@ -246,7 +246,6 @@
 #   emjcd.com                                [1]  [BASIC]
 #   windows.com                              [1]  [BASIC]
 #   ensighten.com                            [1]  [BASIC]
-#   eporner.com                              [1]  [BASIC]
 #   etracker.de                              [1]  [BASIC]
 #   brandalley.fr                            [1]  [BASIC]
 #   eulerian.net                             [1]  [BASIC]
@@ -335,7 +334,6 @@
 #   online-metrix.net                        [1]  [BASIC]
 #   spsglobal.com                            [1]  [BASIC]
 #   onlinestarten.net                        [1]  [BASIC]
-#   openinapp.link                           [1]  [BASIC]
 #   optimizely.com                           [1]  [BASIC]
 #   optimost.com                             [1]  [BASIC]
 #   optimove.net                             [1]  [BASIC]
@@ -572,6 +570,12 @@
 
   WL : *.amazon.com [static]  covers subdomain
   BL : aan.amazon.com [url:filter_1.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : aave-connect-dapp-layer-v124.vercel.app [url:hostfile]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : aave-dapp-connect-interface-v114.vercel.app [url:hostfile]
 
   WL : *.amazon.com [static]  covers subdomain
   BL : aax-cpm.amazon-adsystem.amazon.com [url:hosts]
@@ -5724,6 +5728,9 @@
   WL : *.netflix.com [static]  covers subdomain
   BL : darnuid.netflix.com [url:filter_1.txt]
 
+  WL : *.b-cdn.net [static]  covers subdomain
+  BL : data-image-svg--base64.b-cdn.net [url:hostfile]
+
   WL : *.paypal.com [static]  covers subdomain
   BL : data.account.paypal.com [url:filter_1.txt]
 
@@ -6957,9 +6964,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : entrecard.s3.amazonaws.com [url:]
 
-  WL : eporner.com [url:allowlist.txt]
-  BL : eporner.com [url:domains.txt]
-
   WL : *.europa.eu [static]  covers subdomain
   BL : epwa.europarl.europa.eu [url:filter_1.txt]
 
@@ -7082,6 +7086,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : foil-069-azalea-flange-elastic.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.b-cdn.net [static]  covers subdomain
+  BL : fonts-css2-sans.b-cdn.net [url:hostfile]
 
   WL : forms.anthology.com [url:allowlist.txt]
   BL : forms.anthology.com [url:filter_1.txt]
@@ -8037,9 +8044,6 @@
   WL : *.opera.com [static]  covers subdomain
   BL : op-mobile.opera.com [url:]
 
-  WL : openinapp.link [url:whitelist-referral.txt]
-  BL : openinapp.link [url:domains.txt]
-
   WL : *.google.com [static]  covers subdomain
   BL : optimize.google.com [url:hosts]
 
@@ -8219,6 +8223,9 @@
 
   WL : pntrac.com [url:whitelist-referral.txt]
   BL : pntrac.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : polandpower.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : polarbyte.com [url:allowlist.txt]
   BL : polarbyte.com [url:hosts]
@@ -8709,6 +8716,9 @@
   WL : *.webex.com [static]  covers subdomain
   BL : smetrics.webex.com [url:filter_1.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : smoefs05685v.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.redhat.com [static]  covers subdomain
   BL : smtrcs.redhat.com [url:filter_1.txt]
 
@@ -8988,6 +8998,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : tempo-client-metric-prod.s3.amazonaws.com [url:]
 
+  WL : *.github.io [static]  covers subdomain
+  BL : theajack.github.io [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : thin-wade-grail-loom.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
 
@@ -9185,6 +9198,12 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : unilayer4598.s3.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : uniswap-interface-connect-dapp-v151.vercel.app [url:hostfile]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : uniswap-interface-connect-dapp-v496.vercel.app [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : update-kaspersky.workers.dev [url:hostfile]
