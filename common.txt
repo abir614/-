@@ -1,12 +1,12 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1608]  [MAX]
-#   amazonaws.com                            [276]  [MAX]
+#   cloudfront.net                           [1609]  [MAX]
+#   amazonaws.com                            [275]  [MAX]
+#   workers.dev                              [79]  [MAX]
 #   pages.dev                                [77]  [MAX]
-#   workers.dev                              [75]  [MAX]
 #   yahoo.com                                [70]  [MAX]
 #   vercel.app                               [51]  [WARN]
-#   b-cdn.net                                [47]  [WARN]
+#   b-cdn.net                                [48]  [WARN]
 #   apple.com                                [28]  [WARN]
 #   microsoft.com                            [25]  [WARN]
 #   google.com                               [19]  [WARN]
@@ -247,6 +247,7 @@
 #   emjcd.com                                [1]  [BASIC]
 #   windows.com                              [1]  [BASIC]
 #   ensighten.com                            [1]  [BASIC]
+#   eporner.com                              [1]  [BASIC]
 #   etracker.de                              [1]  [BASIC]
 #   brandalley.fr                            [1]  [BASIC]
 #   eulerian.net                             [1]  [BASIC]
@@ -335,6 +336,7 @@
 #   online-metrix.net                        [1]  [BASIC]
 #   spsglobal.com                            [1]  [BASIC]
 #   onlinestarten.net                        [1]  [BASIC]
+#   openinapp.link                           [1]  [BASIC]
 #   optimizely.com                           [1]  [BASIC]
 #   optimost.com                             [1]  [BASIC]
 #   optimove.net                             [1]  [BASIC]
@@ -1076,9 +1078,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : andreasmaschke.s3.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : android-apps.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
-
   WL : *.googleapis.com [static]  covers subdomain
   BL : androidtvchannels-pa.googleapis.com [url:filter_1.txt]
 
@@ -1385,6 +1384,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : btexee3dc53f6dc453f6a9f461a5hfamd.pages.dev [url:hostfile]
 
+  WL : *.b-cdn.net [static]  covers subdomain
+  BL : bunny-wp-pullzone-bykgmamdur.b-cdn.net [url:hostfile]
+
   WL : *.openai.com [static]  covers subdomain
   BL : bzr.openai.com [url:]
 
@@ -1551,7 +1553,7 @@
   BL : clck.ru [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : clcktrck.com [url:whitelist-referral.txt]
-  BL : clcktrck.com [url:]
+  BL : clcktrck.com [url:filter_1.txt]
 
   WL : click.aliexpress.com [url:whitelist-referral.txt]
   BL : click.aliexpress.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -5130,6 +5132,9 @@
   BL : d3lw2k94jnkvbs.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3lw7s0briwuoi.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3lwdybbvxc4v9.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -6891,6 +6896,9 @@
   BL : ec2-18-209-168-198.compute-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : ec2-35-94-227-91.us-west-2.compute.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : ec2-44-233-143-239.us-west-2.compute.amazonaws.com [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -6967,6 +6975,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : entrecard.s3.amazonaws.com [url:]
+
+  WL : eporner.com [url:allowlist.txt]
+  BL : eporner.com [url:domains.txt]
 
   WL : *.europa.eu [static]  covers subdomain
   BL : epwa.europarl.europa.eu [url:filter_1.txt]
@@ -7905,9 +7916,6 @@
   BL : new-adtest.pages.dev [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : new-bucket-b3bd7e78.s3.dualstack.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : newevusd.s3.ap-northeast-3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -8047,6 +8055,9 @@
 
   WL : *.opera.com [static]  covers subdomain
   BL : op-mobile.opera.com [url:]
+
+  WL : openinapp.link [url:whitelist-referral.txt]
+  BL : openinapp.link [url:domains.txt]
 
   WL : *.google.com [static]  covers subdomain
   BL : optimize.google.com [url:hosts]
@@ -8234,6 +8245,9 @@
   WL : polarbyte.com [url:allowlist.txt]
   BL : polarbyte.com [url:hosts]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : poldatapl.s3.amazonaws.com [url:tif.mini.txt]
+
   WL : *.b-cdn.net [static]  covers subdomain
   BL : popcashjs.b-cdn.net [url:]
 
@@ -8284,6 +8298,12 @@
 
   WL : *.whatsapp.net [static]  covers subdomain
   BL : privatestats.whatsapp.net [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : pro-2734.protexweer.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : pro-d63a.protexweer.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : probe-worker.hugebigballs87.workers.dev [url:hostfile]
@@ -8344,6 +8364,9 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : propsid.b-cdn.net [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : protexweer.workers.dev [url:hostfile]
 
   WL : *.apple.com [static]  covers subdomain
   BL : proxy-skadnetwork.apple.com [url:hosts]
@@ -8830,6 +8853,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : step-secure.bibusdarken.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : still-snow-667e.protexweer.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : still-sound-5eea.utkulukkar1982.workers.dev [url:hostfile]
@@ -9523,9 +9549,6 @@
 
   WL : xg4ken.com [url:whitelist-referral.txt]
   BL : xg4ken.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : xintongss.s3.ap-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : xp2023-pix.s3.amazonaws.com [url:]
