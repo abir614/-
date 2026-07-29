@@ -1,6 +1,6 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1609]  [MAX]
+#   cloudfront.net                           [1611]  [MAX]
 #   amazonaws.com                            [275]  [MAX]
 #   workers.dev                              [79]  [MAX]
 #   pages.dev                                [77]  [MAX]
@@ -30,12 +30,12 @@
 #   netlify.app                              [7]  [BASIC]
 #   firebaseio.com                           [7]  [BASIC]
 #   cloudflare.net                           [7]  [BASIC]
-#   amazon-adsystem.com                      [6]  [BASIC]
 #   box.com                                  [6]  [BASIC]
 #   azure.com                                [6]  [BASIC]
 #   supabase.co                              [6]  [BASIC]
 #   fbsbx.com                                [6]  [BASIC]
 #   trafficmanager.net                       [5]  [BASIC]
+#   amazon-adsystem.com                      [5]  [BASIC]
 #   mozilla.org                              [5]  [BASIC]
 #   bing.com                                 [5]  [BASIC]
 #   redhat.com                               [5]  [BASIC]
@@ -1620,9 +1620,6 @@
 
   WL : *.box.com [static]  covers subdomain
   BL : client-log.box.com [url:]
-
-  WL : client.aps.amazon-adsystem.com [url:easylist_allowlist.txt]
-  BL : client.aps.amazon-adsystem.com [url:hosts]
 
   WL : *.office.com [static]  covers subdomain
   BL : clientlog.portal.office.com [url:filter_1.txt]
@@ -5327,6 +5324,9 @@
   BL : d3qvcyf9oa6vhw.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3qx7quq68rdce.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3qxd84135kurx.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -5856,6 +5856,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dc8xl0ndzn2cb.cloudfront.net [url:filter_1.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : dc9xwpjprguup.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dcai7bdiz5toz.cloudfront.net [url:]
