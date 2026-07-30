@@ -1,8 +1,8 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1611]  [MAX]
-#   amazonaws.com                            [275]  [MAX]
-#   workers.dev                              [79]  [MAX]
+#   amazonaws.com                            [277]  [MAX]
+#   workers.dev                              [81]  [MAX]
 #   pages.dev                                [77]  [MAX]
 #   yahoo.com                                [70]  [MAX]
 #   vercel.app                               [51]  [WARN]
@@ -18,6 +18,7 @@
 #   spotify.com                              [11]  [BASIC]
 #   akamaized.net                            [11]  [BASIC]
 #   reddit.com                               [10]  [BASIC]
+#   azure.com                                [10]  [BASIC]
 #   nvidia.com                               [10]  [BASIC]
 #   azurewebsites.net                        [9]  [BASIC]
 #   paypal.com                               [9]  [BASIC]
@@ -31,7 +32,6 @@
 #   firebaseio.com                           [7]  [BASIC]
 #   cloudflare.net                           [7]  [BASIC]
 #   box.com                                  [6]  [BASIC]
-#   azure.com                                [6]  [BASIC]
 #   supabase.co                              [6]  [BASIC]
 #   fbsbx.com                                [6]  [BASIC]
 #   trafficmanager.net                       [5]  [BASIC]
@@ -1377,6 +1377,9 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : bs-adserver.b-cdn.net [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : bs-deliver-e817.61d8f0e6ac62c139abd08ba5.workers.dev [url:hostfile]
 
   WL : bs.serving-sys.com [url:whitelist-referral.txt]
   BL : bs.serving-sys.com [url:hosts]
@@ -6472,6 +6475,9 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : downloadshi.b-cdn.net [url:]
 
+  WL : *.azure.com [static]  covers subdomain
+  BL : downloadupdate.centralus.cloudapp.azure.com [url:hostfile]
+
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dp1fzft1fdb84.cloudfront.net [url:]
 
@@ -8243,6 +8249,9 @@
   BL : pntrac.com [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : polandp.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : polandpower.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : polarbyte.com [url:allowlist.txt]
@@ -8250,6 +8259,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : poldatapl.s3.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.azure.com [static]  covers subdomain
+  BL : pool.swedencentral.cloudapp.azure.com [url:hostfile]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : popcashjs.b-cdn.net [url:]
@@ -8518,6 +8530,9 @@
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : rmgdapfnccsharpprd.azurewebsites.net [url:]
 
+  WL : *.azure.com [static]  covers subdomain
+  BL : road.swedencentral.cloudapp.azure.com [url:hostfile]
+
   WL : rootzaffiliates.com [url:allowlist.txt]
   BL : rootzaffiliates.com [url:]
 
@@ -8763,6 +8778,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : softmicro.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.azure.com [static]  covers subdomain
+  BL : softwarecube.eastus.cloudapp.azure.com [url:hostfile]
 
   WL : sp-trk.com [url:whitelist-referral.txt]
   BL : sp-trk.com [url:filter_1.txt]
@@ -9343,6 +9361,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : vent-open.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : verify-auth.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : verify-captcha-service-google.pages.dev [url:hostfile]
 
@@ -9576,6 +9597,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : yc-ads.s3.amazonaws.com [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : yellow-smoke-3d0d.yellow-smoke.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : yieldmo-builds.s3.amazonaws.com [url:]
