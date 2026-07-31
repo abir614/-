@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1611]  [MAX]
-#   amazonaws.com                            [277]  [MAX]
+#   amazonaws.com                            [275]  [MAX]
 #   workers.dev                              [81]  [MAX]
 #   pages.dev                                [77]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -247,7 +247,6 @@
 #   emjcd.com                                [1]  [BASIC]
 #   windows.com                              [1]  [BASIC]
 #   ensighten.com                            [1]  [BASIC]
-#   eporner.com                              [1]  [BASIC]
 #   etracker.de                              [1]  [BASIC]
 #   brandalley.fr                            [1]  [BASIC]
 #   eulerian.net                             [1]  [BASIC]
@@ -6985,9 +6984,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : entrecard.s3.amazonaws.com [url:]
 
-  WL : eporner.com [url:allowlist.txt]
-  BL : eporner.com [url:domains.txt]
-
   WL : *.europa.eu [static]  covers subdomain
   BL : epwa.europarl.europa.eu [url:filter_1.txt]
 
@@ -7593,9 +7589,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : kjkgsi-gsjgkan-wintersga.pages.dev [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : kpptgup.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : kqzyfj.com [url:whitelist-referral.txt]
   BL : kqzyfj.com [url:hosts]
@@ -9360,9 +9353,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : vent-open.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : verify-auth.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : verify-captcha-service-google.pages.dev [url:hostfile]
