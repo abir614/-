@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1611]  [MAX]
-#   amazonaws.com                            [275]  [MAX]
+#   amazonaws.com                            [276]  [MAX]
 #   workers.dev                              [81]  [MAX]
 #   pages.dev                                [77]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -1748,6 +1748,9 @@
 
   WL : *.fastly.net [static]  covers subdomain
   BL : counter-mdpr.freetls.fastly.net [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : cpintermedia-net-controlpanel-login-clienttypewebmail8557576565.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : cqcounter.com [url:allowlist.txt]
   BL : cqcounter.com [url:]
@@ -5739,6 +5742,9 @@
   WL : *.netflix.com [static]  covers subdomain
   BL : darnuid.netflix.com [url:filter_1.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : data-ghana.s3.af-south-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.b-cdn.net [static]  covers subdomain
   BL : data-image-svg--base64.b-cdn.net [url:hostfile]
 
@@ -6515,9 +6521,6 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dpeqm8xv96fuc.cloudfront.net [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : dpfamilylawfirm.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dpirwgljl6cjp.cloudfront.net [url:]
