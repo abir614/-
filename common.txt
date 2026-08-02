@@ -1749,9 +1749,6 @@
   WL : *.fastly.net [static]  covers subdomain
   BL : counter-mdpr.freetls.fastly.net [url:]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : cpintermedia-net-controlpanel-login-clienttypewebmail8557576565.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
-
   WL : cqcounter.com [url:allowlist.txt]
   BL : cqcounter.com [url:]
 
@@ -9356,6 +9353,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : vent-open.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : verify-auth.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : verify-captcha-service-google.pages.dev [url:hostfile]
