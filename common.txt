@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1611]  [MAX]
-#   amazonaws.com                            [276]  [MAX]
+#   amazonaws.com                            [280]  [MAX]
 #   workers.dev                              [81]  [MAX]
 #   pages.dev                                [77]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -947,6 +947,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : alphaupsell.s3.ap-northeast-2.amazonaws.com [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : altair-nail.s3.ap-south-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazon.com [static]  covers subdomain
   BL : amazon-adsystem.amazon.com [url:hosts]
@@ -7042,6 +7045,9 @@
   BL : f-tra.com [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : f421f7b11af48bef2d.s3.ap-south-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : f65f92dc-28ab-4274-8d71-f77a2bd0f786.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.edgesuite.net [static]  covers subdomain
@@ -7457,6 +7463,9 @@
 
   WL : iljmp.com [url:whitelist-referral.txt]
   BL : iljmp.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : images-cdn-962.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.box.com [static]  covers subdomain
   BL : images.marketing.box.com [url:filter_1.txt]
@@ -8501,6 +8510,9 @@
 
   WL : *.redhat.com [static]  covers subdomain
   BL : register.redhat.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : relay-brief-cube.s3.ap-south-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : removeads.workers.dev [url:]
