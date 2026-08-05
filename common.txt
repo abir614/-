@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1611]  [MAX]
-#   amazonaws.com                            [280]  [MAX]
+#   amazonaws.com                            [282]  [MAX]
 #   workers.dev                              [81]  [MAX]
 #   pages.dev                                [77]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -6498,6 +6498,9 @@
   WL : dpbolvw.net [url:whitelist-referral.txt]
   BL : dpbolvw.net [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : dpd-de.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dpd9yiocsyy6p.cloudfront.net [url:]
 
@@ -7337,6 +7340,9 @@
 
   WL : *.apple.com [static]  covers subdomain
   BL : graffiti-tags.apple.com [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : gregdsd.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : group-transfer.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
