@@ -1,9 +1,9 @@
 # Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1611]  [MAX]
-#   amazonaws.com                            [282]  [MAX]
-#   workers.dev                              [81]  [MAX]
+#   amazonaws.com                            [283]  [MAX]
 #   pages.dev                                [77]  [MAX]
+#   workers.dev                              [76]  [MAX]
 #   yahoo.com                                [70]  [MAX]
 #   vercel.app                               [51]  [WARN]
 #   b-cdn.net                                [48]  [WARN]
@@ -446,9 +446,6 @@
 #   zenaps.com                               [1]  [BASIC]
 #   zergnet.com                              [1]  [BASIC]
 #
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : 08f0.proxy-edge-c5f.workers.dev [url:hostfile]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : 0a0d-d3l1vr.b-cdn.net [url:hosts]
@@ -1148,9 +1145,6 @@
 
   WL : *.snapchat.com [static]  covers subdomain
   BL : app-analytics.snapchat.com [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : app-server.comof72509.workers.dev [url:hostfile]
 
   WL : app.adjust.cn [url:whitelist-referral.txt]
   BL : app.adjust.cn [url:hosts]
@@ -5991,9 +5985,6 @@
   WL : dev.visualwebsiteoptimizer.com [url:allowlist.txt]
   BL : dev.visualwebsiteoptimizer.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : dev1-server.sogal69343.workers.dev [url:hostfile]
-
   WL : *.github.io [static]  covers subdomain
   BL : devgottia.github.io [url:]
 
@@ -6173,9 +6164,6 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : divekcl7q9fxi.cloudfront.net [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : divine-glitter-cfb4.elena-morales.workers.dev [url:hostfile]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : diz4z73aymwyp.cloudfront.net [url:]
@@ -6954,6 +6942,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : email-verlification-notice-129233-7c0b1e80.s3.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : email-verlification-notice-825571-49b818d7.s3.amazonaws.com [url:tif.mini.txt]
+
   WL : *.substack.com [static]  covers subdomain
   BL : email.mg1.substack.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
@@ -7664,9 +7655,6 @@
 
   WL : linkvertise.com [url:whitelist-referral.txt]
   BL : linkvertise.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : little-frog-2e65.kaxij51156.workers.dev [url:hostfile]
 
   WL : live.primis.tech [url:easylist_allowlist.txt]
   BL : live.primis.tech [url:filter_1.txt]
