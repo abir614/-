@@ -1,10 +1,10 @@
-# Scale  — max: top 20% (>= 70)  warn: top 50% (>= 14)  basic: remaining
+# Scale  — max: top 20% (>= 56)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1611]  [MAX]
-#   amazonaws.com                            [283]  [MAX]
+#   amazonaws.com                            [282]  [MAX]
 #   pages.dev                                [77]  [MAX]
-#   workers.dev                              [76]  [MAX]
 #   yahoo.com                                [70]  [MAX]
+#   workers.dev                              [56]  [MAX]
 #   vercel.app                               [51]  [WARN]
 #   b-cdn.net                                [48]  [WARN]
 #   apple.com                                [28]  [WARN]
@@ -335,7 +335,6 @@
 #   online-metrix.net                        [1]  [BASIC]
 #   spsglobal.com                            [1]  [BASIC]
 #   onlinestarten.net                        [1]  [BASIC]
-#   openinapp.link                           [1]  [BASIC]
 #   optimizely.com                           [1]  [BASIC]
 #   optimost.com                             [1]  [BASIC]
 #   optimove.net                             [1]  [BASIC]
@@ -1192,13 +1191,7 @@
   BL : atdmt.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : atex.quiet-disk-62f9.hrmcxaeel.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
   BL : atex.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : atex.shiny-darkness-5096.hrmcxaeel.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : atex.silent-frog-4440.hrmcxaeel.workers.dev [url:hostfile]
@@ -1249,13 +1242,7 @@
   BL : babes-mansion.s3.amazonaws.com [url:]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : backup.quiet-disk-62f9.hrmcxaeel.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
   BL : backup.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : backup.shiny-darkness-5096.hrmcxaeel.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : backup.silent-frog-4440.hrmcxaeel.workers.dev [url:hostfile]
@@ -5779,13 +5766,7 @@
   BL : data.newsletter.paypal.com [url:filter_1.txt]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : data.quiet-disk-62f9.hrmcxaeel.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
   BL : data.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : data.shiny-darkness-5096.hrmcxaeel.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : data.silent-frog-4440.hrmcxaeel.workers.dev [url:hostfile]
@@ -5899,13 +5880,7 @@
   BL : ddmuiijrdvv0s.cloudfront.net [url:]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : ddos.quiet-disk-62f9.hrmcxaeel.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
   BL : ddos.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : ddos.shiny-darkness-5096.hrmcxaeel.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : ddos.silent-frog-4440.hrmcxaeel.workers.dev [url:hostfile]
@@ -7333,9 +7308,6 @@
   BL : graffiti-tags.apple.com [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : gregdsd.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : group-transfer.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
 
   WL : gsght.com [url:whitelist-referral.txt]
@@ -7747,13 +7719,7 @@
   BL : malware.open.spotify.com [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : malware.quiet-disk-62f9.hrmcxaeel.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
   BL : malware.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : malware.shiny-darkness-5096.hrmcxaeel.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : malware.silent-frog-4440.hrmcxaeel.workers.dev [url:hostfile]
@@ -8061,9 +8027,6 @@
   WL : *.opera.com [static]  covers subdomain
   BL : op-mobile.opera.com [url:]
 
-  WL : openinapp.link [url:whitelist-referral.txt]
-  BL : openinapp.link [url:domains.txt]
-
   WL : *.google.com [static]  covers subdomain
   BL : optimize.google.com [url:hosts]
 
@@ -8161,13 +8124,7 @@
   BL : phileweb-amzrank.vercel.app [url:]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : phishing.quiet-disk-62f9.hrmcxaeel.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
   BL : phishing.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : phishing.shiny-darkness-5096.hrmcxaeel.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : phishing.silent-frog-4440.hrmcxaeel.workers.dev [url:hostfile]
@@ -8428,13 +8385,7 @@
   BL : qksrv.net [url:filter_1.txt]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : quantri.quiet-disk-62f9.hrmcxaeel.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
   BL : quantri.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : quantri.shiny-darkness-5096.hrmcxaeel.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : quantri.silent-frog-4440.hrmcxaeel.workers.dev [url:hostfile]
@@ -8447,9 +8398,6 @@
 
   WL : query.petametrics.com [url:allowlist.txt]
   BL : query.petametrics.com [url:hosts]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : quiet-disk-62f9.hrmcxaeel.workers.dev [url:hostfile]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : qvid2.b-cdn.net [url:]
@@ -8708,9 +8656,6 @@
 
   WL : sharethis.com [url:allowlist.txt]
   BL : sharethis.com [url:hosts]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : shiny-darkness-5096.hrmcxaeel.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : simplicity-w.pages.dev [url:hostfile]
@@ -9310,13 +9255,7 @@
   BL : uz-analysis.akamaized.net [url:]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : v2.quiet-disk-62f9.hrmcxaeel.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
   BL : v2.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : v2.shiny-darkness-5096.hrmcxaeel.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : v2.silent-frog-4440.hrmcxaeel.workers.dev [url:hostfile]
@@ -9325,13 +9264,7 @@
   BL : v2.unpkg.com [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : v3.quiet-disk-62f9.hrmcxaeel.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
   BL : v3.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : v3.shiny-darkness-5096.hrmcxaeel.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : v3.silent-frog-4440.hrmcxaeel.workers.dev [url:hostfile]
