@@ -1,6 +1,6 @@
 # Scale  — max: top 20% (>= 56)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1611]  [MAX]
+#   cloudfront.net                           [1612]  [MAX]
 #   amazonaws.com                            [282]  [MAX]
 #   pages.dev                                [77]  [MAX]
 #   yahoo.com                                [70]  [MAX]
@@ -5275,6 +5275,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3q33rbmdkxzj.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3q5i0g1zfzd69.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3q762vmkbqrah.cloudfront.net [url:]
