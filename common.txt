@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 56)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1612]  [MAX]
-#   amazonaws.com                            [282]  [MAX]
+#   amazonaws.com                            [283]  [MAX]
 #   pages.dev                                [77]  [MAX]
 #   yahoo.com                                [70]  [MAX]
 #   workers.dev                              [56]  [MAX]
@@ -18,9 +18,10 @@
 #   spotify.com                              [11]  [BASIC]
 #   akamaized.net                            [11]  [BASIC]
 #   reddit.com                               [10]  [BASIC]
-#   azure.com                                [10]  [BASIC]
 #   nvidia.com                               [10]  [BASIC]
 #   azurewebsites.net                        [9]  [BASIC]
+#   netlify.app                              [9]  [BASIC]
+#   azure.com                                [9]  [BASIC]
 #   paypal.com                               [9]  [BASIC]
 #   unpkg.com                                [9]  [BASIC]
 #   azureedge.net                            [8]  [BASIC]
@@ -28,7 +29,6 @@
 #   github.io                                [8]  [BASIC]
 #   doubleclick.net                          [7]  [BASIC]
 #   snapchat.com                             [7]  [BASIC]
-#   netlify.app                              [7]  [BASIC]
 #   firebaseio.com                           [7]  [BASIC]
 #   cloudflare.net                           [7]  [BASIC]
 #   box.com                                  [6]  [BASIC]
@@ -1366,6 +1366,9 @@
 
   WL : bs.serving-sys.com [url:whitelist-referral.txt]
   BL : bs.serving-sys.com [url:hosts]
+
+  WL : *.netlify.app [static]  covers subdomain
+  BL : bstocks.netlify.app [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : btexee3dc53f6dc453f6a9f461a5hfamd.pages.dev [url:hostfile]
@@ -7592,9 +7595,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : lbg1trk4740ihnq.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.azure.com [static]  covers subdomain
-  BL : lcowpowerlite.italynorth.cloudapp.azure.com [url:hostfile]
-
   WL : leanplum.com [url:easyprivacy_allowlist.txt]
   BL : leanplum.com [url:filter_1.txt]
 
@@ -8633,6 +8633,9 @@
   WL : serving-sys.com [url:allowlist.txt]
   BL : serving-sys.com [url:hosts]
 
+  WL : *.netlify.app [static]  covers subdomain
+  BL : serwis-o2.netlify.app [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : setupussser-9prwbpa9-be47hwyc.s3.amazonaws.com [url:tif.mini.txt]
 
@@ -8818,6 +8821,9 @@
 
   WL : *.anthropic.com [static]  covers subdomain
   BL : statsig.anthropic.com [url:filter_1.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : stcjp.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : step-secure.bibusdarken.workers.dev [url:hostfile]
