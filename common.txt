@@ -202,7 +202,6 @@
 #   razorpay.com                             [1]  [BASIC]
 #   mediaplex.com                            [1]  [BASIC]
 #   mzstatic.com                             [1]  [BASIC]
-#   mgcld.xyz                                [1]  [BASIC]
 #   mixpanel.com                             [1]  [BASIC]
 #   mm-syringe.com                           [1]  [BASIC]
 #   moatads.com                              [1]  [BASIC]
@@ -7264,9 +7263,6 @@
 
   WL : *.nvidia.com [static]  covers subdomain
   BL : metrics.nvidia.com [url:filter_1.txt]
-
-  WL : mgcld.xyz [url:allowlist.txt]
-  BL : mgcld.xyz [url:filter_1.txt]
 
   WL : *.github.io [static]  covers subdomain
   BL : mihoutao1868.github.io [url:]
