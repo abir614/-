@@ -26,9 +26,9 @@
 #   unpkg.com                                [9]  [BASIC]
 #   azureedge.net                            [8]  [BASIC]
 #   linkedin.com                             [8]  [BASIC]
-#   github.io                                [8]  [BASIC]
 #   snapchat.com                             [7]  [BASIC]
 #   firebaseio.com                           [7]  [BASIC]
+#   github.io                                [7]  [BASIC]
 #   cloudflare.net                           [7]  [BASIC]
 #   box.com                                  [6]  [BASIC]
 #   doubleclick.net                          [6]  [BASIC]
@@ -6672,9 +6672,6 @@
 
   WL : *.unpkg.com [static]  covers subdomain
   BL : gatex.unpkg.com [url:hostfile]
-
-  WL : *.github.io [static]  covers subdomain
-  BL : gavinmakesapps-sys.github.io [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : gcp.fasthorse.workers.dev [url:]
