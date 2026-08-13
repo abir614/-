@@ -2,8 +2,8 @@
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1612]  [MAX]
 #   amazonaws.com                            [283]  [MAX]
-#   pages.dev                                [77]  [MAX]
 #   yahoo.com                                [70]  [MAX]
+#   pages.dev                                [59]  [MAX]
 #   workers.dev                              [56]  [MAX]
 #   vercel.app                               [51]  [WARN]
 #   b-cdn.net                                [48]  [WARN]
@@ -20,13 +20,13 @@
 #   reddit.com                               [10]  [BASIC]
 #   nvidia.com                               [10]  [BASIC]
 #   azurewebsites.net                        [9]  [BASIC]
-#   netlify.app                              [9]  [BASIC]
 #   azure.com                                [9]  [BASIC]
 #   paypal.com                               [9]  [BASIC]
 #   unpkg.com                                [9]  [BASIC]
 #   azureedge.net                            [8]  [BASIC]
 #   linkedin.com                             [8]  [BASIC]
 #   snapchat.com                             [7]  [BASIC]
+#   netlify.app                              [7]  [BASIC]
 #   firebaseio.com                           [7]  [BASIC]
 #   github.io                                [7]  [BASIC]
 #   cloudflare.net                           [7]  [BASIC]
@@ -1212,9 +1212,6 @@
 
   WL : *.googleapis.com [static]  covers subdomain
   BL : clientmetrics-pa.googleapis.com [url:]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : cloud-file-explorer.netlify.app [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : cloud-storage-allgeos.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
@@ -6757,48 +6754,6 @@
   WL : google-analytics.com [url:allowlist.txt]
   BL : google-analytics.com [url:filter_1.txt]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass-v-011002.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass-v-011003.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass-v-011005.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass-v-021001.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass-v-021002.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass-v-021003.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass-v-021004.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass-v-03100dc.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass-v-bckdpsdeuw.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass-v-hsdiwnxdsndknw.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass-v-sflepznfhwys3.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass-v-udk3nbdbw842.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass-v-usfnskwkn666.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : google-security-bypass.pages.dev [url:hostfile]
-
   WL : *.github.io [static]  covers subdomain
   BL : googleads.github.io [url:]
 
@@ -6925,9 +6880,6 @@
   WL : *.supabase.co [static]  covers subdomain
   BL : ihmmkvkaiwnilneauhfn.supabase.co [url:tif.mini.txt]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : ilingering-verify-clouds.pages.dev [url:hostfile]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : images-cdn-962.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
@@ -7009,12 +6961,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : jackal-chestnut-cube-wm-worn.s3.ap-northeast-1.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : javsenpai.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : javsenpaiii.pages.dev [url:hostfile]
-
   WL : *.supabase.co [static]  covers subdomain
   BL : jgpsmeydnemtihfmgtxt.supabase.co [url:tif.mini.txt]
 
@@ -7089,9 +7035,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : lingering-my-verify-clouds-1.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : lingering-verify-cloud-86ee.pages.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : lingering-verify-cloud.pages.dev [url:hostfile]
@@ -7275,9 +7218,6 @@
 
   WL : mm-syringe.com [url:allowlist.txt]
   BL : mm-syringe.com [url:]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : mmm-intranet-document-explorer.netlify.app [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : mnbu-9gjwu07k13q4.s3.dualstack.us-east-1.amazonaws.com [url:tif.mini.txt]
