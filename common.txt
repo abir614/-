@@ -2,7 +2,7 @@
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1612]  [MAX]
 #   amazonaws.com                            [285]  [MAX]
-#   workers.dev                              [95]  [MAX]
+#   workers.dev                              [206]  [MAX]
 #   yahoo.com                                [70]  [MAX]
 #   pages.dev                                [59]  [MAX]
 #   vercel.app                               [51]  [WARN]
@@ -17,10 +17,10 @@
 #   googleapis.com                           [11]  [BASIC]
 #   spotify.com                              [11]  [BASIC]
 #   akamaized.net                            [11]  [BASIC]
+#   azurewebsites.net                        [10]  [BASIC]
 #   reddit.com                               [10]  [BASIC]
 #   azure.com                                [10]  [BASIC]
 #   nvidia.com                               [10]  [BASIC]
-#   azurewebsites.net                        [9]  [BASIC]
 #   paypal.com                               [9]  [BASIC]
 #   unpkg.com                                [9]  [BASIC]
 #   azureedge.net                            [8]  [BASIC]
@@ -469,6 +469,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 2d4e5f6-7a8b-4c2d-9e1f-3b5a7c8d9e0fc.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : 2e52uth2ly.workers.dev [url:hostfile]
+
   WL : 2o7.net [url:allowlist.txt]
   BL : 2o7.net [url:filter_1.txt]
 
@@ -477,6 +480,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 37be4d7f4c7b5e.s3.ap-northeast-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : 3cqku5jtal.workers.dev [url:hostfile]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : 3p-geo.yahoo.com [url:]
@@ -493,14 +499,26 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 4ma0hzvkuhjdicwvx9yy.s3.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : 4rb0f78fcs.workers.dev [url:hostfile]
+
   WL : *.trafficmanager.net [static]  covers subdomain
   BL : 51tongji.trafficmanager.net [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : 526vx22m7w.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : 52ricky.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : 557carlye.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 571-ac-eucalyptus-kindle.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : 5wccis5lmb.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 5z8xi2rj04jyh302fd.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
@@ -516,6 +534,9 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : 682a5845.b-cdn.net [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : 69allied.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 6zas4ci1veizbny.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
@@ -547,8 +568,17 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 8ynyg5w9vfbdb1s.s3-website-us-west-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : 9474amethyst.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : 96qj5j9yr8.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 9b1dd2f1-ce89-4596-be46-ba511a89cad6.s3.dualstack.us-west-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : 9biu5cm2ug.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 9w2zed1szg.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
@@ -669,6 +699,9 @@
 
   WL : ad.linksynergy.com [url:easylist_allowlist.txt]
   BL : ad.linksynergy.com [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : adakg39920.workers.dev [url:hostfile]
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : adconfigproxy.azurewebsites.net [url:filter_1.txt]
@@ -946,6 +979,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : allianz-minicamera.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : alliedjeralee.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : aloe-veer-wm-lance.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
 
@@ -1192,6 +1228,12 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : appsuiteionoshelpcentre.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : aquamarineleila.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : ardagood.workers.dev [url:hostfile]
+
   WL : *.fastly.net [static]  covers subdomain
   BL : ascpqnj-oam.global.ssl.fastly.net [url:]
 
@@ -1218,6 +1260,12 @@
 
   WL : *.azure.com [static]  covers subdomain
   BL : avlc2.westus2.cloudapp.azure.com [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : avtuz17932.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : avyzs94897.workers.dev [url:hostfile]
 
   WL : awin1.com [url:allowlist.txt]
   BL : awin1.com [url:filter_1.txt]
@@ -1258,11 +1306,17 @@
   WL : *.unpkg.com [static]  covers subdomain
   BL : backup.unpkg.com [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : bagydoge.workers.dev [url:hostfile]
+
   WL : bam.nr-data.net [url:allowlist.txt]
   BL : bam.nr-data.net [url:hosts]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : banca-en-linea-prod-alb-1551230938.us-east-1.elb.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : banerobi.workers.dev [url:hostfile]
 
   WL : banners.livepartners.com [url:whitelist-referral.txt]
   BL : banners.livepartners.com [url:filter_1.txt]
@@ -1321,6 +1375,9 @@
   WL : bigcattracks.com [url:whitelist-referral.txt]
   BL : bigcattracks.com [url:filter_1.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : biguwiqa.workers.dev [url:hostfile]
+
   WL : *.microsoft.com [static]  covers subdomain
   BL : bingads.microsoft.com [url:]
 
@@ -1338,6 +1395,9 @@
 
   WL : bluekai.com [url:whitelist-referral.txt]
   BL : bluekai.com [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : bluetybie.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : bokamalas.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
@@ -1495,6 +1555,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : cdnweb3.pages.dev [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : cdsaoufwvo.workers.dev [url:hostfile]
+
   WL : certona.net [url:easyprivacy_allowlist.txt]
   BL : certona.net [url:filter_1.txt]
 
@@ -1515,6 +1578,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : chuyentienquoctenhanh.vercel.app [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : cibiku.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : cirrus-full-snapshots-track-csv-v1-0-na-prod.s3.amazonaws.com [url:]
@@ -1624,6 +1690,9 @@
   WL : *.googleapis.com [static]  covers subdomain
   BL : clientmetrics-pa.googleapis.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : clinical96.workers.dev [url:hostfile]
+
   WL : clk.omgt3.com [url:whitelist-referral.txt]
   BL : clk.omgt3.com [url:hosts]
 
@@ -1689,6 +1758,9 @@
 
   WL : config.aps.amazon-adsystem.com [url:easylist_allowlist.txt]
   BL : config.aps.amazon-adsystem.com [url:hosts]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : confusedulla.workers.dev [url:hostfile]
 
   WL : connatix.com [url:allowlist.txt]
   BL : connatix.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -1756,6 +1828,9 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : creatopy-adtag-production.b-cdn.net [url:filter_1.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : crimson4544.workers.dev [url:hostfile]
+
   WL : *.github.io [static]  covers subdomain
   BL : cryweb.github.io [url:]
 
@@ -1797,6 +1872,9 @@
 
   WL : cxense.com [url:allowlist.txt]
   BL : cxense.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : cyzely.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : czrgcuk1fiatygf.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
@@ -5791,6 +5869,9 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dax3x3wqpt2q3.cloudfront.net [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : daxokoso.workers.dev [url:hostfile]
+
   WL : *.cloudfront.net [static]  covers subdomain
   BL : day13vh1xl0gh.cloudfront.net [url:]
 
@@ -6805,6 +6886,9 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dyj8pbcnat4xv.cloudfront.net [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : dykoqoli.workers.dev [url:hostfile]
+
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dykwdhfiuha6l.cloudfront.net [url:]
 
@@ -7060,6 +7144,12 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : fb-login-acccount-center-helps-meta-verifyx.pages.dev [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : fb749p38a6.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : fbytz48156.workers.dev [url:hostfile]
+
   WL : fcd.autoads.asia [url:whitelist-referral.txt]
   BL : fcd.autoads.asia [url:hosts]
 
@@ -7078,11 +7168,17 @@
   WL : *.googleapis.com [static]  covers subdomain
   BL : federatedcompute-pa.googleapis.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : fibydi.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : filesharee76.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : fingerprintjs.com [url:easylist_allowlist.txt]
   BL : fingerprintjs.com [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : fiqate.workers.dev [url:hostfile]
 
   WL : *.googleapis.com [static]  covers subdomain
   BL : firebaselogging-pa.googleapis.com [url:hosts]
@@ -7098,6 +7194,9 @@
 
   WL : flashtalking.com [url:allowlist.txt]
   BL : flashtalking.com [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : flat8435.workers.dev [url:hostfile]
 
   WL : fls.doubleclick.net [url:allowlist.txt]
   BL : fls.doubleclick.net [url:]
@@ -7141,8 +7240,17 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ftefmti876.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : fu55xztbq0.workers.dev [url:hostfile]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : fuck-ads.vercel.app [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : fudud35949.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : fulakera.workers.dev [url:hostfile]
 
   WL : *.google.com [static]  covers subdomain
   BL : fundingchoicesmessages.google.com [url:]
@@ -7158,6 +7266,9 @@
 
   WL : *.fastly.net [static]  covers subdomain
   BL : fyrsbckgi-c.global.ssl.fastly.net [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : fyumg68489.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : g1130kgpqr.workers.dev [url:hostfile]
@@ -7176,6 +7287,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : gcp.fasthorse.workers.dev [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : gefyloje.workers.dev [url:hostfile]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : gemini.yahoo.com [url:]
@@ -7200,6 +7314,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : geonedgia-parquet-files.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : gesysuky.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : get-analytics-repository.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
@@ -7234,6 +7351,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : globalbusinesspoint-4nhhzuh6.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : gludi69399.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : glue-tp-needle.s3.ap-northeast-1.amazonaws.com [url:tif.mini.txt]
 
@@ -7263,6 +7383,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : goldariela.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : goldlucienne.workers.dev [url:hostfile]
 
   WL : google-analytics.com [url:allowlist.txt]
   BL : google-analytics.com [url:filter_1.txt]
@@ -7308,6 +7431,9 @@
 
   WL : guce.advertising.com [url:whitelist-referral.txt]
   BL : guce.advertising.com [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : gusfytgoqu.workers.dev [url:hostfile]
 
   WL : *.nvidia.com [static]  covers subdomain
   BL : gx-target-experiments-frontend-api.gx.nvidia.com [url:]
@@ -7381,8 +7507,14 @@
   WL : hubspotlinks.com [url:whitelist-referral.txt]
   BL : hubspotlinks.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : hugub60174.workers.dev [url:hostfile]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : human-verify-second.pages.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : hvdkt93305.workers.dev [url:hostfile]
 
   WL : *.akamaized.net [static]  covers subdomain
   BL : hydro-ma-proxy.akamaized.net [url:filter_1.txt]
@@ -7504,6 +7636,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : iuytrewsdfghjioiuygfewsdxcvhjkuiytrewsdfcgvhjhgf.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : ixsnn39525.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : j0v36abmdj.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
 
@@ -7522,6 +7657,9 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : jidufyle.workers.dev [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : jilasu.workers.dev [url:hostfile]
+
   WL : *.yahoo.com [static]  covers subdomain
   BL : jill.fc.yahoo.com [url:filter_1.txt]
 
@@ -7530,6 +7668,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : jodasjd34.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : jonellhomely.workers.dev [url:hostfile]
 
   WL : js-agent.newrelic.com [url:allowlist.txt]
   BL : js-agent.newrelic.com [url:filter_1.txt]
@@ -7553,7 +7694,16 @@
   BL : k40rx16053uzjnb.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : k6sgeuumoz.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : karosivi.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : kdkcj10608.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : kegikica.workers.dev [url:hostfile]
 
   WL : *.github.io [static]  covers subdomain
   BL : kilab-gaming.github.io [url:hostfile]
@@ -7582,6 +7732,12 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : ksyuu99210.workers.dev [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : kuhola.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : kytuty.workers.dev [url:hostfile]
+
   WL : l.betrad.com [url:whitelist-referral.txt]
   BL : l.betrad.com [url:hosts]
 
@@ -7594,11 +7750,17 @@
   WL : *.yahoo.com [static]  covers subdomain
   BL : launch.adserver.yahoo.com [url:hosts]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lbdtd11760.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : lbg1trk4740ihnq.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : leanplum.com [url:easyprivacy_allowlist.txt]
   BL : leanplum.com [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lemohuko.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : lfapps.s3.ap-south-1.amazonaws.com [url:tif.mini.txt]
@@ -7675,6 +7837,12 @@
   WL : *.netflix.com [static]  covers subdomain
   BL : logs.netflix.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : loranolo.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lotojalu.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : lp-apne1-3pk5xpkx.s3.ap-northeast-1.amazonaws.com [url:tif.mini.txt]
 
@@ -7684,6 +7852,9 @@
   WL : lptag.liveperson.net [url:allowlist.txt]
   BL : lptag.liveperson.net [url:filter_1.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lujeviki.workers.dev [url:hostfile]
+
   WL : *.razorpay.com [static]  covers subdomain
   BL : lumberjack-metrics.razorpay.com [url:]
 
@@ -7692,6 +7863,15 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : lx-bobbin-mend.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lyhyvaki.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lykezijo.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lyxoqo.workers.dev [url:hostfile]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : m.adserver.yahoo.com [url:hosts]
@@ -7713,6 +7893,9 @@
 
   WL : *.amazon.com [static]  covers subdomain
   BL : mads.amazon.com [url:]
+
+  WL : *.azurewebsites.net [static]  covers subdomain
+  BL : magentapeople2.azurewebsites.net [url:hostfile]
 
   WL : *.google.com [static]  covers subdomain
   BL : mail-ads.google.com [url:]
@@ -7744,11 +7927,17 @@
   WL : *.yahoo.com [static]  covers subdomain
   BL : marketingsolutions.yahoo.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : maroonermentrude.workers.dev [url:hostfile]
+
   WL : *.b-cdn.net [static]  covers subdomain
   BL : masque-ads.b-cdn.net [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : master-shopify-tracker.s3.amazonaws.com [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : mauritachronic.workers.dev [url:hostfile]
 
   WL : mc.yandex.ru [url:allowlist.txt]
   BL : mc.yandex.ru [url:]
@@ -7852,6 +8041,9 @@
   WL : monitor.fraudblocker.com [url:whitelist-referral.txt]
   BL : monitor.fraudblocker.com [url:filter_1.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : mosoxary.workers.dev [url:hostfile]
+
   WL : *.imgur.com [static]  covers subdomain
   BL : mp.imgur.com [url:]
 
@@ -7861,8 +8053,14 @@
   WL : *.microsoft.com [static]  covers subdomain
   BL : msadsscale.microsoft.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : mspo7btd5u.workers.dev [url:hostfile]
+
   WL : *.redhat.com [static]  covers subdomain
   BL : mtrcs.redhat.com [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : mukyzyxi.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : mvchallenges.s3-website-eu-west-1.amazonaws.com [url:]
@@ -7933,6 +8131,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : nhb227nbx872bd6723g4d.pages.dev [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : nikawusi.workers.dev [url:hostfile]
+
   WL : *.akamaized.net [static]  covers subdomain
   BL : ninja.akamaized.net [url:]
 
@@ -7941,6 +8142,9 @@
 
   WL : njih.net [url:whitelist-referral.txt]
   BL : njih.net [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : nkzfe53284.workers.dev [url:hostfile]
 
   WL : *.netflix.com [static]  covers subdomain
   BL : nmtracking.netflix.com [url:]
@@ -7966,11 +8170,26 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : nouvelobs.s3-website-eu-west-1.amazonaws.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : nphpf05505.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : npwfa66768.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : nuqica.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : nywge73755.workers.dev [url:hostfile]
+
   WL : o-s.io [url:whitelist-referral.txt]
   BL : o-s.io [url:hosts]
 
   WL : *.fbsbx.com [static]  covers subdomain
   BL : o.update.fbsbx.com [url:hosts]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : o2012pz1vs.workers.dev [url:hostfile]
 
   WL : *.trafficmanager.net [static]  covers subdomain
   BL : o365diagtelemetry.trafficmanager.net [url:filter_1.txt]
@@ -7984,6 +8203,9 @@
   WL : *.netlify.com [static]  covers subdomain
   BL : objective-wright-961fed.netlify.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : obpcb01908.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : obx9oo5ehhsv3jj.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
@@ -7995,6 +8217,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : odd-bar-f4c1.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : odi8527yw0.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ofkzeokbv.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
@@ -8058,6 +8283,9 @@
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : opus.analytics.yahoo.com [url:hosts]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : orofg28425.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : otff.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
@@ -8127,6 +8355,9 @@
 
   WL : personaclick.com [url:whitelist-referral.txt]
   BL : personaclick.com [url:hosts]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : pezalafe.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : pf13zvg8zm.workers.dev [url:hostfile]
@@ -8371,6 +8602,9 @@
   WL : public.profitwell.com [url:easyprivacy_allowlist.txt]
   BL : public.profitwell.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : pugyqi.workers.dev [url:hostfile]
+
   WL : *.netflix.com [static]  covers subdomain
   BL : pulse.perfmetrics.netflix.com [url:]
 
@@ -8403,6 +8637,12 @@
 
   WL : *.supabase.co [static]  covers subdomain
   BL : qaomekspdjfbdeixxjky.supabase.co [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : qatevuxa.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : qatumo.workers.dev [url:hostfile]
 
   WL : qksrv.net [url:whitelist-referral.txt]
   BL : qksrv.net [url:filter_1.txt]
@@ -8443,6 +8683,9 @@
   WL : *.live.com [static]  covers subdomain
   BL : rad.live.com [url:hosts]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : ralezilo.workers.dev [url:hostfile]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : rblx-copier.vercel.app [url:]
 
@@ -8457,6 +8700,12 @@
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : real.sp.analytics.yahoo.com [url:hosts]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : rebugere.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : rebylape.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : reef-swan-lagoon.pages.dev [url:hostfile]
@@ -8496,6 +8745,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : rg-3tn.pages.dev [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : rm4404x6us.workers.dev [url:hostfile]
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : rmgdapfnccsharpprd.azurewebsites.net [url:]
@@ -8577,6 +8829,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : saison-api-noreply-fur11pv9kn1b-5.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : sajkx59243.workers.dev [url:hostfile]
 
   WL : *.zoho.com [static]  covers subdomain
   BL : salesiq.zoho.com [url:hosts]
@@ -8712,6 +8967,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : small-morning-8be0.fsocietyandtools.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : smart985.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : smartconsumerguide-r64cz5m3.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
@@ -8861,6 +9119,9 @@
   BL : step-secure.bibusdarken.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : sticky74.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : still-snow-667e.protexweer.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
@@ -8886,6 +9147,9 @@
 
   WL : succeedscene.com [url:easylist_allowlist.txt]
   BL : succeedscene.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : sudiha.workers.dev [url:hostfile]
 
   WL : sundaysky.com [url:allowlist.txt]
   BL : sundaysky.com [url:filter_1.txt]
@@ -8986,6 +9250,9 @@
   WL : tailtarget.com [url:whitelist-referral.txt]
   BL : tailtarget.com [url:filter_1.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : tajajado.workers.dev [url:hostfile]
+
   WL : *.fastly.net [static]  covers subdomain
   BL : tapdaq-adverts.global.ssl.fastly.net [url:]
 
@@ -8997,6 +9264,9 @@
 
   WL : target.microsoft.com [url:whitelist-referral.txt]
   BL : target.microsoft.com [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : taziho.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : tbiodpt0-spsksjd33.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
@@ -9048,6 +9318,9 @@
 
   WL : *.webex.com [static]  covers subdomain
   BL : tmetrics.webex.com [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : tomecalu.workers.dev [url:hostfile]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : tp.ads.yahoo.com [url:hosts]
@@ -9202,6 +9475,15 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : tuck-nr-glaze-slim-oasis.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : tujage.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : tun9dcocc3.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : tuxebe.workers.dev [url:hostfile]
+
   WL : *.yahoo.com [static]  covers subdomain
   BL : tw.adserver.yahoo.com [url:hosts]
 
@@ -9231,6 +9513,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : um-public-panel-prod.s3.amazonaws.com [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : umtck81817.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : un30488839.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
@@ -9340,6 +9625,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : vent-open.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : venusyjy.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : verify-auth.s3.us-west-1.amazonaws.com [url:tif.mini.txt]
 
@@ -9442,6 +9730,9 @@
   WL : *.fastly.net [static]  covers subdomain
   BL : vwonwkaqvq-a.global.ssl.fastly.net [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : vyjafi.workers.dev [url:hostfile]
+
   WL : *.reddit.com [static]  covers subdomain
   BL : w3-reporting-nel.reddit.com [url:]
 
@@ -9469,6 +9760,9 @@
   WL : *.yahoo.com [static]  covers subdomain
   BL : webc2s.pubgw.yahoo.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : webenysy.workers.dev [url:hostfile]
+
   WL : webgains.com [url:allowlist.txt]
   BL : webgains.com [url:filter_1.txt]
 
@@ -9483,6 +9777,9 @@
 
   WL : webtrendslive.com [url:allowlist.txt]
   BL : webtrendslive.com [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : wehisibo.workers.dev [url:hostfile]
 
   WL : *.microsoft.com [static]  covers subdomain
   BL : wes.df.telemetry.microsoft.com [url:hosts]
@@ -9565,6 +9862,15 @@
   WL : xg4ken.com [url:whitelist-referral.txt]
   BL : xg4ken.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : xizidimi.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : xjixl13205.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : xoxuzepe.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : xp2023-pix.s3.amazonaws.com [url:]
 
@@ -9577,6 +9883,12 @@
   WL : xtremetop100.com [url:allowlist.txt]
   BL : xtremetop100.com [url:hosts]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : xuvfb6h7be.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : xuvonywa.workers.dev [url:hostfile]
+
   WL : *.fbcdn.net [static]  covers subdomain
   BL : xy.fbcdn.net [url:filter_1.txt]
 
@@ -9585,6 +9897,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : y-hazel-ten.vercel.app [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : y6w0rd50fe.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : yab-adimages.s3.amazonaws.com [url:]
@@ -9610,14 +9925,29 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : yyupdats.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : yzlik3jn4g.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : zacotile.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : zapier-logos.s3.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : zasanumy.workers.dev [url:hostfile]
 
   WL : zenaps.com [url:allowlist.txt]
   BL : zenaps.com [url:hosts]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : zeohztla01.workers.dev [url:hostfile]
+
   WL : zergnet.com [url:allowlist.txt]
   BL : zergnet.com [url:hosts]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : zodysyhe.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : zoom-i.pages.dev [url:hostfile]
@@ -9627,6 +9957,12 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : zqret51773.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : zrkpd48812.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : zuhase.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : zwbufziw6o4q92.s3.amazonaws.com [url:tif.mini.txt]
