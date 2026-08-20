@@ -1,8 +1,8 @@
 # Scale  — max: top 20% (>= 58)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1612]  [MAX]
-#   amazonaws.com                            [284]  [MAX]
-#   workers.dev                              [239]  [MAX]
+#   amazonaws.com                            [286]  [MAX]
+#   workers.dev                              [248]  [MAX]
 #   yahoo.com                                [70]  [MAX]
 #   pages.dev                                [58]  [MAX]
 #   vercel.app                               [51]  [WARN]
@@ -2362,9 +2362,6 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1boik8k1ctool.cloudfront.net [url:]
-
-  WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1bs2xyipmmosn.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1bxkgbbc428vi.cloudfront.net [url:]
@@ -5448,6 +5445,9 @@
   BL : d3rjndf2qggsna.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3rjsaqi5btg9e.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3rkkddryl936d.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -7451,6 +7451,9 @@
   WL : *.apple.com [static]  covers subdomain
   BL : graffiti-tags.apple.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : greasy8742.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : group-transfer.s3.us-west-2.amazonaws.com [url:tif.mini.txt]
 
@@ -7585,6 +7588,9 @@
 
   WL : *.netflix.com [static]  covers subdomain
   BL : ichnaea.netflix.com [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : ideiu88144.workers.dev [url:hostfile]
 
   WL : identity.mparticle.com [url:easyprivacy_allowlist.txt]
   BL : identity.mparticle.com [url:hosts]
@@ -7806,6 +7812,9 @@
   BL : launch.adserver.yahoo.com [url:hosts]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : lavenderteodora.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : lbdtd11760.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -7932,6 +7941,9 @@
   BL : lykezijo.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : lyqivo.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : lyxoqo.workers.dev [url:hostfile]
 
   WL : *.yahoo.com [static]  covers subdomain
@@ -7957,6 +7969,9 @@
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : magentapeople2.azurewebsites.net [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : magnificent5240.workers.dev [url:hostfile]
 
   WL : *.google.com [static]  covers subdomain
   BL : mail-ads.google.com [url:]
@@ -8080,6 +8095,9 @@
 
   WL : mm-syringe.com [url:allowlist.txt]
   BL : mm-syringe.com [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : mmcharty.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : mmtro.com [url:whitelist-referral.txt]
   BL : mmtro.com [url:filter_1.txt]
@@ -8236,6 +8254,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : npwfa66768.workers.dev [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ntiein.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : numeda.workers.dev [url:hostfile]
@@ -8730,6 +8751,9 @@
   BL : qksrv.net [url:filter_1.txt]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : qovifequ.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : quantri.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
@@ -8746,6 +8770,9 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : qvid2.b-cdn.net [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : qybari.workers.dev [url:hostfile]
 
   WL : r.akipam.com [url:whitelist-referral.txt]
   BL : r.akipam.com [url:filter_1.txt]
@@ -8878,6 +8905,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : rwacbzxkynlfy8a.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : ryluhy.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : s-14billmondy.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
@@ -9952,6 +9982,9 @@
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : x9t7g4m2qk2.azurewebsites.net [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : xejaluze.workers.dev [url:hostfile]
 
   WL : xg4ken.com [url:whitelist-referral.txt]
   BL : xg4ken.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
