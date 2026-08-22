@@ -1,8 +1,8 @@
 # Scale  — max: top 20% (>= 51)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [1612]  [MAX]
-#   amazonaws.com                            [289]  [MAX]
-#   workers.dev                              [261]  [MAX]
+#   cloudfront.net                           [1614]  [MAX]
+#   amazonaws.com                            [288]  [MAX]
+#   workers.dev                              [272]  [MAX]
 #   yahoo.com                                [70]  [MAX]
 #   vercel.app                               [51]  [MAX]
 #   pages.dev                                [50]  [WARN]
@@ -310,7 +310,6 @@
 #   rezync.com                               [1]  [BASIC]
 #   liverail.com                             [1]  [BASIC]
 #   lndata.com                               [1]  [BASIC]
-#   liveperson.net                           [1]  [BASIC]
 #   razorpay.com                             [1]  [BASIC]
 #   media01.eu                               [1]  [BASIC]
 #   mediaintelligence.de                     [1]  [BASIC]
@@ -542,6 +541,9 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : 682a5845.b-cdn.net [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : 695ariela.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : 69allied.workers.dev [url:hostfile]
@@ -3433,6 +3435,9 @@
   BL : d23spca806c5fu.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d23uh58cc2jksn.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d23xhr62nxa8qo.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -5650,6 +5655,9 @@
   BL : d4ngwggzm3w7j.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d59gpuqareznf.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d5d3sg85gu7o6.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -6798,6 +6806,9 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : duh0b8nl8uhfn.cloudfront.net [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : dujexi.workers.dev [url:hostfile]
+
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dupcczkfziyd3.cloudfront.net [url:]
 
@@ -7001,6 +7012,9 @@
 
   WL : *.akamaiedge.net [static]  covers subdomain
   BL : e37364.dscd.akamaiedge.net [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : e4i5spo3yx.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : e6ednstx1d.workers.dev [url:hostfile]
@@ -7209,6 +7223,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : fdfwasrgwrhfdgvwr.pages.dev [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : feculafi.workers.dev [url:hostfile]
+
   WL : *.googleapis.com [static]  covers subdomain
   BL : federatedcompute-pa.googleapis.com [url:]
 
@@ -7304,6 +7321,9 @@
 
   WL : fwcdn2.com [url:allowlist.txt]
   BL : fwcdn2.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : fwgij17247.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : fy1j23u7c3.workers.dev [url:hostfile]
@@ -7918,6 +7938,9 @@
   BL : logs.netflix.com [url:]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : lojyny.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : loranolo.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
@@ -7928,9 +7951,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : lp-apne1-3pk5xpkx.s3.ap-northeast-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : lptag.liveperson.net [url:allowlist.txt]
-  BL : lptag.liveperson.net [url:filter_1.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : lujeviki.workers.dev [url:hostfile]
@@ -7982,6 +8002,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : magnificent5240.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : magulewi.workers.dev [url:hostfile]
 
   WL : *.google.com [static]  covers subdomain
   BL : mail-ads.google.com [url:]
@@ -8378,6 +8401,9 @@
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : opus.analytics.yahoo.com [url:hosts]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : orgjc7u140.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : orofg28425.workers.dev [url:hostfile]
@@ -9730,6 +9756,9 @@
   BL : uz-analysis.akamaized.net [url:]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : uz7mn8jcpt.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : v2.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
@@ -9815,6 +9844,9 @@
 
   WL : *.microsoft.com [static]  covers subdomain
   BL : vortex.data.microsoft.com [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : vowycuxa.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : vqyxwuvtyxm0c96.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
@@ -9969,9 +10001,6 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : wqczklqnha.workers.dev [url:hostfile]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : wraplogicllc-65ee4adc428c428d9495994c81713853.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
-
   WL : *.google.com [static]  covers subdomain
   BL : www-google-analytics.l.google.com [url:]
 
@@ -10019,6 +10048,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : xjixl13205.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : xorajahy.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : xoxuzepe.workers.dev [url:hostfile]
