@@ -1,18 +1,18 @@
-# Scale  — max: top 20% (>= 70)  warn: top 50% (>= 13)  basic: remaining
+# Scale  — max: top 20% (>= 52)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1619]  [MAX]
-#   workers.dev                              [1382]  [MAX]
-#   amazonaws.com                            [351]  [MAX]
+#   workers.dev                              [1381]  [MAX]
+#   amazonaws.com                            [350]  [MAX]
 #   yahoo.com                                [70]  [MAX]
+#   pages.dev                                [52]  [MAX]
 #   vercel.app                               [51]  [WARN]
-#   pages.dev                                [51]  [WARN]
 #   b-cdn.net                                [47]  [WARN]
 #   apple.com                                [28]  [WARN]
 #   microsoft.com                            [25]  [WARN]
 #   google.com                               [19]  [WARN]
 #   opera.com                                [16]  [WARN]
 #   amazon.com                               [14]  [WARN]
-#   netflix.com                              [13]  [WARN]
+#   netflix.com                              [13]  [BASIC]
 #   fastly.net                               [12]  [BASIC]
 #   spotify.com                              [11]  [BASIC]
 #   reddit.com                               [10]  [BASIC]
@@ -1571,9 +1571,6 @@
   WL : atdmt.com [url:allowlist.txt]
   BL : atdmt.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : atex.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
-
   WL : *.archive.org [static]  covers subdomain
   BL : athena.archive.org [url:]
 
@@ -1639,9 +1636,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : babes-mansion.s3.amazonaws.com [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : backup.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
 
   WL : *.unpkg.com [static]  covers subdomain
   BL : backup.unpkg.com [url:hostfile]
@@ -1863,6 +1857,9 @@
   BL : boujy17296.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : bqumy43555.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : brd55i3s5p.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -2002,6 +1999,9 @@
 
   WL : *.apple.com [static]  covers subdomain
   BL : ca.iadsdk.apple.com [url:hosts]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : cagiky.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : cahuqebe.workers.dev [url:hostfile]
@@ -6548,9 +6548,6 @@
   WL : *.redhat.com [static]  covers subdomain
   BL : data.notify.redhat.com [url:filter_1.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : data.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
-
   WL : *.unpkg.com [static]  covers subdomain
   BL : data.unpkg.com [url:hostfile]
 
@@ -6664,9 +6661,6 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : ddmuiijrdvv0s.cloudfront.net [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : ddos.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
 
   WL : *.unpkg.com [static]  covers subdomain
   BL : ddos.unpkg.com [url:hostfile]
@@ -7812,9 +7806,6 @@
   BL : eboksx.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
-  BL : ec2-13-233-119-235.ap-south-1.compute.amazonaws.com [url:hostfile]
-
-  WL : *.amazonaws.com [static]  covers subdomain
   BL : ec2-18-208-244-120.compute-1.amazonaws.com [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -8247,6 +8238,9 @@
   BL : fudud35949.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : fujipaje.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : fukokuto.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
@@ -8530,6 +8524,9 @@
 
   WL : gotrackier.com [url:whitelist-referral.txt]
   BL : gotrackier.com [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : gowinu.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : gq0xhozbnn.workers.dev [url:hostfile]
@@ -9124,6 +9121,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : jon8yi28om16om5e6cr1.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : jonelate.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : jonellhomely.workers.dev [url:hostfile]
@@ -9764,6 +9764,9 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : lzoao88779.workers.dev [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lzphy97221.workers.dev [url:hostfile]
+
   WL : *.yahoo.com [static]  covers subdomain
   BL : m.adserver.yahoo.com [url:hosts]
 
@@ -9826,9 +9829,6 @@
 
   WL : *.spotify.com [static]  covers subdomain
   BL : malware.open.spotify.com [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : malware.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
 
   WL : *.unpkg.com [static]  covers subdomain
   BL : malware.unpkg.com [url:hostfile]
@@ -10097,6 +10097,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : mvchallenges.s3-website-eu-west-1.amazonaws.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : mwqhf37093.workers.dev [url:hostfile]
+
   WL : mxpnl.com [url:allowlist.txt]
   BL : mxpnl.com [url:filter_1.txt]
 
@@ -10278,6 +10281,9 @@
   BL : noa.yahoo.com [url:]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : nodupoqi.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : nogepoku.workers.dev [url:hostfile]
 
   WL : *.yahoo.com [static]  covers subdomain
@@ -10423,9 +10429,6 @@
 
   WL : odb.outbrain.com [url:allowlist.txt]
   BL : odb.outbrain.com [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : odd-bar-f4c1.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : odi8527yw0.workers.dev [url:hostfile]
@@ -10657,9 +10660,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : phileweb-amzrank.vercel.app [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : phishing.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
 
   WL : *.unpkg.com [static]  covers subdomain
   BL : phishing.unpkg.com [url:hostfile]
@@ -11009,6 +11009,9 @@
   WL : *.netflix.com [static]  covers subdomain
   BL : pulse.perfmetrics.netflix.com [url:]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : pumpfunaaexposed.pages.dev [url:hostfile]
+
   WL : *.workers.dev [static]  covers subdomain
   BL : pumula.workers.dev [url:hostfile]
 
@@ -11236,9 +11239,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : qs0sd7xjfm.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : quantri.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
 
   WL : *.unpkg.com [static]  covers subdomain
   BL : quantri.unpkg.com [url:hostfile]
@@ -12369,6 +12369,9 @@
   BL : toruseli.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : tosulepa.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : towide.workers.dev [url:hostfile]
 
   WL : *.yahoo.com [static]  covers subdomain
@@ -12740,14 +12743,8 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : v-4loqpt2kg6dgdgdzcb.s3.ap-south-1.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : v2.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
-
   WL : *.unpkg.com [static]  covers subdomain
   BL : v2.unpkg.com [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : v3.royal-sea-6c18.firebrainss.workers.dev [url:hostfile]
 
   WL : *.unpkg.com [static]  covers subdomain
   BL : v3.unpkg.com [url:hostfile]
