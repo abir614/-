@@ -1,0 +1,124 @@
+{
+  "dns_over_https": [
+    {
+      "provider": "Mullvad DNS",
+      "url": "https://doh.mullvad.net/dns-query",
+      "privacy_priority": "very_high"
+    },
+    {
+      "provider": "Quad9",
+      "url": "https://dns.quad9.net/dns-query",
+      "privacy_priority": "very_high"
+    },
+    {
+      "provider": "AdGuard DNS",
+      "url": "https://dns.adguard-dns.com/dns-query",
+      "privacy_priority": "very_high"
+    },
+    {
+      "provider": "Cloudflare",
+      "url": "https://cloudflare-dns.com/dns-query",
+      "privacy_priority": "high"
+    },
+    {
+      "provider": "NextDNS",
+      "url": "https://dns.nextdns.io/dns-query",
+      "privacy_priority": "high"
+    },
+    {
+      "provider": "Control D",
+      "url": "https://freedns.controld.com/p0",
+      "privacy_priority": "high"
+    },
+    {
+      "provider": "DNS.SB",
+      "url": "https://doh.dns.sb/dns-query",
+      "privacy_priority": "high"
+    },
+    {
+      "provider": "LibreDNS",
+      "url": "https://doh.libredns.gr/dns-query",
+      "privacy_priority": "high"
+    },
+    {
+      "provider": "CleanBrowsing",
+      "url": "https://doh.cleanbrowsing.org/doh/security-filter/",
+      "privacy_priority": "high"
+    },
+    {
+      "provider": "RethinkDNS",
+      "url": "https://max.rethinkdns.com/dns-query",
+      "privacy_priority": "high"
+    },
+    {
+      "provider": "Google Public DNS",
+      "url": "https://dns.google/dns-query",
+      "privacy_priority": "medium"
+    },
+    {
+      "provider": "OpenDNS",
+      "url": "https://doh.opendns.com/dns-query",
+      "privacy_priority": "medium"
+    },
+    {
+      "provider": "Hurricane Electric",
+      "url": "https://ordns.he.net/dns-query",
+      "privacy_priority": "medium"
+    },
+    {
+      "provider": "DNSPod",
+      "url": "https://dns.pub/dns-query",
+      "privacy_priority": "medium"
+    },
+    {
+      "provider": "OneDNS",
+      "url": "https://doh-pure.onedns.net/dns-query",
+      "privacy_priority": "medium"
+    },
+    {
+      "provider": "Applied Privacy",
+      "url": "https://doh.applied-privacy.net/query",
+      "privacy_priority": "very_high"
+    },
+    {
+      "provider": "Digitale Gesellschaft",
+      "url": "https://dns.digitale-gesellschaft.ch/dns-query",
+      "privacy_priority": "very_high"
+    },
+    {
+      "provider": "UncensoredDNS",
+      "url": "https://anycast.uncensoreddns.org/dns-query",
+      "privacy_priority": "high"
+    },
+    {
+      "provider": "dnsforge",
+      "url": "https://dnsforge.de/dns-query",
+      "privacy_priority": "high"
+    },
+    {
+      "provider": "AhaDNS",
+      "url": "https://dns.ahadns.com/dns-query",
+      "privacy_priority": "high"
+    },
+    {
+      "provider": "BlahDNS",
+      "url": "https://doh-jp.blahdns.com/dns-query",
+      "privacy_priority": "high"
+    },
+    {
+      "provider": "CIRA Canadian Shield",
+      "url": "https://protected.canadianshield.cira.ca/dns-query",
+      "privacy_priority": "high"
+    },
+    {
+      "provider": "Switch DNS",
+      "url": "https://dns.switch.ch/dns-query",
+      "privacy_priority": "high"
+    },
+    {
+      "provider": "CZ.NIC ODVR",
+      "url": "https://odvr.nic.cz/doh",
+      "privacy_priority": "high"
+    }
+  ]
+}
