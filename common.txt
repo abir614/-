@@ -1,7 +1,7 @@
 # Scale  — max: top 20% (>= 52)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   cloudfront.net                           [1629]  [MAX]
-#   workers.dev                              [1325]  [MAX]
+#   workers.dev                              [1331]  [MAX]
 #   amazonaws.com                            [355]  [MAX]
 #   yahoo.com                                [70]  [MAX]
 #   pages.dev                                [52]  [MAX]
@@ -15,13 +15,13 @@
 #   netflix.com                              [13]  [BASIC]
 #   fastly.net                               [12]  [BASIC]
 #   spotify.com                              [11]  [BASIC]
+#   azurewebsites.net                        [10]  [BASIC]
 #   reddit.com                               [10]  [BASIC]
 #   akamaized.net                            [10]  [BASIC]
 #   azure.com                                [10]  [BASIC]
 #   nvidia.com                               [10]  [BASIC]
 #   substack.com                             [9]  [BASIC]
 #   googleapis.com                           [9]  [BASIC]
-#   azurewebsites.net                        [9]  [BASIC]
 #   paypal.com                               [9]  [BASIC]
 #   unpkg.com                                [9]  [BASIC]
 #   linkedin.com                             [8]  [BASIC]
@@ -2002,6 +2002,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : caxuhove.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : cbgys73064.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : cbuod47726.workers.dev [url:hostfile]
@@ -6708,6 +6711,9 @@
   BL : desgao1zt7irn.cloudfront.net [url:]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : detopyza.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : dev-adblocker.workers.dev [url:filter_1.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -10502,6 +10508,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : peach-analytics.vercel.app [url:]
 
+  WL : *.azurewebsites.net [static]  covers subdomain
+  BL : peatsorbng.azurewebsites.net [url:hostfile]
+
   WL : *.workers.dev [static]  covers subdomain
   BL : pegetoli.workers.dev [url:hostfile]
 
@@ -10519,6 +10528,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : petoqove.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : pezalafe.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : pfaz89ummq.workers.dev [url:hostfile]
@@ -11044,6 +11056,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : qilydobu.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : qiqarife.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : qiriqesy.workers.dev [url:hostfile]
@@ -11764,6 +11779,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : slimzyss.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : slippery971.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : small-morning-8be0.fsocietyandtools.workers.dev [url:hostfile]
@@ -12685,6 +12703,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : vaytinviet.vercel.app [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : vc4625eicq.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : vcabw71270.workers.dev [url:hostfile]
