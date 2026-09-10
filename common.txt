@@ -1,8 +1,8 @@
 # Scale  — max: top 20% (>= 126)  warn: top 50% (>= 14)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   pages.dev                                [15602]  [MAX]
+#   pages.dev                                [15604]  [MAX]
 #   cloudfront.net                           [1741]  [MAX]
-#   workers.dev                              [1434]  [MAX]
+#   workers.dev                              [1437]  [MAX]
 #   amazonaws.com                            [362]  [MAX]
 #   wordpress.com                            [126]  [MAX]
 #   b-cdn.net                                [98]  [WARN]
@@ -20,10 +20,10 @@
 #   fastly.net                               [12]  [BASIC]
 #   spotify.com                              [11]  [BASIC]
 #   reddit.com                               [11]  [BASIC]
+#   azurewebsites.net                        [10]  [BASIC]
 #   akamaized.net                            [10]  [BASIC]
 #   nvidia.com                               [10]  [BASIC]
 #   googleapis.com                           [9]  [BASIC]
-#   azurewebsites.net                        [9]  [BASIC]
 #   paypal.com                               [9]  [BASIC]
 #   unpkg.com                                [9]  [BASIC]
 #   cloudflare.net                           [9]  [BASIC]
@@ -14530,6 +14530,9 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d985a9d2clzq5.cloudfront.net [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : d9aip4sfay.workers.dev [url:hostfile]
+
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d9b5gfwt6p05u.cloudfront.net [url:]
 
@@ -20509,6 +20512,9 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : felawi.workers.dev [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : felice979.workers.dev [url:hostfile]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : fellatrixmilf.pages.dev [url:]
 
@@ -23147,6 +23153,9 @@
   BL : fyjilowu.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : fykecyjo.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : fykinifa.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
@@ -25573,9 +25582,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : grazi-neves-porn.pages.dev [url:]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : greasy8742.workers.dev [url:hostfile]
-
   WL : *.wordpress.com [static]  covers subdomain
   BL : greatsextoy.wordpress.com [url:]
 
@@ -25992,6 +25998,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : gysaluri.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : gyvola.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : gzdeakgnporno.pages.dev [url:]
@@ -27050,6 +27059,9 @@
   BL : hitsxxxgalery.pages.dev [url:]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : hiwywobo.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : hixoqoke.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
@@ -27707,6 +27719,9 @@
   BL : horny-milfgroup.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : horny-p.pages.dev [url:]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : horny-pussy-girl-group.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -28156,6 +28171,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : houstonlatinaporn.pages.dev [url:]
 
+  WL : *.azurewebsites.net [static]  covers subdomain
+  BL : houstonparksboard.azurewebsites.net [url:hostfile]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : how-to-train-your-dragon-porn-cartoon.pages.dev [url:]
 
@@ -28540,9 +28558,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : idabergfothporn.pages.dev [url:]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : ideiu88144.workers.dev [url:hostfile]
-
   WL : identity.mparticle.com [url:easyprivacy_allowlist.txt]
   BL : identity.mparticle.com [url:hosts]
 
@@ -28629,6 +28644,9 @@
 
   WL : *.digicert.com [static]  covers subdomain
   BL : img.response.digicert.com [url:filter_1.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : imgirls-hornyxx.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : imgirlshorny.pages.dev [url:]
@@ -30133,6 +30151,9 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : juvaka.workers.dev [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : jvrsf06816.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : jxa0xelq0d0xvb5zauoc.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
@@ -30153,6 +30174,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : jylebori.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : jymybify.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : jyrybi.workers.dev [url:hostfile]
@@ -31333,6 +31357,9 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : kuhekybi.workers.dev [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : kujoe31070.workers.dev [url:hostfile]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : kukisanbanporn.pages.dev [url:]
 
@@ -31359,6 +31386,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : kuxojy.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : kuzanony.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : kuzuv0porn.pages.dev [url:]
@@ -31662,9 +31692,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : laurineporn.pages.dev [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : lavenderteodora.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : lawime.workers.dev [url:hostfile]
@@ -33133,9 +33160,6 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : lyleh89393.workers.dev [url:hostfile]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : lyqivo.workers.dev [url:hostfile]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : lyraamorrporn.pages.dev [url:]
 
@@ -33276,9 +33300,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : magma-swingt-sex-chat-kostenlos.pages.dev [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : magnificent5240.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : magnoliaminxxx-leaked-video-and-images.pages.dev [url:]
@@ -36450,6 +36471,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : naughtysexxgroup.pages.dev [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : nawacyqi.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : nckxxx.pages.dev [url:]
@@ -46214,9 +46238,6 @@
   BL : qosiwepa.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : qovifequ.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
   BL : qovoto.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
@@ -46320,9 +46341,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : qwxeh11866.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : qybari.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : qycaloky.workers.dev [url:hostfile]
@@ -47475,9 +47493,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : ryduzoxe.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : ryluhy.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : ryqagywe.workers.dev [url:hostfile]
@@ -53650,6 +53665,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : skinny-granny-solo-porn.pages.dev [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : skinny8860.workers.dev [url:hostfile]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : sklave-gefesselt-erotikseiten-fr-frauen.pages.dev [url:]
 
@@ -59702,6 +59720,9 @@
   BL : vylodo.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : vysyze.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : vzz1jq7u8k.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -60906,9 +60927,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : xegyvoca.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : xejaluze.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : xekaty.workers.dev [url:hostfile]
