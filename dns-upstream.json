@@ -119,6 +119,91 @@
       "provider": "CZ.NIC ODVR",
       "url": "https://odvr.nic.cz/doh",
       "aura": "medium"
+    },
+    {
+      "provider": "dns0.eu",
+      "url": "https://dns0.eu/dns-query",
+      "aura": "high"
+    },
+    {
+      "provider": "Njalla",
+      "url": "https://dns.njal.la/dns-query",
+      "aura": "high"
+    },
+    {
+      "provider": "DNS4EU (Unfiltered)",
+      "url": "https://unfiltered.joindns4.eu/dns-query",
+      "aura": "high"
+    },
+    {
+      "provider": "SecureDNS.eu",
+      "url": "https://doh.securedns.eu/dns-query",
+      "aura": "medium"
+    },
+    {
+      "provider": "Quad101 (TWNIC)",
+      "url": "https://dns.twnic.tw/dns-query",
+      "aura": "medium"
+    },
+    {
+      "provider": "AliDNS (Alibaba)",
+      "url": "https://dns.alidns.com/dns-query",
+      "aura": "low"
+    },
+    {
+      "provider": "Yandex DNS",
+      "url": "https://common.dot.dns.yandex.net/dns-query",
+      "aura": "low"
+    },
+    {
+      "provider": "Andrews & Arnold",
+      "url": "https://dns.aa.net.uk/dns-query",
+      "aura": "high"
+    },
+    {
+      "provider": "Aquilenet",
+      "url": "https://dns.aquilenet.fr/dns-query",
+      "aura": "high"
+    },
+    {
+      "provider": "Blokada DNS",
+      "url": "https://dns.blokada.org/dns-query",
+      "aura": "high"
+    },
+    {
+      "provider": "Quad9 (Unsecured)",
+      "url": "https://dns10.quad9.net/dns-query",
+      "aura": "high"
+    },
+    {
+      "provider": "CIRA Canadian Shield (Private)",
+      "url": "https://private.canadianshield.cira.ca/dns-query",
+      "aura": "high"
+    },
+    {
+      "provider": "Belnet",
+      "url": "https://dns.belnet.be/dns-query",
+      "aura": "medium"
+    },
+    {
+      "provider": "CERT Estonia",
+      "url": "https://dns.cert.ee/dns-query",
+      "aura": "medium"
+    },
+    {
+      "provider": "arnor.org",
+      "url": "https://nsec.arnor.org/dns-query",
+      "aura": "medium"
+    },
+    {
+      "provider": "BlahDNS (Germany)",
+      "url": "https://doh-de.blahdns.com/dns-query",
+      "aura": "medium"
+    },
+    {
+      "provider": "BlahDNS (Finland)",
+      "url": "https://doh-fi.blahdns.com/dns-query",
+      "aura": "medium"
     }
   ]
 }
