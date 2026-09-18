@@ -1,9 +1,9 @@
 # Scale  — max: top 20% (>= 130)  warn: top 50% (>= 15)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   pages.dev                                [15846]  [MAX]
-#   cloudfront.net                           [1729]  [MAX]
-#   amazonaws.com                            [365]  [MAX]
-#   workers.dev                              [315]  [MAX]
+#   pages.dev                                [15824]  [MAX]
+#   cloudfront.net                           [1730]  [MAX]
+#   amazonaws.com                            [373]  [MAX]
+#   workers.dev                              [311]  [MAX]
 #   wordpress.com                            [130]  [MAX]
 #   b-cdn.net                                [100]  [WARN]
 #   yahoo.com                                [71]  [WARN]
@@ -588,9 +588,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : 260120.vercel.app [url:hostfile]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : 2644uneven.workers.dev [url:hostfile]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : 2a1whatsappsex.pages.dev [url:]
 
@@ -620,6 +617,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 32534a34e6004c3180746df5a4d459ab.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : 328591b8f8a84799a511ca989f0cef7a.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 37be4d7f4c7b5e.s3.ap-northeast-1.amazonaws.com [url:tif.mini.txt]
@@ -721,16 +721,10 @@
   BL : 5call-sexx.pages.dev [url:]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : 5nrkm0ei2e.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
   BL : 5t3wqa339g.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 5z8xi2rj04jyh302fd.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : 6213blush.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : 65ey0xwrct.workers.dev [url:hostfile]
@@ -1381,9 +1375,6 @@
   BL : adult-c27.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
-  BL : adult-chat-ao8.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
   BL : adult-chat.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -1394,12 +1385,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : adult-datexxx.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : adult-dating-5ye.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : adult-dating-5yea.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : adult-dating-5yeaa.pages.dev [url:]
@@ -2402,9 +2387,6 @@
 
   WL : *.netflix.com [static]  covers subdomain
   BL : aidsvc.netflix.com [url:filter_1.txt]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : aiko-gay.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : aimeelawleysex.pages.dev [url:]
@@ -4254,9 +4236,6 @@
   WL : *.apple.com [static]  covers subdomain
   BL : api-adservices.apple.com [url:]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : api-proxy.mersiblagodarutebya.workers.dev [url:hostfile]
-
   WL : api.amplitude.com [url:easyprivacy_allowlist.txt]
   BL : api.amplitude.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
@@ -5085,9 +5064,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : bannersweb.s3.amazonaws.com [url:]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : bapele.workers.dev [url:hostfile]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : barangayhub-react.pages.dev [url:]
 
@@ -5126,9 +5102,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : baysitesexx.pages.dev [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : bazipy.workers.dev [url:hostfile]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : bbangads.b-cdn.net [url:hosts]
@@ -6759,9 +6732,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : bluepageporn.pages.dev [url:]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : blwcg81617.workers.dev [url:hostfile]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : bmf-sex-scences.pages.dev [url:]
 
@@ -7755,6 +7725,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : bxbyvioletxsextape.pages.dev [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : bytetixa.workers.dev [url:hostfile]
+
   WL : *.openai.com [static]  covers subdomain
   BL : bzr.openai.com [url:]
 
@@ -7799,6 +7772,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : c3771637.s3.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : c7ayqlpj789f.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : c9whatsappsex.pages.dev [url:]
@@ -10688,6 +10664,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1jd9usa22o1l7.cloudfront.net [url:]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1jemqk05k0kst.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1jhnmm20k4wp8.cloudfront.net [url:]
@@ -15888,9 +15867,6 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dilvyi2h98h1q.cloudfront.net [url:]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : dinaly.workers.dev [url:hostfile]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : diovanakonigsreuterporn.pages.dev [url:]
 
@@ -16944,9 +16920,6 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : du99h8anpnevg.cloudfront.net [url:]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : ducave.workers.dev [url:hostfile]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : dude-thats-lewd-porn.pages.dev [url:]
 
@@ -17219,6 +17192,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : e78gueny09.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : e9po0d3brl.workers.dev [url:hostfile]
 
   WL : eacdn.com [url:whitelist-referral.txt]
   BL : eacdn.com [url:filter_1.txt]
@@ -19314,6 +19290,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : erzwungener-orgasmus-erotik-meppen.pages.dev [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : escalation-bucket-5986523902.s3-website.us-east-2.amazonaws.com [url:tif.mini.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : escolaadultslavilajoiosa-com.pages.dev [url:]
 
@@ -19515,8 +19494,14 @@
   WL : *.loom.com [static]  covers subdomain
   BL : evs.sgmt.loom.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : evwb5jgip6.workers.dev [url:hostfile]
+
   WL : evyy.net [url:whitelist-referral.txt]
   BL : evyy.net [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : ew779n8ja1.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : excellent-escort-sex-chat-free-deutsch.pages.dev [url:]
@@ -20030,6 +20015,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : fhofipehoifjiwoeaioefhpoihawe-miyoporn-cdn.pages.dev [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : fhzot2fl0zjs.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : fick-maschine-sex-in-gtersloh.pages.dev [url:]
@@ -22416,12 +22404,6 @@
   WL : fwcdn2.com [url:allowlist.txt]
   BL : fwcdn2.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : fykecyjo.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : fymamalo.workers.dev [url:hostfile]
-
   WL : *.fastly.net [static]  covers subdomain
   BL : fyrsbckgi-c.global.ssl.fastly.net [url:]
 
@@ -22496,9 +22478,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : gamerrrgirl-cam-porn.pages.dev [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : gamusepo.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : gang-bang-bochum-sm-sex-videos-kostenlos.pages.dev [url:]
@@ -22720,12 +22699,6 @@
   BL : gay-chiropractors-near-me.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
-  BL : gay-clemmie.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : gay-danmark-de.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
   BL : gay-darsteller-dsseldorf-tantra.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -22808,9 +22781,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : gay-naked-rednecks.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : gay-nederland-de.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : gay-nigga-dev.pages.dev [url:]
@@ -22927,13 +22897,7 @@
   BL : gay-sm-club-erotische-kleinanzeigen-kln.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
-  BL : gay-sounds-sitpos-ts-it.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
   BL : gay-spanking-punishment-porn.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : gay-suomi-de.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : gay-swim-trunks.pages.dev [url:]
@@ -23258,9 +23222,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : gefickte-frauen-dirty-talk-ficken.pages.dev [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : gegebowi.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : geiele-weiber-alte-reife-frauen-ficken.pages.dev [url:]
@@ -23958,6 +23919,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : ghost-spider-porn.pages.dev [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : gi24ggk8md65.s3-website.us-east-2.amazonaws.com [url:tif.mini.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : gia-tiktoker-xxx.pages.dev [url:]
 
@@ -24032,9 +23996,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : girlfuckssleepingguyporn.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : girlhorny-2pb.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : girlpssy18pluswhatsaapforxxx.pages.dev [url:]
@@ -24563,6 +24524,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : gouhuan-gay.pages.dev [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : gowiteji.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : gq36h6nz916j8hyp3v5n.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
@@ -26070,9 +26034,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : hermaphrodite-sex-doll.pages.dev [url:]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : herminiarose.workers.dev [url:hostfile]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : hermione-granger-porn-game.pages.dev [url:]
 
@@ -27115,9 +27076,6 @@
   BL : hotmallusexvideos.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
-  BL : hotmilf-avw.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
   BL : hotmilf-dating-site.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -27312,6 +27270,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : hrspiel-porno-pornostar-nitro.pages.dev [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : hrwsflkxka.workers.dev [url:hostfile]
+
   WL : hs.eloqua.com [url:whitelist-referral.txt]
   BL : hs.eloqua.com [url:hosts]
 
@@ -27478,7 +27439,7 @@
   BL : hw00022.wordpress.com [url:]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : hx4ha4w0p9.workers.dev [url:hostfile]
+  BL : hwxcm702c8.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : hxxxav.pages.dev [url:]
@@ -27717,9 +27678,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : imnotproudof.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : imogenarmed.workers.dev [url:hostfile]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : importantdocumentscopys.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
 
@@ -27869,9 +27827,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : inne22tull90mse.s3.eu-north-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : inner-adult.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ins-essen-wichsen-wetlook-world-forum.pages.dev [url:]
@@ -28839,9 +28794,6 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : jolocule.workers.dev [url:hostfile]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : jolymeza.workers.dev [url:hostfile]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : jon8yi28om16om5e6cr1.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
@@ -29105,12 +29057,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : jxa0xelq0d0xvb5zauoc.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : jykivamo.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : jynacizo.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : k40rx16053uzjnb.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
@@ -30195,9 +30141,6 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : kududuzy.workers.dev [url:hostfile]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : kujoe31070.workers.dev [url:hostfile]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : kukisanbanporn.pages.dev [url:]
 
@@ -30534,9 +30477,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : lebensmittel-anal-einfhren-laytex-porn.pages.dev [url:]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : lecato.workers.dev [url:hostfile]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : lecken-bis-sie-kommt-sex-qualen.pages.dev [url:]
 
@@ -30863,6 +30803,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : lillienueonlyfansporn.pages.dev [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lilowysu.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : lilyandjustinporn.pages.dev [url:]
@@ -31335,6 +31278,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : lnger-ficken-muschi-lecken-free-video.pages.dev [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lnuch69247.workers.dev [url:hostfile]
+
   WL : *.azureedge.net [static]  covers subdomain
   BL : loader-cdn.azureedge.net [url:]
 
@@ -31762,10 +31708,16 @@
   BL : lvsexiaodaohang-cx7.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : lvsexiaodaohang.pages.dev [url:]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : lvsexiaodh.pages.dev [url:]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : lwkafdjadfnjasdfnjasdfn.lmzvzxsdlkf.workers.dev [url:hostfile]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : lwzhgay.pages.dev [url:]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : lx-bobbin-mend.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
@@ -31856,9 +31808,6 @@
 
   WL : *.amazon.com [static]  covers subdomain
   BL : mads.amazon.com [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : mael-gay.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : mafershofxxx.pages.dev [url:]
@@ -32426,9 +32375,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : mayabucketsleakedporn.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : mayabucketssextape.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : mayalona13sex.pages.dev [url:]
@@ -33942,6 +33888,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : mos-pretty-sexy.pages.dev [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : mosinytu.workers.dev [url:hostfile]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : moskva-adult-russian.pages.dev [url:]
 
@@ -34365,9 +34314,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : museum0fcum-porn.pages.dev [url:]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : musezuga.workers.dev [url:hostfile]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : muskanagarwalporn.pages.dev [url:]
 
@@ -34697,9 +34643,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : nackte-japanische-mdchen-private-sexparty.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : nackte-junge-hausfrauen-pornos-gratis-reife-frauen.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : nackte-lesben-beim-sex-seiersberg-pirka.pages.dev [url:]
@@ -35730,9 +35673,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : nyny-irene-porn.pages.dev [url:]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : nyqugupi.workers.dev [url:hostfile]
-
   WL : o-s.io [url:whitelist-referral.txt]
   BL : o-s.io [url:hosts]
 
@@ -35741,6 +35681,9 @@
 
   WL : *.trafficmanager.net [static]  covers subdomain
   BL : o365diagtelemetry.trafficmanager.net [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : o7z81ibgm2.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : o9tt6h08li.execute-api.eu-west-1.amazonaws.com [url:filter_1.txt]
@@ -36667,6 +36610,9 @@
   BL : overtimemegansextapeleaks.pages.dev [url:]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : ovusb96472.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : owwyt4xqrs.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -36689,9 +36635,6 @@
 
   WL : p11.techlab-cdn.com [url:easyprivacy_allowlist.txt]
   BL : p11.techlab-cdn.com [url:hosts]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : p8czohl7nq.workers.dev [url:hostfile]
 
   WL : *.firefox.com [static]  covers subdomain
   BL : pa.firefox.com [url:]
@@ -37227,6 +37170,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : perkosaporno.pages.dev [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : perm-check-1779499979-557cf67fef.s3-website.ap-south-1.amazonaws.com [url:tif.mini.txt]
+
   WL : personaclick.com [url:whitelist-referral.txt]
   BL : personaclick.com [url:hosts]
 
@@ -37667,6 +37613,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : pokimanenakedporn.pages.dev [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : pokogili.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : polandp.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
@@ -43752,9 +43701,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : powiadomienieplatnosci.s3.ap-south-1.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : poxizu.workers.dev [url:hostfile]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : poxsertechazzeufxxx.pages.dev [url:]
 
@@ -43859,9 +43805,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : primemilf.pages.dev [url:]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : primethreein.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : princegokuporn.pages.dev [url:]
@@ -44325,6 +44268,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : pumpfunaaexposed.pages.dev [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : punogyxu.workers.dev [url:hostfile]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : puppenhaus-norderstedt-sm-sex-geschichten.pages.dev [url:]
 
@@ -44406,6 +44352,9 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : puvepa.workers.dev [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : puwqx93041.workers.dev [url:hostfile]
+
   WL : puzzles-games-api.gp-prod.conde.digital [url:allowlist.txt]
   BL : puzzles-games-api.gp-prod.conde.digital [url:filter_1.txt]
 
@@ -44426,6 +44375,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : pxxx.pages.dev [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : pylabe.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : pytee-porn.pages.dev [url:]
@@ -44590,9 +44542,6 @@
   BL : raeleerudolphsextape.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
-  BL : rafael-gay.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
   BL : rahyndeejamesonlyfansporn.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -44609,6 +44558,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : rasierte-msen-kostenlos-gay-puff-mnchen.pages.dev [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : rasimy.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ratsgay.pages.dev [url:]
@@ -44738,6 +44690,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : redporn-6ja.pages.dev [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : redsissy.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : redtubeamateursex.pages.dev [url:]
@@ -45047,9 +45002,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : retroporno.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : retrosex.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : rgen-escort-pornofilme-von-frauen-fr-frauen.pages.dev [url:]
@@ -45528,6 +45480,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : ryxxx-lpsg.pages.dev [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : s-31niukey.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
+
   WL : *.opera.com [static]  covers subdomain
   BL : s-adx.op-mobile.opera.com [url:filter_1.txt]
 
@@ -45764,9 +45719,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sassyhollyporn.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : satine-phoenix-bdsm.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : satisfying-needs-9-porn.pages.dev [url:]
@@ -49258,9 +49210,6 @@
   BL : sexkontakte-affoltern-am-albis.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
-  BL : sexkontakte-baden-wrttemberg-msen-rasiert.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
   BL : sexkontakte-berlin-swingerclub-tschechien.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -49736,9 +49685,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sexplosion.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : sexpornneww.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sexpornoadulte-com.pages.dev [url:]
@@ -50824,9 +50770,6 @@
   BL : sexy-nicole-leaked-video-and-images.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
-  BL : sexy-onlyfans-captions.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
   BL : sexy-porno-nachbarin-nackt-im-garten.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -51756,9 +51699,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : skylerflexesporn.pages.dev [url:]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : skywonderlandpornpics.pages.dev [url:]
-
   WL : *.paypal.com [static]  covers subdomain
   BL : slc.stats.paypal.com [url:hosts]
 
@@ -51806,9 +51746,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : slut-club-hamburg-gelsenkirchen.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : slutgirl.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : slutmilf.pages.dev [url:]
@@ -52822,9 +52759,6 @@
   BL : squirt-technik-private-chat-sex.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
-  BL : squirting-anal-sex-gummihosen-bilder.pages.dev [url:]
-
-  WL : *.pages.dev [static]  covers subdomain
   BL : squirting-anal-sex-massagel-statt-gleitgel.pages.dev [url:]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -53522,6 +53456,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : suspension-bondage-sex-in-heidenheim.pages.dev [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : suxedure.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : suzannestokesporn.pages.dev [url:]
@@ -55557,9 +55494,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : tiffany-poindexter-porn.pages.dev [url:]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : tifomoqa.workers.dev [url:hostfile]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : tigger-porn-star.pages.dev [url:]
 
@@ -56244,6 +56178,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : tuncuan25.pages.dev [url:nsfw.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : tunewuso.workers.dev [url:hostfile]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : turbo-vpn-sex.pages.dev [url:]
 
@@ -56255,6 +56192,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : turning-red-mei-porn.pages.dev [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : turquoiseardys.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : tvamateursex.pages.dev [url:]
@@ -56615,6 +56555,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : vagina-sexfilms-trantra-massage.pages.dev [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : vagovizo.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : val-steele-vr-porn.pages.dev [url:]
@@ -57123,9 +57066,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : vidxxx-mn6.pages.dev [url:]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : vidyrelu.workers.dev [url:hostfile]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : vietsubsex.pages.dev [url:]
 
@@ -57278,9 +57218,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : vixenpporn.pages.dev [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : vj80iqsgs3.workers.dev [url:hostfile]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : vmailnewwqmwe.vercel.app [url:hostfile]
@@ -58258,6 +58195,9 @@
   BL : winorlosepixarporn2.pages.dev [url:]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : witudeju.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : wivahu.workers.dev [url:hostfile]
 
   WL : *.firebaseio.com [static]  covers subdomain
@@ -58277,6 +58217,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : wltgay.pages.dev [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : wmxkgt84hymy.s3-website.us-east-2.amazonaws.com [url:tif.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : wo-ist-der-nchste-swingerclub-sexszenen-porno.pages.dev [url:]
@@ -58539,17 +58482,17 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : xegave.workers.dev [url:hostfile]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : xer0a002po.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : xfw5tj8qnq.workers.dev [url:hostfile]
-
   WL : xg4ken.com [url:whitelist-referral.txt]
   BL : xg4ken.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : xidaluze.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : xidqg43964.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : xisefopa.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : xnxx-alternativen-bodypainting-sex.pages.dev [url:]
@@ -58905,6 +58848,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : yyupdats.s3.ap-southeast-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : z9ckwycnhdwj.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.substack.com [static]  covers subdomain
   BL : zacharyzane.substack.com [url:]
 
@@ -58934,6 +58880,9 @@
 
   WL : *.github.io [static]  covers subdomain
   BL : zhaizhaivip.github.io [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : zhwwd37940.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : zidaho.workers.dev [url:hostfile]
