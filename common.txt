@@ -2,7 +2,7 @@
 # Whitelisted root domains (score = BL subdomain hits):
 #   pages.dev                                [15766]  [MAX]
 #   cloudfront.net                           [1713]  [MAX]
-#   workers.dev                              [419]  [MAX]
+#   workers.dev                              [421]  [MAX]
 #   amazonaws.com                            [386]  [MAX]
 #   wordpress.com                            [130]  [MAX]
 #   b-cdn.net                                [92]  [WARN]
@@ -55832,6 +55832,9 @@
   BL : ua-voyeur.org [url:nsfw.txt]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : uarzw97131.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : ucojz29483.workers.dev [url:hostfile]
 
   WL : *.yahoo.com [static]  covers subdomain
@@ -57996,6 +57999,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : xbktm00536.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : xehokedu.workers.dev [url:hostfile]
 
   WL : xg4ken.com [url:whitelist-referral.txt]
   BL : xg4ken.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
