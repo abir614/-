@@ -21,8 +21,12 @@ https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimet
 https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/nsfw.txt
 https://cdn.jsdelivr.net/gh/sjhgvr/oisd@latest/domainswild_nsfw_small.txt
 
-# ("Phone Home" / in-app DoH) from bypassing system or router DNS filtering
+# ("Phone Home" / in-app DoH & VPN) from bypassing system or router DNS filtering
 https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/doh.txt
+https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/doh-vpn-proxy-bypass.txt
+
+# Dynamic DNS (DynDNS), guards against dynamic DNS abuse
+https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/dyndns.txt
 #######################################################################################################
 [/BLACKLIST_URLS]
 
