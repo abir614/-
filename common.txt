@@ -10,7 +10,7 @@
 #   fastly.net                               [56]  [WARN]
 #   yahoo.com                                [35]  [WARN]
 #   github.io                                [25]  [WARN]
-#   apple.com                                [22]  [WARN]
+#   apple.com                                [21]  [WARN]
 #   netlify.app                              [20]  [WARN]
 #   azure.com                                [17]  [WARN]
 #   google.com                               [14]  [BASIC]
@@ -8188,28 +8188,28 @@
   BL : dnre5xkn2r25r.cloudfront.net [url:]
 
   WL : *.adguard.com [static]  covers subdomain
-  BL : dns-family.adguard.com [url:doh.txt]
+  BL : dns-family.adguard.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.adguard.com [static]  covers subdomain
-  BL : dns-unfiltered.adguard.com [url:doh.txt]
+  BL : dns-unfiltered.adguard.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudflare.net [static]  covers subdomain
-  BL : dns.233py.com.cdn.cloudflare.net [url:doh.txt]
+  BL : dns.233py.com.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.adguard.com [static]  covers subdomain
-  BL : dns.adguard.com [url:doh.txt]
+  BL : dns.adguard.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.apple.com [static]  covers subdomain
   BL : dns.apple.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudflare.com [static]  covers subdomain
-  BL : dns.cloudflare.com [url:doh.txt]
+  BL : dns.cloudflare.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.google.com [static]  covers subdomain
-  BL : dns.google.com [url:doh.txt]
+  BL : dns.google.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.umbrella.com [static]  covers subdomain
-  BL : dns.umbrella.com [url:doh.txt]
+  BL : dns.umbrella.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dnxlgencstz4.cloudfront.net [url:]
@@ -8253,17 +8253,14 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : dogeub-v4-mu-nine.vercel.app [url:doh-vpn-proxy-bypass.txt]
 
-  WL : *.apple.com [static]  covers subdomain
-  BL : doh.dns.apple.com [url:doh.txt]
-
   WL : *.umbrella.com [static]  covers subdomain
-  BL : doh.umbrella.com [url:doh.txt]
+  BL : doh.umbrella.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
-  BL : doh1.b-cdn.net [url:doh.txt]
+  BL : doh1.b-cdn.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
-  BL : doh2.b-cdn.net [url:doh.txt]
+  BL : doh2.b-cdn.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : doinntz6jwzoh.cloudfront.net [url:]
@@ -9514,10 +9511,10 @@
   BL : google-analytics.com [url:filter_1.txt]
 
   WL : *.google.com [static]  covers subdomain
-  BL : google-public-dns-a.google.com [url:doh.txt]
+  BL : google-public-dns-a.google.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.google.com [static]  covers subdomain
-  BL : google-public-dns-b.google.com [url:doh.txt]
+  BL : google-public-dns-b.google.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.github.io [static]  covers subdomain
   BL : googleads.github.io [url:]
@@ -10399,16 +10396,16 @@
   BL : marketingsolutions.yahoo.com [url:]
 
   WL : *.apple-dns.net [static]  covers subdomain
-  BL : mask-api.fe.apple-dns.net [url:doh.txt]
+  BL : mask-api.fe.apple-dns.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.icloud.com [static]  covers subdomain
-  BL : mask-canary.icloud.com [url:doh.txt]
+  BL : mask-canary.icloud.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.icloud.com [static]  covers subdomain
-  BL : mask-h2.icloud.com [url:doh.txt]
+  BL : mask-h2.icloud.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.icloud.com [static]  covers subdomain
-  BL : mask.icloud.com [url:doh.txt]
+  BL : mask.icloud.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : masque-ads.b-cdn.net [url:]
@@ -11896,7 +11893,7 @@
   BL : sqg-nf9a4.mckennaeleanor69537.workers.dev [url:hostfile]
 
   WL : *.azure.com [static]  covers subdomain
-  BL : sradg.eastus.cloudapp.azure.com [url:doh.txt]
+  BL : sradg.eastus.cloudapp.azure.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : src.mcfind.workers.dev [url:hostfile]

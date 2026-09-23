@@ -1,8 +1,8 @@
 # ============================================================
 # Combined Blocklist
 # ============================================================
-# Generated  : 2026-09-23 11:59 UTC+6
-# Sources    : 12 blacklist URL(s) + 3943 static entries
+# Generated  : 2026-09-23 12:08 UTC+6
+# Sources    : 11 blacklist URL(s) + 3943 static entries
 # FP-filter  : Explicit whitelist only (static + URL-sourced).
 #              Tranco/Umbrella/Majestic are LOGGED, NOT auto-removed.
 #              STATIC_BLACKLIST entries bypass ALL filters.
@@ -22,12 +22,12 @@
 #   (Wildcard *.evil.com would catch good.evil.com too).
 # ============================================================
 # Stats
-#   Raw domains (all sources)  : 511,759
+#   Raw domains (all sources)  : 511,763
 #   Dropped by whitelist        : 281
-#   Wildcard entries (*.d)      : 511,344
+#   Wildcard entries (*.d)      : 511,348
 #   Exact entries (d only)      : 134
-#   Total output entries        : 511,478
-#   Notable (pop. lists, kept)  : 78,609
+#   Total output entries        : 511,482
+#   Notable (pop. lists, kept)  : 78,608
 # ============================================================
 # Blacklist URL sources:
 #   https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.mini.txt
@@ -39,7 +39,6 @@
 #   https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext
 #   https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/nsfw.txt
 #   https://cdn.jsdelivr.net/gh/sjhgvr/oisd@latest/domainswild_nsfw_small.txt
-#   https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/doh.txt
 #   https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/doh-vpn-proxy-bypass.txt
 #   https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/dyndns.txt
 # Static blacklist entries : 3943
@@ -44840,6 +44839,7 @@
 *.asthmanotchcave.com
 *.asthmasburr.cyou
 *.asthub.com
+*.astiltex.com
 *.astivysauran.com
 *.astjigglypuffchan.com
 *.astkyureman.com
@@ -48348,6 +48348,7 @@
 *.avtv.beer
 *.avtvq.com
 *.avuiuqpnt.com
+*.avukatajandasi.com
 *.avukatmsb.com
 *.avulsesshevri.qpon
 *.avult.jamesavery.com
@@ -52428,6 +52429,7 @@
 *.barbiehouse69.com
 *.barbielect.store
 *.barboelitr.rest
+*.barbosadecarvalho.adv.br
 *.barboscaught.com
 *.barbosritel.com
 *.barbour-at.com
@@ -62722,6 +62724,7 @@
 *.blackeyedpeas.net
 *.blackfeetbootystreet.com
 *.blackfemmesurvival.com
+*.blackfleettransportsinc.com
 *.blackfridaymegastore.com
 *.blackfrot.blogspot.com
 *.blackfused.com
@@ -63810,6 +63813,7 @@
 *.blooming-asset.com
 *.blooming-bond.com
 *.blooming-trove.com
+*.bloomingcap.com
 *.bloomingvibe.com
 *.bloomiquestore.shop
 *.bloommanagementengine.garden
@@ -190784,7 +190788,6 @@
 *.h4dnwp.shop
 *.h4dtpo.casa
 *.h4g3z1-doh-vpn-proxy-bypass.web.app
-*.h4g3z1-doh.web.app
 *.h4g3z1-dyndns.web.app
 *.h4g3z1-nsfw.web.app
 *.h4g3z1-tif.mini.web.app
