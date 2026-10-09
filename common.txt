@@ -1,19 +1,19 @@
-# Scale  — max: top 20% (>= 153)  warn: top 50% (>= 17)  basic: remaining
+# Scale  — max: top 20% (>= 154)  warn: top 50% (>= 20)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   cloudfront.net                           [2133]  [MAX]
-#   amazonaws.com                            [381]  [MAX]
-#   workers.dev                              [341]  [MAX]
+#   cloudfront.net                           [2135]  [MAX]
+#   amazonaws.com                            [390]  [MAX]
+#   workers.dev                              [362]  [MAX]
 #   cloudflare.net                           [194]  [MAX]
-#   vercel.app                               [153]  [MAX]
-#   pages.dev                                [105]  [WARN]
+#   vercel.app                               [154]  [MAX]
+#   pages.dev                                [103]  [WARN]
 #   b-cdn.net                                [83]  [WARN]
 #   fastly.net                               [55]  [WARN]
 #   yahoo.com                                [35]  [WARN]
+#   google.com                               [30]  [WARN]
 #   github.io                                [25]  [WARN]
 #   apple.com                                [21]  [WARN]
 #   netlify.app                              [20]  [WARN]
-#   azure.com                                [17]  [WARN]
-#   google.com                               [14]  [BASIC]
+#   azure.com                                [17]  [BASIC]
 #   netflix.com                              [13]  [BASIC]
 #   firebaseio.com                           [12]  [BASIC]
 #   nvidia.com                               [11]  [BASIC]
@@ -26,10 +26,11 @@
 #   spotify.com                              [9]  [BASIC]
 #   reddit.com                               [9]  [BASIC]
 #   unpkg.com                                [9]  [BASIC]
+#   googleusercontent.com                    [8]  [BASIC]
 #   opera.com                                [8]  [BASIC]
 #   wordpress.com                            [8]  [BASIC]
+#   supabase.co                              [8]  [BASIC]
 #   azureedge.net                            [7]  [BASIC]
-#   supabase.co                              [7]  [BASIC]
 #   paypal.com                               [7]  [BASIC]
 #   mozilla.org                              [6]  [BASIC]
 #   snapchat.com                             [6]  [BASIC]
@@ -70,7 +71,6 @@
 #   wikimedia.org                            [3]  [BASIC]
 #   mailchimp.com                            [3]  [BASIC]
 #   googlesyndication.com                    [3]  [BASIC]
-#   googleusercontent.com                    [2]  [BASIC]
 #   amazon-adsystem.com                      [2]  [BASIC]
 #   crwdcntrl.net                            [2]  [BASIC]
 #   linksynergy.com                          [2]  [BASIC]
@@ -431,10 +431,16 @@
   BL : 114-etilobrut-diordna.b-cdn.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.googleusercontent.com [static]  covers subdomain
+  BL : 134.116.205.35.bc.googleusercontent.com [url:hostfile]
+
+  WL : *.googleusercontent.com [static]  covers subdomain
   BL : 154.60.198.35.bc.googleusercontent.com [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 1927784483.s3.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.googleusercontent.com [static]  covers subdomain
+  BL : 193.255.232.35.bc.googleusercontent.com [url:hostfile]
 
   WL : *.fastly.net [static]  covers subdomain
   BL : 1void-vision2.global.ssl.fastly.net [url:doh-vpn-proxy-bypass.txt]
@@ -487,6 +493,9 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : 401-retsam-swodniw.b-cdn.net [url:doh-vpn-proxy-bypass.txt]
 
+  WL : *.googleusercontent.com [static]  covers subdomain
+  BL : 44.113.38.34.bc.googleusercontent.com [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 47yc3unywqrrv17.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
@@ -515,7 +524,13 @@
   BL : 58pef9ti5f.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : 5rz2fsgv9o.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : 637g88ee4h.workers.dev [url:hostfile]
+
+  WL : *.googleusercontent.com [static]  covers subdomain
+  BL : 64.78.233.35.bc.googleusercontent.com [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 66173681.s3.amazonaws.com [url:tif.mini.txt]
@@ -556,6 +571,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 7ywkikvsp13idiy.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.googleusercontent.com [static]  covers subdomain
+  BL : 85.233.229.8.bc.googleusercontent.com [url:hostfile]
+
   WL : *.workers.dev [static]  covers subdomain
   BL : 880cris.workers.dev [url:hostfile]
 
@@ -570,6 +588,9 @@
 
   WL : *.googleusercontent.com [static]  covers subdomain
   BL : 90.195.247.35.bc.googleusercontent.com [url:hostfile]
+
+  WL : *.googleusercontent.com [static]  covers subdomain
+  BL : 95.245.234.35.bc.googleusercontent.com [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 9b1dd2f1-ce89-4596-be46-ba511a89cad6.s3.dualstack.us-west-1.amazonaws.com [url:tif.mini.txt]
@@ -912,6 +933,9 @@
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : aisd.mathforkids.buzz.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : aj4es70jgv.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ajf8dr38iy7ank3tumny.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
@@ -1375,9 +1399,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : bernabenicole.s3.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : besafiza.workers.dev [url:hostfile]
-
   WL : bestbuy.7tiv.net [url:whitelist-referral.txt]
   BL : bestbuy.7tiv.net [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
@@ -1398,9 +1419,6 @@
 
   WL : *.supabase.co [static]  covers subdomain
   BL : bichaatwdluxktdvrehv.supabase.co [url:doh-vpn-proxy-bypass.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : bifafu.workers.dev [url:hostfile]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : bigbang.pics.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
@@ -1453,9 +1471,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : bokamalas.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : bolyqyru.workers.dev [url:hostfile]
-
   WL : *.apple.com [static]  covers subdomain
   BL : books-analytics-events.apple.com [url:]
 
@@ -1479,6 +1494,9 @@
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : borsvarlden-banners.azurewebsites.net [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : boziqucu.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : brd-sdk-app-packages.s3.amazonaws.com [url:doh-vpn-proxy-bypass.txt]
@@ -1696,6 +1714,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : cdnweb3.pages.dev [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : cekavyzi.workers.dev [url:hostfile]
+
   WL : *.github.io [static]  covers subdomain
   BL : censortracker.github.io [url:doh-vpn-proxy-bypass.txt]
 
@@ -1758,9 +1779,6 @@
 
   WL : *.edgesuite.net [static]  covers subdomain
   BL : citi.bridgetrack.com.edgesuite.net [url:tif.mini.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : civillatrina.workers.dev [url:hostfile]
 
   WL : cj.com [url:whitelist-referral.txt]
   BL : cj.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -2014,6 +2032,9 @@
   WL : cqcounter.com [url:allowlist.txt]
   BL : cqcounter.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : cqvsy7voq9.workers.dev [url:hostfile]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : crackstuff.pages.dev [url:doh-vpn-proxy-bypass.txt]
 
@@ -2098,6 +2119,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : cyberpanel-vkff1kio.s3.eu-west-2.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : cylobidi.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : czrgcuk1fiatygf.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
@@ -2150,7 +2174,7 @@
   BL : d10ydmitx7crxz.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d10zmv6hrj5cx1.cloudfront.net [url:]
+  BL : d10zmv6hrj5cx1.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d10zqflh5ol9cq.cloudfront.net [url:tif.mini.txt]
@@ -2159,7 +2183,7 @@
   BL : d10zu8ijzdhnhd.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d114isgihvajcp.cloudfront.net [url:]
+  BL : d114isgihvajcp.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1180od816jent.cloudfront.net [url:filter_1.txt]
@@ -2174,7 +2198,7 @@
   BL : d11enq2rymy0yl.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d11hjbdxxtogg5.cloudfront.net [url:]
+  BL : d11hjbdxxtogg5.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d11jzht7mj96rr.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -2198,7 +2222,7 @@
   BL : d11tybz5ul8vel.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d11w14257901lw.cloudfront.net [url:]
+  BL : d11w14257901lw.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d11zevc9a5598r.cloudfront.net [url:tif.mini.txt]
@@ -2213,19 +2237,19 @@
   BL : d127oyoibbqwge.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d127s3e8wcl3q6.cloudfront.net [url:]
+  BL : d127s3e8wcl3q6.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d12aa3oa7bl4we.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d12bql71awc8k.cloudfront.net [url:]
+  BL : d12bql71awc8k.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d12czbu0tltgqq.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d12dky1jzngacn.cloudfront.net [url:]
+  BL : d12dky1jzngacn.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d12e9f83wyj0ww.cloudfront.net [url:tif.mini.txt]
@@ -2234,37 +2258,37 @@
   BL : d12nvv2jqzsaax.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d12t7h1bsbq1cs.cloudfront.net [url:]
+  BL : d12t7h1bsbq1cs.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d12tu1kocp8e8u.cloudfront.net [url:]
+  BL : d12tu1kocp8e8u.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d12ylqdkzgcup5.cloudfront.net [url:]
+  BL : d12ylqdkzgcup5.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d12zgccgt6pwjz.cloudfront.net [url:]
+  BL : d12zgccgt6pwjz.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d132o2ux0nuv2m.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d133y3h5r255gq.cloudfront.net [url:]
+  BL : d133y3h5r255gq.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d135re68iqn9un.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d138am4hd4ke4y.cloudfront.net [url:]
+  BL : d138am4hd4ke4y.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d13gni3sfor862.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d13j11nqjt0s84.cloudfront.net [url:]
+  BL : d13j11nqjt0s84.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d13jhr4vol1304.cloudfront.net [url:]
+  BL : d13jhr4vol1304.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d13k7prax1yi04.cloudfront.net [url:filter_1.txt]
@@ -2273,13 +2297,13 @@
   BL : d13nu0oomnx5ti.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d13pxqgp3ixdbh.cloudfront.net [url:]
+  BL : d13pxqgp3ixdbh.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d13qwbj37sfx89.cloudfront.net [url:]
+  BL : d13qwbj37sfx89.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d13r2gmqlqb3hr.cloudfront.net [url:]
+  BL : d13r2gmqlqb3hr.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d13uyjvmsvkesh.cloudfront.net [url:]
@@ -2315,7 +2339,7 @@
   BL : d14hxpch4aft97.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d14l1tkufmtp1z.cloudfront.net [url:]
+  BL : d14l1tkufmtp1z.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d14lmt9ltccptm.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -2336,7 +2360,7 @@
   BL : d14pwugcs00a42.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d14x46ho6sn9yf.cloudfront.net [url:]
+  BL : d14x46ho6sn9yf.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d14zhsq5aop7ap.cloudfront.net [url:tif.mini.txt]
@@ -2345,7 +2369,7 @@
   BL : d153rqv8na4vs.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d154nw1c88j0q6.cloudfront.net [url:]
+  BL : d154nw1c88j0q6.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d154xb576g1iud.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -2354,13 +2378,13 @@
   BL : d15bbbc3wnvnmn.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d15bcy38hlba76.cloudfront.net [url:]
+  BL : d15bcy38hlba76.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d15chnoqn49f19.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d15cjcet1djbmv.cloudfront.net [url:]
+  BL : d15cjcet1djbmv.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d15fkr9rkey1dd.cloudfront.net [url:tif.mini.txt]
@@ -2435,7 +2459,7 @@
   BL : d175dtblugd1dn.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d17757b88bjr2y.cloudfront.net [url:]
+  BL : d17757b88bjr2y.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d17c5vf4t6okfg.cloudfront.net [url:tif.mini.txt]
@@ -2513,7 +2537,7 @@
   BL : d18ql5xgy7gz3p.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d18t35yyry2k49.cloudfront.net [url:]
+  BL : d18t35yyry2k49.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d18xcs94twaq85.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -2525,13 +2549,13 @@
   BL : d190ltnfcockml.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d19182vyfoustz.cloudfront.net [url:]
+  BL : d19182vyfoustz.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d191y0yd6d0jy4.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d192g7g8iuw79c.cloudfront.net [url:]
+  BL : d192g7g8iuw79c.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d192r5l88wrng7.cloudfront.net [url:tif.mini.txt]
@@ -2540,19 +2564,22 @@
   BL : d196fri2z18sm.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d199kwgcer5a6q.cloudfront.net [url:]
+  BL : d199kwgcer5a6q.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d19a04d0igndnt.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d19bpqj0yivlb3.cloudfront.net [url:]
+  BL : d19bpqj0yivlb3.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d19diizb3qce6y.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d19gkl2iaav80x.cloudfront.net [url:]
+  BL : d19f0dp1dh77jq.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d19gkl2iaav80x.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d19os92r1hr1tp.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -2567,25 +2594,25 @@
   BL : d19xwvijk9a556.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d19y03yc9s7c1c.cloudfront.net [url:]
+  BL : d19y03yc9s7c1c.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1a22i0thf0hz4.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1a3jb5hjny5s4.cloudfront.net [url:]
+  BL : d1a3jb5hjny5s4.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1a9ce6x1iba5r.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1aa9f6zukqylf.cloudfront.net [url:]
+  BL : d1aa9f6zukqylf.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1aaxxscqxmabs.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1ac2du043ydir.cloudfront.net [url:]
+  BL : d1ac2du043ydir.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1aezk8tun0dhm.cloudfront.net [url:tif.mini.txt]
@@ -2630,40 +2657,40 @@
   BL : d1az618or4kzj8.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1aznprfp4xena.cloudfront.net [url:]
+  BL : d1aznprfp4xena.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1azpphj80lavy.cloudfront.net [url:]
+  BL : d1azpphj80lavy.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1b0fk9ns6n0w9.cloudfront.net [url:]
+  BL : d1b0fk9ns6n0w9.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1b240xv9h0q8y.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1b499kr4qnas6.cloudfront.net [url:]
+  BL : d1b499kr4qnas6.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1b7aq9bn3uykv.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1b9b1cxai2c03.cloudfront.net [url:]
+  BL : d1b9b1cxai2c03.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1bad9ankyq5eg.cloudfront.net [url:]
+  BL : d1bad9ankyq5eg.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1bci271z7i5pg.cloudfront.net [url:]
+  BL : d1bci271z7i5pg.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1betjlqogdr97.cloudfront.net [url:]
+  BL : d1betjlqogdr97.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1bevsqehy4npt.cloudfront.net [url:]
+  BL : d1bevsqehy4npt.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1bf1sb7ks8ojo.cloudfront.net [url:]
+  BL : d1bf1sb7ks8ojo.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1bi6hxlc51jjw.cloudfront.net [url:tif.mini.txt]
@@ -2681,7 +2708,7 @@
   BL : d1bshntecis4nt.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1bxkgbbc428vi.cloudfront.net [url:]
+  BL : d1bxkgbbc428vi.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1byvlfiet2h9q.cloudfront.net [url:tif.mini.txt]
@@ -2699,7 +2726,7 @@
   BL : d1cdnlzf6usiff.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1cg2aopojxanm.cloudfront.net [url:]
+  BL : d1cg2aopojxanm.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1ckj42q07f9s3.cloudfront.net [url:tif.mini.txt]
@@ -2717,7 +2744,7 @@
   BL : d1crt12zco2cvf.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1csp7vj6qqoa6.cloudfront.net [url:]
+  BL : d1csp7vj6qqoa6.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1cu1v8rtmkdap.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -2762,10 +2789,10 @@
   BL : d1dh1gvx7p0imm.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1diqetif5itzx.cloudfront.net [url:]
+  BL : d1diqetif5itzx.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1djrodi2reo2w.cloudfront.net [url:]
+  BL : d1djrodi2reo2w.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1dli2tyorled9.cloudfront.net [url:tif.mini.txt]
@@ -2777,13 +2804,13 @@
   BL : d1dmgcawtbm6l9.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1dqwj4dc78lwy.cloudfront.net [url:]
+  BL : d1dqwj4dc78lwy.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1dstqek52a9wv.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1dtl43j681tft.cloudfront.net [url:]
+  BL : d1dtl43j681tft.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1dxafvkz5efdk.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -2792,7 +2819,7 @@
   BL : d1dxoqu0t5mb7j.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1e28xq8vu3baf.cloudfront.net [url:]
+  BL : d1e28xq8vu3baf.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1e3vw6pz2ty1m.cloudfront.net [url:tif.mini.txt]
@@ -2801,13 +2828,13 @@
   BL : d1e4djp9ey9j89.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1e51ovcxdu97v.cloudfront.net [url:]
+  BL : d1e51ovcxdu97v.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1e9rtdi67kart.cloudfront.net [url:]
+  BL : d1e9rtdi67kart.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1ebha2k07asm5.cloudfront.net [url:]
+  BL : d1ebha2k07asm5.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1eeht7p8f5lpk.cloudfront.net [url:tif.mini.txt]
@@ -2831,7 +2858,7 @@
   BL : d1esu58yx12bwb.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1ev4o49j4zqc3.cloudfront.net [url:]
+  BL : d1ev4o49j4zqc3.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1ev866ubw90c6.cloudfront.net [url:]
@@ -2948,7 +2975,7 @@
   BL : d1h9h0ul1yshdr.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1ha41wacubcnb.cloudfront.net [url:]
+  BL : d1ha41wacubcnb.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1hfbz0n5yb6ym.cloudfront.net [url:tif.mini.txt]
@@ -2993,7 +3020,7 @@
   BL : d1i3h541wbnrfi.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1i4rchxg0yau7.cloudfront.net [url:]
+  BL : d1i4rchxg0yau7.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1i64ia3gj0ol1.cloudfront.net [url:tif.mini.txt]
@@ -3002,13 +3029,13 @@
   BL : d1i76h1c9mme1m.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1ieffz9zqrn09.cloudfront.net [url:]
+  BL : d1ieffz9zqrn09.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1if9r6p4kame4.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1igvjcl1gjs62.cloudfront.net [url:]
+  BL : d1igvjcl1gjs62.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1ilwohzbe4ao6.cloudfront.net [url:tif.mini.txt]
@@ -3017,7 +3044,7 @@
   BL : d1iqexz00vhgaz.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1iy4wgzi9qdu7.cloudfront.net [url:]
+  BL : d1iy4wgzi9qdu7.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1iylq4m38r1re.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -3026,28 +3053,28 @@
   BL : d1iz0b4hmb7usn.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1j1m9awq6n3x3.cloudfront.net [url:]
+  BL : d1j1m9awq6n3x3.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1j2jv7bvcsxqg.cloudfront.net [url:]
+  BL : d1j2jv7bvcsxqg.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1j47wsepxe9u2.cloudfront.net [url:]
+  BL : d1j47wsepxe9u2.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1j4wrcckudtef.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1j5bhx6uel4km.cloudfront.net [url:]
+  BL : d1j5bhx6uel4km.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1j6limf657foe.cloudfront.net [url:]
+  BL : d1j6limf657foe.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1j760q98esobn.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1j818d3wapogd.cloudfront.net [url:]
+  BL : d1j818d3wapogd.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1j9qsxe04m2ki.cloudfront.net [url:tif.mini.txt]
@@ -3059,7 +3086,7 @@
   BL : d1jcj9gy98l90g.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1jd9usa22o1l7.cloudfront.net [url:]
+  BL : d1jd9usa22o1l7.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1jikhx1ssl81z.cloudfront.net [url:tif.mini.txt]
@@ -3452,7 +3479,7 @@
   BL : d1qpxk1wfeh8v1.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1qtf1avwa1wvl.cloudfront.net [url:]
+  BL : d1qtf1avwa1wvl.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1r08wok4169a5.cloudfront.net [url:]
@@ -3470,10 +3497,10 @@
   BL : d1r55yzuc1b1bw.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1r90st78epsag.cloudfront.net [url:]
+  BL : d1r90st78epsag.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1r9f6frybgiqo.cloudfront.net [url:]
+  BL : d1r9f6frybgiqo.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1rczqt4tdkw1g.cloudfront.net [url:]
@@ -3482,16 +3509,16 @@
   BL : d1rg2274px6zb.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1rgi5lmynkcm4.cloudfront.net [url:]
+  BL : d1rgi5lmynkcm4.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1rgnfh960lz2b.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1rguclfwp7nc8.cloudfront.net [url:]
+  BL : d1rguclfwp7nc8.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1rkd1d0jv6skn.cloudfront.net [url:]
+  BL : d1rkd1d0jv6skn.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1rkf0bq85yx06.cloudfront.net [url:]
@@ -3503,13 +3530,13 @@
   BL : d1rnejrnt2c4br.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1rnknz34k1ko0.cloudfront.net [url:]
+  BL : d1rnknz34k1ko0.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1ros97qkrwjf5.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1rp4yowwe587e.cloudfront.net [url:]
+  BL : d1rp4yowwe587e.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1rsh847opos9y.cloudfront.net [url:tif.mini.txt]
@@ -3524,7 +3551,7 @@
   BL : d1ry4tp9yai77v.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1s18kaechs9c9.cloudfront.net [url:]
+  BL : d1s18kaechs9c9.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1s4mby8domwt9.cloudfront.net [url:tif.mini.txt]
@@ -3539,7 +3566,7 @@
   BL : d1sboz88tkttfp.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1sfclevshpbro.cloudfront.net [url:]
+  BL : d1sfclevshpbro.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1sjkjf57zhuij.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -3551,16 +3578,16 @@
   BL : d1snv67wdds0p2.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1sowp9ayjro6j.cloudfront.net [url:]
+  BL : d1sowp9ayjro6j.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1spc7iz1ls2b1.cloudfront.net [url:]
+  BL : d1spc7iz1ls2b1.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1sq8m76ef4pny.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1sqvt36mg3t1b.cloudfront.net [url:]
+  BL : d1sqvt36mg3t1b.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1stxfv94hrhia.cloudfront.net [url:]
@@ -3569,22 +3596,22 @@
   BL : d1syst8nxcqg54.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1sytkg9v37f5q.cloudfront.net [url:]
+  BL : d1sytkg9v37f5q.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1t1fxgxazche8.cloudfront.net [url:]
+  BL : d1t1fxgxazche8.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1t38ngzzazukx.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1t4ekjh9ps4ob.cloudfront.net [url:]
+  BL : d1t4ekjh9ps4ob.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1t671k72j9pxc.cloudfront.net [url:]
+  BL : d1t671k72j9pxc.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1t8it0ywk3xu.cloudfront.net [url:]
+  BL : d1t8it0ywk3xu.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1t9uctetvi0tu.cloudfront.net [url:]
@@ -3599,7 +3626,7 @@
   BL : d1tbj6eaenapdy.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1tizxwina1bjc.cloudfront.net [url:]
+  BL : d1tizxwina1bjc.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1tjcziy9n8hnk.cloudfront.net [url:]
@@ -3632,7 +3659,7 @@
   BL : d1tru86qrby720.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1tt3ye7u0e0ql.cloudfront.net [url:]
+  BL : d1tt3ye7u0e0ql.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1tttug1538qv1.cloudfront.net [url:tif.mini.txt]
@@ -3653,7 +3680,7 @@
   BL : d1u46mnruerycz.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1u4z2la3g1n0x.cloudfront.net [url:]
+  BL : d1u4z2la3g1n0x.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1u5ibtsigyagv.cloudfront.net [url:tif.mini.txt]
@@ -3665,7 +3692,7 @@
   BL : d1uae3ok0byyqw.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1uc64ype5braa.cloudfront.net [url:]
+  BL : d1uc64ype5braa.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1udjti6mtxz9q.cloudfront.net [url:filter_1.txt]
@@ -3737,7 +3764,7 @@
   BL : d1wbjksx0xxdn3.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1wc0ojltqk24g.cloudfront.net [url:]
+  BL : d1wc0ojltqk24g.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1wd81rzdci3ru.cloudfront.net [url:tif.mini.txt]
@@ -3965,7 +3992,7 @@
   BL : d218zko9b2en9z.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d219kvfj8xp5vh.cloudfront.net [url:]
+  BL : d219kvfj8xp5vh.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d21f25e9uvddd7.cloudfront.net [url:tif.mini.txt]
@@ -4109,7 +4136,7 @@
   BL : d23p9gffjvre9v.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d23pdhuxarn9w2.cloudfront.net [url:]
+  BL : d23pdhuxarn9w2.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d23poh9wsma6va.cloudfront.net [url:filter_1.txt]
@@ -4187,7 +4214,7 @@
   BL : d25racy3pduw1s.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d25sca3heoa1so.cloudfront.net [url:]
+  BL : d25sca3heoa1so.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d25vwvprbxda9z.cloudfront.net [url:tif.mini.txt]
@@ -4214,7 +4241,7 @@
   BL : d264dxqvolp03e.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d26adrx9c3n0mq.cloudfront.net [url:]
+  BL : d26adrx9c3n0mq.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d26e5rmb2qzuo3.cloudfront.net [url:tif.mini.txt]
@@ -4283,7 +4310,7 @@
   BL : d27zo25ndi7m0e.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d28bcu8ltt2bxh.cloudfront.net [url:]
+  BL : d28bcu8ltt2bxh.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d28exbmwuav7xa.cloudfront.net [url:]
@@ -4406,7 +4433,7 @@
   BL : d2bhuafc91b3gh.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2bkkt3kqfmyo0.cloudfront.net [url:]
+  BL : d2bkkt3kqfmyo0.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2bs5vtcw2lxsv.cloudfront.net [url:tif.mini.txt]
@@ -4580,7 +4607,7 @@
   BL : d2f9q8zryik75d.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2fbkzyicji7c4.cloudfront.net [url:]
+  BL : d2fbkzyicji7c4.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2fbvay81k4ji3.cloudfront.net [url:tif.mini.txt]
@@ -4766,7 +4793,7 @@
   BL : d2jgbcah46jjed.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2jgih9urxpa47.cloudfront.net [url:]
+  BL : d2jgih9urxpa47.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2jgp81mjwggyr.cloudfront.net [url:tif.mini.txt]
@@ -4913,13 +4940,13 @@
   BL : d2lyx5ly60ksu3.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2lzu2a5ishr7o.cloudfront.net [url:]
+  BL : d2lzu2a5ishr7o.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2m6mzhbzc72b5.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2m785nxw66jui.cloudfront.net [url:]
+  BL : d2m785nxw66jui.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2m7r6rby7ezkp.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -5069,7 +5096,7 @@
   BL : d2p3h6fha0qln0.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2p3vqj5z5rdwv.cloudfront.net [url:]
+  BL : d2p3vqj5z5rdwv.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2p6p61as37cfr.cloudfront.net [url:tif.mini.txt]
@@ -5102,7 +5129,7 @@
   BL : d2psma0az3acui.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2pspvbdjxwkpo.cloudfront.net [url:]
+  BL : d2pspvbdjxwkpo.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2pt12ct4kmq21.cloudfront.net [url:]
@@ -5219,7 +5246,7 @@
   BL : d2sb9bdg0i3tp1.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2sbzwmcg5amr3.cloudfront.net [url:]
+  BL : d2sbzwmcg5amr3.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2sffavqvyl9dp.cloudfront.net [url:tif.mini.txt]
@@ -5258,7 +5285,7 @@
   BL : d2t530yk5s6ixp.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2t72ftdissnrr.cloudfront.net [url:]
+  BL : d2t72ftdissnrr.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2t77mnxyo7adj.cloudfront.net [url:]
@@ -5270,37 +5297,37 @@
   BL : d2tbszkvx1p56e.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2tc1zttji8e3a.cloudfront.net [url:]
+  BL : d2tc1zttji8e3a.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2tgfbvjf3q6hn.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2tkdzior84vck.cloudfront.net [url:]
+  BL : d2tkdzior84vck.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2trpg4l6gqit0.cloudfront.net [url:]
+  BL : d2trpg4l6gqit0.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2tvgfsghnrkwb.cloudfront.net [url:]
+  BL : d2tvgfsghnrkwb.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2u0czku5lzf0d.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2u2lv2h6u18yc.cloudfront.net [url:]
+  BL : d2u2lv2h6u18yc.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2u4fn5ca4m3v6.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2uaktjl22qvg4.cloudfront.net [url:]
+  BL : d2uaktjl22qvg4.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2uap9jskdzp2.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2udkjdo48yngu.cloudfront.net [url:]
+  BL : d2udkjdo48yngu.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2uhkjizpxjtq7.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -5318,13 +5345,13 @@
   BL : d2uu46itxfd65q.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2uy8iq3fi50kh.cloudfront.net [url:]
+  BL : d2uy8iq3fi50kh.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2uyi99y1mkn17.cloudfront.net [url:]
+  BL : d2uyi99y1mkn17.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2uzayf7r4rh08.cloudfront.net [url:]
+  BL : d2uzayf7r4rh08.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2v02itv0y9u9t.cloudfront.net [url:filter_1.txt]
@@ -5336,7 +5363,7 @@
   BL : d2v4wf9my00msd.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2va1d0hpla18n.cloudfront.net [url:]
+  BL : d2va1d0hpla18n.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2vmavw0uawm2t.cloudfront.net [url:tif.mini.txt]
@@ -5345,25 +5372,25 @@
   BL : d2vnkecz5vlbv3.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2vorijeeka2cf.cloudfront.net [url:]
+  BL : d2vorijeeka2cf.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2vptth0euqbxm.cloudfront.net [url:]
+  BL : d2vptth0euqbxm.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2vvyk8pqw001z.cloudfront.net [url:]
+  BL : d2vvyk8pqw001z.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2vwl2vhlatm2f.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2vwsmst56j4zq.cloudfront.net [url:]
+  BL : d2vwsmst56j4zq.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2vyg8sptlh6gi.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2w7avhumdk0s6.cloudfront.net [url:]
+  BL : d2w7avhumdk0s6.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2w88er3oa79h8.cloudfront.net [url:]
@@ -5378,13 +5405,13 @@
   BL : d2wa5sea6guof0.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2wekgv66wx77n.cloudfront.net [url:]
+  BL : d2wekgv66wx77n.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2werg7o2mztut.cloudfront.net [url:]
+  BL : d2werg7o2mztut.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2wexw25ezayh1.cloudfront.net [url:]
+  BL : d2wexw25ezayh1.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2wi2b2cb6hdai.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -5393,7 +5420,7 @@
   BL : d2wkmoh47zvvhf.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2wl3qmk54t3ha.cloudfront.net [url:]
+  BL : d2wl3qmk54t3ha.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2woo2d8x6gvwu.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -5405,7 +5432,7 @@
   BL : d2wpncypj5awud.cloudfront.net [url:nsfw.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2wpx0eqgykz4q.cloudfront.net [url:]
+  BL : d2wpx0eqgykz4q.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2wtfo1jwx0xc1.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -5417,13 +5444,13 @@
   BL : d2wy8f7a9ursnm.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2x0u7rtw4p89p.cloudfront.net [url:]
+  BL : d2x0u7rtw4p89p.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2x0utty60e3ca.cloudfront.net [url:nsfw.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2x19ia47o8gwm.cloudfront.net [url:]
+  BL : d2x19ia47o8gwm.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2x86d5t89hffs.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -5432,7 +5459,7 @@
   BL : d2x97wp5htyx27.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2xct5bvixoxmj.cloudfront.net [url:]
+  BL : d2xct5bvixoxmj.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2xl5j5majlxvm.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -5441,13 +5468,13 @@
   BL : d2xmhkjuwxhdnk.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2xng9e6gymuzr.cloudfront.net [url:]
+  BL : d2xng9e6gymuzr.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2xxqqn3tj9nf3.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2y1lr6nqzfgkq.cloudfront.net [url:]
+  BL : d2y1lr6nqzfgkq.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2y4hhqzzjydgq.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -5459,16 +5486,16 @@
   BL : d2yc6hxtq0phup.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2yeczd6cyyd0z.cloudfront.net [url:]
+  BL : d2yeczd6cyyd0z.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2yjxa7gi6wm99.cloudfront.net [url:]
+  BL : d2yjxa7gi6wm99.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2ykons4g8jre6.cloudfront.net [url:]
+  BL : d2ykons4g8jre6.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2ywv53s25fi6c.cloudfront.net [url:]
+  BL : d2ywv53s25fi6c.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2yyd1h5u9mauk.cloudfront.net [url:]
@@ -5477,22 +5504,22 @@
   BL : d2yz0oamomyxzv.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2yzlvmgs67bxt.cloudfront.net [url:]
+  BL : d2yzlvmgs67bxt.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2z0bn1jv8xwtk.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2z0gqc8sv0l7p.cloudfront.net [url:]
+  BL : d2z0gqc8sv0l7p.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2z51a9spn09cw.cloudfront.net [url:]
+  BL : d2z51a9spn09cw.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2z5e7lt7ltwz.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2zbpgxs57sg1k.cloudfront.net [url:]
+  BL : d2zbpgxs57sg1k.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2zbrsgwxpxcye.cloudfront.net [url:]
@@ -5501,16 +5528,16 @@
   BL : d2zbwgaesqbvw9.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2zcblk8m9mzq5.cloudfront.net [url:]
+  BL : d2zcblk8m9mzq5.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2zd0wa1vpt7j9.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2zf5gu5e5mp87.cloudfront.net [url:]
+  BL : d2zf5gu5e5mp87.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2zh7okxrw0ix.cloudfront.net [url:]
+  BL : d2zh7okxrw0ix.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2zhqf8vp4pw68.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -5519,7 +5546,7 @@
   BL : d2zi8ra5rb7m89.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2zjd612oq0w0l.cloudfront.net [url:]
+  BL : d2zjd612oq0w0l.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2zk8mk8hghu3d.cloudfront.net [url:]
@@ -5534,13 +5561,13 @@
   BL : d2zuksqaom3fkp.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2zur9cc2gf1tx.cloudfront.net [url:]
+  BL : d2zur9cc2gf1tx.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2zvubfyz6pl46.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2zzazjvlpgmgi.cloudfront.net [url:]
+  BL : d2zzazjvlpgmgi.cloudfront.net [url:tif.mini.txt]
 
   WL : *.railway.app [static]  covers subdomain
   BL : d3-umami.up.railway.app [url:filter_1.txt]
@@ -5549,7 +5576,7 @@
   BL : d300jm499woj5o.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d301cxwfymy227.cloudfront.net [url:]
+  BL : d301cxwfymy227.cloudfront.net [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : d303e3cdddb4ded4b6ff495a7b496ed5.s3.amazonaws.com [url:]
@@ -5582,13 +5609,13 @@
   BL : d30sec8k5ond2x.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d30sxnvlkawtwa.cloudfront.net [url:]
+  BL : d30sxnvlkawtwa.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d30tme16wdjle5.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d30ts2zph80iw7.cloudfront.net [url:]
+  BL : d30ts2zph80iw7.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d30vnp3fqcdhq5.cloudfront.net [url:]
@@ -5597,7 +5624,7 @@
   BL : d30yd3ryh0wmud.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d30zrwt3s044zr.cloudfront.net [url:]
+  BL : d30zrwt3s044zr.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d311dco7myupmk.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -5624,28 +5651,28 @@
   BL : d31j03l5n49cmk.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d31m6w8i2nx65e.cloudfront.net [url:]
+  BL : d31m6w8i2nx65e.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d31mxuhvwrofft.cloudfront.net [url:]
+  BL : d31mxuhvwrofft.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d31nb97nd8ha11.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d31o2k8hutiibd.cloudfront.net [url:]
+  BL : d31o2k8hutiibd.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d31ph8fftb4r3x.cloudfront.net [url:]
+  BL : d31ph8fftb4r3x.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d31rse9wo0bxcx.cloudfront.net [url:]
+  BL : d31rse9wo0bxcx.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d31s5xi4eq6l6p.cloudfront.net [url:]
+  BL : d31s5xi4eq6l6p.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d31uxzurj3z4fa.cloudfront.net [url:]
+  BL : d31uxzurj3z4fa.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d31vxm9ubutrmw.cloudfront.net [url:]
@@ -5663,7 +5690,7 @@
   BL : d31ykvhok3bnqh.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d325d2mtoblkfq.cloudfront.net [url:]
+  BL : d325d2mtoblkfq.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3276n778u4j4k.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -5675,13 +5702,13 @@
   BL : d3291gn845t5h9.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d32bug9eb0g0bh.cloudfront.net [url:]
+  BL : d32bug9eb0g0bh.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d32d89surjhks4.cloudfront.net [url:]
+  BL : d32d89surjhks4.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d32h65j3m1jqfb.cloudfront.net [url:]
+  BL : d32h65j3m1jqfb.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d32hwlnfiv2gyn.cloudfront.net [url:]
@@ -5690,7 +5717,7 @@
   BL : d32jf5gjc44l9b.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d32kwu6pkckni5.cloudfront.net [url:]
+  BL : d32kwu6pkckni5.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d32r49xyei4vz6.cloudfront.net [url:tif.mini.txt]
@@ -5978,7 +6005,7 @@
   BL : d38optp29wd03m.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d38psrni17bvxu.cloudfront.net [url:]
+  BL : d38psrni17bvxu.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d38rrxgee6j9l3.cloudfront.net [url:tif.mini.txt]
@@ -5996,7 +6023,7 @@
   BL : d39b2npo77gjq2.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d39hdzmeufnl50.cloudfront.net [url:]
+  BL : d39hdzmeufnl50.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d39hm6xr97shwr.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -6023,31 +6050,31 @@
   BL : d39vupl819wjy5.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d39xdhxlbi0rlm.cloudfront.net [url:]
+  BL : d39xdhxlbi0rlm.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d39xkyrc56llbg.cloudfront.net [url:]
+  BL : d39xkyrc56llbg.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d39xxywi4dmut5.cloudfront.net [url:]
+  BL : d39xxywi4dmut5.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d39yds8oe4n4jq.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3a00ifauhjdp.cloudfront.net [url:]
+  BL : d3a00ifauhjdp.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3a49eam5ump99.cloudfront.net [url:]
+  BL : d3a49eam5ump99.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3a56eqmhwvppz.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3a781y1fb2dm6.cloudfront.net [url:]
+  BL : d3a781y1fb2dm6.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3aajkp07o1e4y.cloudfront.net [url:]
+  BL : d3aajkp07o1e4y.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3adusqpo5nqlt.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -6059,13 +6086,13 @@
   BL : d3afnee9qjz3p7.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3ahinqqx1dy5v.cloudfront.net [url:]
+  BL : d3ahinqqx1dy5v.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3aicbrzoy14kh.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3akmxskpi6zai.cloudfront.net [url:]
+  BL : d3akmxskpi6zai.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3apzcqz3ghyay.cloudfront.net [url:]
@@ -6077,13 +6104,13 @@
   BL : d3atjwc1bjssrv.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3b2hhehkqd158.cloudfront.net [url:]
+  BL : d3b2hhehkqd158.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3b38ljlzfqvb1.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3b4u8mwtkp9dd.cloudfront.net [url:]
+  BL : d3b4u8mwtkp9dd.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3b4y213ksr6z5.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -6098,16 +6125,16 @@
   BL : d3banl4fzuxsjl.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3bbyfw7v2aifi.cloudfront.net [url:]
+  BL : d3bbyfw7v2aifi.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3bdacxveib6iu.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3beefy8kd1pr7.cloudfront.net [url:]
+  BL : d3beefy8kd1pr7.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3bfricg2zhkdf.cloudfront.net [url:]
+  BL : d3bfricg2zhkdf.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3bgypqca3lh3w.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -6119,7 +6146,7 @@
   BL : d3bo67muzbfgtl.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3boleenfhg2gk.cloudfront.net [url:]
+  BL : d3boleenfhg2gk.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3bq1ctvn3d5um.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -6134,7 +6161,7 @@
   BL : d3c3cq33003psk.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3c3uihon9kmp.cloudfront.net [url:]
+  BL : d3c3uihon9kmp.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3c4w812zqrvlw.cloudfront.net [url:tif.mini.txt]
@@ -6146,10 +6173,13 @@
   BL : d3c94cjs9g5lg7.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3cciiowg5l3jx.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3cegil552nnks.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3cesrg5igdcgt.cloudfront.net [url:]
+  BL : d3cesrg5igdcgt.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3cgm8py10hi0z.cloudfront.net [url:]
@@ -6161,7 +6191,7 @@
   BL : d3cih9w5t9kofz.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3ciks47fhh9wv.cloudfront.net [url:]
+  BL : d3ciks47fhh9wv.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3cl0ipbob7kki.cloudfront.net [url:]
@@ -6236,7 +6266,7 @@
   BL : d3dw9e5ep9si6p.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3ea0dyj1ehgcr.cloudfront.net [url:]
+  BL : d3ea0dyj1ehgcr.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3eaaylp894lcg.cloudfront.net [url:tif.mini.txt]
@@ -6272,7 +6302,7 @@
   BL : d3esc8t0xvf1p8.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3eub2e21dc6h0.cloudfront.net [url:]
+  BL : d3eub2e21dc6h0.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3evio1yid77jr.cloudfront.net [url:tif.mini.txt]
@@ -6380,7 +6410,7 @@
   BL : d3ha4i87b4lyo0.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3hdbjtb1686tn.cloudfront.net [url:filter_1.txt]
+  BL : d3hdbjtb1686tn.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3hfiiy55cbi5t.cloudfront.net [url:tif.mini.txt]
@@ -6419,7 +6449,7 @@
   BL : d3hyoy1d16gfg0.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3i28n8laz9lyd.cloudfront.net [url:]
+  BL : d3i28n8laz9lyd.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3i98h3wj731z8.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -6449,7 +6479,7 @@
   BL : d3ip4t8fp90x81.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3ipmxzmjf8cw7.cloudfront.net [url:]
+  BL : d3ipmxzmjf8cw7.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3ithbwcmjcxl7.cloudfront.net [url:tif.mini.txt]
@@ -6458,7 +6488,7 @@
   BL : d3ivwsjpaz07p8.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3iz6lralvg77g.cloudfront.net [url:]
+  BL : d3iz6lralvg77g.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3izx2bp9bipp6.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -6557,7 +6587,7 @@
   BL : d3lp4y2rzhp0v7.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3lppnezw695ey.cloudfront.net [url:]
+  BL : d3lppnezw695ey.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3lqotgbn3npr.cloudfront.net [url:]
@@ -6566,7 +6596,7 @@
   BL : d3lvevsl94g13d.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3lvr7yuk4uaui.cloudfront.net [url:filter_1.txt]
+  BL : d3lvr7yuk4uaui.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3lw2k94jnkvbs.cloudfront.net [url:tif.mini.txt]
@@ -6584,7 +6614,7 @@
   BL : d3m4hp4bp4w996.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3m6crjuedf6o.cloudfront.net [url:]
+  BL : d3m6crjuedf6o.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3m6sept6cnil5.cloudfront.net [url:]
@@ -6674,7 +6704,7 @@
   BL : d3oep4gb91kpuv.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3og8t183i1vbg.cloudfront.net [url:]
+  BL : d3og8t183i1vbg.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3ohee25hhsn8j.cloudfront.net [url:tif.mini.txt]
@@ -6686,7 +6716,7 @@
   BL : d3op2vgjk53ps1.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3oq85vya4e39p.cloudfront.net [url:]
+  BL : d3oq85vya4e39p.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3or5d0jdz94or.cloudfront.net [url:filter_1.txt]
@@ -6857,7 +6887,7 @@
   BL : d3riqarbejqwzm.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3rjndf2qggsna.cloudfront.net [url:]
+  BL : d3rjndf2qggsna.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3rkkddryl936d.cloudfront.net [url:tif.mini.txt]
@@ -6980,7 +7010,7 @@
   BL : d3u8vuldqjolr7.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3ubdcv1nz4dub.cloudfront.net [url:]
+  BL : d3ubdcv1nz4dub.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3ud741uvs727m.cloudfront.net [url:tif.mini.txt]
@@ -6989,7 +7019,7 @@
   BL : d3ugwbjwrb0qbd.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3uj0uhi43axgb.cloudfront.net [url:]
+  BL : d3uj0uhi43axgb.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3uqm14ppr8tkw.cloudfront.net [url:]
@@ -7049,7 +7079,7 @@
   BL : d3vvrup2jpfiep.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3vw4uehoh23hx.cloudfront.net [url:]
+  BL : d3vw4uehoh23hx.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3vw74hiy9xqtm.cloudfront.net [url:tif.mini.txt]
@@ -7220,7 +7250,7 @@
   BL : d88a4w8zwzno7.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d8a69dni6x2i5.cloudfront.net [url:]
+  BL : d8a69dni6x2i5.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d8bsqfpnw46ux.cloudfront.net [url:tif.mini.txt]
@@ -7232,7 +7262,7 @@
   BL : d8cxnvx3e75nn.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d8dcj5iif1uz.cloudfront.net [url:]
+  BL : d8dcj5iif1uz.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d8djeoqdr1o19.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -7259,7 +7289,7 @@
   BL : d90z5o386dhs7.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d91i6bsb0ef59.cloudfront.net [url:]
+  BL : d91i6bsb0ef59.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d94qwxh6czci4.cloudfront.net [url:]
@@ -7271,7 +7301,7 @@
   BL : d9b5gfwt6p05u.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d9c5dterekrjd.cloudfront.net [url:]
+  BL : d9c5dterekrjd.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d9cshxmf0qazr.cloudfront.net [url:]
@@ -7289,7 +7319,7 @@
   BL : d9leupuz17y6i.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d9qjkk0othy76.cloudfront.net [url:]
+  BL : d9qjkk0othy76.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d9r4lqt28t1fm.cloudfront.net [url:]
@@ -7298,7 +7328,7 @@
   BL : d9riwzrzl2jul.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d9tnvwv7i2n85.cloudfront.net [url:]
+  BL : d9tnvwv7i2n85.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d9v72urx9pbbc.cloudfront.net [url:filter_1.txt]
@@ -7307,7 +7337,7 @@
   BL : d9yk47of1efyy.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : da26k71rxh0kb.cloudfront.net [url:]
+  BL : da26k71rxh0kb.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : da327va27j0hh.cloudfront.net [url:tif.mini.txt]
@@ -7319,7 +7349,7 @@
   BL : da4talg8ap14y.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : da5h676k6d22w.cloudfront.net [url:]
+  BL : da5h676k6d22w.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : da656buijq2gw.cloudfront.net [url:tif.mini.txt]
@@ -7531,6 +7561,9 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : ddfnmo6ev4fd.cloudfront.net [url:]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ddixfspl.s3.amazonaws.com [url:tif.mini.txt]
+
   WL : *.cloudfront.net [static]  covers subdomain
   BL : ddla593ymz72o.cloudfront.net [url:]
 
@@ -7602,6 +7635,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : deisd5o6v8rgq.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : delaka.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : demandmedia.s3.amazonaws.com [url:filter_1.txt]
@@ -7832,7 +7868,7 @@
   BL : dhpjduwp6dzow.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dhrhzii89gpwo.cloudfront.net [url:]
+  BL : dhrhzii89gpwo.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dhrjk370wprvp.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -7967,7 +8003,7 @@
   BL : djr4k68f8n55o.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : djsoo8p407d6p.cloudfront.net [url:]
+  BL : djsoo8p407d6p.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : djucew6ul1t0k.cloudfront.net [url:tif.mini.txt]
@@ -8012,7 +8048,7 @@
   BL : dknnlu3s1bnz7.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dkre4lyk6a9bt.cloudfront.net [url:]
+  BL : dkre4lyk6a9bt.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dktr03lf4tq7h.cloudfront.net [url:tif.mini.txt]
@@ -8036,16 +8072,16 @@
   BL : dl1d2m8ri9v3j.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dl37p9e5e1vn0.cloudfront.net [url:]
+  BL : dl37p9e5e1vn0.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dl4d3y1ajyv3q.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dl5ft52dtazxd.cloudfront.net [url:]
+  BL : dl5ft52dtazxd.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dlem1deojpcg7.cloudfront.net [url:]
+  BL : dlem1deojpcg7.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dlgnjc45r3k2l.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -8054,22 +8090,22 @@
   BL : dlh8c15zw7vfn.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dlk457skl57zp.cloudfront.net [url:]
+  BL : dlk457skl57zp.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dlmc5bmayr4mg.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dlmr7hpb2buud.cloudfront.net [url:]
+  BL : dlmr7hpb2buud.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dlne6myudrxi1.cloudfront.net [url:]
+  BL : dlne6myudrxi1.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dlooqrhebkjoh.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dlrioxg1637dk.cloudfront.net [url:]
+  BL : dlrioxg1637dk.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dlthst9q2beh8.cloudfront.net [url:]
@@ -8084,7 +8120,7 @@
   BL : dlvds9i67c60j.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dlxk2dj1h3e83.cloudfront.net [url:]
+  BL : dlxk2dj1h3e83.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dlzbtksc33i7k.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -8093,7 +8129,7 @@
   BL : dm0acvguygm9h.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dm0ly9ibqkdxn.cloudfront.net [url:]
+  BL : dm0ly9ibqkdxn.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dm0t14ck8pg86.cloudfront.net [url:tif.mini.txt]
@@ -8111,13 +8147,13 @@
   BL : dm7gsepi27zsx.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dm7ii62qkhy9z.cloudfront.net [url:]
+  BL : dm7ii62qkhy9z.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dmc1acwvwny3.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dmdigbrzjbmso.cloudfront.net [url:]
+  BL : dmdigbrzjbmso.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dmeq7blex6x1u.cloudfront.net [url:tif.mini.txt]
@@ -8129,7 +8165,7 @@
   BL : dmh2vhxzf0tuf.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dmkdtkad2jyb9.cloudfront.net [url:]
+  BL : dmkdtkad2jyb9.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dmmzkfd82wayn.cloudfront.net [url:tif.mini.txt]
@@ -8159,7 +8195,7 @@
   BL : dn34cbtcv9mef.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dn3uy6cx65ujf.cloudfront.net [url:]
+  BL : dn3uy6cx65ujf.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dn666andut2j1.cloudfront.net [url:]
@@ -8207,7 +8243,7 @@
   BL : dnn506yrbagrg.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dnre5xkn2r25r.cloudfront.net [url:]
+  BL : dnre5xkn2r25r.cloudfront.net [url:tif.mini.txt]
 
   WL : *.adguard.com [static]  covers subdomain
   BL : dns-family.adguard.com [url:doh-vpn-proxy-bypass.txt]
@@ -8243,22 +8279,22 @@
   BL : dnzedhceh7nim.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : do0digwedphcm.cloudfront.net [url:]
+  BL : do0digwedphcm.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : do1dns3y1w33m.cloudfront.net [url:]
+  BL : do1dns3y1w33m.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : do6256x8ae75.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : do67etikr7pwz.cloudfront.net [url:]
+  BL : do67etikr7pwz.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : do69ll745l27z.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : doc830ytc7pyp.cloudfront.net [url:]
+  BL : doc830ytc7pyp.cloudfront.net [url:tif.mini.txt]
 
   WL : docomo-analytics.com [url:allowlist.txt]
   BL : docomo-analytics.com [url:]
@@ -8285,7 +8321,7 @@
   BL : doh2.b-cdn.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : doinntz6jwzoh.cloudfront.net [url:]
+  BL : doinntz6jwzoh.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dojx47ab4dyxi.cloudfront.net [url:filter_1.txt]
@@ -8294,7 +8330,7 @@
   BL : dojy0dg181308.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dokzl8xhmt1x7.cloudfront.net [url:]
+  BL : dokzl8xhmt1x7.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : doo6pwib3qngu.cloudfront.net [url:tif.mini.txt]
@@ -8399,7 +8435,7 @@
   BL : dpjlvaveq1byu.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dppaivsn6f9dy.cloudfront.net [url:]
+  BL : dppaivsn6f9dy.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dppesulohfqre.cloudfront.net [url:]
@@ -8417,7 +8453,7 @@
   BL : dq06u9lt5akr2.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dq3yxnlzwhcys.cloudfront.net [url:]
+  BL : dq3yxnlzwhcys.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dqd5t8xfxmhi7.cloudfront.net [url:tif.mini.txt]
@@ -8534,7 +8570,7 @@
   BL : dt0zlb8f941f.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dt3y1f1i1disy.cloudfront.net [url:]
+  BL : dt3y1f1i1disy.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dt4f1zrb25v4h.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -8567,13 +8603,13 @@
   BL : dtr2ivqmzj8wx.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dtu2kitmpserg.cloudfront.net [url:]
+  BL : dtu2kitmpserg.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dtv5loup63fac.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dtv5ske218f44.cloudfront.net [url:]
+  BL : dtv5ske218f44.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dtxtngytz5im1.cloudfront.net [url:filter_1.txt]
@@ -8594,7 +8630,7 @@
   BL : du01z5hhojprz.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : du0pud0sdlmzf.cloudfront.net [url:]
+  BL : du0pud0sdlmzf.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : du2uh7rq0r0d3.cloudfront.net [url:filter_1.txt]
@@ -8618,10 +8654,13 @@
   BL : due5a6x777z0x.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dufai4b1ap33z.cloudfront.net [url:]
+  BL : dufai4b1ap33z.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : duh0b8nl8uhfn.cloudfront.net [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : dumumeje.workers.dev [url:hostfile]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : duoigy6eo1pg6.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -8693,28 +8732,28 @@
   BL : dw7vmlojkx16k.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dw85st0ijc8if.cloudfront.net [url:]
+  BL : dw85st0ijc8if.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dw9uc6c6b8nwx.cloudfront.net [url:]
+  BL : dw9uc6c6b8nwx.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dwcj5jjpyz577.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dwd11wtouhmea.cloudfront.net [url:]
+  BL : dwd11wtouhmea.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dwebwj8qthne8.cloudfront.net [url:]
+  BL : dwebwj8qthne8.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dwene4pgj0r33.cloudfront.net [url:]
+  BL : dwene4pgj0r33.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dwf6crl4raal7.cloudfront.net [url:]
+  BL : dwf6crl4raal7.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dwfbs38k9z6bu.cloudfront.net [url:]
+  BL : dwfbs38k9z6bu.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dwhh0bi26t86w.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -8723,25 +8762,25 @@
   BL : dwjaokp57it6j.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dwnm2295blvjq.cloudfront.net [url:]
+  BL : dwnm2295blvjq.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dwr3zytn850g.cloudfront.net [url:]
+  BL : dwr3zytn850g.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dwt19px9j7kpm.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dx6uy6q3udhkj.cloudfront.net [url:]
+  BL : dx6uy6q3udhkj.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dxgo95ahe73e8.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dxh2ivs16758.cloudfront.net [url:]
+  BL : dxh2ivs16758.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dxj6cq8hj162l.cloudfront.net [url:]
+  BL : dxj6cq8hj162l.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dxk5g04fo96r4.cloudfront.net [url:tif.mini.txt]
@@ -8750,16 +8789,16 @@
   BL : dxkazp4h1leyi.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dxkkb5tytkivf.cloudfront.net [url:]
+  BL : dxkkb5tytkivf.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dxprljqoay4rt.cloudfront.net [url:]
+  BL : dxprljqoay4rt.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dxyef5b084fjk.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dxz454z33ibrc.cloudfront.net [url:]
+  BL : dxz454z33ibrc.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dy2xcjk8s1dbz.cloudfront.net [url:]
@@ -8768,13 +8807,13 @@
   BL : dy58t8rwtsd9j.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dy5t1b0a29j1v.cloudfront.net [url:]
+  BL : dy5t1b0a29j1v.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dyat82opedjd2.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dybxezbel1g44.cloudfront.net [url:]
+  BL : dybxezbel1g44.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dyf08yha87tii.cloudfront.net [url:]
@@ -8786,13 +8825,13 @@
   BL : dyhasi.workers.dev [url:hostfile]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dyj8pbcnat4xv.cloudfront.net [url:]
+  BL : dyj8pbcnat4xv.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dykwdhfiuha6l.cloudfront.net [url:]
+  BL : dykwdhfiuha6l.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dymwsh1c2kslr.cloudfront.net [url:]
+  BL : dymwsh1c2kslr.cloudfront.net [url:tif.mini.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : dynbanners.netlify.app [url:]
@@ -8801,7 +8840,7 @@
   BL : dyodrs1kxvg6o.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dyrfxuvraq0fk.cloudfront.net [url:]
+  BL : dyrfxuvraq0fk.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dysuze6ljcmcr.cloudfront.net [url:tif.mini.txt]
@@ -8816,13 +8855,13 @@
   BL : dz6uw9vrm7nx6.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dzbkl37t8az8q.cloudfront.net [url:]
+  BL : dzbkl37t8az8q.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dzcx04lyk9hjp.cloudfront.net [url:]
+  BL : dzcx04lyk9hjp.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dzdgfp673c1p0.cloudfront.net [url:]
+  BL : dzdgfp673c1p0.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dzglif4kkvz04.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -8837,19 +8876,19 @@
   BL : dzpu6za66svjl.cloudfront.net [url:]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dzr4v2ld8fze2.cloudfront.net [url:]
+  BL : dzr4v2ld8fze2.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dzs55b7slwyx.cloudfront.net [url:]
+  BL : dzs55b7slwyx.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dzt3uyxd69um2.cloudfront.net [url:]
+  BL : dzt3uyxd69um2.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dztww0ddy4n2.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dzu5p9pd5q24b.cloudfront.net [url:]
+  BL : dzu5p9pd5q24b.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dzupi9b81okew.cloudfront.net [url:tif.mini.txt]
@@ -8858,7 +8897,7 @@
   BL : dzv1ekshu2vbs.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : dzxr711a4yw31.cloudfront.net [url:]
+  BL : dzxr711a4yw31.cloudfront.net [url:tif.mini.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : e045f561.b-cdn.net [url:]
@@ -8888,13 +8927,37 @@
   BL : eboksx.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : ec2-16-146-96-209.us-west-2.compute.amazonaws.com [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ec2-16-147-31-138.us-west-2.compute.amazonaws.com [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : ec2-18-208-244-120.compute-1.amazonaws.com [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ec2-18-220-246-163.us-east-2.compute.amazonaws.com [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ec2-184-33-142-175.us-west-2.compute.amazonaws.com [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ec2-34-194-122-51.compute-1.amazonaws.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : ec2-35-79-220-88.ap-northeast-1.compute.amazonaws.com [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : ec2-44-233-143-239.us-west-2.compute.amazonaws.com [url:]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ec2-44-242-253-11.us-west-2.compute.amazonaws.com [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ec2-44-248-186-42.us-west-2.compute.amazonaws.com [url:hostfile]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ec2-54-69-124-190.us-west-2.compute.amazonaws.com [url:hostfile]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : ecom.info.north-kazakhstan.su.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
@@ -8944,14 +9007,14 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ehc0p1-5bgduy9hz9h4e.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : ek14wfzd1z.workers.dev [url:hostfile]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : elite-s3-bucket.s3.amazonaws.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.onelogin.com [static]  covers subdomain
   BL : eloqua.onelogin.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : elset4.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : email-verlification-notice-129181-4f5bb5c0.s3.amazonaws.com [url:tif.mini.txt]
@@ -8982,6 +9045,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : emberos.pages.dev [url:doh-vpn-proxy-bypass.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : emcvq31477.workers.dev [url:hostfile]
 
   WL : emjcd.com [url:whitelist-referral.txt]
   BL : emjcd.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -9175,9 +9241,6 @@
   WL : *.youtube.com [static]  covers subdomain
   BL : fcmatch.youtube.com [url:]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : fd9slwdbs3dr.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
-
   WL : *.googleapis.com [static]  covers subdomain
   BL : federatedcompute-pa.googleapis.com [url:]
 
@@ -9208,9 +9271,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : fhzot2fl0zjs.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : fiizo54361.workers.dev [url:hostfile]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : files-i64x8o71w7-20j5.s3.eu-west-3.amazonaws.com [url:tif.mini.txt]
 
@@ -9234,9 +9294,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : fit.wiwgf.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : fivepibe.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : fivestarontop.pages.dev [url:doh-vpn-proxy-bypass.txt]
@@ -9368,6 +9425,9 @@
   BL : fwcdn2.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : fylaxesi.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : fypazene.workers.dev [url:hostfile]
 
   WL : *.fastly.net [static]  covers subdomain
@@ -9470,7 +9530,7 @@
   BL : giraff.io [url:filter_1.txt]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : glenpossible.workers.dev [url:hostfile]
+  BL : gkuwo76378.workers.dev [url:hostfile]
 
   WL : *.youngjoygame.com [static]  covers subdomain
   BL : global-report.ml.youngjoygame.com [url:]
@@ -9509,6 +9569,48 @@
   BL : google-analytics.com [url:filter_1.txt]
 
   WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-192-178-15-5.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-192-178-15-6.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-192-178-15-7.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-192-178-15-8.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-192-178-15-9.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-66-249-84-224.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-66-249-84-229.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-66-249-88-195.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-66-249-88-196.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-66-249-88-197.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-66-249-88-199.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-74-125-212-69.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-74-125-213-34.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : google-proxy-74-125-213-44.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
   BL : google-public-dns-a.google.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.google.com [static]  covers subdomain
@@ -9528,6 +9630,9 @@
 
   WL : gopjn.com [url:whitelist-referral.txt]
   BL : gopjn.com [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : goseryvy.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : goshare-fleet-ads.s3.ap-southeast-1.amazonaws.com [url:]
@@ -9639,9 +9744,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : higylo.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : hixelelo.workers.dev [url:hostfile]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : hjxcbshadikjsad.info.north-kazakhstan.su.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
@@ -9988,6 +10090,9 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : jedaro.workers.dev [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : jekai57386.workers.dev [url:hostfile]
+
   WL : *.yahoo.com [static]  covers subdomain
   BL : jill.fc.yahoo.com [url:filter_1.txt]
 
@@ -10021,6 +10126,9 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : jordanna8106.workers.dev [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : jqzfa37850.workers.dev [url:hostfile]
+
   WL : *.fastly.net [static]  covers subdomain
   BL : jrdnmath.global.ssl.fastly.net [url:doh-vpn-proxy-bypass.txt]
 
@@ -10032,9 +10140,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : jscdnweb.pages.dev [url:]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : jucilyru.workers.dev [url:hostfile]
 
   WL : *.wordpress.com [static]  covers subdomain
   BL : jusmynote.wordpress.com [url:nsfw.txt]
@@ -10097,7 +10202,10 @@
   BL : klq7nduszn.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : kmkco15319.workers.dev [url:hostfile]
+  BL : kofonidi.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : kohihu.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : koitushinterneinnehmen.s3.eu-central-1.amazonaws.com [url:tif.mini.txt]
@@ -10122,6 +10230,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : kuvadeta.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : kvjmm72764.workers.dev [url:hostfile]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : kwazydabest.vercel.app [url:doh-vpn-proxy-bypass.txt]
@@ -10160,7 +10271,7 @@
   BL : l80j5odbxqr06iof9jpz.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : lafymexe.workers.dev [url:hostfile]
+  BL : lajuteco.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : lchtj96894.workers.dev [url:hostfile]
@@ -10179,6 +10290,12 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : lemon-hill7.pages.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lemyvi.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lepope.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : lfxdlazjwlnex43uhh6b.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
@@ -10297,6 +10414,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : lrazr6q9gkc-kzrsy57p.s3.ap-south-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : lucanuhu.workers.dev [url:hostfile]
+
   WL : *.razorpay.com [static]  covers subdomain
   BL : lumberjack-metrics.razorpay.com [url:]
 
@@ -10383,6 +10503,12 @@
 
   WL : *.github.io [static]  covers subdomain
   BL : masterproxy-proxy.github.io [url:doh-vpn-proxy-bypass.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : matefalls.pages.dev [url:hostfile]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : matefallsbeta.pages.dev [url:hostfile]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : math.info.north-kazakhstan.su.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
@@ -10471,6 +10597,9 @@
   WL : *.cloudflare.net [static]  covers subdomain
   BL : mexi.rest.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : midety.workers.dev [url:hostfile]
+
   WL : *.github.io [static]  covers subdomain
   BL : mihoutao1868.github.io [url:]
 
@@ -10503,6 +10632,9 @@
 
   WL : *.fastly.net [static]  covers subdomain
   BL : mjca-yijws.global.ssl.fastly.net [url:]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : mldkv26213.workers.dev [url:hostfile]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : mlst-prom-static.b-cdn.net [url:doh-vpn-proxy-bypass.txt]
@@ -10552,6 +10684,9 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : mrr-qa3-static.b-cdn.net [url:doh-vpn-proxy-bypass.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : mrwxog9wri.workers.dev [url:hostfile]
+
   WL : *.azureedge.net [static]  covers subdomain
   BL : msadsscale.azureedge.net [url:]
 
@@ -10590,9 +10725,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : mywolexe.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : myxowolo.workers.dev [url:hostfile]
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : n.gemini.yahoo.com [url:filter_1.txt]
@@ -10719,6 +10851,9 @@
 
   WL : *.firebaseio.com [static]  covers subdomain
   BL : noonv2-c55a5-default-rtdb.firebaseio.com [url:doh-vpn-proxy-bypass.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : nosabely.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : not-nasa.pages.dev [url:doh-vpn-proxy-bypass.txt]
@@ -11113,6 +11248,9 @@
   WL : *.github.io [static]  covers subdomain
   BL : powervpn.github.io [url:doh-vpn-proxy-bypass.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : pozalexy.workers.dev [url:hostfile]
+
   WL : ppcprotect.com [url:whitelist-referral.txt]
   BL : ppcprotect.com [url:filter_1.txt]
 
@@ -11185,9 +11323,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : proj-hid513291kzg.pages.dev [url:hostfile]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : project-ms50192kd15.pages.dev [url:hostfile]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : projectagora.s3.amazonaws.com [url:]
 
@@ -11242,6 +11377,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : pushd-android-logs.s3.amazonaws.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : puwutawi.workers.dev [url:hostfile]
+
   WL : puzzles-games-api.gp-prod.conde.digital [url:allowlist.txt]
   BL : puzzles-games-api.gp-prod.conde.digital [url:filter_1.txt]
 
@@ -11256,6 +11394,12 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : pymela.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : pypoxala.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : pywixesu.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : q-s3yb3waofgob5283h2.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
@@ -11282,13 +11426,19 @@
   BL : qebapyma.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : qhydz65819.workers.dev [url:hostfile]
+  BL : qeejm91148.workers.dev [url:hostfile]
 
   WL : *.github.io [static]  covers subdomain
   BL : qianmosite.github.io [url:doh-vpn-proxy-bypass.txt]
 
+  WL : *.supabase.co [static]  covers subdomain
+  BL : qiotpqfrrypshdvcvhso.supabase.co [url:tif.mini.txt]
+
   WL : qksrv.net [url:whitelist-referral.txt]
   BL : qksrv.net [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : qokomuqi.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : qtvsz36517.workers.dev [url:hostfile]
@@ -11302,9 +11452,6 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : qudocade.workers.dev [url:hostfile]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : queenie7453.workers.dev [url:hostfile]
-
   WL : *.firebaseio.com [static]  covers subdomain
   BL : quix-vpn-default-rtdb.firebaseio.com [url:doh-vpn-proxy-bypass.txt]
 
@@ -11316,6 +11463,9 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : qymojo.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : qzgaa33186.workers.dev [url:hostfile]
 
   WL : r.akipam.com [url:whitelist-referral.txt]
   BL : r.akipam.com [url:filter_1.txt]
@@ -11348,6 +11498,9 @@
   BL : radio.ajh.boats.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : rajylazu.workers.dev [url:hostfile]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : ralitoko.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
@@ -11356,8 +11509,11 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : raspy-recipe-71c0.workers.dev [url:doh-vpn-proxy-bypass.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : ravufini.workers.dev [url:hostfile]
+  WL : *.google.com [static]  covers subdomain
+  BL : rate-limited-proxy-72-14-199-162.google.com [url:hostfile]
+
+  WL : *.google.com [static]  covers subdomain
+  BL : rate-limited-proxy-72-14-199-163.google.com [url:hostfile]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : rblx-copier.vercel.app [url:]
@@ -11434,6 +11590,9 @@
   WL : *.cloudflare.net [static]  covers subdomain
   BL : riversideacademy.site.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : rizygu.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : rm01b4c6d3e8d4e2c8d1d2c.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
@@ -11456,7 +11615,7 @@
   BL : romance.aasya.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : ronirusi.workers.dev [url:hostfile]
+  BL : ronalda2.workers.dev [url:hostfile]
 
   WL : rootzaffiliates.com [url:allowlist.txt]
   BL : rootzaffiliates.com [url:]
@@ -11506,9 +11665,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : rwacbzxkynlfy8a.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : ryqeza.workers.dev [url:hostfile]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : s-31niukey.s3.us-east-2.amazonaws.com [url:tif.mini.txt]
 
@@ -11543,7 +11699,7 @@
   BL : sanalytics.box.com [url:filter_1.txt]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : saweva.workers.dev [url:hostfile]
+  BL : sanamuqe.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : sazepidi.workers.dev [url:hostfile]
@@ -11577,6 +11733,9 @@
 
   WL : scorecardresearch.com [url:allowlist.txt]
   BL : scorecardresearch.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : script-six-tawny.vercel.app [url:hostfile]
 
   WL : *.azurefd.net [static]  covers subdomain
   BL : sd-tagging.azurefd.net [url:]
@@ -11628,9 +11787,6 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : seksmet.b-cdn.net [url:nsfw.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : sekugyly.workers.dev [url:hostfile]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : selenite-copy.pages.dev [url:doh-vpn-proxy-bypass.txt]
@@ -11730,9 +11886,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : sikibe.workers.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : simplicity-w.pages.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : siren.aeafh.workers.dev [url:hostfile]
@@ -12004,6 +12157,9 @@
   WL : *.azure.com [static]  covers subdomain
   BL : synctime.australiaeast.cloudapp.azure.com [url:hostfile]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : synuvyfa.workers.dev [url:hostfile]
+
   WL : *.b-cdn.net [static]  covers subdomain
   BL : system-beta.b-cdn.net [url:]
 
@@ -12190,6 +12346,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : tierbase4.s3.amazonaws.com [url:doh-vpn-proxy-bypass.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : tight-dew-df89.esbpomiqpz.workers.dev [url:hostfile]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : tiive-9w539ymkpsu5jb.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
@@ -12261,6 +12420,9 @@
 
   WL : *.eff.org [static]  covers subdomain
   BL : tor.eff.org [url:doh-vpn-proxy-bypass.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : torpa68821.workers.dev [url:hostfile]
 
   WL : tpc.googlesyndication.com [url:allowlist.txt]
   BL : tpc.googlesyndication.com [url:filter_1.txt]
@@ -12466,6 +12628,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : uihguxda893-uy-zns3i.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : ukouu42212.workers.dev [url:hostfile]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : ultraviolet-static-dhd.pages.dev [url:doh-vpn-proxy-bypass.txt]
 
@@ -12640,6 +12805,9 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : verifiedcarrier.alladinbarry.workers.dev [url:hostfile]
 
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : verifijap.s3-website-us-west-1.amazonaws.com [url:tif.mini.txt]
+
   WL : *.authorize.net [static]  covers subdomain
   BL : verify.authorize.net [url:filter_1.txt]
 
@@ -12675,6 +12843,9 @@
 
   WL : *.yahoo.com [static]  covers subdomain
   BL : visit.webhosting.yahoo.com [url:filter_1.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : visuqopo.workers.dev [url:hostfile]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : vmailnewwqmwe.vercel.app [url:hostfile]
@@ -12857,9 +13028,6 @@
   BL : w88.go.com [url:]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : wacepa.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
   BL : wakevihu.workers.dev [url:hostfile]
 
   WL : *.workers.dev [static]  covers subdomain
@@ -12940,6 +13108,9 @@
   WL : widgets.outbrain.com [url:allowlist.txt]
   BL : widgets.outbrain.com [url:]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : wijabozo.workers.dev [url:hostfile]
+
   WL : *.cloudflare.net [static]  covers subdomain
   BL : william.tienda.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
@@ -13008,9 +13179,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : xadohewe.workers.dev [url:hostfile]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : xalibovu.workers.dev [url:hostfile]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : xbasugigqiuegiwqdbsx.s3.ap-northeast-1.amazonaws.com [url:tif.mini.txt]
@@ -13141,9 +13309,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : zgendpnts.s3.amazonaws.com [url:doh-vpn-proxy-bypass.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : zicolywo.workers.dev [url:hostfile]
-
   WL : *.azure.com [static]  covers subdomain
   BL : zigbee.eastus.cloudapp.azure.com [url:hostfile]
 
@@ -13159,12 +13324,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : zlhp6jksk5.execute-api.eu-west-3.amazonaws.com [url:doh-vpn-proxy-bypass.txt]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : zoom-i.pages.dev [url:hostfile]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : zoom-in.pages.dev [url:hostfile]
-
   WL : *.workers.dev [static]  covers subdomain
   BL : zozizo.workers.dev [url:hostfile]
 
@@ -13173,6 +13332,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : zr7-dx0vnxm1zpikvqzr.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : zulucuhy.workers.dev [url:hostfile]
 
   WL : *.fastly.net [static]  covers subdomain
   BL : zva-186.global.ssl.fastly.net [url:doh-vpn-proxy-bypass.txt]
