@@ -22,13 +22,10 @@ jobs:
 
       # ── 2. Verify sources ─────────────────────────────────────────────────
       - name: Verify sources
-        env:
-          ABUSECH_AUTH_KEY: ${{ secrets.ABUSECH_AUTH_KEY }}
         run: |
           python3 - <<'PYEOF'
           import re, sys, time, socket, urllib.request, urllib.error
           from pathlib import Path
-          from abusech_fetch import is_abusech_api, abusech_fetch
 
           _RE_VALID = re.compile(
               r'^[a-z0-9]([a-z0-9\-]{0,61}[a-z0-9])?'
@@ -70,18 +67,6 @@ jobs:
               return count
 
           def check(url, timeout=20):
-              if is_abusech_api(url):
-                  try:
-                      t0 = time.time()
-                      text = abusech_fetch(url, timeout=30)
-                      domains = count_domains(text)
-                      return {"ok": domains > 0, "status": 200, "domains": domains,
-                              "size_kb": len(text) / 1024, "elapsed": time.time() - t0,
-                              "note": "NO DOMAINS PARSED" if domains == 0 else ""}
-                  except urllib.error.HTTPError as e:
-                      return {"ok": False, "status": e.code, "note": f"HTTP {e.code} {e.reason}"}
-                  except Exception as e:
-                      return {"ok": False, "status": 0, "note": str(e)}
               try:
                   req = urllib.request.Request(url, headers={"User-Agent": "DNS-Verifier/1.0"})
                   t0 = time.time()
@@ -166,15 +151,12 @@ jobs:
 
       # ── 3. Run main Python pipeline ───────────────────────────────────────
       - name: Run pipeline
-        env:
-          ABUSECH_AUTH_KEY: ${{ secrets.ABUSECH_AUTH_KEY }}
         run: |
           python3 - <<'PYEOF'
           import re
           import urllib.request
           from pathlib import Path
           from datetime import datetime, timezone, timedelta
-          from abusech_fetch import is_abusech_api, abusech_fetch, source_label
 
           # ══════════════════════════════════════════════════════════════════
           # DOMAIN HELPERS
@@ -531,9 +513,6 @@ jobs:
           def fetch_raw(url: str, label: str) -> bytes | None:
               """Download URL and return raw bytes; None on failure."""
               try:
-                  # abuse.ch keyed API sources → plain domain list (key sent in header only)
-                  if is_abusech_api(url):
-                      return abusech_fetch(url).encode("utf-8")
                   req = urllib.request.Request(
                       url, headers={"User-Agent": "DNS-Builder/1.0"})
                   with urllib.request.urlopen(req, timeout=30) as r:
@@ -605,7 +584,7 @@ jobs:
           # the common.txt report; a domain being in multiple sources is normal.
           bl_src_map: dict = {}
           for url in bl_urls:
-              label = source_label(url) if is_abusech_api(url) else url.split('/')[-1][:60]
+              label = url.split('/')[-1][:60]
               fetched = fetch_and_parse(url, label)
               for d in fetched:
                   bl_src_map.setdefault(d, f"url:{label}")
