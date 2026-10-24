@@ -8,9 +8,14 @@ https://downloads.majestic.com/majestic_million.csv
 ######################################################################################################
 # Primary Security & Malware Lists (Balanced for high security, low false-positives)
 https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/tif.mini.txt
-https://urlhaus.abuse.ch/downloads/hostfile
-https://threatfox.abuse.ch/downloads/hostfile
 https://cdn.jsdelivr.net/gh/DNSBunker/CTI@latest/domains.txt
+
+# abuse.ch (keyed API — needs the ABUSECH_AUTH_KEY GitHub secret; handled by abusech_fetch.py)
+# The key is sent in a request header only, so nothing secret lives in this file.
+# URLhaus   : hosts of currently-online malware distribution URLs (last 3 days, max 1000)
+# ThreatFox : domain IOCs, confidence >= 75, last 7 days
+https://urlhaus-api.abuse.ch/v1/urls/recent/limit/1000/
+https://threatfox-api.abuse.ch/api/v1/
 
 # Additional Tracking & Telemetry (Community Recommended & Highly Stable)
 https://small.oisd.nl/
