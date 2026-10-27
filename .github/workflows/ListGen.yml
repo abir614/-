@@ -686,7 +686,8 @@ jobs:
                   return ""
 
               peek = _decode(data[:4096]).lstrip()
-              if peek.startswith(("{", "[")):                                     # JSON
+              peek_lower = peek.lower()
+              if peek.startswith("{") or (peek.startswith("[") and not peek_lower.startswith(("[adblock", "[autoproxy", "[adguard", "[section"))):
                   try:
                       obj = json.loads(_decode(data))
                       lines: list = []
@@ -706,7 +707,8 @@ jobs:
                           log(f"    [json] extracted {len(lines):,} entries")
                           return "\n".join(lines)
                   except Exception as e:                                          # noqa: BLE001
-                      log(f"    ⚠  WARN: {label} — json parse error: {e}")
+                      if peek.startswith("{"):
+                          log(f"    ⚠  WARN: {label} — json parse error: {e}")
               return _decode(data)                                                # plain text
 
 
@@ -776,7 +778,7 @@ jobs:
               raw_block: set = set()
               bl_src_map: dict = {}
               for url in bl_urls:
-                  label = url.split('/')[-1][:60]
+                  label = (url.rstrip("/").split("/")[-1] or url)[:60]
                   fetched = fetch_and_parse(url, label)
                   for d in fetched:
                       bl_src_map.setdefault(d, f"url:{label}")
@@ -820,7 +822,7 @@ jobs:
               fp_ref_urls = block_urls(extract_block(bl_raw, "FP_REF_URLS"))
               print(f"  FP reference URLs: {len(fp_ref_urls)}")
               for url in fp_ref_urls:
-                  label = url.split('/')[-1][:60]
+                  label = (url.rstrip("/").split("/")[-1] or url)[:60]
                   raw_fp = fetch_raw(url, label)
                   if raw_fp is None:
                       continue
@@ -841,7 +843,7 @@ jobs:
 
               ext_wl: set = set()
               for url in wl_urls:
-                  label = url.split('/')[-1][:60]
+                  label = (url.rstrip("/").split("/")[-1] or url)[:60]
                   ex, wc = fetch_and_parse_wl(url, label)
                   for d in ex:
                       wl_src_map.setdefault(d, f"url:{label}")
