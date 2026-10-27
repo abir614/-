@@ -1594,10 +1594,10 @@ jobs:
           head -20 whitelist.txt
           echo ""
           echo "════ Counts ════"
-          echo "blocklist wildcard : $(grep -c '^\*\.' blocklist.txt || true)"
+          echo "blocklist wildcard : $(grep -c '^\*\\.' blocklist.txt || true)"
           echo "blocklist exact    : $(grep -cE '^[a-z0-9]' blocklist.txt || true)"
-          echo "whitelist exact    : $(grep -v '^[#*]' whitelist.txt | grep -c '\.' || true)"
-          echo "whitelist wildcard : $(grep -c '^\*\.' whitelist.txt || true)"
+          echo "whitelist exact    : $(grep -v '^[#*]' whitelist.txt | grep -c '\\.' || true)"
+          echo "whitelist wildcard : $(grep -c '^\*\\.' whitelist.txt || true)"
           echo "total_blocked      : $(cat total_blocked.txt)"
           echo "total_whitelisted  : $(cat total_whitelisted.txt)"
           echo ""
@@ -1617,9 +1617,9 @@ jobs:
             echo "changed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          BL=$(grep -c '^\*\.' blocklist.txt || true)
+          BL=$(grep -c '^\*\\.' blocklist.txt || true)
           EX=$(grep -cE '^[a-z0-9]' blocklist.txt || true)
-          WL=$(grep -v '^#' whitelist.txt | grep -c '\.' || true)
+          WL=$(grep -v '^#' whitelist.txt | grep -c '\\.' || true)
           git commit -m "chore: update lists — block:${BL}wc+${EX}ex white:${WL} [$(date -u '+%Y-%m-%d')]"
           pushed=0
           for attempt in 1 2 3; do
