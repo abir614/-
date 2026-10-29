@@ -3,7 +3,7 @@
 #   pages.dev                                [23283]  [MAX]
 #   vercel.app                               [4159]  [MAX]
 #   cloudfront.net                           [2224]  [MAX]
-#   amazonaws.com                            [520]  [MAX]
+#   amazonaws.com                            [522]  [MAX]
 #   workers.dev                              [471]  [MAX]
 #   netlify.app                              [328]  [WARN]
 #   github.io                                [250]  [WARN]
@@ -18,9 +18,9 @@
 #   apple.com                                [21]  [BASIC]
 #   google.com                               [14]  [BASIC]
 #   netflix.com                              [13]  [BASIC]
+#   microsoft.com                            [11]  [BASIC]
 #   nvidia.com                               [11]  [BASIC]
 #   googleapis.com                           [10]  [BASIC]
-#   microsoft.com                            [10]  [BASIC]
 #   akamaized.net                            [10]  [BASIC]
 #   substack.com                             [9]  [BASIC]
 #   amazon.com                               [9]  [BASIC]
@@ -31875,6 +31875,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : eu-krakn-login.pages.dev [url:domains.txt]
+
+  WL : *.microsoft.com [static]  covers subdomain
+  BL : eu-office.events.data.microsoft.com [url:filter_1.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : eu-revolut-global.vercel.app [url:domains.txt]
@@ -84071,10 +84074,16 @@
   BL : uhu506bb.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : uhu53735.s3.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : uhu7535b.s3.amazonaws.com [url:domains.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : uhu7e035.s3.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : uhue2105.s3.amazonaws.com [url:tif.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ui-phntom-us.pages.dev [url:domains.txt]
