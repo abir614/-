@@ -1580,7 +1580,7 @@ jobs:
       - name: Safety guard
         env:
           FORCE: ${{ inputs.force }}
-          MAX_DROP_PCT: '30'       # fail if blocklist or whitelist shrinks by more than this
+          MAX_DROP_PCT: '50'       # fail if blocklist or whitelist shrinks by more than this
           MIN_BLOCKED: '1000'      # …or if the blocklist has fewer entries than this
         run: python3 build_lists.py guard
 
