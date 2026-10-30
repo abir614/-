@@ -1,9 +1,9 @@
 # Scale  — max: top 20% (>= 649)  warn: top 50% (>= 21)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
 #   pages.dev                                [7012]  [MAX]
-#   vercel.app                               [4137]  [MAX]
+#   vercel.app                               [4133]  [MAX]
 #   cloudfront.net                           [2189]  [MAX]
-#   netlify.app                              [711]  [MAX]
+#   netlify.app                              [706]  [MAX]
 #   workers.dev                              [649]  [MAX]
 #   amazonaws.com                            [418]  [WARN]
 #   github.io                                [360]  [WARN]
@@ -286,9 +286,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 03nlvk-3xo43-lut5i-lu9-n95ug.pages.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 04tyesy.vercel.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : 05ecr7i80o9iya1h001ncllc89i09a6cd87.netlify.app [url:domains.txt]
@@ -5579,9 +5576,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : bfb76b24ef4f39994db41677dff3eb5ffaa8600730bf804477ddba0f4e.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : bfyf32u-h26u.vercel.app [url:domains.txt]
-
   WL : *.cloudflare.net [static]  covers subdomain
   BL : bg.geek.nz.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
@@ -7187,9 +7181,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : capability-plot.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : capable-sunburst-47a70d.netlify.app [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : capchadao2405-fxs5.vercel.app [url:domains.txt]
 
@@ -7900,9 +7891,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : claim-fjh.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : claim-fn2.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : claim-fod.netlify.app [url:domains.txt]
@@ -18455,9 +18443,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : eclectic-profiterole-2d1204.netlify.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : eclectic-pudding-234766.netlify.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : ecmgr-6sf6m-8sa-ix2q77-e850r.pages.dev [url:domains.txt]
 
@@ -23464,9 +23449,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : itau-landing.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : itau-mtl1cy76b-gamero-galons-projects.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : itau-snowy.vercel.app [url:domains.txt]
@@ -35358,9 +35340,6 @@
   BL : qvk-odft-18a88-j59c1p-y3h23.pages.dev [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : qvlq00387-h21.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : qvpo06acya-h01a.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -36871,9 +36850,6 @@
 
   WL : *.intel.com [static]  covers subdomain
   BL : seek.intel.com [url:filter_1.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : seguridad-2026b65782.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : seguridadengine-com.pages.dev [url:domains.txt]
@@ -45847,9 +45823,6 @@
 
   WL : *.fastly.net [static]  covers subdomain
   BL : ubgus.freetls.fastly.net [url:doh-vpn-proxy-bypass.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : ubiquitous-brioche-bf6702.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : ubiquitous-fox-1d2094.netlify.app [url:domains.txt]
