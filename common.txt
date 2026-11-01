@@ -1,12 +1,12 @@
-# Scale  — max: top 20% (>= 477)  warn: top 50% (>= 21)  basic: remaining
+# Scale  — max: top 20% (>= 416)  warn: top 50% (>= 21)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   pages.dev                                [7048]  [MAX]
-#   vercel.app                               [3919]  [MAX]
-#   cloudfront.net                           [2189]  [MAX]
-#   workers.dev                              [651]  [MAX]
-#   netlify.app                              [477]  [MAX]
-#   amazonaws.com                            [418]  [WARN]
-#   github.io                                [360]  [WARN]
+#   pages.dev                                [7202]  [MAX]
+#   vercel.app                               [3815]  [MAX]
+#   cloudfront.net                           [2190]  [MAX]
+#   workers.dev                              [654]  [MAX]
+#   amazonaws.com                            [416]  [MAX]
+#   netlify.app                              [371]  [WARN]
+#   github.io                                [364]  [WARN]
 #   cloudflare.net                           [196]  [WARN]
 #   b-cdn.net                                [112]  [WARN]
 #   fastly.net                               [57]  [WARN]
@@ -287,9 +287,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : 03nlvk-3xo43-lut5i-lu9-n95ug.pages.dev [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : 05ecr7i80o9iya1h001ncllc89i09a6cd87.netlify.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : 064o-j63p-lm7-ra0-glpo9c.pages.dev [url:domains.txt]
 
@@ -485,12 +482,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : 1234-six-omega.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 128tyesy.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 129tyesy.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : 12a1aa1a.pages.dev [url:domains.txt]
 
@@ -509,9 +500,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : 1310neinek-fyy5.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 132tyesy.vercel.app [url:domains.txt]
-
   WL : *.workers.dev [static]  covers subdomain
   BL : 1342796343837374.6583349354412048645696401555924s2nnms90n.workers.dev [url:domains.txt]
 
@@ -527,23 +515,11 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : 1581-g1gx-h9a-xsfi-tq8w5f.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 161tyesy.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 165tyesy.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 169tyesy.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : 16bdj.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 16dyuw.pages.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 178tyesy.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : 17dnight-abkx.vercel.app [url:domains.txt]
@@ -560,15 +536,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : 17dnightt-ad4f.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 181tyesy.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 183tyesy.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 186tyesy.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : 18feb38d-9304-49ed-8a45-4b919bb3ed9f-netflix-clone-fixed.pages.dev [url:domains.txt]
 
@@ -577,6 +544,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : 193h-slfkgstkgnlshlkanganlkraregnkl.vercel.app [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : 1a13a1aw.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 1ab0d2f3.web3-multichainconnect-dapps-listing.pages.dev [url:domains.txt]
@@ -651,6 +621,9 @@
   BL : 1pz-c5w-wfbci-c5j-iza-1ly.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : 1qf63-nxm-07nb-w2azh-11-10-2026-aa.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : 1qgy7uj.pages.dev [url:domains.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -691,6 +664,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 1s9q2g-qw888a-2p8z1k9m4s-fsgcyyhy.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : 1s9q8g-qw244c84y-8k2p1m9z8s-fsgc.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 1toqwc-n4y-u435z-53owl-e7q.pages.dev [url:domains.txt]
@@ -816,6 +792,9 @@
   BL : 2cfc0222.salamanderprocessing.pages.dev [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
+  BL : 2d4c.reicrut-chat.workers.dev [url:domains.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
   BL : 2dzl-umko-ou34.tom-macsystemsltd-co-uk-s-account.workers.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -835,6 +814,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 2m1p9k-8r5p6e-8p1mz2-qw177a82f.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : 2m1p9z-qw644c24y-8m9p1k-qw177a82f.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 2m9p8s1k-qw888agreg-9x1p8k2mzp-fsgc.pages.dev [url:domains.txt]
@@ -871,6 +853,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 2s8q0g-9k1mzp28a4-1p8m-qw888c24y.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : 2s8q1g-qw333agreg-8z1p9k2m4s-fsgc.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 2s8q1g-qw999agreg-3z9p1k8m2s-fsgc.pages.dev [url:domains.txt]
@@ -1124,6 +1109,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : 3uzbh-q38ov-3s82s4-vjpj2m.pages.dev [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : 3v7i8-nnh-po7w-bd5dv-14-10-2026-aa.pages.dev [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : 3vvyneos2gtvgxlcsyr9j9rexr7faysjv9sf9-cg1108s.vercel.app [url:domains.txt]
 
@@ -1217,11 +1205,11 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : 4h-jnkgedfrtterjnkgfretjnkfetgrgeet.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 4h578rtq-h16.vercel.app [url:domains.txt]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 4hfvbao1ea.execute-api.ap-northeast-2.amazonaws.com [url:filter_1.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : 4k8m9p-8r5p6e-8m9zp1-1v9m8p2a3.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 4killawm-awm-digital.pages.dev [url:domains.txt]
@@ -1322,6 +1310,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : 51jx-q.vercel.app [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : 51m1-x8wb-f8n6-xn5yrl-iy0b0l.pages.dev [url:domains.txt]
+
   WL : *.trafficmanager.net [static]  covers subdomain
   BL : 51tongji.trafficmanager.net [url:filter_1.txt]
 
@@ -1369,9 +1360,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 595ed0a3ac89d897a429ce28c81ac3.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : 5985n9mff-funfn994784ecd853-8478h84.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 5b68q-0ml-a62-sum-0v61-du8ctb.pages.dev [url:domains.txt]
@@ -1499,9 +1487,6 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : 61f0c7ab.597f2b0bd2ee11be5dc06abd.workers.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 61ftyesy.vercel.app [url:domains.txt]
-
   WL : *.workers.dev [static]  covers subdomain
   BL : 625r-7dkl-5grd.ar-royalcases-org-s-account.workers.dev [url:domains.txt]
 
@@ -1554,6 +1539,9 @@
   BL : 68713204433c6d2032e1efeb--euphonious-dodol-162d14.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : 6874280190.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : 687bee7531c859330b2a732cf2f07b08c59e47bc25a13d362bb9d63f40.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -1597,9 +1585,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 6hfwy-chf-7of-j0gp-byg-lku2be.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : 6ibkyf0om5u.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 6lny4-kuwwnc-jwcx-i828z-2948.pages.dev [url:domains.txt]
@@ -1724,11 +1709,17 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : 7m1p8z-8s7q0g-2p8m1z-qw644c24y.pages.dev [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : 7m1p9k-qw177a-8k1p9z-qw644c24y.pages.dev [url:domains.txt]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 7ng6v3lu3c.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 7p6wx2-4nowm-qdh5-rirc4-nslcv.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : 7p8m1k-qw177a-8x1p9z-2v9m1p8a3.pages.dev [url:domains.txt]
 
   WL : *.fastly.net [static]  covers subdomain
   BL : 7q1z79gxsi.global.ssl.fastly.net [url:small.oisd.nl]
@@ -1743,7 +1734,13 @@
   BL : 7s1q2g-qw111agreg-2z8p9k1m4s-fsgc.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : 7s1q8g-qw333agreg-mbtz1m8p9z2-fsgc.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : 7tv-p1yhx-67ab-fa7v-wmhg-f2y.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : 7u3m8c-qw199agreg-mbtz8z2p1m9-qwxk.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 7u3m9c-qw188c24y-mbtz8k1p9m2-qwxk.pages.dev [url:domains.txt]
@@ -1920,6 +1917,9 @@
   BL : 8s1q2g-qw177a-1z8p9k2m4s-fsgcyyhy.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : 8s1q2g-qw999agreg-mbtz1m8p9z2-fsgc12.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : 8s1q2g-qw999agreg-mbtz8m1p9z2-fsgc.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -1960,6 +1960,12 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 8tiodxhk8a.execute-api.us-east-1.amazonaws.com [url:doh-vpn-proxy-bypass.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : 8u1m9c-qw388a-mbtz2m9p1z8-qwxknnnx.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : 8u2m4c-qw644c24y-1k9z8p2m4s-qwxk.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 8u5m9c-qw644c24y-mbtz9k8p1m2-qwxk.pages.dev [url:domains.txt]
@@ -2012,9 +2018,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : 90nb-csdvsavj1sbvsdfv-nbmsnnbvckcbsv.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 91tyesy.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : 920611.pages.dev [url:domains.txt]
 
@@ -2050,12 +2053,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : 998z-s1fdvdbbvncfn-ghnmggdgm.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : 99nightintheforestx7.netlify.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 99tyesy.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : 99v-zcv-bdgbgfbfgn-fhnghjcbcvb.vercel.app [url:domains.txt]
@@ -2207,9 +2204,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : 9z2m1p-8r5p6e-7m1p9s-3v8m1p9a2.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : a-oferta-do-dia-magal.vercel.app [url:domains.txt]
-
   WL : a.partner-versicherung.de [url:whitelist-referral.txt]
   BL : a.partner-versicherung.de [url:filter_1.txt]
 
@@ -2236,9 +2230,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : a9dzlse0xjz55e2.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : a9qlsgdbwq4ieg7memxzhbxt8gfrmoafsf43-cg13s.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : a9yx9-aip-fj2t-9qpyc-13-09-2026-hh.pages.dev [url:domains.txt]
@@ -2491,9 +2482,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : account-report-center.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : account-restricted-verify-request.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : account-review-assistance-id6781787.vercel.app [url:domains.txt]
@@ -2981,9 +2969,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : adsmanager-manager-security-3h.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : adsmarketting-bluetick-request-it-i.vercel.app [url:domains.txt]
-
   WL : adsmeasurement.com [url:whitelist-referral.txt]
   BL : adsmeasurement.com [url:filter_1.txt]
 
@@ -3208,9 +3193,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : agefj-ia7vta-xvd5vh-pf1j.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : agencyy-partner-program.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : agilvaltrix-shop.pages.dev [url:domains.txt]
@@ -3546,6 +3528,9 @@
   BL : allm0i-4wi2.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : allnodeswift.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : allure-gainvix-engine-com.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -3753,9 +3738,6 @@
   BL : amazon-clone-teal-three.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : amazon-clone-ten-lake-68.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : amazon-clone-ten-rust.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -3784,9 +3766,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : amazon-clone-zeta-nine.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : amazon-clone1546.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : amazon-copy.vercel.app [url:domains.txt]
@@ -4200,6 +4179,9 @@
   BL : app-flareportal.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : app-iotrezor.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : app-ledger-live-en-us.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -4216,6 +4198,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : app-trezor-start.pages.dev [url:domains.txt]
+
+  WL : *.github.io [static]  covers subdomain
+  BL : app-tronscan.github.io [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : app-uphold-login-account-cdn.pages.dev [url:domains.txt]
@@ -4659,6 +4644,9 @@
   BL : auric-mine.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : auric-pad.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : auric-ship.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -4705,9 +4693,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : auth-ndax-log-en.pages.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : auth-protecteddoc.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : auth-secure-portal.vercel.app [url:domains.txt]
@@ -4916,9 +4901,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : b1uq-icqn-srq7zp-tzwf-fsde7.pages.dev [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : b23875917-28a8-4eb0-8c3d-860cc8ad1ef0.netlify.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : b26e-dj4-kpbz0-c2c-dukrc.pages.dev [url:domains.txt]
 
@@ -5035,9 +5017,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : bancolombbia.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : bancolombiacupoaumento.vercel.app [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : bancoprovincia-bancainternet.bancoprovincia-bancainternet.workers.dev [url:domains.txt]
@@ -5415,6 +5394,9 @@
   BL : bg.geek.nz.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : bgrfd0f07kq-vtqpllos-3t2q8b-bgr42w.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : bgrfd34qnk-hwcps82zlk-9i4g2g-mt492d.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -5643,6 +5625,9 @@
   BL : bkstr32tgbn-ktpmqskr-8m1h3g-jks18c649.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : bkstr32tgbn-ktpmqskr-8m3h1g-jks89c642.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : bkstr61klnp-ktpmqskr-8m3h9g-jks42c918.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -5831,11 +5816,11 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : bnb-verify.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : bnimail-owa.vercel.app [url:domains.txt]
+  WL : *.pages.dev [static]  covers subdomain
+  BL : bnbfourclaim.pages.dev [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : bnp-sinistre-billeterie-2dka1bkmg-neat-eu.vercel.app [url:domains.txt]
+  BL : bnimail-owa.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : bnpparibas-dane.vercel.app [url:domains.txt]
@@ -5967,6 +5952,9 @@
   BL : boostciproxp-digital.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : boreal-forge.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : borealcredvexsoft-com.pages.dev [url:domains.txt]
 
   WL : *.fastly.net [static]  covers subdomain
@@ -6035,9 +6023,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : br-2441-02ced9604df3a000f4dfe50e3a1d1e06-qfq8dcdsu-acq-ui-eng.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : br-zim.netlify.app [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : bralvexo-tin264908531.vercel.app [url:domains.txt]
 
@@ -6098,8 +6083,8 @@
   WL : *.github.io [static]  covers subdomain
   BL : brigh1245.github.io [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : bright-concha-4e6328.netlify.app [url:domains.txt]
+  WL : *.pages.dev [static]  covers subdomain
+  BL : bright-ridge.pages.dev [url:domains.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : brightdata-app-production-app-bucket.s3.us-east-1.amazonaws.com [url:doh-vpn-proxy-bypass.txt]
@@ -6860,9 +6845,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : c5d-sjhq05-dci1cp-rqtum-efwhz.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : c5e2eebc14e3af5a3ec7a62e74c65e93.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : c67-9ew-ne88c-ey6-l30nl-8kfr1v.pages.dev [url:domains.txt]
 
@@ -6880,9 +6862,6 @@
 
   WL : *.fastly.net [static]  covers subdomain
   BL : caidenhashuzz.global.ssl.fastly.net [url:doh-vpn-proxy-bypass.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : caidjt2conme2chungmay2.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : caixaconsultachat-six.vercel.app [url:domains.txt]
@@ -6949,9 +6928,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : cancelarcardiffseguro360.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : cancelarsegurodecardiff360.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : cancelcardiffbahora.vercel.app [url:domains.txt]
@@ -7122,9 +7098,6 @@
   BL : case100atr5z9qfri95671-bvnmvnftvd-hieu1409.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : case100atr5z9qfri95671-wergdfgerw-hieu0709.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : case10w7xa5optm526y0707j9ldh2orqkytz38utm9oyhn6ukl.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -7189,9 +7162,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : caspianwilder.ordersdocumentation.workers.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : catalogo-bb-na-marcha.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : cb85df97.onedrive-1mr.pages.dev [url:domains.txt]
@@ -7455,6 +7425,9 @@
   BL : chasa.pages.dev [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.vercel.app [static]  covers subdomain
+  BL : chase-acess.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
   BL : chase-bank-gamm.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -7513,9 +7486,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : checkpageviolationid5241-23j6.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : checkslogin.netlify.app [url:domains.txt]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : chetoes.info.north-kazakhstan.su.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
@@ -7635,9 +7605,6 @@
   BL : claim-acs.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
-  BL : claim-b8q.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
   BL : claim-dp.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
@@ -7651,9 +7618,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : claim-fsf.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : claim-gli.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : claim-gu.netlify.app [url:domains.txt]
@@ -7677,16 +7641,10 @@
   BL : claim-k7w.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
-  BL : claim-khw.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
   BL : claim-ks.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : claim-nq.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : claim-ojo.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : claim-pc4.netlify.app [url:domains.txt]
@@ -7732,9 +7690,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : claim-vd.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : claim-x7k.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : claim-xx.netlify.app [url:domains.txt]
@@ -7789,9 +7744,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : classy-creponne-96db5c.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : classy-kulfi-c3cd9f.netlify.app [url:domains.txt]
 
   WL : *.railway.app [static]  covers subdomain
   BL : claudeadsback-production-67c1.up.railway.app [url:domains.txt]
@@ -8402,9 +8354,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : coinbase-chrome-extension.pages.dev [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : coinbase-clone-le.netlify.app [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : coinbase-clone-ruddy.vercel.app [url:domains.txt]
 
@@ -8576,9 +8525,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : coinbase-walletconnect.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : coinbase-web3.netlify.app [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : coinbase-web3.vercel.app [url:domains.txt]
 
@@ -8678,9 +8624,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : comcast2.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : comcastsecure.netlify.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : comeouts.pages.dev [url:domains.txt]
 
@@ -8695,9 +8638,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : comforting-crisp-7f6119.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : comforting-malasada-6d9fdb.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : comfy-hamster-f88545.netlify.app [url:domains.txt]
@@ -8761,6 +8701,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : comunicaciones365supp.vercel.app [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : conbse-extenson-guide.pages.dev [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : concept-ergo.vercel.app [url:domains.txt]
@@ -8935,6 +8878,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : cont17ct-pavelo-biz-kunet-mavri.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : cont17ct-pelaro-biz-vunet-kavri.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : cont17ct-pelavi-biz-vunok-serta.pages.dev [url:domains.txt]
@@ -9173,9 +9119,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : cool-concha-3432a2.netlify.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : cool-hummingbird-0ff756.netlify.app [url:domains.txt]
-
   WL : *.workers.dev [static]  covers subdomain
   BL : cool-water-6d4a.jallisonfl.workers.dev [url:domains.txt]
 
@@ -9413,9 +9356,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : crescercalyron-digital.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : crese-con-tu-cupo.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : crest-tango9072.pages.dev [url:domains.txt]
 
@@ -9535,9 +9475,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : cstelar-omega-0rw71c-flux-titanix.pages.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : csvd44569-cg21.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : cth0-casefb207319.vercel.app [url:domains.txt]
@@ -9802,6 +9739,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d127s3e8wcl3q6.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d128wldt9dh6cv.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d12aa3oa7bl4we.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -10698,7 +10638,7 @@
   BL : d1juimniehopp3.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1jum8517nhtf1.cloudfront.net [url:tif.mini.txt]
+  BL : d1jum8517nhtf1.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1jwpd11ofhd5g.cloudfront.net [url:tif.mini.txt]
@@ -12651,7 +12591,7 @@
   BL : d2ndqiignn36wl.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2ng6x3yyemlxz.cloudfront.net [url:tif.mini.txt]
+  BL : d2ng6x3yyemlxz.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2nin2iqst0txp.cloudfront.net [url:tif.mini.txt]
@@ -14496,7 +14436,7 @@
   BL : d3q4tlm7pw29zr.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3q5i0g1zfzd69.cloudfront.net [url:tif.mini.txt]
+  BL : d3q5i0g1zfzd69.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3q5swr1z5iuia.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -15179,9 +15119,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : dappdecentralisedlaunchpad.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : dapper-kelpie-e759ea.netlify.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : dappfixwebs.pages.dev [url:domains.txt]
 
@@ -15432,6 +15369,9 @@
   BL : data-center-standard-customer.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : data-center-standard-data.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : data-center-strike-customer.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -15583,9 +15523,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : dau-ug-koreatyujdjhdjuuej6664746637.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : davgf96kmjw-bcfd98ujwn-18cec3c-3005gt.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : david-base7456.pages.dev [url:domains.txt]
@@ -15835,6 +15772,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : decameroncolombia-new.vercel.app [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : decen-tralises-exxod.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : decentralbridge.pages.dev [url:domains.txt]
@@ -16322,9 +16262,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : diagnostyka-poczta.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : diagnostyka-wp.netlify.app [url:domains.txt]
-
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dic9vgwbkxd8r.cloudfront.net [url:tif.mini.txt]
 
@@ -16402,6 +16339,9 @@
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : directory.leeschoolsk12.org.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : directorymonerofil.pages.dev [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : discombobulate-2601-mu.vercel.app [url:domains.txt]
@@ -16922,6 +16862,9 @@
   WL : *.github.io [static]  covers subdomain
   BL : doancongminh23bi14287.github.io [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : doc--exxodus--web3.pages.dev [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : doc-aavmdlr.vercel.app [url:domains.txt]
 
@@ -17438,6 +17381,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : dskrp7d84gp-mbjmja-3x7v1c-dskps29c.pages.dev [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : dskrp85lkww-mbjwur-3u6v9b-dskps77p.pages.dev [url:domains.txt]
+
   WL : *.amazonaws.com [static]  covers subdomain
   BL : dsl-app.s3.us-east-2.amazonaws.com [url:doh-vpn-proxy-bypass.txt]
 
@@ -17744,9 +17690,6 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dyh1wzegu1j6z.cloudfront.net [url:tif.mini.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : dyhh14kid-h20.vercel.app [url:domains.txt]
-
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dyj8pbcnat4xv.cloudfront.net [url:tif.mini.txt]
 
@@ -17916,9 +17859,6 @@
   BL : earnrewardspro.pages.dev [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : easc37x-h16x.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : easy-bank-beta.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -18086,9 +18026,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ecommstats.s3.amazonaws.com [url:small.oisd.nl]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : ecosystem-dapp.netlify.app [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : ecount-update.vercel.app [url:domains.txt]
 
@@ -18165,9 +18102,6 @@
   BL : effortless-macaron-6afef2.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
-  BL : effortless-puffpuff-a0722c.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
   BL : effulgent-stroopwafel-efb9ce.netlify.app [url:small.oisd.nl]
 
   WL : *.workers.dev [static]  covers subdomain
@@ -18233,9 +18167,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : elavor-bintel-3b82fc-mrkt-grendal-896.pages.dev [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : elegant-sopapillas-d9528e.netlify.app [url:domains.txt]
-
   WL : *.b-cdn.net [static]  covers subdomain
   BL : elektronicznychbocina.b-cdn.net [url:domains.txt]
 
@@ -18259,9 +18190,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : eloquent-meringue-407613.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : eloquent-starburst-c86185.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : elpotronesxz-git-main-lamorrocoya.vercel.app [url:domains.txt]
@@ -18467,9 +18395,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : enus-desk-ledgr.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : eo0a3t1di9b4uil0brfbgpcopex4yy8oqfb46-cg14v.vercel.app [url:domains.txt]
-
   WL : *.b-cdn.net [static]  covers subdomain
   BL : eonpru.b-cdn.net [url:domains.txt]
 
@@ -18628,6 +18553,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ev-dragder-christopher.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : evaris-grid.pages.dev [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : eventchecker-h6.netlify.app [url:domains.txt]
@@ -18827,9 +18755,6 @@
   WL : *.github.io [static]  covers subdomain
   BL : extensionmetamask.github.io [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : extraordinary-marzipan-01f72a.netlify.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : exxodusweb-en-us.pages.dev [url:domains.txt]
 
@@ -18838,9 +18763,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : eyvil0-li0nw-bwq3xc-4w5eyz.pages.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : ez10000l8uf6g21108veziq73gvgggam82xjzu8eslew9sba3a85v.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ezicbu-82k3-yyqqiq-vao1d.pages.dev [url:domains.txt]
@@ -18964,9 +18886,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : facebook-clone-neon-ten.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : facebook-clone-nu-ecru.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : facebook-clone-nu-eight.vercel.app [url:domains.txt]
@@ -19344,16 +19263,10 @@
   BL : fb-login-acccount-center-helps-meta-verifyesz.pages.dev [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : fb-login-mob.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : fb-login-page.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : fb-login3shrii.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : fb-meta-supp0rt-center.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : fb-meta-verified-14259.vercel.app [url:domains.txt]
@@ -19400,9 +19313,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : fb-sun-case-28sp.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : fb-votlo-darlowo.netlify.app [url:domains.txt]
-
   WL : *.workers.dev [static]  covers subdomain
   BL : fb.phoenixcloud.workers.dev [url:domains.txt]
 
@@ -19438,9 +19348,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : fbsecure.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : fbue18782-h24.vercel.app [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : fc2617cf.4346164a315335d9f00d2c36.workers.dev [url:domains.txt]
@@ -19508,6 +19415,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : fenaqrix-biz-ploqavemi-f4t7dy38.pages.dev [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : fendrix-node.pages.dev [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : feno43-hbk20.vercel.app [url:domains.txt]
 
@@ -19516,9 +19426,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ferrovaldenza-pro.pages.dev [url:domains.txt]
-
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : ferrule-active.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : fexnori-mpt-qalmuzo-h3x7pe96.pages.dev [url:domains.txt]
@@ -19543,9 +19450,6 @@
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : ffd.travelpage.biz.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : ffna19p-c02p.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : ffv2-nine.vercel.app [url:domains.txt]
@@ -19578,6 +19482,9 @@
   BL : fghwc4158lk-kxtrnpli-1pt84d-fgh92c.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : fghzd062pt-yrpkw37mch-5v2x7g-wpt96z.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : fghzd70kq-kxlrq36los-7x9x4b-wp973w.pages.dev [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -19585,6 +19492,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : fhzot2fl0zjs.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : fi9j-vs8pr2-mnyzq-kmfh-83z.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : fi9mid-1ofp7r-al03qa-fjxz.pages.dev [url:domains.txt]
@@ -19864,12 +19774,6 @@
 
   WL : *.firefox.com [static]  covers subdomain
   BL : fpn.firefox.com [url:doh-vpn-proxy-bypass.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : fqjq38s-c07s.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : fqws75liro-h04o.vercel.app [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : fr-empty-voice-330d.2415054122105.workers.dev [url:domains.txt]
@@ -20153,9 +20057,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : g6zte-13s-jeen-7ox4o-15-10-2026-aa.pages.dev [url:domains.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : g71c7g3-ou9wh835ca-1.s3.ap-southeast-2.amazonaws.com [url:tif.mini.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : g72e-kwifta-r5k0-4x8ujc-fs0d.pages.dev [url:domains.txt]
 
@@ -20293,9 +20194,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : gentle-salad-64b0.kellyngoc34020.workers.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : gentle-tulumba-57e1ce.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : gentlewhisper-sigma.vercel.app [url:domains.txt]
@@ -20451,6 +20349,9 @@
   BL : ghost-town.partedu.club.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : ghpl8-z82l37-wund4-g9x-t5h9i.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : ghscy36nhw-pxvbmlpw-0p9k7e-ghs79c.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -20484,9 +20385,6 @@
   BL : gigachadd.vercel.app [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.netlify.app [static]  covers subdomain
-  BL : gilded-macaron-79e0e2.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
   BL : gilded-rugelach-019282.netlify.app [url:domains.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -20516,9 +20414,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : gleaming-duckanoo-612317.netlify.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : gleeful-mermaid-933ec5.netlify.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : glen-meta-pruk-biz.pages.dev [url:domains.txt]
 
@@ -20545,9 +20440,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : glittery-maamoul-38a517.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : glittery-pegasus-dbc406.netlify.app [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : global-chaseonline-verificationsurvey.charlottemeckschoolscom.workers.dev [url:domains.txt]
@@ -20705,6 +20597,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : governance-quality-standards-compliance-appraisal.pages.dev [url:domains.txt]
 
+  WL : *.github.io [static]  covers subdomain
+  BL : gpt-5-6.github.io [url:domains.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : gpt30mentax-digital.pages.dev [url:domains.txt]
 
@@ -20746,9 +20641,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : graxil-skrom-9k58hi-rthn-lravik.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : green-dot-web.netlify.app [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : green-hat-296d.airyvuavv-dd4.workers.dev [url:domains.txt]
@@ -21245,17 +21137,8 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : helwe-qtonw-daz-jgw-yu04s0.pages.dev [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : heneratorposylnyzzminoufirmy.netlify.app [url:domains.txt]
-
   WL : *.b-cdn.net [static]  covers subdomain
   BL : hentaied.b-cdn.net [url:nsfw.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : heroic-crumble-2f110e.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : heroic-gingersnap-c91d12.netlify.app [url:domains.txt]
 
   WL : *.akamaized.net [static]  covers subdomain
   BL : hesads.akamaized.net [url:filter_1.txt]
@@ -21365,9 +21248,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : hnwg61kern1.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : hnze58d-h16d.vercel.app [url:domains.txt]
-
   WL : *.github.io [static]  covers subdomain
   BL : hoangboy23.github.io [url:domains.txt]
 
@@ -21434,9 +21314,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : home-uphold-login.pages.dev [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : home-webmail-login-mvefi1z5snnoqy2ekh.netlify.app [url:domains.txt]
-
   WL : *.cloudflare.net [static]  covers subdomain
   BL : home.vincenzodimaro.it.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
@@ -21463,9 +21340,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : horame.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : horensosaldrainerdemo.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : horion-static.pages.dev [url:domains.txt]
@@ -21698,9 +21572,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : ig-recreation-bdjl5t6lw-jennydmcm.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : ig-sec.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : ig8f4-xo57-s8j7-0vfkim-s7ks6w.pages.dev [url:domains.txt]
 
@@ -21736,9 +21607,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ik2npu-rez-7hrh-1db8wd-0dg.pages.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : ikfa48lwtw-h01w.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : ikilledmydog.vercel.app [url:doh-vpn-proxy-bypass.txt]
@@ -22055,9 +21923,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : innov-windows.s3.us-east-2.amazonaws.com [url:doh-vpn-proxy-bypass.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : inpost-parcel.netlify.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : inpostcapital-digital.pages.dev [url:domains.txt]
 
@@ -22075,9 +21940,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : insert-ledgerlive-en.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : inset-liveledger-en.netlify.app [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : insight-detail-base.s2498731-5ef.workers.dev [url:domains.txt]
@@ -22341,9 +22203,6 @@
   BL : instagram-copy.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : instagram-cs.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : instagram-demo-clone-ashit-sinha.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -22492,9 +22351,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : instagram-post-77486qets.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : instagram-prifile-one.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : instagram-project-for-students.vercel.app [url:domains.txt]
@@ -22674,9 +22530,6 @@
   BL : interface-beta-eight.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : interface-git-fix-revert-6928-staging-uniswap.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : interface-uniswap.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -22826,17 +22679,14 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : ipfs-url-validator.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : ipfsio-webmaildomainlport.netlify.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : iphone-3d-rehul4dev.pages.dev [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : ipkopll.netlify.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : ipqmn15csdr-oypkt28nyp-9w3u6d-ccj41t.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : ipqmn42csdr-oypkt28nyp-3w1u9d-ccj74t.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ipqmn53csdr-oypkt19nyp-4w7u8d-ccj12t.pages.dev [url:domains.txt]
@@ -22858,9 +22708,6 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : iqlm-u88i-ml0n-f37pb.b-cdn.net [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : iridescent-tarsier-049b2e.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : iris-well-hill.pages.dev [url:domains.txt]
@@ -22933,9 +22780,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : ivhk96-c17s.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : ivvy25ugqi-h04i.vercel.app [url:domains.txt]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : ixl.com.de.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
@@ -23066,6 +22910,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : jhfdaplh.vercel.app [url:domains.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : jhiluidferty.juyiouyfd.workers.dev [url:domains.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : jhqdy-382-5awc-b2n3s-01-10-2026-hh.pages.dev [url:domains.txt]
 
@@ -23101,6 +22948,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : jmks3c79dr-ylpxtpli-7r8p2g-jmk30c.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : jmks94-zxcnh215vzk-5t0t2g-vtq39.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : jmudz95kfly-zgron98pdrf-0e3a6b-gre2l.pages.dev [url:domains.txt]
@@ -23155,9 +23005,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : join-whatsappgold.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : jolly-kangaroo-53835c.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : jolnexa-847203vkz.vercel.app [url:domains.txt]
@@ -23414,9 +23261,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : keen-semifreddo-1386ec.netlify.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : keen-truffle-a8f043.netlify.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : kelra-bryno-tavi.pages.dev [url:domains.txt]
 
@@ -23435,6 +23279,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : ket-vzpy23-nx9an-ynutz1-n593.pages.dev [url:domains.txt]
 
+  WL : *.vercel.app [static]  covers subdomain
+  BL : kevvvv-delta.vercel.app [url:domains.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : kflyp-zgron-bvark-8os49d-qrxp-vryska.pages.dev [url:domains.txt]
 
@@ -23446,9 +23293,6 @@
 
   WL : *.github.io [static]  covers subdomain
   BL : khalidhassan832.github.io [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : khan-netfli.netlify.app [url:domains.txt]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : khanacademy.mom.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
@@ -23554,9 +23398,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : konsultant-identyfikacja.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : konta-24weryfikacja.netlify.app [url:domains.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : kontaktowapoczta.b-cdn.net [url:domains.txt]
@@ -23738,9 +23579,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : kwazytopg.vercel.app [url:doh-vpn-proxy-bypass.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : kwfopusa-cg18.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : kwvo5-qw2-qtdj-7y2n9-2beyc.pages.dev [url:domains.txt]
 
@@ -23748,10 +23586,16 @@
   BL : kwxf-6eqm-dnzw.mahwish-aimimage-com-s-account.workers.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : kxlrq079kf-fghzdpdr-3z0r4c-wp199c.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : kxlrq170nhw-fghzdfyn-3y8x0g-wp611a.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : kxlrq279nhw-fghzdfyn-3y0x1g-wp833a.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : kxlrq57nhwu-fghzdfyn-3y6x4g-wp777a.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : kxtrn428mjw-bvldqrel-3q8p5g-yr899a.pages.dev [url:domains.txt]
@@ -23885,8 +23729,17 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : ldgr-lives-app.pages.dev [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : ldgre-liives.pages.dev [url:domains.txt]
+
   WL : *.workers.dev [static]  covers subdomain
   BL : ldgrinyhgj.azalea1.workers.dev [url:domains.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : ldgriokdfsuh.nafis330.workers.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : ldgrres-live.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ldgrrr---start.pages.dev [url:domains.txt]
@@ -23911,9 +23764,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : leadsenginerights.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : leafy-gnome-e7d08c.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : leanl-rosy.vercel.app [url:domains.txt]
@@ -23971,9 +23821,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ledge-live-auth.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : ledgeer-live-start.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ledgelive-en-us.pages.dev [url:domains.txt]
@@ -24318,9 +24165,6 @@
   BL : leilacasabahia.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : leilaoaovivocompleto.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : leilaocasasbahiia.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -24529,9 +24373,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : linhabranca-oficial45.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : linia-dialogu.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : linia-kontaktu.vercel.app [url:domains.txt]
@@ -25007,6 +24848,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : lives-eng-ledgre.pages.dev [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : lives-ledgrs.pages.dev [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : livesimple-session14.vercel.app [url:domains.txt]
 
@@ -25096,9 +24940,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : livetrustwalletsnycs.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : lixk07umo-h20.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : lixvorta-ken472618395.vercel.app [url:domains.txt]
@@ -25328,9 +25169,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : logowanieamu.netlify.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : logowanies.netlify.app [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : logs-inky-alpha.vercel.app [url:domains.txt]
 
@@ -25363,9 +25201,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : long-lake-ac9f.vospipuspa185.workers.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : lonos-mail-bisiness.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : lookhot-rust.vercel.app [url:domains.txt]
@@ -25712,9 +25547,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : luxeriseessenza-soft-com.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : luxnu-h20u.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : lv-jeffries-stuart.pages.dev [url:domains.txt]
 
@@ -25732,12 +25564,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : lww-jslbt1-rvfpu-n36tl-w34k9r.pages.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : lyiwj6shxzad4znunl3er39bnwr3qbhgbfb32-cg14v.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : lykashfortappf.xhla-v-6fb.workers.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : lyren-vision.pages.dev [url:domains.txt]
@@ -25801,6 +25627,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : m72-v2f8d1-ig2t-b0ab8v-k8og.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : m73es-llfj-eo1g-g16-wlkapx.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : m7ab-rkox5-olu-zxk7pg-ins6i0.pages.dev [url:domains.txt]
@@ -25879,9 +25708,6 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : mailmunch.s3.amazonaws.com [url:small.oisd.nl]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : main--vermillion-macaron-d1f7e4.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : main-ledgre-live.pages.dev [url:domains.txt]
@@ -26256,6 +26082,12 @@
   BL : mbank-akademia.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : mbj85skrp-dskrpds-9v2v6e-mbj22c.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : mbtzp1dqtwil-qwxknnnx-8r5p6e-qw999agreg.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : mbtzp314nhw-fsgcyfyn-2t6s5g-qw899a73f.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -26312,9 +26144,6 @@
   WL : *.cloudflare.net [static]  covers subdomain
   BL : mediaserver.gvcaffiliates.com.cdn.cloudflare.net [url:filter_1.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : meek-support.netlify.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : meela.pages.dev [url:doh-vpn-proxy-bypass.txt]
 
@@ -26355,13 +26184,7 @@
   BL : mellifluous-trifle-2fc3a0.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
-  BL : mellow-duckanoo-a41968.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
   BL : mellow-lily-c9d36b.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : mellow-lollipop-fae466.netlify.app [url:domains.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : mellowtel-bucket.s3.us-east-1.amazonaws.com [url:doh-vpn-proxy-bypass.txt]
@@ -26377,6 +26200,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : melzora-kxt-farquni-r6t8hk29.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : member-worksheet.pages.dev [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : memberservices-backupcentre-exodus.vercel.app [url:domains.txt]
@@ -26427,9 +26253,6 @@
   BL : messenger-clone-attempt2.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : messenger-clone-beta.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : messenger-clone-eltahawy.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -26478,6 +26301,9 @@
   BL : meta-aster-bsp.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-astrox.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-async.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -26490,6 +26316,9 @@
   BL : meta-balir-syvon.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-band.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-beacon-1jo.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -26500,6 +26329,12 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-blade-39p.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-bloomcore.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-blossom.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-brexon-verification-path-4ug.pages.dev [url:domains.txt]
@@ -26541,13 +26376,25 @@
   BL : meta-cobalt.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-colonnade.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-commerce-3d2.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-compass.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-compose.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-conclave.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-conflux-44g.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-corebase.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-corin.pages.dev [url:domains.txt]
@@ -26565,7 +26412,13 @@
   BL : meta-crown.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-curator.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-cyclone.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-dais.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-daluno-biz-kemaro-xuneki.pages.dev [url:domains.txt]
@@ -26599,6 +26452,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-dragon.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-dreamon.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-drelix-meron-vykar.pages.dev [url:domains.txt]
@@ -26665,6 +26521,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-field-eva.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-finance.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-flare-6dr.pages.dev [url:domains.txt]
@@ -26769,6 +26628,9 @@
   BL : meta-frame-d6e.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-frisar.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-garrison.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -26821,6 +26683,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-info-service-update-zone.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-isle.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-ivarol.pages.dev [url:domains.txt]
@@ -26931,6 +26796,9 @@
   BL : meta-manifold.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-mapcore.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-mapx-8t6.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -26961,10 +26829,16 @@
   BL : meta-mexal-varyn-tyro.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-mission.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-modehub.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-morph-ejq.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-mosaic.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-mylon-6if.pages.dev [url:domains.txt]
@@ -27000,6 +26874,9 @@
   BL : meta-np98.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-object.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-olimo-biz-ewafu-xonaki.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -27015,10 +26892,19 @@
   BL : meta-order-77g.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-ovation.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-overdrive.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-oxlin-153.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-oxlin-1ri.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-pack.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-parse-d1j.pages.dev [url:domains.txt]
@@ -27028,6 +26914,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-pathway-3h6.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-phasex.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-pillar-1o2.pages.dev [url:domains.txt]
@@ -27063,7 +26952,13 @@
   BL : meta-profilehubx.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-proton.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-pulsecore.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-pure.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-query-0xg.pages.dev [url:domains.txt]
@@ -27080,11 +26975,17 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-react-7xp.pages.dev [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-rebootx.pages.dev [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : meta-reconnect-online-server.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-registry.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-research.pages.dev [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : meta-restore-server.vercel.app [url:domains.txt]
@@ -27126,6 +27027,9 @@
   BL : meta-scope.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-sector.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-securex.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -27141,6 +27045,9 @@
   BL : meta-sentinel-3vy.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-server.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-service-network-alert-hub.pages.dev [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -27153,6 +27060,9 @@
   BL : meta-skyline-9zc.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-skyway.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-solin-veqra-dyno.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -27163,6 +27073,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-station.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-storage.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-stream-23n.pages.dev [url:domains.txt]
@@ -27567,6 +27480,9 @@
   BL : meta-synapse-c6q.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : meta-synapse.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : meta-synergy.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -27601,6 +27517,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-trinoth-review-map-2v6.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-tynova.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-tyvon.pages.dev [url:domains.txt]
@@ -27719,9 +27638,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-zelaro-biz-fununo-dakaki.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : meta-zen-server.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-zeron-94o.pages.dev [url:domains.txt]
 
@@ -27819,9 +27735,6 @@
   BL : metamask-docs-4q672pqsp-consensys-ddffed67.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : metamask-docs-74tizf1jt-metamask-web.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : metamask-docs-75mpj2s96-consensys-ddffed67.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -27832,9 +27745,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : metamask-docs-git-dependabot-npmandya-95394d-consensys-ddffed67.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : metamask-docs-git-request-execution-p-73cacd-consensys-ddffed67.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : metamask-docs-keec0mi8n-consensys-ddffed67.vercel.app [url:domains.txt]
@@ -27910,9 +27820,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : metamask2-eight.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : metamasks.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : metamasksupport.vercel.app [url:domains.txt]
@@ -28070,14 +27977,8 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : microsoft-clone-eight.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : microsoft-online-auth.netlify.app [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : microsoft0117.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : microsoftcomdefenderupdate.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : microsoftconfig-3.vercel.app [url:domains.txt]
@@ -28691,6 +28592,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : moon-go-shop.pages.dev [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : moonbirds-nft-al4.pages.dev [url:domains.txt]
+
   WL : *.netlify.app [static]  covers subdomain
   BL : moonlit-crumble-90efc9.netlify.app [url:domains.txt]
 
@@ -28701,37 +28605,10 @@
   BL : moonpay-and-pay-box-guide.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-17unme5eo-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-3bex710ga-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-5jacj9p4a-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-6xnwbvw2o-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : moonpay-commerce-868w0wpy4-heliofi.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-c1mua6f25-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-cpo1hdq10-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-fv5d1zirm-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : moonpay-commerce-git-feat-com2-3522-wallet-conne-543db7-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-git-fix-com2-1957-sync-flow-tra-c89b07-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-git-fix-com2-2691-dialog-phanto-f001a8-heliofi.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : moonpay-commerce-git-fix-com2-3952-heliofi.vercel.app [url:domains.txt]
@@ -28740,25 +28617,10 @@
   BL : moonpay-commerce-git-fix-com2-4528-heliofi.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-git-henryharris-btc-swap-target-cf424a-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-git-henryharris-com2-2779-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-git-remove-withdraw-feature-flag-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-git-show-all-routes-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : moonpay-commerce-heliofi.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : moonpay-commerce-ijsgokz66-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-jql3k2i1g-heliofi.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : moonpay-commerce-k620j2ok3-heliofi.vercel.app [url:domains.txt]
@@ -28770,43 +28632,10 @@
   BL : moonpay-commerce-l06q77rl2-heliofi.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-mbr3iglgp-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-p197ibwvq-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-p1n7nv04q-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-pm9rgtd8y-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : moonpay-commerce-r5fqezbru-heliofi.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : moonpay-commerce-ynemjsv7i-heliofi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : moonpay-paybox-guide.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : moonshot-listing-dug.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : moonshot-listing-rcs.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : moonshot-listing-skg.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : moonshot-listing-slg.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : moonshot-voting-d1t.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : moonshotvote-rq.netlify.app [url:domains.txt]
 
   WL : *.github.io [static]  covers subdomain
   BL : mordenized-technology.github.io [url:domains.txt]
@@ -29019,6 +28848,9 @@
   BL : multichainnode.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : multichainxs.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : multidappwallet.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -29050,9 +28882,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : musical-chainsaw-ten.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : musical-pasca-ca550c.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : musical-youtiao-ebd643.netlify.app [url:domains.txt]
@@ -29493,9 +29322,6 @@
   BL : neiiiidei1002-eoqb.vercel.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
-  BL : neon-dieffenbachia-b7c936.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
   BL : neon-profiterole-a1d2bd.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -29775,9 +29601,6 @@
   BL : netflix-clone-coral-delta.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : netflix-clone-coral-eta.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : netflix-clone-coral-ten.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -29845,9 +29668,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : netflix-clone-gamma.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : netflix-clone-gilt-phi.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : netflix-clone-gold-nine.vercel.app [url:domains.txt]
@@ -30731,9 +30551,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : nievelucrorio-click.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : niie37z-h21z.vercel.app [url:domains.txt]
-
   WL : *.workers.dev [static]  covers subdomain
   BL : nik.testbservermajd.workers.dev [url:domains.txt]
 
@@ -30823,6 +30640,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : noburufintaru-live.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : noctis-vein.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : node-miner-collector.pages.dev [url:domains.txt]
@@ -31337,11 +31157,11 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : okpe7-zhb-sak0-1h0a0-03-10-2026-aa.pages.dev [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : ol8-rynyb-jcp-21yt0-cnwwn.pages.dev [url:domains.txt]
+
   WL : *.workers.dev [static]  covers subdomain
   BL : old-math-da99.noraleiawrvund1052.workers.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : old-netfliiixx-clone.netlify.app [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : old-paper-7688.manicarsta197562.workers.dev [url:domains.txt]
@@ -31372,9 +31192,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : oman-2023.pages.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : omcd51m-h23m.vercel.app [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : ommdemiioccxdsdx.basheer1.workers.dev [url:domains.txt]
@@ -31579,9 +31396,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : opensea-giftbox9-nine.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : opensea-io1.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : opensea-login-help-cpp.pages.dev [url:domains.txt]
@@ -32168,6 +31982,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : optipay-click.pages.dev [url:domains.txt]
 
+  WL : *.github.io [static]  covers subdomain
+  BL : opus-5-0.github.io [url:domains.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : oq7f-hku-a16sp-rcg-4mh9-rfpd6.pages.dev [url:domains.txt]
 
@@ -32179,9 +31996,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : orange-cloud-c86d.364354xl.workers.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : orange-money-gift.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : orange-pl.netlify.app [url:domains.txt]
@@ -32197,9 +32011,6 @@
 
   WL : *.github.io [static]  covers subdomain
   BL : orbs-network.github.io [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : order-request-a-654532.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ordexiagpt-digital.pages.dev [url:domains.txt]
@@ -32369,9 +32180,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : p0by7-f74j-mse-u3sh5-94qh.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : p100061dw7cs11208vez6hz6yygnxvx37uo5kpesex7c90tw8huv.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : p2k7v8-4v9m1a2-m8p1z9k3-qw28c31y.pages.dev [url:domains.txt]
 
@@ -32508,9 +32316,6 @@
   BL : pancackswap.github.io [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : pancake-frontend-flznr5rp3-chefilip.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : pancakes-finances.vercel.app [url:domains.txt]
 
   WL : *.github.io [static]  covers subdomain
@@ -32579,6 +32384,9 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : patient-unit-5759.rbrm7orl.workers.dev [url:domains.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : patient-wind.dentclinic.workers.dev [url:domains.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : pay-center-lvy190081909.pages.dev [url:domains.txt]
 
@@ -32587,9 +32395,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : pay-pal-omega.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : pay-pal.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : pay-profiles-bkk7iy70a-walletconnect.vercel.app [url:domains.txt]
@@ -32623,9 +32428,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : paytm-wallet-user-app.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : pbeautiplun.vercel.app [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : pbroad-hall-567foland.tisema1051.workers.dev [url:domains.txt]
@@ -32751,6 +32553,9 @@
   BL : pfxmz420kf-cvqgspdr-9l8d5c-wtr32n.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : pfxmz4c01pl-cvqgsyhy-9j6h0g-wt511a.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : pfxmz8c60qt-wtrkbnnx-9i4g0e-wt800a.pages.dev [url:domains.txt]
 
   WL : pgpartner.com [url:allowlist.txt]
@@ -32761,6 +32566,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : phantom--walat.pages.dev [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : phantom-app-4eu8.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : phantom-cash.vercel.app [url:domains.txt]
@@ -32779,9 +32587,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : phantomphone.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : phantomwalletai.netlify.app [url:domains.txt]
 
   WL : *.github.io [static]  covers subdomain
   BL : phantomwallethj.github.io [url:domains.txt]
@@ -32894,11 +32699,8 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : pknorlen-shop.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : pl-nine-red.vercel.app [url:domains.txt]
-
   WL : *.netlify.app [static]  covers subdomain
-  BL : pl-zim.netlify.app [url:domains.txt]
+  BL : pkoplatform.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : pl6c-wbak2s-kkff8e-rllgwp.pages.dev [url:domains.txt]
@@ -33079,9 +32881,6 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : poczapl.b-cdn.net [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : poczta-auths.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : poczta-google.netlify.app [url:domains.txt]
@@ -33363,6 +33162,9 @@
   BL : priceless-feynman-ffe5e7.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : prime-parcel.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : primenipponai-club.pages.dev [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -33523,9 +33325,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : project-io-cdn.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : project-io-suites.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : project-ms0419431ks13.pages.dev [url:domains.txt]
@@ -33827,9 +33626,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : pvga-gxj-udc5-q2y-wxaa0-8ud.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : pvhm48v-h07v.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : pvrn18c29qt-aktp1nnx-3o8m6e-zk138a.pages.dev [url:domains.txt]
 
@@ -33853,6 +33649,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : pvrn73c82qt-aktp9nnx-1o4m8e-zk925a.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : pvrn81c43qt-aktp2nnx-5o9m2e-zk384a.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : pvrn83c12qt-aktp9nnx-5o2m8e-zk471a.pages.dev [url:domains.txt]
@@ -33919,6 +33718,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : pzxqn05cmbj-dskrp97dsk-7x1v9d-ghf84t.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : pzxqn0i85dr-dskrplpw-7t2r0d-ds922a.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : pzxqn3ifdran-dskrplpw-7t4r6d-ds144a.pages.dev [url:domains.txt]
@@ -34220,9 +34022,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : ql3e20-jmpl91-61tvz-re4o8.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : qlkqzuus-cg18.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : qlq3f-9pwx8-xv2-621ljm-5b49o.pages.dev [url:domains.txt]
 
@@ -34314,7 +34113,19 @@
   BL : qs4l-380o-rec8-xdh-ayj-szs3du.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : qsc327-vnxkp548vzk-8w3w5g-tjr62.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : qsc5f85dr-zptrkpli-0u9s3g-qsc29c.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : qsc762sk-zptrkzp-0w7w1e-qsc72c.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : qsc86skrp-zptrkzp-0w1w3e-qsc21c.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : qsc96skrp-zptrkzp-0w3w7e-qsc33c.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : qsc96vstr-dhfgy72mja-0x4w8g-tj352n.pages.dev [url:domains.txt]
@@ -34407,6 +34218,9 @@
   BL : qulnar-dremor-7a31dc-gb1504bb-s2406vma.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : quorra-zone.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : qurfani-mpt-zavxelo-h6d2ka95.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -34480,6 +34294,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : qwxknnnx-2s8q1g-qw911c44y-8z1x9m.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : qwxknnnx-4s9q2g-qw311c84y-2z9x1m.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : qwxknnnx-9s1q8g-qw222c14y-1z8x9m.pages.dev [url:domains.txt]
@@ -34568,11 +34385,14 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : r92ur-esx2nk-kxc-jyps-ib18i.pages.dev [url:domains.txt]
 
+  WL : *.vercel.app [static]  covers subdomain
+  BL : ra-krxu.vercel.app [url:domains.txt]
+
+  WL : *.github.io [static]  covers subdomain
+  BL : rabby-vallet.github.io [url:domains.txt]
+
   WL : *.github.io [static]  covers subdomain
   BL : rabinhoodloginy.github.io [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : racsacewednailwsid92441438a7594cbeb.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : radiant-pggrenjak-ae1822-jyn1204-nn-2406wra.pages.dev [url:domains.txt]
@@ -34597,15 +34417,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : rainbet-7-hu-com-8eb1c7ae.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : rainbow-bunny-860d07.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : rainbow-kataifi-98620f.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : rainbow-speculoos-2f3715.netlify.app [url:domains.txt]
 
   WL : *.github.io [static]  covers subdomain
   BL : raj-gupt.github.io [url:domains.txt]
@@ -34642,9 +34453,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : rapidrewards.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : rapport-clerc-jean-paul-guillou.netlify.app [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : rapyoie-2043.theanvoonkho.workers.dev [url:domains.txt]
@@ -34898,9 +34706,6 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : registro-formulario-digital-aoha-2026.cr-web.workers.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : registrohistorico.vercel.app [url:domains.txt]
-
   WL : *.github.io [static]  covers subdomain
   BL : rehmatdigitalsevakendra.github.io [url:domains.txt]
 
@@ -35024,6 +34829,9 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : resilient-donut-4647f2.netlify.app [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : resolver-daa.pages.dev [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : resolverapp.vercel.app [url:domains.txt]
 
@@ -35038,9 +34846,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : responsive-facebooklayout.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : restless-art-7998.kaleishabell24.workers.dev [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : restoration-user-case.netlify.app [url:domains.txt]
@@ -35184,22 +34989,13 @@
   BL : roaring-dragon-af3c3a.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
-  BL : roaring-marzipan-8ace7d.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
   BL : roaring-puffpuff-410de4.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : rob222.netlify.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : robin-hood-airdrop.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : robinhood-chain-report.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : robinhood-main-dex-xlf.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : robinhood-number.pages.dev [url:domains.txt]
@@ -35302,6 +35098,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : rootluxerisq-shop.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : rorvik-plenda-b7d204-rgtt-ponvek.pages.dev [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : rosaehessfrzimbra.vercel.app [url:domains.txt]
@@ -35574,9 +35373,6 @@
   BL : safs5623fwe.pages.dev [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
-  BL : sage-dusk-77ba3d.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
   BL : sage-gingersnap-61c339.netlify.app [url:domains.txt]
 
   WL : *.github.io [static]  covers subdomain
@@ -35791,9 +35587,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : secure-check-murex.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : secure-checkupbusiness2026.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : secure-coinbas-en-auth.pages.dev [url:domains.txt]
@@ -36023,17 +35816,11 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : server-dch23456789045678.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : service-auth.netlify.app [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : service-blueticks-fb-479843.vercel.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : service-mail.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : service-walidacja.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : service-weryfikacja.netlify.app [url:domains.txt]
@@ -36057,13 +35844,7 @@
   BL : serwis-techniczna.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
-  BL : serwis-wp.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
   BL : serwis24.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : serwislog.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : seryl-vision.pages.dev [url:domains.txt]
@@ -36213,9 +35994,6 @@
   BL : shiftprofitex-platform-com.pages.dev [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
-  BL : shimmering-peony-afbdc6.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
   BL : shiny-kangaroo-251349.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -36235,9 +36013,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : shop7-topaz.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : shopee-with.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : shopeehomeoffice.vercel.app [url:domains.txt]
@@ -36554,9 +36329,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : sohampatraamazonclone-soham-patras-projects-10ad660b.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : sojjpx8u-cg18.vercel.app [url:domains.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : solairdrops-d9.netlify.app [url:domains.txt]
 
@@ -36591,6 +36363,9 @@
   BL : solariavionex-cfd.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : solen-forge.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : solen-grid-532.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -36598,9 +36373,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : solflare-extension.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : solicita-tu-tarjeta-de-credito-bhd.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : solicitud-de-cr-dito-livid.vercel.app [url:domains.txt]
@@ -37800,6 +37572,9 @@
   BL : sp12ct-hormik-biz-zaldek-vansor.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp12ct-hormor-biz-prandek-zelsik.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp12ct-horvek-biz-kemsor-ladmik.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -38400,6 +38175,9 @@
   BL : sp18ct-nalvo-biz-varek-zemri.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp18ct-narvo-biz-zelik-murex.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp18ct-nelva-biz-torik-zumex.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -38829,6 +38607,9 @@
   BL : sp19ct-pavel-biz-vorin-kuma.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp19ct-pavin-biz-lorel-tesu.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp19ct-ravel-biz-nunel-kati.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -39039,6 +38820,9 @@
   BL : sp1ct10-dorval-biz-zulzo-pelri.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp1ct10-dorvani-biz-lazviko.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp1ct10-dorvuni-biz-zelzaro.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -39117,6 +38901,9 @@
   BL : sp1ct10-kavviro-biz-nalreko.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp1ct10-kavzelo-biz-norvako.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp1ct10-kelravo-biz-zulmiko.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -39186,6 +38973,9 @@
   BL : sp1ct10-morlevo-biz-vanzaro.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp1ct10-nalvemi-biz-korzuko.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp1ct10-nalviro-biz-melzaro.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -39226,6 +39016,12 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp1ct10-rumleko-biz-melzaro.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp1ct10-rumlemi-biz-varkazo.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp1ct10-rumzavo-biz-velkuni.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp1ct10-varkelo-biz-nalrevo.pages.dev [url:domains.txt]
@@ -39289,6 +39085,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp1ct10-zorvilo-biz-davmari.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp1ct10-zulvako-biz-kelreko.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp1ct10-zulvako-biz-melrevo.pages.dev [url:domains.txt]
@@ -39423,6 +39222,9 @@
   BL : sp20ct-qanik-biz-zavel-vunex-1pe.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp20ct-qemav-biz-zurik-nadex.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp20ct-sarnix-biz-kelqom-vorlek.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -39445,6 +39247,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp20ct-zorqam-biz-felsik-pronel.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp20ct-zunik-biz-vorek-madex.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp20ct10-danreko-biz-zumali.pages.dev [url:domains.txt]
@@ -39475,6 +39280,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp20ct10-dorvilo-biz-kunema.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp20ct10-dorvilo-biz-zaneku.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp20ct10-dorviro-biz-melaku.pages.dev [url:domains.txt]
@@ -39514,6 +39322,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp20ct10-kelmavo-biz-zuniko.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp20ct10-kelrevo-biz-munati.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp20ct10-kelveta-biz-zorami.pages.dev [url:domains.txt]
@@ -39745,6 +39556,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp20ct10-zorvilo-biz-kematu.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp20ct10-zulvako-biz-merani.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp20ct10-zulvako-biz-renimu.pages.dev [url:domains.txt]
@@ -40830,6 +40644,9 @@
   BL : sp28ct-gunem-biz-zorel-ranek.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp28ct-guneq-biz-morav-zatek.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp28ct-havel-biz-zumir-ranek.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -40899,6 +40716,9 @@
   BL : sp28ct5-kavun-biz-felri-zomti.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp28ct5-kelro-biz-ravun-zemki.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp28ct5-lurvi-biz-felun-zemro.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -40924,6 +40744,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp28ct5-zemor-biz-rulak-kavti.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp28ct5-zemri-biz-kavun-felti.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp28ct5-zemvi-biz-norak-vulti.pages.dev [url:domains.txt]
@@ -41050,6 +40873,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp29ct-nemro-biz-vakti-luzra.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp29ct-nemvi-biz-zorak-pelru.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp29ct-norak-biz-felun-zavri.pages.dev [url:domains.txt]
@@ -41220,6 +41046,9 @@
   BL : sp30ct-mirel-biz-tovak-zunel.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct-morav-biz-qelix-zunik.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct-munex-biz-zavor-qalik.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -41232,10 +41061,16 @@
   BL : sp30ct-murel-biz-zavik-qonad.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct-murel-biz-zunik-kavex.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct-murev-biz-qalon-zadex-8bv.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct-nadex-biz-kurel-zomik.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct-nadex-biz-kurim-zoval.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct-navel-biz-turix-mokan.pages.dev [url:domains.txt]
@@ -41266,6 +41101,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct-qorel-biz-ravix-zanul.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct-qorix-biz-velun-zadok.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct-radex-biz-zunik-vomad.pages.dev [url:domains.txt]
@@ -41334,6 +41172,12 @@
   BL : sp30ct-vorek-biz-qalix-zanul.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct-vorek-biz-qanik-zumal.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct-vunel-biz-qemik-zarov.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct-vural-biz-mexik-qoren.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -41383,6 +41227,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct-zumel-biz-kavor-ranix.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct-zumik-biz-varek-nodal.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct-zumor-biz-qavik-nelad.pages.dev [url:domains.txt]
@@ -41482,6 +41329,12 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct10-korlemi-biz-kunaro.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct10-korvako-biz-kurelo.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct10-korvemi-biz-zunaro.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct10-korvilo-biz-zamuni.pages.dev [url:domains.txt]
@@ -41643,6 +41496,9 @@
   BL : sp30ct10-varkavo-biz-lumeti.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct10-varkelo-biz-munaro.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct10-varkelo-biz-zumati.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -41698,6 +41554,12 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct10-vemzako-biz-kunari.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct10-vemzako-biz-kunati.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct10-zanlevo-biz-zunaro.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct10-zanlevo-biz-zureti.pages.dev [url:domains.txt]
@@ -42111,6 +41973,12 @@
   BL : sp3ct-zersak-biz8-lovqik-humed.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp3ct10-davzemi-biz-kavloro.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp3ct10-korvilo-biz-melzuni.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp4ct-belmorin-biz8-furem-kasix.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -42465,9 +42333,6 @@
   BL : splendid-druid-635b4e.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
-  BL : splendid-mandazi-5cacbf.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
   BL : splotify-clone-srijit.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -42508,9 +42373,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : spotify-clone-js.netlify.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : spotify-clone-lime.vercel.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : spotify-clone-mustr.netlify.app [url:domains.txt]
@@ -42735,10 +42597,16 @@
   BL : startphntum.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : starts-ldgre.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : starts-ledgr--en.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : starts-trezorr-io.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : startt-io-trezorr.pages.dev [url:domains.txt]
 
   WL : *.wordpress.com [static]  covers subdomain
   BL : starttrezor.wordpress.com [url:domains.txt]
@@ -42763,9 +42631,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : static-cloudflare.workers.dev [url:small.oisd.nl]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : static-cor-qdnee.vercel.app [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : static-resources.workers.dev [url:filter_1.txt]
@@ -42909,9 +42774,6 @@
   BL : stromdexerispro-com.pages.dev [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
-  BL : strong-gnome-1958ba.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
   BL : strong-granita-a557a4.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -42932,20 +42794,11 @@
   WL : *.cloudflare.net [static]  covers subdomain
   BL : studi.info.north-kazakhstan.su.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : studious-bassoon-pi.vercel.app [url:domains.txt]
-
   WL : *.cloudflare.net [static]  covers subdomain
   BL : study.wiki-edu.xyz.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : stunng-chiveera-7bcefb-n1204-hh-2406mzb.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : stupendous-raindrop-c7cdc6.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : stupendous-trifle-78d5a5.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : stupfundbit-digital.pages.dev [url:domains.txt]
@@ -43024,9 +42877,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : suite-apps-trez-help.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : suites-app-cloud-cdn.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : suitetrezor-secure.pages.dev [url:domains.txt]
@@ -43138,9 +42988,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : support-open-sea-login-io.pages.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : support-pdf.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : support-squad-1sdz.vercel.app [url:domains.txt]
@@ -43466,9 +43313,6 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : t81zn28jpnk70e8rt4w0.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : t8dauq22pyvqgsskezv.vercel.app [url:domains.txt]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : tag-based.s3.*.amazonaws.com [url:filter_1.txt]
 
@@ -43749,6 +43593,9 @@
   BL : terquna-kxt-felmavi-p9t4fc27.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : tersre-suit-e.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : tervani-kxt-belmora-r2t6hq84.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -43823,6 +43670,9 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : thepornguy.b-cdn.net [url:nsfw.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : therapypsychcom.weupdaa.workers.dev [url:domains.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : thetervinaxorium-com.pages.dev [url:domains.txt]
 
@@ -43895,17 +43745,11 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : timber-crest-beacon-anchor-signal-hold.pages.dev [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : timely-otter-7eb194.netlify.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : tino.pages.dev [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : tintabrshop-three.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : tiny-daifuku-f429b1.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : tiny-heliotrope-f10a19.netlify.app [url:domains.txt]
@@ -43923,13 +43767,22 @@
   BL : tjrml069nhw-dhfgyfyn-2x7w9g-vn500a.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : tjrml0gplix-dhfgyyhy-2w7t1g-vn077a.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : tjrml168nhw-dhfgyfyn-2x9w0g-vn722a.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : tjrml5htqtw-vnxkpnnx-2v9s0e-vn333a.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : tjrml8g45pl-dhfgyyhy-2w9t3g-vn955a.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : tjrml97hwu-vnxkp25fyn-2x0w7g-zp199c.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : tjrml9gplix-dhfgyyhy-2w1t4g-vn511a.pages.dev [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : tksxv6okt0v9pz5-lo6n5mp1thhi10zevyljrp1s.vercel.app [url:domains.txt]
@@ -44085,6 +43938,9 @@
   BL : tor.eff.org [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : torin-studio.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : torkvulidplatform-com.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -44222,20 +44078,11 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : transfer-1usd-bep.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : transfer-bep-20.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : transfer-doc-23dec5.netlify.app [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : transfer-local-ads-manage-idd957318.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : transfer-to-click.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : transfer-tokenbnb.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : transilvaniaai-click.pages.dev [url:domains.txt]
@@ -44278,9 +44125,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : trazor-login.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : trazor-offical-sso.netlify.app [url:domains.txt]
 
   WL : trck.wargaming.net [url:whitelist-referral.txt]
   BL : trck.wargaming.net [url:filter_1.txt]
@@ -44395,6 +44239,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : trezr-loginn.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : trezrr-suity.pages.dev [url:domains.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : trgfx.b-cdn.net [url:small.oisd.nl]
@@ -44610,6 +44457,9 @@
   BL : trzkq5dplix-ghscyyhy-6q5o8g-pxv177a.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : trzkq64x-ghscy29zfn-6s3j-mld63k.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : trzkq6dplix-ghscyyhy-6q1o5g-pxv633a.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -44647,9 +44497,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ttttttccccc12.pages.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : tu-cupo-ec.vercel.app [url:domains.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : tuck-nr-glaze-slim-oasis.s3.eu-west-1.amazonaws.com [url:tif.mini.txt]
@@ -45039,13 +44886,13 @@
   BL : upsawb4290324.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
+  BL : uptvha-rdopop7x.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
   BL : uqwdzsiydvqaizythohlft-dwf9-th8sau.vercel.app [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : uqwn-1b5l-5yog.lee-kneadhd-com-s-account.workers.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : uqyr85y-h16y.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ur-exods.pages.dev [url:domains.txt]
@@ -45309,9 +45156,6 @@
   BL : v0-seu-chopp-gelado.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : v0-spectrummail-update.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : v0-superoddth2.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -45507,6 +45351,9 @@
   BL : velnaro-mpt-fuqzavi-h4d7ka86.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : velor-net.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : velorafundsai-digital.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -45556,9 +45403,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ventra-lymos-biz-xavren-trokla.pages.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : ventraip-domains.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ventroviabexia-shop.pages.dev [url:domains.txt]
@@ -45969,6 +45813,24 @@
   BL : vniswap-v3-interface.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : vnxkp050mj-tjrmlren-8v5w0g-zp366a.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : vnxkp05kwg-dhfgy72pli-5uy71d-vn27k.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : vnxkp15mjwy-tjrmlren-8v7w9g-zp633a.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : vnxkp4ifdran-zptrklpw-8u5s7d-zp255a.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : vnxkp862mjw-tjrmlrel-8v3s0g-zp233a.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : vnxkp955mj-tjrml25ren-8v5w1g-zp852k.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : vnxld511mj-mkgpt81ren-0n7n3g-yl418k.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -46007,12 +45869,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : vnzkt8bskra-msprqwur-6e5f2c-hb000a.pages.dev [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : vocal-druid-a7186b.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : vocal-heliotrope-da3972.netlify.app [url:domains.txt]
-
   WL : *.cloudflare.net [static]  covers subdomain
   BL : vocaloid.pro.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
@@ -46021,9 +45877,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : voeazul-two.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : voeazulpromo.vercel.app [url:domains.txt]
 
   WL : *.github.io [static]  covers subdomain
   BL : voicemailonemailloading.github.io [url:domains.txt]
@@ -46329,6 +46182,9 @@
   BL : vxxqbm-a5zc-p1r-vhiuwt-5es278.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : vyvdm-pczfo1-feh6-c2zvm3.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : vyxomler-shop.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -46418,9 +46274,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : walletconnect-zeta-nine.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : walletconnect0.netlify.app [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : walletconnnect-deeplink-prompt-issue.vercel.app [url:domains.txt]
 
@@ -46462,9 +46315,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : warebelegstein-shop.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : warm-praline-eb6560.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : warm-selkie-5f01cf.netlify.app [url:domains.txt]
@@ -46782,9 +46632,6 @@
   BL : wetransfer-pink.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : wetransfer-smoky.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : wevpn.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -46852,9 +46699,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : whatsappo-ten.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : whatssep-group4k.vercel.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : whimsical-youtiao-7c5f6e.netlify.app [url:domains.txt]
@@ -47054,9 +46898,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : wowinterstellar.pages.dev [url:doh-vpn-proxy-bypass.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : wp-logowanie.netlify.app [url:domains.txt]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : wphlvzycf5.execute-api.eu-west-2.amazonaws.com [url:filter_1.txt]
 
@@ -47132,9 +46973,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : wttrrghs0oyt7nur5e0fdyrdzwuqkvuuavd29-h26.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : wupwh-h19h.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : wwkha-ritq-oc1-n03jqq-2tc.pages.dev [url:domains.txt]
 
@@ -47155,6 +46993,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : www-solve-your-violation.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : www.flhealthlicense-rosy.vercel.app [url:domains.txt]
 
   WL : *.redhat.com [static]  covers subdomain
   BL : www.info.redhat.com [url:filter_1.txt]
@@ -47189,9 +47030,6 @@
   WL : *.europa.eu [static]  covers subdomain
   BL : www.webanalytics.europa.eu [url:filter_1.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : wwwinstagram.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : wxlng4avstr-sjycdmja-0d5e4f-wxq03c.pages.dev [url:domains.txt]
 
@@ -47218,6 +47056,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : wzrostportfinexsolution-com.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : x0980-q58av-o73-w1w-c4yr.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : x1fex3-e8c7oc-wzw-l68e5-p41.pages.dev [url:domains.txt]
@@ -47251,6 +47092,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : x8o-76p3-vc3v-atc12i-ieqdx.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : x9j0-bxh-g7te-vis8-xhyp0.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : x9p4m1-kl38q21-v82m4p-9a1k3s7zp.pages.dev [url:domains.txt]
@@ -47436,9 +47280,6 @@
   BL : xf0147.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : xfdc27s-c02s.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : xfinity2.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -47452,9 +47293,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : xfinty.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : xflnltyappsute-weblog.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : xg3o-oh5spr-ulb5t4-r4dh8.pages.dev [url:domains.txt]
@@ -47513,9 +47351,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : xlbdw83-vnzkt104vzk-3c6d7f-msp28.pages.dev [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : xlgc16q-h16q.vercel.app [url:domains.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : xlml1-b640q9-oge52-o04cr.pages.dev [url:domains.txt]
 
@@ -47533,9 +47368,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : xnz-3c4-jevfw-zg1q-r4efws.pages.dev [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : xocgpqrl-cg18.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : xoehj-qiquil-244z-6n89-s0t4l.pages.dev [url:domains.txt]
@@ -47560,6 +47392,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : xp2023-pix.s3.amazonaws.com [url:small.oisd.nl]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : xq7tkt-7xt-zdl4v5-1kme1y.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : xqs5g-zgy-hvf-owu-7h901-6lfp.pages.dev [url:domains.txt]
@@ -47717,6 +47552,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : yc-ads.s3.amazonaws.com [url:small.oisd.nl]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : ycgfn72jwr-msbpr61rel-4b5d0e-hbk91w31.pages.dev [url:domains.txt]
+
   WL : *.cloudflare.net [static]  covers subdomain
   BL : ydihh84ntwoj.info.north-kazakhstan.su.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
@@ -47836,9 +47674,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : yqyibf6oxunoegyyexhstbeenn0tvmqt7ft44-h06.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : yqzi90j-c02j.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : yrpkn0b58pz-mjszplsi-9t4r6b-yrpkq20c.pages.dev [url:domains.txt]
@@ -48055,6 +47890,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : zelquro-gld-dorvixa-r2t5dk39.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : zemquni-kxt-felrani-c7x4hq29.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : zemquni-kxt-felrani-c8x1hq95.pages.dev [url:domains.txt]
@@ -48303,7 +48141,19 @@
   BL : zoyaa113.github.io [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : zptrk569bf-qscskr-4x3s9g-zptks12c.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : zptrk664bf-qscskr-4x1s8g-zptks49c.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : zptrk85vnx-qsc328tjr-7x0s1g-dhf51p.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : zptrk86bfrn-qscskr-4x7s1g-zptks55c.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : zptrk8e95gp-qscmja-4y8w2c-zptks30c.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : zptrk9e78gp-qscmja-4y3w0c-zptks27c.pages.dev [url:domains.txt]
