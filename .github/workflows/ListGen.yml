@@ -98,7 +98,6 @@ jobs:
               "https://urlhaus-api.abuse.ch/v2/files/exports/{ABUSECH_AUTH_KEY}/hostfile.txt",
               "https://threatfox-api.abuse.ch/v2/files/exports/{ABUSECH_AUTH_KEY}/hostfile.txt",
               "https://feodotracker.abuse.ch/downloads/ipblocklist.txt",
-              "https://sslbl.abuse.ch/blacklist/sslipblacklist.txt",
           ]
 
           QUIET = False
@@ -1566,8 +1565,6 @@ jobs:
                       b"127.0.0.1 threatfox-c2.evil-site.net\n",
                   "https://feodotracker.abuse.ch/downloads/ipblocklist.txt":
                       b"203.0.113.99\n",
-                  "https://sslbl.abuse.ch/blacklist/sslipblacklist.txt":
-                      b"198.51.100.42\n",
                   "https://src.test/dead.txt": None,
                   "https://src.test/wl.txt": b"@@||good-site.org^\n",
                   "https://src.test/fp.csv": b"1,evil-site.org\n2,popular-site.org\n",
