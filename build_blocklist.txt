@@ -29,6 +29,9 @@ https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/dyndns.txt
 https://urlhaus-api.abuse.ch/v2/files/exports/${ABUSECH_AUTH_KEY}/hostfile.txt
 https://threatfox-api.abuse.ch/v2/files/exports/${ABUSECH_AUTH_KEY}/hostfile.txt
 https://feodotracker.abuse.ch/downloads/ipblocklist.txt
+
+# Gambling Sites
+https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/gambling.mini.txt
 #######################################################################################################
 [/BLACKLIST_URLS]
 
@@ -53,23 +56,14 @@ hiperflixtv.net
 *.propellerads.com
 *.nvms9000updates.su
 *.bn888888.com
+*.kookjar.com
 
 # Analytics & Telemetry
 *.smetrics.com
 *.quantserve.com
 
 # Deceptive & High-Risk
-*.123movies.*
 *.coinhive.com
 *.speed-test.cloud
-
-# Gamebling
-*1xbet*
-*1x-bet*
-*1x001*
-*1xslots*
-*1xbit*
-*bk-1xbet*
-*1xstavka*
 #--------------------------------------------Domain Ends-----------------------------------------------#
 [/STATIC_BLACKLIST]
