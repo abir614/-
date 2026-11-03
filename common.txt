@@ -1,6 +1,6 @@
 # Scale  — max: top 20% (>= 196)  warn: top 50% (>= 22)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   pages.dev                                [16347]  [MAX]
+#   pages.dev                                [16350]  [MAX]
 #   vercel.app                               [2649]  [MAX]
 #   cloudfront.net                           [2196]  [MAX]
 #   workers.dev                              [529]  [MAX]
@@ -4183,7 +4183,7 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : alavor-brund-3b82fc-mrkt-grendal.pages.dev [url:domains.txt]
 
-  WL : alb.reddit.com [url:whitelist-referral.txt]
+  WL : *.reddit.com [static]  covers subdomain
   BL : alb.reddit.com [url:filter_1.txt]
 
   WL : *.workers.dev [static]  covers subdomain
@@ -8758,7 +8758,7 @@
   WL : *.openai.com [static]  covers subdomain
   BL : bzrcdn.openai.com [url:small.oisd.nl]
 
-  WL : c.apple.com [url:whitelist-referral.txt]
+  WL : *.apple.com [static]  covers subdomain
   BL : c.apple.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.live.com [static]  covers subdomain
@@ -9904,7 +9904,7 @@
   WL : click.allkeyshop.com [url:whitelist-referral.txt]
   BL : click.allkeyshop.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
-  WL : click.discord.com [url:whitelist-referral.txt]
+  WL : *.discord.com [static]  covers subdomain
   BL : click.discord.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.zoom.us [static]  covers subdomain
@@ -10699,7 +10699,7 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : cloudflareapage.pages.dev [url:domains.txt]
 
-  WL : cloudflareinsights.com [static]
+  WL : *.cloudflareinsights.com [static]
   BL : cloudflareinsights.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.amazonaws.com [static]  covers subdomain
@@ -14851,7 +14851,7 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2c4ylitp1qu24.cloudfront.net [url:filter_1.txt]
 
-  WL : d2c8v52ll5s99u.cloudfront.net [url:whitelist.txt]
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2c8v52ll5s99u.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -23473,7 +23473,7 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : fastflowvaltrix-soft-com.pages.dev [url:domains.txt]
 
-  WL : fastly-insights.com [static]
+  WL : *.fastly-insights.com [static]
   BL : fastly-insights.com [url:filter_1.txt]
 
   WL : *.fastly.net [static]  covers subdomain
@@ -30966,6 +30966,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : lger-live-waleet.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : lger-live-x-authes.pages.dev [url:domains.txt]
 
   WL : *.akamaized.net [static]  covers subdomain
   BL : lgforbes.akamaized.net [url:small.oisd.nl]
@@ -43045,6 +43048,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : pixzku9mls6ixqe6-brh.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : piyryrt886y97yuuyc.pages.dev [url:domains.txt]
+
   WL : *.cloudflare.net [static]  covers subdomain
   BL : pizza.frogiee.one.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
@@ -46594,7 +46600,7 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : s1065m-29umkt-nee0-vj62-jqnhzj.pages.dev [url:domains.txt]
 
-  WL : s2.youtube.com [url:whitelist.txt]
+  WL : *.youtube.com [static]  covers subdomain
   BL : s2.youtube.com [url:filter_1.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -48165,6 +48171,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp0ct-ramqok-biz-marnex-belvix.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp0ct-relqam-biz-marnok-felvor.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp0ct-relvix-biz-morqem-gelnax.pages.dev [url:domains.txt]
@@ -58786,7 +58795,7 @@
   WL : *.akamai.com [static]  covers subdomain
   BL : target.akamai.com [url:filter_1.txt]
 
-  WL : target.microsoft.com [url:whitelist-referral.txt]
+  WL : *.microsoft.com [static]  covers subdomain
   BL : target.microsoft.com [url:filter_1.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -59776,7 +59785,7 @@
   WL : track.adform.net [url:whitelist-referral.txt]
   BL : track.adform.net [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
-  WL : track.canva.com [url:whitelist-referral.txt]
+  WL : *.canva.com [static]  covers subdomain
   BL : track.canva.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : track.flexlinkspro.com [url:whitelist-referral.txt]
@@ -63499,7 +63508,7 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : wktvz946nhw-bcjfgfyn-0v7u8g-hp500a.pages.dev [url:domains.txt]
 
-  WL : wl.spotify.com [url:whitelist-referral.txt]
+  WL : *.spotify.com [static]  covers subdomain
   BL : wl.spotify.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : *.pages.dev [static]  covers subdomain
