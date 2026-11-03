@@ -81,7 +81,7 @@ jobs:
           # ══════════════════════════════════════════════════════════════════════════
           # CONFIG
           # ══════════════════════════════════════════════════════════════════════════
-          UA = "DNS-Builder/2.0 (+github-actions)"
+          UA = "GitHub/abir614 (+github-actions)"
           FETCH_TIMEOUT = 30                 # seconds per attempt
           FETCH_RETRIES = 3                  # transient errors only (timeouts, 5xx, 429, network)
           MAX_BYTES = 256 * 1024 * 1024      # hard cap for any download / decompression
