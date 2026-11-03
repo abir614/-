@@ -88,47 +88,48 @@ jobs:
           CACHE_DIR = Path(".fetch_cache")   # verify -> build hand-over (never committed)
           CACHE_MAX_AGE = 6 * 3600
           URL_PATH_MODE = os.environ.get("URL_PATH_MODE", "skip")
-          ABUSECH_AUTH_KEY = os.environ.get("ABUSECH_AUTH_KEY", "").strip()
           PSL_URL = "https://raw.githubusercontent.com/publicsuffix/list/master/public_suffix_list.dat"
 
-          # Built-in default abuse.ch feeds automatically injected if not already in build_blocklist.txt
-          DEFAULT_ABUSECH_URLS = [
-              "https://urlhaus-api.abuse.ch/v2/files/exports/{ABUSECH_AUTH_KEY}/hostfile.txt",
-              "https://threatfox-api.abuse.ch/v2/files/exports/{ABUSECH_AUTH_KEY}/hostfile.txt",
+          ABUSECH_AUTH_KEY = os.environ.get("ABUSECH_AUTH_KEY", "").strip()
+          ABUSECH_DEFAULT_FEEDS = (
+              "https://urlhaus-api.abuse.ch/v2/files/exports/${ABUSECH_AUTH_KEY}/hostfile.txt",
+              "https://threatfox-api.abuse.ch/v2/files/exports/${ABUSECH_AUTH_KEY}/hostfile.txt",
               "https://feodotracker.abuse.ch/downloads/ipblocklist.txt",
               "https://sslbl.abuse.ch/blacklist/sslipblacklist.txt",
-          ]
+          )
 
           QUIET = False
 
 
-          def _redact(s: str) -> str:
-              """Ensure ABUSECH_AUTH_KEY never leaks into logs, files, or notifications."""
-              if ABUSECH_AUTH_KEY and len(ABUSECH_AUTH_KEY) >= 4:
-                  return s.replace(ABUSECH_AUTH_KEY, "{ABUSECH_AUTH_KEY}")
-              return s
-
-
-          def _resolve_fetch_url(url: str) -> tuple[str, dict]:
-              """Inject ABUSECH_AUTH_KEY into abuse.ch URLs/headers at fetch time only."""
-              headers = {"User-Agent": UA}
-              real_url = url
-              if ABUSECH_AUTH_KEY:
-                  for token in ("{ABUSECH_AUTH_KEY}", "${ABUSECH_AUTH_KEY}", "$ABUSECH_AUTH_KEY", "YOUR-AUTH-KEY-HERE"):
-                      real_url = real_url.replace(token, ABUSECH_AUTH_KEY)
-                  # Auto-upgrade legacy unauthenticated hostfile URLs (HTTP 410 Gone) to v2 API exports
-                  if re.match(r"^https?://urlhaus\.abuse\.ch/downloads/hostfile/?$", real_url, re.I):
-                      real_url = f"https://urlhaus-api.abuse.ch/v2/files/exports/{ABUSECH_AUTH_KEY}/hostfile.txt"
-                  elif re.match(r"^https?://threatfox\.abuse\.ch/(?:downloads|export)/hostfile/?$", real_url, re.I):
-                      real_url = f"https://threatfox-api.abuse.ch/v2/files/exports/{ABUSECH_AUTH_KEY}/hostfile.txt"
-                  if "abuse.ch" in real_url.lower():
-                      headers["Auth-Key"] = ABUSECH_AUTH_KEY
-              return real_url, headers
-
-
           def log(*a, **k):
               if not QUIET:
-                  print(*(_redact(str(x)) for x in a), **k)
+                  print(*a, **k)
+
+
+          def expand_url(url: str) -> str:
+              """Substitute ${ABUSECH_AUTH_KEY} placeholder with the actual secret when fetching."""
+              if "${ABUSECH_AUTH_KEY}" in url:
+                  return url.replace("${ABUSECH_AUTH_KEY}", ABUSECH_AUTH_KEY)
+              return url
+
+
+          def redact_secret(text: str) -> str:
+              """Never leak ABUSECH_AUTH_KEY in committed files, console output, or logs."""
+              if ABUSECH_AUTH_KEY and ABUSECH_AUTH_KEY in text:
+                  text = text.replace(ABUSECH_AUTH_KEY, "***")
+              return text.replace("${ABUSECH_AUTH_KEY}", "***")
+
+
+          def url_label(url: str) -> str:
+              """Readable source label for a URL without exposing auth keys."""
+              clean = redact_secret(url).rstrip("/")
+              parts = [p for p in clean.split("/") if p and p != "***"]
+              host = next((p for p in parts if "." in p), "")
+              tail = parts[-1] if parts else clean
+              if "abuse.ch" in host and tail in ("hostfile.txt", "ipblocklist.txt", "sslipblacklist.txt", "rpz"):
+                  sub = host.split(".")[0].replace("-api", "")
+                  return f"abuse.ch-{sub}-{tail}"[:60]
+              return (tail or clean)[:60]
 
 
           # ══════════════════════════════════════════════════════════════════════════
@@ -601,7 +602,7 @@ jobs:
 
 
           def _cache_path(url: str) -> Path:
-              return CACHE_DIR / hashlib.sha1(_redact(url).encode()).hexdigest()
+              return CACHE_DIR / hashlib.sha1(url.encode()).hexdigest()
 
 
           def _read_capped(resp) -> bytes:
@@ -618,19 +619,23 @@ jobs:
 
           def fetch_raw(url: str, label: str = "", quiet: bool = False, use_cache: bool = True):
               """Download with retries. Returns bytes or None (reason in FETCH_ERR[url])."""
-              if "{ABUSECH_AUTH_KEY}" in url and not ABUSECH_AUTH_KEY:
-                  msg = "ABUSECH_AUTH_KEY secret is not set"
-                  FETCH_ERR[url] = msg
+              if "${ABUSECH_AUTH_KEY}" in url and not ABUSECH_AUTH_KEY:
+                  reason = "ABUSECH_AUTH_KEY secret is not set"
+                  FETCH_ERR[url] = reason
                   if not quiet:
-                      log(f"    ⚠  WARN: {label or _redact(url)} — {msg} (skipped)")
+                      log(f"    ⚠  WARN: {label or redact_secret(url)} — {reason} (skipped)")
                   return None
 
-              cp = _cache_path(url)
+              real_url = expand_url(url)
+              cp = _cache_path(real_url)
               if use_cache and not os.environ.get("NO_CACHE") and cp.exists() \
                       and time.time() - cp.stat().st_mtime < CACHE_MAX_AGE:
                   return cp.read_bytes()
-              real_url, headers = _resolve_fetch_url(url)
               last = "unknown error"
+              headers = {"User-Agent": UA}
+              if "abuse.ch" in real_url and ABUSECH_AUTH_KEY:
+                  headers["Auth-Key"] = ABUSECH_AUTH_KEY
+
               for attempt in range(1, FETCH_RETRIES + 1):
                   try:
                       req = urllib.request.Request(real_url, headers=headers)
@@ -650,16 +655,17 @@ jobs:
                   except (socket.timeout, TimeoutError):
                       last = "Timeout"
                   except urllib.error.URLError as e:
-                      last = f"URLError: {_redact(str(e.reason))}"
+                      last = f"URLError: {e.reason}"
                       if isinstance(e.reason, (socket.timeout, TimeoutError)):
                           last = "Timeout"
                   except Exception as e:                       # noqa: BLE001
-                      last = _redact(str(e))
+                      last = str(e)
                   if attempt < FETCH_RETRIES:
                       time.sleep(2 * attempt)
+              last = redact_secret(last)
               FETCH_ERR[url] = last
               if not quiet:
-                  log(f"    ⚠  WARN: {label or _redact(url)} — fetch error: {last} (skipped)")
+                  log(f"    ⚠  WARN: {label or redact_secret(url)} — fetch error: {last} (skipped)")
               return None
 
 
@@ -784,27 +790,18 @@ jobs:
               for line in block_text.splitlines():
                   line = line.strip()
                   if line and not line.startswith("#") and line.startswith(("http://", "https://")):
-                      results.append(_redact(line))
+                      results.append(line)
               return results
 
 
           def get_blacklist_urls(bl_raw: str) -> list:
               urls = block_urls(extract_block(bl_raw, "BLACKLIST_URLS"))
               if ABUSECH_AUTH_KEY:
-                  existing = {u.lower() for u in urls}
-                  for u in DEFAULT_ABUSECH_URLS:
-                      if u.lower() not in existing:
-                          urls.append(u)
+                  existing = set(urls)
+                  for feed in ABUSECH_DEFAULT_FEEDS:
+                      if feed not in existing and expand_url(feed) not in existing:
+                          urls.append(feed)
               return urls
-
-
-          def _url_label(url: str) -> str:
-              u = _redact(url).rstrip("/")
-              if "abuse.ch" in u.lower():
-                  host = u.split("//")[-1].split("/")[0].split(".")[0]
-                  fname = u.split("/")[-1]
-                  return f"{host}:{fname}"[:60]
-              return (u.split("/")[-1] or u)[:60]
 
 
           def _read(path: str) -> str:
@@ -839,7 +836,7 @@ jobs:
               raw_block: set = set()
               bl_src_map: dict = {}
               for url in bl_urls:
-                  label = _url_label(url)
+                  label = url_label(url)
                   fetched = fetch_and_parse(url, label)
                   for d in fetched:
                       bl_src_map.setdefault(d, f"url:{label}")
@@ -883,7 +880,7 @@ jobs:
               fp_ref_urls = block_urls(extract_block(bl_raw, "FP_REF_URLS"))
               print(f"  FP reference URLs: {len(fp_ref_urls)}")
               for url in fp_ref_urls:
-                  label = _url_label(url)
+                  label = url_label(url)
                   raw_fp = fetch_raw(url, label)
                   if raw_fp is None:
                       continue
@@ -904,7 +901,7 @@ jobs:
 
               ext_wl: set = set()
               for url in wl_urls:
-                  label = _url_label(url)
+                  label = url_label(url)
                   ex, wc = fetch_and_parse_wl(url, label)
                   for d in ex:
                       wl_src_map.setdefault(d, f"url:{label}")
@@ -1093,7 +1090,7 @@ jobs:
                   if len(exact_out) > 50:
                       print(f"    ... and {len(exact_out)-50} more")
 
-              # Write blocklist.txt
+              # Write blocklist.txt (with secrets redacted from source URLs)
               bl_header = [
                   "# ============================================================",
                   "# Combined Blocklist",
@@ -1118,7 +1115,7 @@ jobs:
                   f"#   Notable (pop. lists, kept)  : {len(notable):,}",
                   "# ============================================================",
                   "# Blacklist URL sources:",
-              ] + [f"#   {_redact(u)}" for u in bl_urls] + [
+              ] + [f"#   {redact_secret(u)}" for u in bl_urls] + [
                   f"# Static blacklist entries : {len(static_bl)}",
                   "# ============================================================",
                   "# DO NOT EDIT — regenerated automatically on every workflow run.",
@@ -1286,13 +1283,13 @@ jobs:
 
               failed, warned = [], []
               for kind, url in sources:
-                  short = _redact(url).split("//")[-1][:55]
+                  short = redact_secret(url).split("//")[-1][:55]
                   t0 = time.time()
                   data = fetch_raw(url, short, quiet=True)
                   elapsed = time.time() - t0
                   note, domains, size_kb = "", 0, 0.0
                   if data is None:
-                      note = _redact(FETCH_ERR.get(url, "fetch error"))
+                      note = FETCH_ERR.get(url, "fetch error")
                   else:
                       size_kb = len(data) / 1024
                       text = _sniff_and_decompress(data, url, short)
@@ -1316,13 +1313,15 @@ jobs:
                   else:
                       print(f"  {kind:<3} {'FAIL':>5}  {'---':>9}  {'---':>8}  {'---':>6}  {short}")
                       print(f"  {'':3}  {'':5}  {'':9}  {'':8}  {'':6}  +-- {note}")
-                      (warned if "timeout" in note.lower() or "timed out" in note.lower() else failed).append((kind, _redact(url), note))
+                      (warned if "timeout" in note.lower() or "timed out" in note.lower() else failed).append(
+                          (kind, redact_secret(url), redact_secret(note))
+                      )
 
               ok_count = len(sources) - len(failed) - len(warned)
               print(f"\n{'=' * 88}\n  OK: {ok_count}  |  WARN (timeout): {len(warned)}  |  FAILED: {len(failed)}\n{'=' * 88}\n")
               with open("warn_log.txt", "w", encoding="utf-8") as wf:
                   for kind, url, note in warned + failed:
-                      wf.write(f"[{kind}] {_redact(url)}  ->  {_redact(note)} (will skip in pipeline)\n")
+                      wf.write(f"[{kind}] {redact_secret(url)}  ->  {redact_secret(note)} (will skip in pipeline)\n")
               n = len(warned) + len(failed)
               print(f"  {n} source issue(s) written to warn_log.txt" if n else "  No source issues — warn_log.txt is empty")
               return 0
@@ -1408,7 +1407,7 @@ jobs:
                   print("Run cancelled — no notification")
                   return 0
               try:
-                  lines = [l.strip() for l in Path("warn_log.txt").read_text(encoding="utf-8").splitlines() if l.strip()]
+                  lines = [redact_secret(l.strip()) for l in Path("warn_log.txt").read_text(encoding="utf-8").splitlines() if l.strip()]
               except FileNotFoundError:
                   lines = []
               if status == "success" and not lines:
@@ -1434,13 +1433,13 @@ jobs:
                   f"Triggered by: <code>{e(trigger)}</code>",
               ]
               try:
-                  reason = Path("fail_reason.txt").read_text(encoding="utf-8").strip()
+                  reason = redact_secret(Path("fail_reason.txt").read_text(encoding="utf-8").strip())
               except FileNotFoundError:
                   reason = ""
               if status != "success" and reason:
-                  head += ["", f"<b>Reason:</b>\n<pre>{e(_redact(reason[:900]))}</pre>"]
+                  head += ["", f"<b>Reason:</b>\n<pre>{e(reason[:900])}</pre>"]
               if lines:
-                  shown = "\n".join(f"  • {e(_redact(l[:260]))}" for l in lines[:10])
+                  shown = "\n".join(f"  • {e(l[:260])}" for l in lines[:10])
                   if len(lines) > 10:
                       shown += f"\n  … and {len(lines) - 10} more"
                   title = "Skipped sources" if status == "success" else f"Warnings during run ({len(lines)})"
@@ -1542,6 +1541,8 @@ jobs:
                   "https://src.test/abp.txt.gz": gzip.compress(
                       b"[Adblock Plus 2.0]\n||track.evil-site.org^\n@@||fine-site.org^\nexample.org##.ad\n||x.example.net^$script\n"
                       b"||bad.example.net^$important\nco.uk\n"),
+                  "https://urlhaus-api.abuse.ch/v2/files/exports/test-secret-key-999/hostfile.txt":
+                      b"127.0.0.1 malware-drop.evil-site.net\n",
                   "https://src.test/dead.txt": None,
                   "https://src.test/wl.txt": b"@@||good-site.org^\n",
                   "https://src.test/fp.csv": b"1,evil-site.org\n2,popular-site.org\n",
@@ -1551,9 +1552,14 @@ jobs:
                   self.old = os.getcwd()
                   self.tmp = tempfile.TemporaryDirectory()
                   os.chdir(self.tmp.name)
+                  global ABUSECH_AUTH_KEY
+                  self._orig_key = ABUSECH_AUTH_KEY
+                  ABUSECH_AUTH_KEY = "test-secret-key-999"
                   Path("build_blocklist.txt").write_text(
                       "[FP_REF_URLS]\nhttps://src.test/fp.csv\n[/FP_REF_URLS]\n"
-                      "[BLACKLIST_URLS]\nhttps://src.test/hosts.txt\nhttps://src.test/abp.txt.gz\nhttps://src.test/dead.txt\n"
+                      "[BLACKLIST_URLS]\nhttps://src.test/hosts.txt\nhttps://src.test/abp.txt.gz\n"
+                      "https://urlhaus-api.abuse.ch/v2/files/exports/${ABUSECH_AUTH_KEY}/hostfile.txt\n"
+                      "https://src.test/dead.txt\n"
                       "[/BLACKLIST_URLS]\n[STATIC_BLACKLIST]\nstatic-site.org\n*.123movies.*\n1.2.3.4\n[/STATIC_BLACKLIST]\n")
                   Path("build_whitelist.txt").write_text(
                       "[WHITELIST_URLS]\nhttps://src.test/wl.txt\n[/WHITELIST_URLS]\n[STATIC_WHITELIST]\n*.good-site.org\n[/STATIC_WHITELIST]\n")
@@ -1561,7 +1567,8 @@ jobs:
                   self._orig_fetch = fetch_raw
 
                   def fake(url, label="", quiet=False, use_cache=True):
-                      data = self.SOURCES.get(url)
+                      real_url = expand_url(url)
+                      data = self.SOURCES.get(real_url)
                       if data is None:
                           FETCH_ERR[url] = "HTTP 410 Gone"
                       return data
@@ -1571,18 +1578,22 @@ jobs:
                   SKIP.clear()
 
               def tearDown(self):
-                  global fetch_raw
+                  global fetch_raw, ABUSECH_AUTH_KEY
                   fetch_raw = self._orig_fetch
+                  ABUSECH_AUTH_KEY = self._orig_key
                   os.chdir(self.old)
                   self.tmp.cleanup()
 
               def test_build_end_to_end(self):
                   self.assertEqual(build(), 0)
-                  bl = Path("blocklist.txt").read_text().splitlines()
+                  bl_text = Path("blocklist.txt").read_text()
+                  self.assertNotIn("test-secret-key-999", bl_text)
+                  bl = bl_text.splitlines()
                   entries = {l for l in bl if l and not l.startswith("#")}
                   self.assertIn("*.ads.evil-site.org", entries)
                   self.assertIn("*.track.evil-site.org", entries)
                   self.assertIn("*.bad.example.net", entries)
+                  self.assertIn("*.malware-drop.evil-site.net", entries)
                   self.assertIn("*.static-site.org", entries)
                   self.assertIn("*.123movies.*", entries)
                   self.assertIn("1.2.3.4", entries)
@@ -1700,22 +1711,7 @@ jobs:
           fi
           echo "changed=true" >> "$GITHUB_OUTPUT"
 
-      # ── 9. Purge jsDelivr CDN cache ─────────────────────────────────────────
-      # jsDelivr caches GitHub raw files independently of the worker's own
-      # caches (KV/D1/_listCache). Without this, @latest/blocklist.txt and
-      # @latest/total_blocked.txt can stay out of sync for hours after a commit.
-      - name: Purge jsdelivr cache
-        if: steps.commit.outputs.changed == 'true'
-        run: |
-          REPO="${{ github.repository }}"
-          for f in blocklist.txt whitelist.txt total_blocked.txt total_whitelisted.txt common.txt; do
-            url="https://purge.jsdelivr.net/gh/${REPO}@latest/${f}"
-            echo "Purging ${url}"
-            code=$(curl -s -o /dev/null -w '%{http_code}' "$url" || true)
-            echo "  -> HTTP ${code}"
-          done
-
-      # ── 10. Telegram — ONE message: warnings on success, reason + warnings on failure ──
+      # ── 9. Telegram — ONE message: warnings on success, reason + warnings on failure ──
       - name: Notify Telegram
         if: always()
         env:
