@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       force:
-        description: "Force by skipping guard"
+        description: "Publish even if the safety guard says the lists shrank too much (check the source table first!)"
         type: boolean
         default: false
 
@@ -925,15 +925,17 @@ jobs:
 
               combined_wl: set = static_wl | ext_wl
 
-              _wl_explicit = static_wl | ext_wl
               wl_exact_before = len(combined_wl)
               wl_redundant = {
                   d for d in combined_wl
                   if not _is_ip(d)
-                  and d not in _wl_explicit
                   and (d in wl_wildcards or any(a in wl_wildcards for a in ancestors(d)))
               }
               combined_wl -= wl_redundant
+              wc_redundant = {w for w in wl_wildcards if any(a in wl_wildcards for a in ancestors(w))}
+              wl_wildcards -= wc_redundant
+              if wc_redundant:
+                  print(f"\n  WL wildcard dedup: {len(wc_redundant)} wildcard(s) dropped (covered by a parent wildcard)")
               if wl_redundant:
                   print(f"\n  WL cross-dedup: {len(wl_redundant)} exact entrie(s) dropped"
                         f" (auto-redundant, covered by wildcard):")
@@ -961,8 +963,8 @@ jobs:
               all_bl = raw_block | static_bl
               _wc_carveouts = []
               for d in all_bl:
-                  if d in static_bl or _is_ip(d):
-                      continue
+                  if d in static_bl or _is_ip(d) or d in wl_wildcards:
+                      continue                      # d itself is a whitelisted wildcard root -> whitelist wins (Rule A)
                   covering_wc = next(
                       (w for w in ([to_root(d)] + ancestors(d)) if w in wl_wildcards), None
                   )
@@ -1615,6 +1617,34 @@ jobs:
                   ABUSECH_AUTH_KEY = self._orig_key
                   os.chdir(self.old)
                   self.tmp.cleanup()
+
+              def test_no_false_overlap_and_no_dupes(self):
+                  self.SOURCES = dict(self.SOURCES)
+                  self.SOURCES["https://src.test/ov.txt"] = (
+                      b"dup.org\ndup.org\nbad.org\nx.bad.org\nexample.com\nwlparent.org\n")
+                  Path("build_blocklist.txt").write_text(
+                      "[BLACKLIST_URLS]\nhttps://src.test/ov.txt\n[/BLACKLIST_URLS]\n"
+                      "[STATIC_BLACKLIST]\nstatic.org\ns.static.org\n[/STATIC_BLACKLIST]\n")
+                  Path("build_whitelist.txt").write_text(
+                      "[STATIC_WHITELIST]\n*.example.com\nsub.example.com\n*.a.example.com\n"
+                      "good.org\ngood.org\nchild.wlparent.org\n[/STATIC_WHITELIST]\n")
+                  self.assertEqual(build(), 0)
+                  bl = [l for l in Path("blocklist.txt").read_text().splitlines() if l and not l.startswith("#")]
+                  wl = [l for l in Path("whitelist.txt").read_text().splitlines() if l and not l.startswith("#")]
+                  self.assertEqual(len(bl), len(set(bl)))
+                  self.assertEqual(len(wl), len(set(wl)))
+                  self.assertEqual(wl.count("*.example.com"), 1)
+                  self.assertNotIn("sub.example.com", wl)            # covered by *.example.com
+                  self.assertNotIn("*.a.example.com", wl)            # covered by *.example.com
+                  self.assertNotIn("*.example.com", bl)              # whitelist wins over BL entry for same root
+                  self.assertNotIn("example.com", bl)
+                  self.assertIn("*.bad.org", bl)
+                  self.assertNotIn("*.x.bad.org", bl)                # subdomain folded into *.bad.org
+                  self.assertEqual(bl.count("*.dup.org"), 1)
+                  self.assertIn("*.static.org", bl)
+                  self.assertNotIn("*.s.static.org", bl)
+                  self.assertIn("wlparent.org", bl)                  # exact only: whitelisted child stays reachable
+                  self.assertNotIn("*.wlparent.org", bl)
 
               def test_build_end_to_end(self):
                   self.assertEqual(build(), 0)
