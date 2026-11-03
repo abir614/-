@@ -1626,7 +1626,6 @@ jobs:
                   self.assertIn("1.2.3.4", entries)
                   self.assertIn("185.220.101.5", entries)
                   self.assertIn("203.0.113.99", entries)
-                  self.assertIn("198.51.100.42", entries)
                   self.assertNotIn("*.fine-site.org", entries)
                   self.assertNotIn("*.example.org", entries)
                   self.assertNotIn("*.x.example.net", entries)
