@@ -81,21 +81,17 @@ jobs:
           # ══════════════════════════════════════════════════════════════════════════
           # CONFIG
           # ══════════════════════════════════════════════════════════════════════════
-          UA = "DNS-Builder/2.0 (+github-actions)"
+          UA = "GitHub/abir614"
           FETCH_TIMEOUT = 30                 # seconds per attempt
           FETCH_RETRIES = 3                  # transient errors only (timeouts, 5xx, 429, network)
           MAX_BYTES = 256 * 1024 * 1024      # hard cap for any download / decompression
           CACHE_DIR = Path(".fetch_cache")   # verify -> build hand-over (never committed)
           CACHE_MAX_AGE = 6 * 3600
           URL_PATH_MODE = os.environ.get("URL_PATH_MODE", "skip")
-          PSL_URL = "https://raw.githubusercontent.com/publicsuffix/list/master/public_suffix_list.dat"
 
+          # Secret only. Every source URL (blacklist, whitelist, FP refs, PSL) lives in
+          # build_blocklist.txt / build_whitelist.txt -- nothing is hardcoded in this workflow.
           ABUSECH_AUTH_KEY = os.environ.get("ABUSECH_AUTH_KEY", "").strip()
-          ABUSECH_DEFAULT_FEEDS = (
-              "https://urlhaus-api.abuse.ch/v2/files/exports/${ABUSECH_AUTH_KEY}/hostfile.txt",
-              "https://threatfox-api.abuse.ch/v2/files/exports/${ABUSECH_AUTH_KEY}/hostfile.txt",
-              "https://feodotracker.abuse.ch/downloads/ipblocklist.txt",
-              )
 
           QUIET = False
 
@@ -165,13 +161,20 @@ jobs:
           _PSL = None  # (exact, wild, exc, source)
 
 
+          def _psl_url() -> str:
+              """Optional [PSL_URL] block in build_blocklist.txt (first URL wins); '' = use built-in list."""
+              urls = block_urls(extract_block(_read("build_blocklist.txt"), "PSL_URL"))
+              return urls[0] if urls else ""
+
+
           def _load_psl():
               global _PSL
               if _PSL is not None:
                   return _PSL
               exact, wild, exc = set(), set(), set()
               source = "built-in fallback"
-              raw = fetch_raw(PSL_URL, "public_suffix_list", quiet=True)
+              psl_url = _psl_url()
+              raw = fetch_raw(psl_url, "public_suffix_list", quiet=True) if psl_url else None
               text = raw.decode("utf-8", errors="ignore") if raw else ""
               if "===BEGIN ICANN DOMAINS===" in text:
                   icann = text.split("===BEGIN ICANN DOMAINS===", 1)[1].split("===END ICANN DOMAINS===", 1)[0]
@@ -784,23 +787,33 @@ jobs:
               return m.group(1) if m else ""
 
 
+          _RE_KEY_PLACEHOLDER = re.compile(
+              r"\$?\{ABUSECH_AUTH_KEY\}|\$ABUSECH_AUTH_KEY(?![A-Za-z0-9_])|YOUR-AUTH-KEY-HERE"
+          )
+
+
+          def norm_placeholder(url: str) -> str:
+              """{KEY} / ${KEY} / $KEY / YOUR-AUTH-KEY-HERE -> canonical ${ABUSECH_AUTH_KEY}."""
+              return _RE_KEY_PLACEHOLDER.sub("${ABUSECH_AUTH_KEY}", url)
+
+
           def block_urls(block_text: str) -> list:
               results = []
               for line in block_text.splitlines():
                   line = line.strip()
                   if line and not line.startswith("#") and line.startswith(("http://", "https://")):
-                      results.append(line)
+                      results.append(norm_placeholder(line))
               return results
 
 
           def get_blacklist_urls(bl_raw: str) -> list:
               urls = block_urls(extract_block(bl_raw, "BLACKLIST_URLS"))
-              if ABUSECH_AUTH_KEY:
-                  existing = set(urls)
-                  for feed in ABUSECH_DEFAULT_FEEDS:
-                      if feed not in existing and expand_url(feed) not in existing:
-                          urls.append(feed)
-              return urls
+              seen, uniq = set(), []
+              for u in urls:                      # drop exact duplicates, keep order
+                  if u not in seen:
+                      seen.add(u)
+                      uniq.append(u)
+              return uniq
 
 
           def _read(path: str) -> str:
@@ -1521,6 +1534,26 @@ jobs:
                   self.assertEqual(to_root("1.2.3.4"), "1.2.3.4")
 
 
+          class _PlaceholderTests(unittest.TestCase):
+              def test_placeholder_forms_and_no_injected_defaults(self):
+                  global ABUSECH_AUTH_KEY
+                  orig, ABUSECH_AUTH_KEY = ABUSECH_AUTH_KEY, "k-test-1234"
+                  try:
+                      base = "https://urlhaus-api.abuse.ch/v2/files/exports/%s/hostfile.txt"
+                      canon = base % "${ABUSECH_AUTH_KEY}"
+                      for form in ("{ABUSECH_AUTH_KEY}", "${ABUSECH_AUTH_KEY}", "$ABUSECH_AUTH_KEY", "YOUR-AUTH-KEY-HERE"):
+                          self.assertEqual(block_urls(base % form), [canon], form)
+                      raw = ("[BLACKLIST_URLS]\n" + base % "{ABUSECH_AUTH_KEY}" + "\n"
+                             + base % "${ABUSECH_AUTH_KEY}" + "\n[/BLACKLIST_URLS]\n")
+                      urls = get_blacklist_urls(raw)
+                      self.assertEqual(urls, [canon])                       # exact dupes collapse
+                      self.assertEqual(expand_url(urls[0]).count("k-test-1234"), 1)
+                      self.assertEqual(get_blacklist_urls(""), [])          # nothing injected
+                      self.assertEqual(get_blacklist_urls("[BLACKLIST_URLS]\n[/BLACKLIST_URLS]"), [])
+                  finally:
+                      ABUSECH_AUTH_KEY = orig
+
+
           class _DecompressTests(unittest.TestCase):
               def test_formats(self):
                   txt = b"0.0.0.0 a.example.com\n"
@@ -1609,7 +1642,7 @@ jobs:
 
           def cmd_test() -> int:
               suite = unittest.TestSuite()
-              for tc in (_ParserTests, _DecompressTests, _PipelineTests):
+              for tc in (_ParserTests, _PlaceholderTests, _DecompressTests, _PipelineTests):
                   suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(tc))
               runner = unittest.TextTestRunner(verbosity=2)
               res = runner.run(suite)
