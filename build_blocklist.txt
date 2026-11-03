@@ -32,6 +32,11 @@ https://feodotracker.abuse.ch/downloads/ipblocklist.txt
 #######################################################################################################
 [/BLACKLIST_URLS]
 
+[PSL_URL]
+# Public Suffix List
+https://raw.githubusercontent.com/publicsuffix/list/master/public_suffix_list.dat
+[/PSL_URL]
+
 [STATIC_BLACKLIST]
 #-------------------------------------------Domain Starts----------------------------------------------#
 # User Specified
