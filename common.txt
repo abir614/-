@@ -1,21 +1,21 @@
-# Scale  — max: top 20% (>= 196)  warn: top 50% (>= 22)  basic: remaining
+# Scale  — max: top 20% (>= 201)  warn: top 50% (>= 23)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   pages.dev                                [16350]  [MAX]
-#   vercel.app                               [2649]  [MAX]
-#   cloudfront.net                           [2196]  [MAX]
-#   workers.dev                              [529]  [MAX]
+#   pages.dev                                [16391]  [MAX]
+#   vercel.app                               [2652]  [MAX]
+#   cloudfront.net                           [2218]  [MAX]
+#   workers.dev                              [541]  [MAX]
 #   amazonaws.com                            [421]  [MAX]
-#   cloudflare.net                           [196]  [MAX]
+#   cloudflare.net                           [201]  [MAX]
 #   netlify.app                              [153]  [WARN]
-#   b-cdn.net                                [100]  [WARN]
-#   github.io                                [77]  [WARN]
+#   b-cdn.net                                [105]  [WARN]
+#   github.io                                [80]  [WARN]
 #   fastly.net                               [55]  [WARN]
 #   yahoo.com                                [35]  [WARN]
+#   googleusercontent.com                    [26]  [WARN]
 #   google.com                               [25]  [WARN]
+#   azurewebsites.net                        [24]  [WARN]
 #   railway.app                              [24]  [WARN]
-#   googleusercontent.com                    [23]  [WARN]
 #   azure.com                                [23]  [WARN]
-#   azurewebsites.net                        [22]  [WARN]
 #   apple.com                                [21]  [BASIC]
 #   azurefd.net                              [18]  [BASIC]
 #   firebaseio.com                           [14]  [BASIC]
@@ -54,6 +54,7 @@
 #   dropbox.com                              [4]  [BASIC]
 #   zoom.us                                  [4]  [BASIC]
 #   redditmedia.com                          [4]  [BASIC]
+#   okta.com                                 [3]  [BASIC]
 #   twitter.com                              [3]  [BASIC]
 #   x.com                                    [3]  [BASIC]
 #   mattel163.com                            [3]  [BASIC]
@@ -68,7 +69,6 @@
 #   wikimedia.org                            [3]  [BASIC]
 #   mailchimp.com                            [3]  [BASIC]
 #   auth0.com                                [2]  [BASIC]
-#   okta.com                                 [2]  [BASIC]
 #   adjust.com                               [2]  [BASIC]
 #   adjust.io                                [2]  [BASIC]
 #   adjust.world                             [2]  [BASIC]
@@ -430,6 +430,9 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : 102-orp-diordna.b-cdn.net [url:doh-vpn-proxy-bypass.txt]
 
+  WL : *.googleusercontent.com [static]  covers subdomain
+  BL : 103.59.55.34.bc.googleusercontent.com [url:abuse.ch-threatfox-hostfile.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : 106-governance-venice.pages.dev [url:domains.txt]
 
@@ -528,6 +531,9 @@
 
   WL : *.googleusercontent.com [static]  covers subdomain
   BL : 175.53.189.35.bc.googleusercontent.com [url:abuse.ch-threatfox-hostfile.txt]
+
+  WL : *.googleusercontent.com [static]  covers subdomain
+  BL : 179.241.150.34.bc.googleusercontent.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 18el7-fc0wd-zoz8lz-ufchjm.pages.dev [url:domains.txt]
@@ -1081,6 +1087,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : 33333333-8r7.pages.dev [url:domains.txt]
 
+  WL : *.b-cdn.net [static]  covers subdomain
+  BL : 3344112.b-cdn.net [url:gambling.mini.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : 33455677.pages.dev [url:domains.txt]
 
@@ -1371,6 +1380,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 45ksg-q6d-g3x7-iqkaf-24-09-2026-hh.pages.dev [url:domains.txt]
+
+  WL : *.googleusercontent.com [static]  covers subdomain
+  BL : 46.85.175.207.bc.googleusercontent.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 46f0u-hwlhoa-3npcx-rc0c-1oix.pages.dev [url:domains.txt]
@@ -1998,6 +2010,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 78987select-fth0-capital-plans.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : 789betsecurity.pages.dev [url:gambling.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : 78b687.pages.dev [url:domains.txt]
@@ -2663,6 +2678,9 @@
   BL : 9u1m8c-qw177a-mbtz8p1k9m2-qwxknnnx.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : 9u1m8c-qw333c14y-mbtz8k2p1m9-qwxk.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : 9u2m1c-qw244c84y-mbtz9k8p1z2-qwxk.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -2796,6 +2814,12 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : abc-overview-cck6546754.pages.dev [url:domains.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : abcvipsafepage.public-f1c.workers.dev [url:gambling.mini.txt]
+
+  WL : *.github.io [static]  covers subdomain
+  BL : abdiqeys.github.io [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : abhishekchfedex.pages.dev [url:domains.txt]
@@ -3108,9 +3132,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : achabachaforgandabacha.pages.dev [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : achillscoinbase.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : achpaymentauthorization.pages.dev [url:domains.txt]
@@ -4613,6 +4634,9 @@
   BL : anchorcomet.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : andanh.pages.dev [url:gambling.mini.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : andescapitalgpt-app-digital.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -4788,6 +4812,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : app-arcus.pages.dev [url:domains.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : app-box-7ybn.p-qvcypmu0.workers.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : app-bugsfix.pages.dev [url:domains.txt]
@@ -5581,6 +5608,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : aurvenixtplateforme-click.pages.dev [url:domains.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : austinechemical.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
+
   WL : *.cloudflare.net [static]  covers subdomain
   BL : austinisd.net.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
@@ -5891,6 +5921,9 @@
   BL : b71240031-d877-44e7-84f7-b418b8fa25e5.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
+  BL : b75182308-c0d5-4456-b5a9-580fef7ade7b.netlify.app [url:domains.txt]
+
+  WL : *.netlify.app [static]  covers subdomain
   BL : b75182308-c0d5-4456-b5a9-843c0586c7d4.netlify.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -5940,6 +5973,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : badfoxquest.pages.dev [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : badge-fr-bu-0111-3.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : badge-tango626.pages.dev [url:domains.txt]
@@ -6350,6 +6386,9 @@
   BL : benaqrix-biz-plamvureta-c7x5dy82.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : benefitfinbnk.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : benelux-ai-click.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -6582,6 +6621,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : beta-instagram.vercel.app [url:domains.txt]
+
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : betmgm.com.cdn.cloudflare.net [url:gambling.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : beulad435-8316maraes.pages.dev [url:domains.txt]
@@ -6893,6 +6935,9 @@
   BL : bk4w-why-gcna5-f5iv03-vhk.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : bk6brbcd.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : bkstr17asdf-ktpmqskr-5m1h3g-jks93c418.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -7197,6 +7242,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : bluecheckservices.vercel.app [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : bluefinntrades.pages.dev [url:domains.txt]
 
   WL : bluekai.com [url:whitelist-referral.txt]
   BL : bluekai.com [url:filter_1.txt]
@@ -8866,6 +8914,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : cael-crest.pages.dev [url:domains.txt]
 
+  WL : *.okta.com [static]  covers subdomain
+  BL : caesars.okta.com [url:gambling.mini.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : caf8cd683d23149e574589406ea6a8c5854bf0b18f74566958d887b174.pages.dev [url:domains.txt]
 
@@ -8874,6 +8925,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : cake-96k.pages.dev [url:domains.txt]
+
+  WL : *.github.io [static]  covers subdomain
+  BL : cakosv52-maker.github.io [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : cal0f-zz3-8vfq4-33xph-faryd.pages.dev [url:domains.txt]
@@ -9776,6 +9830,9 @@
   BL : claim-ing.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : claim-mamba.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : claim-mogcoinxyz.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -10496,6 +10553,9 @@
   BL : cloudflare-dns-ega28dgb172ahaj.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : cloudflare-dns-el8298fb346cd8h.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : cloudflare-dns-em504bmi1148f8i.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -11066,6 +11126,9 @@
   BL : coinbase-pro-login-app.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : coinbase-pro-login-bkk.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : coinbase-pro-login-cdn.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -11163,6 +11226,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : coinbasecom-chrome.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : coinbasecom-extension.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : coinbasecryptohelpcenter.pages.dev [url:domains.txt]
@@ -11370,6 +11436,9 @@
 
   WL : *.fastly.net [static]  covers subdomain
   BL : confiant-integrations.global.ssl.fastly.net [url:small.oisd.nl]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : configd-blush.vercel.app [url:domains.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : configurationamazroundcubenamespace.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
@@ -11669,9 +11738,6 @@
   BL : cont17ct-telav-biz-kemur-zonri.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
-  BL : cont17ct-telavi-biz-norek-zumli.pages.dev [url:domains.txt]
-
-  WL : *.pages.dev [static]  covers subdomain
   BL : cont17ct-teluma-biz-vakor-jenli.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -11820,6 +11886,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : coral-well.pages.dev [url:domains.txt]
+
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : coral.co.uk.cdn.cloudflare.net [url:gambling.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : coral31-mesa.pages.dev [url:domains.txt]
@@ -12332,6 +12401,9 @@
   BL : customer-sp-nellteal02.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : customer-sp-renata.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : customer-support-assistx.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -12507,6 +12579,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d11bdev7tcn7wh.cloudfront.net [url:small.oisd.nl]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d11dm6tasib5wm.cloudfront.net [url:gambling.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d11enq2rymy0yl.cloudfront.net [url:filter_1.txt]
@@ -12747,6 +12822,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d162nnmwf9bggr.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d163fqiuv18rgj.cloudfront.net [url:gambling.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d165oxpckv5zc9.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -13298,6 +13376,9 @@
   BL : d1g9mo1dle9119.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1gerghwka22i9.cloudfront.net [url:gambling.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1get58iwmjrxx.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -13355,6 +13436,9 @@
   BL : d1hq2jdy5kdrma.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1hrntjl3nif0z.cloudfront.net [url:gambling.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1hwgqswo3ntzz.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -13395,6 +13479,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1iqexz00vhgaz.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1iw2qpzbah04l.cloudfront.net [url:gambling.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1iy4wgzi9qdu7.cloudfront.net [url:tif.mini.txt]
@@ -13874,6 +13961,9 @@
   BL : d1rguclfwp7nc8.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1rjdtga24patt.cloudfront.net [url:gambling.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1rkd1d0jv6skn.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -14172,6 +14262,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1xo0f2fdn5no0.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1xohlng9pq0pr.cloudfront.net [url:gambling.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1xw8yqtkk9ae5.cloudfront.net [url:tif.mini.txt]
@@ -14609,6 +14702,12 @@
   BL : d25yl3zz7cfmzs.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d25zlc7jdpudkm.cloudfront.net [url:gambling.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d261t6b9mqvak8.cloudfront.net [url:gambling.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d261u4g5nqprix.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -14762,6 +14861,9 @@
   BL : d29mxewlidfjg1.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d29my8eu7x251e.cloudfront.net [url:gambling.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d29nuu35dlhqob.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -14886,6 +14988,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2cqjjokdc31wb.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2ct91i329bp8h.cloudfront.net [url:gambling.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2cwuxwqkmco9z.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -15158,6 +15263,9 @@
   BL : d2ier523in7agz.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2ihhhfxxy6goa.cloudfront.net [url:gambling.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2it3a9l98tmsr.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -15225,6 +15333,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2juccxzu13rax.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2jvokyu2sg5e1.cloudfront.net [url:gambling.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2jw88zdm5mi8i.cloudfront.net [url:tif.mini.txt]
@@ -15743,6 +15854,9 @@
   BL : d2tvgfsghnrkwb.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2u02fwhj4jdjy.cloudfront.net [url:gambling.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2u0czku5lzf0d.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -15885,6 +15999,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2x86d5t89hffs.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2x8e21b8kcyud.cloudfront.net [url:gambling.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2x97wp5htyx27.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -17373,6 +17490,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3rr3d0n31t48m.cloudfront.net [url:small.oisd.nl]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3rv2u8eer1b5r.cloudfront.net [url:gambling.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3rxqouo2bn71j.cloudfront.net [url:tif.mini.txt]
@@ -19736,6 +19856,9 @@
   BL : dfqcp2awt0947.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : dfrv5adev0nhy.cloudfront.net [url:gambling.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : dfs4h2kjvu14o.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -19923,6 +20046,9 @@
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : diddy.info.north-kazakhstan.su.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : didr93kp.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : dierdre45-case-studies.pages.dev [url:domains.txt]
@@ -20771,6 +20897,9 @@
   BL : dpjlvaveq1byu.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : dplm6r712yjn.cloudfront.net [url:gambling.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : dppaivsn6f9dy.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -20790,6 +20919,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dq06u9lt5akr2.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : dq1m0ww3er5ri.cloudfront.net [url:gambling.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dq3yxnlzwhcys.cloudfront.net [url:tif.mini.txt]
@@ -21395,6 +21527,9 @@
   BL : dv0uonokej56p.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : dv19gvpc10nk.cloudfront.net [url:gambling.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : dv663fc06d35i.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -21432,6 +21567,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dvwowtnmyluv4.cloudfront.net [url:small.oisd.nl]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : dw55cseuocgyp.cloudfront.net [url:gambling.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dw55pg05c2rl5.cloudfront.net [url:tif.mini.txt]
@@ -21549,6 +21687,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dykwdhfiuha6l.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : dymbrefnhhmcg.cloudfront.net [url:gambling.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dymwsh1c2kslr.cloudfront.net [url:tif.mini.txt]
@@ -22652,6 +22793,9 @@
   BL : ethereum-lottery-dapp.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : ethereum-mainnet-blockchain-versionfinal.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : ethereumauthenticationswallets.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -22803,6 +22947,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ex4x3x4g3.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : exchange-dyydx-support.pages.dev [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : excite.aeafh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
@@ -23325,9 +23472,6 @@
 
   WL : *.workers.dev [static]  covers subdomain
   BL : false.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : family-banking-marcella.vercel.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : famous-kheer-d4bf3b.netlify.app [url:domains.txt]
@@ -26818,6 +26962,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : hooommmee---logiiinnn---trezorr.pages.dev [url:domains.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : horabe.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : horizonai-shop.pages.dev [url:domains.txt]
 
@@ -27509,9 +27656,6 @@
   BL : instagram-groupe-invite.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : instagram-jordan-3gf99sp2e-reallynguyen.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : instagram-lilac-two.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -27858,9 +28002,6 @@
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : intra-frostbank-web-staging.azurewebsites.net [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : intranet.bobox81176bayxscom.bobox81176.workers.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : intro-trezorbridgedownload.pages.dev [url:domains.txt]
@@ -28243,6 +28384,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : itn-live-ledgr.pages.dev [url:domains.txt]
 
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : itsfogo.com.cdn.cloudflare.net [url:gambling.mini.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : iun6b-jck-xtdj-e5qqo-12-10-2026-aa.pages.dev [url:domains.txt]
 
@@ -28317,6 +28461,12 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : j7kh7-bd0-nhwz-20yr5-30-09-2026-hh.pages.dev [url:domains.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : j88home.public-f1c.workers.dev [url:gambling.mini.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : j88safepage.public-f1c.workers.dev [url:gambling.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : j8i7-al3-2anus-iyi-v0t4-wp9.pages.dev [url:domains.txt]
@@ -28620,6 +28770,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : jogbtren.pages.dev [url:domains.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : jogoluck.cdn-83a.workers.dev [url:gambling.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : join-group-error8371079.pages.dev [url:domains.txt]
@@ -29116,6 +29269,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : kj2p-iwzb-xag78-qxi9-1iy.pages.dev [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : kjc-cd-483.pages.dev [url:gambling.mini.txt]
+
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : kjdsfjisdfjr23.azurewebsites.net [url:small.oisd.nl]
 
@@ -29269,6 +29425,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : kontozazerowpkobp-biz.pages.dev [url:domains.txt]
 
+  WL : *.azurewebsites.net [static]  covers subdomain
+  BL : korporacjaradex-pl.azurewebsites.net [url:domains.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : korra-hold.pages.dev [url:domains.txt]
 
@@ -29298,6 +29457,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : kqsbi-pbdw3-ftx4-ga5e-upld0v.pages.dev [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : kr-bu-amex-n2k-3010-5.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : kraakn-login.pages.dev [url:domains.txt]
@@ -29664,6 +29826,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : l80j5odbxqr06iof9jpz.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
+
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : ladbrokes.com.cdn.cloudflare.net [url:gambling.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ladger-live-info.pages.dev [url:domains.txt]
@@ -30837,6 +31002,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ledzrre-com-start.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : leedgeer-live.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : leedgrr-live-desktop.pages.dev [url:domains.txt]
@@ -33319,6 +33487,9 @@
   WL : *.workers.dev [static]  covers subdomain
   BL : megangray.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : meima32858.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : mekong-metlife-bprd.pages.dev [url:domains.txt]
 
@@ -34671,6 +34842,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-for-business-data-standard-compliance.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : meta-for-business-data-standard-control.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : meta-for-business-data-standard.pages.dev [url:domains.txt]
@@ -38816,6 +38990,9 @@
   BL : mintingnow-opnsea27.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
+  BL : mintingnow-opnsea28.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
   BL : mintingnow-opnsea29.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -38871,6 +39048,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : mintnew-toknso7.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : mintnew-toknso8.vercel.app [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : mintnow.pages.dev [url:domains.txt]
@@ -39099,6 +39279,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : mm-betaversion.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : mm88-cd-links-mb.pages.dev [url:gambling.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : mmac-transport-invoice.pages.dev [url:domains.txt]
@@ -40205,6 +40388,9 @@
   BL : nervoro-kxt-zanvori-c6x5fc79.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : nes-e0d.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : nest-brisk8170.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -40221,6 +40407,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : net-flix-rust.vercel.app [url:domains.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : net-hub-gxqg.p-pso2at2d.workers.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : net16ct-bor-biz-tami-zeku.pages.dev [url:domains.txt]
@@ -41036,6 +41225,9 @@
   BL : noreply-sp-justin15379.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : noreplyfb-alexdangsupport.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : nork-meta-triv-biz.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -41488,6 +41680,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : obx9oo5ehhsv3jj.s3-website-us-east-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.azurewebsites.net [static]  covers subdomain
+  BL : oc89861c74109.azurewebsites.net [url:domains.txt]
+
   WL : *.workers.dev [static]  covers subdomain
   BL : occur.aeafh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
@@ -41891,6 +42086,9 @@
   BL : opensea-nftbox7-steel.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
+  BL : opensea-nftboxx-drab.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
   BL : opensea-nftgifts.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -41916,9 +42114,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : openseacsdi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : openseacsjdb.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : openseacsjo.vercel.app [url:domains.txt]
@@ -42314,6 +42509,9 @@
   BL : paaqk-p0f-sbr5-i4w1j-25-09-2026-hh.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : paccbet.pages.dev [url:gambling.mini.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : pacifics-manta-network.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -42529,6 +42727,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : partnersalbion172-pro.pages.dev [url:domains.txt]
 
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : partypoker.com.cdn.cloudflare.net [url:gambling.mini.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : pas58-et3-gl8-cji0-rh2-21n5.pages.dev [url:domains.txt]
 
@@ -42615,6 +42816,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : pbcn.pages.dev [url:domains.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : pc-mm88-link.rr88tino.workers.dev [url:gambling.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : pc-tc.s3-eu-west-1.amazonaws.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
@@ -44068,6 +44272,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : prolificpad-digital.pages.dev [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : promeefusetopperyt.pages.dev [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : promo-do-dia-black-friday-da-magalu.vercel.app [url:domains.txt]
 
@@ -44441,6 +44648,9 @@
   BL : qa-paypal-bakery-e41996.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : qa5i-pknxd-ssr-d36k-0spof.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : qagdt-ga5-tzy-tx2-yiku-x4rz3.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -44728,6 +44938,9 @@
   WL : *.github.io [static]  covers subdomain
   BL : qianmosite.github.io [url:doh-vpn-proxy-bypass.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : qihupu.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
+
   WL : *.netlify.app [static]  covers subdomain
   BL : qill.netlify.app [url:domains.txt]
 
@@ -44807,6 +45020,9 @@
   BL : qnkxz7e52dr-zlkytlpw-6i1g9d-zl699a.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : qorfani-mpt-vexloro-k7d4pe92.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : qorfavi-mpt-zelnuro-p9x4me68.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -44853,6 +45069,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : qovlira-tek193847265.vercel.app [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : qq888com.pages.dev [url:gambling.mini.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : qr-r-c72786f9.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
@@ -45060,6 +45279,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : quiet-bay-8cw.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : quiet-grove.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : quiet-shore.pages.dev [url:domains.txt]
@@ -45816,6 +46038,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : regulations-a6c.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : rehbq.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : reholddurablefil.pages.dev [url:domains.txt]
@@ -47497,6 +47722,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : shoreyard.pages.dev [url:domains.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : shortlink.kjcpage.workers.dev [url:gambling.mini.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : shreya-netflix.pages.dev [url:domains.txt]
 
@@ -48098,6 +48326,9 @@
   BL : sp0ct-belrem-biz-delqok-lorvix.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp0ct-bravex-biz-lentor-kavrix.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp0ct-celvok-biz-xarnix-qelram.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -48108,6 +48339,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp0ct-delqix-biz-yarnok-kelvax.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp0ct-demvok-biz-yalqen-rovqix.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp0ct-dorlen-biz-mavqen-relvox.pages.dev [url:domains.txt]
@@ -48165,6 +48399,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp0ct-porvik-biz-karnex-belqor.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp0ct-qavlen-biz-lorvix-demqok.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp0ct-qelrem-biz-sarnix-yelvoq.pages.dev [url:domains.txt]
@@ -53045,6 +53282,9 @@
   BL : sp22ct-zavem-biz-loru-kemu.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp22ct-zavik-biz-loru-kemu-b1e.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp22ct-zavik-biz-loru-kemu.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -54917,6 +55157,9 @@
   BL : sp30ct-lazun-biz-vorek-mexal.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct-lenav-biz-zorek-vumix.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct-lonex-biz-kavur-zimak.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -55107,6 +55350,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct-ravik-biz-zumel-kovad.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct-ravix-biz-zunel-qomak.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct-ravul-biz-qenik-zomar.pages.dev [url:domains.txt]
@@ -55499,6 +55745,9 @@
   BL : sp30ct10-lavvako-biz-zunemi.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct10-lavvilo-biz-zunaro.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct10-lavzako-biz-zunaro.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -55569,6 +55818,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct10-melzako-biz-kurani.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : sp30ct10-melzako-biz-zurelo.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : sp30ct10-melzavo-biz-lunemi.pages.dev [url:domains.txt]
@@ -60775,6 +61027,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : u730-897-ivj-1e39ky-z4n-y2r.pages.dev [url:domains.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : u888safepage.public-f1c.workers.dev [url:gambling.mini.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : u9m-u5dh-9zy-12dt-h22-32cew.pages.dev [url:domains.txt]
 
@@ -62063,6 +62318,9 @@
   BL : vnxld616mj-mkgptren-0n7n2g-yl922a.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : vnxld61kwg-bcfzw38pli-7nq93d-vnx83k.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : vnxld62mjwr-mkgptrel-0n1m3g-yl299a.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -62761,6 +63019,9 @@
   WL : *.amazonaws.com [static]  covers subdomain
   BL : wbf3tva75r--mn8ss1pa.s3.us-east-1.amazonaws.com [url:tif.mini.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : wbmall-stat.pages.dev [url:domains.txt]
+
   WL : *.cloudflare.net [static]  covers subdomain
   BL : we-stats.com.cdn.cloudflare.net [url:filter_1.txt]
 
@@ -63328,6 +63589,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : whitelist-usualmoneycom.pages.dev [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : whitelist-wormholecrypto.pages.dev [url:domains.txt]
+
   WL : *.workers.dev [static]  covers subdomain
   BL : whitepainful.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
@@ -63513,6 +63777,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : wlavor-bintel-rf3006bnh-mrkt-grendal.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : wlh2024328.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : wlin-meta-gron-4sf.pages.dev [url:domains.txt]
@@ -66061,6 +66328,9 @@
   WL : *.github.io [static]  covers subdomain
   BL : www.khvdjdgt.github.io [url:domains.txt]
 
+  WL : *.b-cdn.net [static]  covers subdomain
+  BL : www.kikijapl.b-cdn.net [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : www.kjandiaodaadwd1.vercel.app [url:domains.txt]
 
@@ -67218,6 +67488,12 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : www.pnc-nine.vercel.app [url:domains.txt]
+
+  WL : *.b-cdn.net [static]  covers subdomain
+  BL : www.poctzpl.b-cdn.net [url:domains.txt]
+
+  WL : *.b-cdn.net [static]  covers subdomain
+  BL : www.poczapl.b-cdn.net [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : www.polverino-kazem68421397.vercel.app [url:domains.txt]
@@ -68422,6 +68698,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : www.zn5itlu4.vercel.app [url:domains.txt]
 
+  WL : *.github.io [static]  covers subdomain
+  BL : www.zoomapi.github.io [url:domains.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : wxexwexex.pages.dev [url:domains.txt]
 
@@ -68863,6 +69142,9 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : xervazo-mpt-qelmuri-r5n8qa27.pages.dev [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : xervora-kxt-zenmavi-r1x6dw85.pages.dev [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : xevqilo-nar372816495.vercel.app [url:domains.txt]
 
@@ -69069,6 +69351,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : xsivok-xenon-8pu59a-cjbyh-chronos.pages.dev [url:domains.txt]
+
+  WL : *.b-cdn.net [static]  covers subdomain
+  BL : xt30sf.b-cdn.net [url:gambling.mini.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : xulvertiksoftware-shop.pages.dev [url:domains.txt]
@@ -69512,6 +69797,9 @@
   BL : yrpkw0f89gp-msvmja-5z4x1c-yrpks38c.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
+  BL : yrpkw1fhpxo-msvmja-5z6x8c-yrpks16c.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
   BL : yrpkw6g75pz-msvlsi-5z2x6b-yrpks02c.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
@@ -69564,6 +69852,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ywsd7220bf-qbxj5skr-7q4l1g-ywsq05c.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : ywsd7220lkw-qbxj5wur-7o4p6b-ywsq70p.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : ywsd732bfrn-qbxj5skr-7q8l9g-ywsq65c.pages.dev [url:domains.txt]
