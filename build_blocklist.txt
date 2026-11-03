@@ -24,6 +24,10 @@ https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-vpn-pr
 
 # Dynamic DNS (DynDNS), guards against dynamic DNS abuse
 https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/dyndns.txt
+
+# Community Driven
+https://urlhaus-api.abuse.ch/v2/files/exports/{ABUSECH_AUTH_KEY}/hostfile.txt
+https://threatfox-api.abuse.ch/v2/files/exports/{ABUSECH_AUTH_KEY}/hostfile.txt
 #######################################################################################################
 [/BLACKLIST_URLS]
 
