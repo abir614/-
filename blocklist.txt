@@ -1,8 +1,8 @@
 # ============================================================
 # Combined Blocklist
 # ============================================================
-# Generated  : 2026-11-03 17:16 UTC+6
-# Sources    : 14 blacklist URL(s) + 23269 static entries
+# Generated  : 2026-11-03 17:32 UTC+6
+# Sources    : 12 blacklist URL(s) + 23270 static entries
 # FP-filter  : Explicit whitelist only (static + URL-sourced).
 #              Tranco/Umbrella/Majestic are LOGGED, NOT auto-removed.
 #              STATIC_BLACKLIST entries bypass ALL filters.
@@ -12,12 +12,12 @@
 #   sub.root.tld — exact: blocks ONLY that specific label or IP.
 # ============================================================
 # Stats
-#   Raw domains/IPs (all sources): 636,384
+#   Raw domains/IPs (all sources): 636,399
 #   Dropped by whitelist        : 146
-#   Wildcard entries (*.d)      : 636,063
+#   Wildcard entries (*.d)      : 636,078
 #   Exact entries (d only / IP) : 175
-#   Total output entries        : 636,238
-#   Notable (pop. lists, kept)  : 98,728
+#   Total output entries        : 636,253
+#   Notable (pop. lists, kept)  : 98,729
 # ============================================================
 # Blacklist URL sources:
 #   https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/tif.mini.txt
@@ -29,12 +29,10 @@
 #   https://raw.githubusercontent.com/sjhgvr/oisd/main/domainswild_nsfw_small.txt
 #   https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/doh-vpn-proxy-bypass.txt
 #   https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/dyndns.txt
-#   https://urlhaus-api.abuse.ch/v2/files/exports/{ABUSECH_AUTH_KEY}/hostfile.txt
-#   https://threatfox-api.abuse.ch/v2/files/exports/{ABUSECH_AUTH_KEY}/hostfile.txt
-#   https://feodotracker.abuse.ch/downloads/ipblocklist.txt
 #   https://urlhaus-api.abuse.ch/v2/files/exports/***/hostfile.txt
 #   https://threatfox-api.abuse.ch/v2/files/exports/***/hostfile.txt
-# Static blacklist entries : 23269
+#   https://feodotracker.abuse.ch/downloads/ipblocklist.txt
+# Static blacklist entries : 23270
 # ============================================================
 # DO NOT EDIT — regenerated automatically on every workflow run.
 # To make changes, edit build_blocklist.txt instead.
@@ -15231,7 +15229,6 @@
 *.612fc22a02.com
 *.6132app.com
 *.613651.com
-*.613653.com
 *.61379j.com
 *.613800000.com
 *.613823.com
@@ -15929,7 +15926,6 @@
 *.677187.com
 *.67772p.com
 *.67775b.com
-*.67775c.com
 *.67775p.com
 *.67776p.com
 *.67777bet.cyou
@@ -17017,7 +17013,6 @@
 *.7226c194658c672c.com
 *.72272.xyz
 *.7228.eu
-*.72288u.com
 *.722pod.net
 *.7231.pro
 *.72329j.com
@@ -21273,7 +21268,6 @@
 *.945d3447ed068dbd.com
 *.94612.vip
 *.9465123.com
-*.94659955.com
 *.94659966.com
 *.94709.my
 *.947386453.edgeone.dev
@@ -36894,6 +36888,7 @@
 *.agngnn.com
 *.agnieszkaklimkowska.live
 *.agnizequeach.cfd
+*.agnosh.com
 *.agnruzedegphs.site
 *.agnxomu.com
 *.agoago.top
@@ -66730,7 +66725,6 @@
 *.b5511.top
 *.b5550fb4c4.sbs
 *.b55d5cbf.chaoshosting.net
-*.b5612.com
 *.b56blj.jpbrazs.com
 *.b56dcc84edd1d10f.com
 *.b56e540f5353c802.com
@@ -79588,7 +79582,6 @@
 *.bigwin-casino.fr
 *.bigwin1000jp.online
 *.bigwin68.com
-*.bigwin777cn.org
 *.bigwincasino.fr
 *.bigwinscasino.fr
 *.bigworldfashion.com
@@ -94532,6 +94525,7 @@
 *.burqeni.shop
 *.burrberry.eth
 *.burreepr.ace90betkade.com
+*.burrenprogramme.com
 *.burririspa.online
 *.burritobookings.app
 *.burritodelight.com
@@ -110754,6 +110748,7 @@
 *.chigua-bing.top
 *.chigua.com
 *.chigua18.com
+*.chigua91dasai.cn
 *.chiguabaoliaorukou51cgchigua-app.lol
 *.chiguabaoliaorukou51cgchigua-top.lol
 *.chiguaw-bing.top
@@ -112571,7 +112566,6 @@
 *.ciqifxatuzxby.space
 *.ciqne.myobvi.com
 *.cirad.or.id
-*.circanaglobal.app
 *.circascope.com
 *.circinus-viewframer.lovable.app
 *.circinusholdings.com
@@ -181994,6 +181988,7 @@
 *.eurotubi-booking.com
 *.eurotwinkmovies.com
 *.eurovani.shop
+*.eurovantis-ai.com
 *.euroviaai.net
 *.euroviatrade.net
 *.eurovillage.shop
@@ -184621,6 +184616,7 @@
 *.exspressvpn.com
 *.exsvxjgh.com
 *.ext-03.jeetbot.cc
+*.ext-4095.pro
 *.ext-4351.pro
 *.ext-9475.pro
 *.ext-bouyguestelecom.fr
@@ -204975,6 +204971,7 @@
 *.frinvexya.net
 *.frinvoiceadsmanager.vercel.app
 *.frioaislantes.com
+*.friociosou.sa.com
 *.friodiorai.sa.com
 *.frioencwksyur.website
 *.frionene.xyz
@@ -216785,7 +216782,9 @@
 *.gg51-fwli237.vip
 *.gg51-fwvf1643.vip
 *.gg51-fxcp2034.cc
+*.gg51-ldus2339.cc
 *.gg51-ldvw1763.vip
+*.gg51-ldzd2238.cc
 *.gg51-lecp1679.vip
 *.gg51-ledz1868.cc
 *.gg51-lext1832.cc
@@ -233975,6 +233974,7 @@
 *.guangyue-lace.com
 *.guangzheno.com
 *.guangzhoufuda.com
+*.guangzhoutrans.cn
 *.guangzhouttcs20.com
 *.guanhecheng.com
 *.guanhongkeji.com
@@ -236086,6 +236086,7 @@
 *.h2tcbox.baidu.com
 *.h2vkq89b.angizeshfarahani.store
 *.h2z5j-brf9p-60fg8-833ip2.pages.dev
+*.h3-binaceapp.com
 *.h3-web-whatsapp.com
 *.h314563.pro
 *.h3200457.wixsite.com
@@ -236216,6 +236217,7 @@
 *.h5wpqxywtw5dgmrfczpzdtvyib7ajg3oc6vj6bwxyx3eryphuvb2aaad.onion
 *.h5x6ijt1.kulonprogo.org
 *.h5yaxin.com
+*.h6-binaceapp.com
 *.h6-whatsapp.com
 *.h6295.com
 *.h6466waygy.52http.tech
@@ -297017,6 +297019,7 @@
 *.lc5lya7l.romabetkade.com
 *.lc653rdqh6.com
 *.lc6867.com
+*.lc691nox.bossbeyvip5.xyz
 *.lc77.net
 *.lc8dc04.com
 *.lc8dc24.com
@@ -321993,7 +321996,6 @@
 *.m.30appman.com
 *.m.313yd.com
 *.m.326578.com
-*.m.329911.com
 *.m.35236.cc
 *.m.361334.com
 *.m.365bet447.com
@@ -322003,7 +322005,6 @@
 *.m.3805035.com
 *.m.3939499.com
 *.m.43943.one
-*.m.469766.com
 *.m.4737014.com
 *.m.484yh.com
 *.m.5115i5115.com
@@ -322014,7 +322015,6 @@
 *.m.5319vip.com
 *.m.535by.com
 *.m.5598696.com
-*.m.570407.com
 *.m.577hm.com
 *.m.5pdtg2eh2p57.com
 *.m.5u1io.com
@@ -322026,7 +322026,6 @@
 *.m.63p6.com
 *.m.64899ff.com
 *.m.656387.com
-*.m.664888e.com
 *.m.66baidu.com
 *.m.6779p.com
 *.m.6781369.com
@@ -324782,7 +324781,6 @@
 *.makluksulfine.shop
 *.maklumat-jawatan.com
 *.maklumatjawatan.com
-*.makmur.loginmmango.com
 *.makmur76-delivery.com
 *.makmurapp.digital
 *.makmurpaycore.shop
@@ -345845,6 +345843,11 @@
 *.mm51-l1787.cc
 *.mm51-l2055.cc
 *.mm51-l2296.cc
+*.mm51-l2333.cc
+*.mm51-l2364.cc
+*.mm51-l2367.cc
+*.mm51-l2368.cc
+*.mm51-l2388.cc
 *.mm51-l2534.cc
 *.mm51-l2690.cc
 *.mm51-l467.cc
@@ -371190,6 +371193,7 @@
 *.np-vwx.net
 *.np-vwx.work
 *.np-whatsapp.com
+*.np.akun258.org
 *.np.alkhateeb.ae
 *.np.grammofood.shop
 *.np.nestmepartners.com
@@ -416142,6 +416146,7 @@
 *.primrosefield.eu
 *.prims-espaces.com
 *.primsoc.com
+*.primua.com
 *.primus-scuhle-titz.de
 *.primusad.com
 *.primuselektro.de
@@ -445334,7 +445339,6 @@
 *.rritltd.com
 *.rrjfa.pfaslawfirms.com
 *.rrjmps.viatorinc.com
-*.rrjp7hig.wentgot.lat
 *.rrjzyj.lepage.fr
 *.rrkvgegrywbkf.site
 *.rrlpfsdammzii.site
@@ -447790,7 +447794,6 @@
 *.rush.darktrace.surf
 *.rush.powerdrift.surf
 *.rush.rapidstorm.surf
-*.rush.redstonenova.lat
 *.rushadventure.com
 *.rushanren.com
 *.rushaparts.com
@@ -464454,6 +464457,7 @@
 *.servicehanschen-kg.com
 *.servicehdlq.sbs
 *.serviceheft24.com
+*.servicehfwp.sbs
 *.servicehstcmon.com
 *.serviceihqb.sbs
 *.servicejardina.com
@@ -464461,6 +464465,7 @@
 *.servicejmut.sbs
 *.servicejwee.sbs
 *.servicekdgd.sbs
+*.servicekxkm.sbs
 *.servicelightingnotification.e.epiqnotification.com
 *.serviceltd.top
 *.servicemail02infos8.wixsite.com
@@ -464498,6 +464503,7 @@
 *.servicepublicfr.net
 *.serviceqeew.sbs
 *.serviceqjdu.sbs
+*.serviceqswk.sbs
 *.servicercso.sbs
 *.serviceresiliation.fr
 *.services-barclays-update.live
@@ -464567,11 +464573,13 @@
 *.serviceswithfederation.net
 *.servicetabac.fr
 *.servicetudr.sbs
+*.serviceuhwp.sbs
 *.serviceukdc.sbs
 *.serviceunlock-luxtrust.com
 *.servicev3-carte.fr
 *.servicevinci.com
 *.serviceweb-whatsapp.com
+*.servicewkyu.sbs
 *.servicewluh.sbs
 *.serviceworksshop.shop
 *.servicewroclaw.live
@@ -479917,7 +479925,6 @@
 *.sky-wave7.pages.dev
 *.sky-whatsapp.com.cn
 *.sky.awahz3.com
-*.sky.brightflowsite.lat
 *.sky.brightreef.surf
 *.sky.damaiwizard.com
 *.sky.dolcefantasia.us
@@ -489060,7 +489067,6 @@
 *.sollunabtc231.net
 *.solluxiasparktrade.com
 *.solmarkex.flen4vax.lat
-*.solmarkis1.klatren.lat
 *.solmedianetworks.com
 *.solmere.icu
 *.solming.com
@@ -512717,7 +512723,6 @@
 *.star-theladyfinds.com
 *.star-vpn.shop
 *.star-workshop.christmas
-*.star.brightflowsite.lat
 *.star.brightreef.surf
 *.star.businessglobalizer.com
 *.star.fira6dox.surf
@@ -537396,6 +537401,7 @@
 *.terebdcvpl.yoga
 *.terebimpsw.wiki
 *.terebiqwdr.wiki
+*.tereblueline.club
 *.tereblueline.ink
 *.tereblueline.wiki
 *.terebnmplq.work
@@ -539893,7 +539899,6 @@
 *.texezxqlrw.click
 *.texezxqlrw.help
 *.texezxrpla.click
-*.texg.klatren.lat
 *.texiqijitorresources.click
 *.texisfinanza-fr.com
 *.texisfinanza-fr.live
@@ -540366,6 +540371,7 @@
 *.tgsk.xyz
 *.tgslb.org
 *.tgsoa.org
+*.tgspp.org
 *.tgssx.org
 *.tgstarter.xyz
 *.tgsub.lichtnelke.de
@@ -563245,6 +563251,7 @@
 *.twekblwn.com
 *.twelfthmansvoice.com
 *.twelvedawn.com
+*.twelvefetish.huonfr.fr
 *.twelvemonthdissemxxblers.info
 *.twelvepastmidnite.com
 *.twelvethtribefashion.shop
@@ -568558,7 +568565,6 @@
 *.unionlgy.info
 *.unionlinejp.com
 *.unionlinkhouse.com
-*.unionmarkbnk.com
 *.unionmeds.com
 *.unionpayinpcl.com
 *.unionpayintcnl.com
@@ -571109,6 +571115,7 @@
 *.us.lfac.net.br
 *.us.libost.xyz
 *.us.maskify.link
+*.us.mauricis.shop
 *.us.metamasksafe.eu.cc
 *.us.micardapi.micloud.xiaomi.net.iberostar.com
 *.us.mplis.gov.vn
@@ -590121,12 +590128,10 @@
 *.wap.3199522.com
 *.wap.33339yh.com
 *.wap.3r8vvp.cn
-*.wap.570407.com
 *.wap.61sheying.com
 *.wap.6377978.com
 *.wap.638898.vip
 *.wap.6465p.com
-*.wap.66baidu.com
 *.wap.6779p.com
 *.wap.6h899.com
 *.wap.7859x13.com
@@ -596095,6 +596100,7 @@
 *.wfruichen.com
 *.wfs.euromatic-bvba.be
 *.wfs6-whatsapp.com.ph
+*.wfsb-whatsapp.com.ph
 *.wfsczypfjnova.online
 *.wfsd-whatsapp.com.ph
 *.wfsisters.com
@@ -596734,6 +596740,7 @@
 *.whatsapp11-cnj.pages.dev
 *.whatsapp123.com
 *.whatsapp18.joins5.com
+*.whatsapp4352.pages.dev
 *.whatsapp666.vip
 *.whatsapp675.pages.dev
 *.whatsapp724.blogspot.com
@@ -602448,6 +602455,8 @@
 *.wrvvxap.1pishbini.com
 *.wrvxrwbqvnzdr.space
 *.wrwqxy.victoriaemerson.com
+*.wrwu-whatsapp.com.ph
+*.wrwx-whatsapp.com.ph
 *.wrx12.top
 *.wrx17.top
 *.wrx8mbpe.en-trump-token.com
@@ -604440,6 +604449,7 @@
 *.www.c0nt4ct-me.pages.dev
 *.www.c1s.su
 *.www.c8un2-bz0ox-ecsxpp.xyz
+*.www.cabsalotti.it
 *.www.cacoach.com
 *.www.callofduty.yesh.lk
 *.www.calm-sun-283a.ianzyvnee.workers.dev
@@ -604554,6 +604564,7 @@
 *.www.cloudius.sviluppo.host
 *.www.cloudnest-project.vercel.app
 *.www.club-scootergt.com
+*.www.clubanimazione.it
 *.www.cmi4u.com
 *.www.cnmoinbscaelognx.godaddysites.com
 *.www.cocinasheck.cl
@@ -605158,6 +605169,7 @@
 *.www.gwdkbremoterd.moneysquad.org
 *.www.gwww.banotexists7654321032543210notexistsnotexistsb93a38fc.nip.lfree.org
 *.www.h38zn.top
+*.www.hameemgroup.net
 *.www.hanachockler.com
 *.www.hannoush.vercel.app
 *.www.hartnessintl.com
@@ -628305,6 +628317,7 @@
 *.zahabaiplatform.com
 *.zahavseguranca.com.br
 *.zaheenmedical.com
+*.zahegcn.icu
 *.zahid.ezyplaza.com
 *.zahidyakoob.com
 *.zahirul.jarul.com.bd

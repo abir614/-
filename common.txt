@@ -1,6 +1,6 @@
 # Scale  — max: top 20% (>= 196)  warn: top 50% (>= 22)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   pages.dev                                [16346]  [MAX]
+#   pages.dev                                [16347]  [MAX]
 #   vercel.app                               [2649]  [MAX]
 #   cloudfront.net                           [2196]  [MAX]
 #   workers.dev                              [529]  [MAX]
@@ -63246,6 +63246,9 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : whatsapp11-cnj.pages.dev [url:domains.txt]
+
+  WL : *.pages.dev [static]  covers subdomain
+  BL : whatsapp4352.pages.dev [url:domains.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : whatsapp675.pages.dev [url:domains.txt]
