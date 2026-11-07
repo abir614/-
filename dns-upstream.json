@@ -1,18 +1,13 @@
 {
   "dns_over_https": [
     {
-      "provider": "Mullvad DNS",
-      "url": "https://dns.mullvad.net/dns-query",
-      "aura": "high"
-    },
-    {
       "provider": "Quad9",
-      "url": "https://dns.quad9.net/dns-query",
+      "url": "https://dns10.quad9.net/dns-query",
       "aura": "high"
     },
     {
       "provider": "AdGuard DNS",
-      "url": "https://dns.adguard-dns.com/dns-query",
+      "url": "https://unfiltered.adguard-dns.com/dns-query",
       "aura": "high"
     },
     {
