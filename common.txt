@@ -1,31 +1,31 @@
-# Scale  — max: top 20% (>= 231)  warn: top 50% (>= 31)  basic: remaining
+# Scale  — max: top 20% (>= 201)  warn: top 50% (>= 34)  basic: remaining
 # Whitelisted root domains (score = BL subdomain hits):
-#   vercel.app                               [15826]  [MAX]
-#   netlify.app                              [2470]  [MAX]
-#   cloudfront.net                           [2412]  [MAX]
-#   b-cdn.net                                [384]  [MAX]
-#   workers.dev                              [267]  [MAX]
-#   azurefd.net                              [231]  [MAX]
-#   cloudflare.net                           [200]  [WARN]
+#   vercel.app                               [15797]  [MAX]
+#   cloudfront.net                           [2493]  [MAX]
+#   netlify.app                              [2471]  [MAX]
+#   b-cdn.net                                [382]  [MAX]
+#   azurefd.net                              [230]  [MAX]
+#   cloudflare.net                           [201]  [MAX]
+#   workers.dev                              [135]  [WARN]
 #   amazonaws.com                            [119]  [WARN]
-#   pages.dev                                [118]  [WARN]
+#   pages.dev                                [105]  [WARN]
 #   railway.app                              [93]  [WARN]
 #   azurewebsites.net                        [85]  [WARN]
 #   wordpress.com                            [79]  [WARN]
 #   fastly.net                               [67]  [WARN]
-#   firebaseio.com                           [49]  [WARN]
-#   azure.com                                [43]  [WARN]
+#   firebaseio.com                           [52]  [WARN]
+#   azure.com                                [40]  [WARN]
 #   yahoo.com                                [35]  [WARN]
-#   netlify.com                              [31]  [WARN]
-#   googleusercontent.com                    [26]  [BASIC]
-#   github.io                                [25]  [BASIC]
+#   netlify.com                              [34]  [WARN]
+#   googleusercontent.com                    [27]  [BASIC]
+#   github.io                                [23]  [BASIC]
 #   apple.com                                [20]  [BASIC]
 #   google.com                               [18]  [BASIC]
+#   supabase.co                              [16]  [BASIC]
 #   netflix.com                              [13]  [BASIC]
-#   supabase.co                              [12]  [BASIC]
+#   azureedge.net                            [11]  [BASIC]
 #   nvidia.com                               [11]  [BASIC]
 #   googleapis.com                           [10]  [BASIC]
-#   azureedge.net                            [10]  [BASIC]
 #   microsoft.com                            [10]  [BASIC]
 #   akamaized.net                            [10]  [BASIC]
 #   substack.com                             [9]  [BASIC]
@@ -41,7 +41,6 @@
 #   box.com                                  [6]  [BASIC]
 #   trafficmanager.net                       [5]  [BASIC]
 #   twitch.tv                                [5]  [BASIC]
-#   apple-dns.net                            [5]  [BASIC]
 #   cloudflare.com                           [5]  [BASIC]
 #   malwarebytes.com                         [5]  [BASIC]
 #   icloud.com                               [5]  [BASIC]
@@ -53,8 +52,10 @@
 #   europa.eu                                [4]  [BASIC]
 #   digicert.com                             [4]  [BASIC]
 #   dropbox.com                              [4]  [BASIC]
+#   apple-dns.net                            [4]  [BASIC]
 #   zoom.us                                  [4]  [BASIC]
 #   redditmedia.com                          [4]  [BASIC]
+#   cloudflarestorage.com                    [3]  [BASIC]
 #   okta.com                                 [3]  [BASIC]
 #   twitter.com                              [3]  [BASIC]
 #   x.com                                    [3]  [BASIC]
@@ -68,7 +69,6 @@
 #   firefox.com                              [3]  [BASIC]
 #   wikimedia.org                            [3]  [BASIC]
 #   mailchimp.com                            [3]  [BASIC]
-#   cloudflarestorage.com                    [2]  [BASIC]
 #   auth0.com                                [2]  [BASIC]
 #   adjust.com                               [2]  [BASIC]
 #   adjust.io                                [2]  [BASIC]
@@ -91,6 +91,7 @@
 #   akamai.com                               [2]  [BASIC]
 #   proton.me                                [2]  [BASIC]
 #   fbcdn.net                                [2]  [BASIC]
+#   1aurl.net                                [1]  [BASIC]
 #   2performant.com                          [1]  [BASIC]
 #   partner-versicherung.de                  [1]  [BASIC]
 #   ab1n.net                                 [1]  [BASIC]
@@ -374,8 +375,8 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : 0e1ilkvi.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : 0g-auth-check.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
+  WL : *.workers.dev [static]  covers subdomain
+  BL : 0epwyduadt.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : 0kn.vercel.app [url:domains.txt]
@@ -496,6 +497,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : 104920h-amexerikaekowifjsoirfawd.vercel.app [url:domains.txt]
+
+  WL : *.googleusercontent.com [static]  covers subdomain
+  BL : 107.10.76.34.bc.googleusercontent.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.railway.app [static]  covers subdomain
   BL : 1072mytechpass-production.up.railway.app [url:domains.txt]
@@ -1178,6 +1182,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : 1ajdbiaudonajd.vercel.app [url:domains.txt]
 
+  WL : 1aurl.net [url:whitelist-referral.txt]
+  BL : 1aurl.net [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : 1avpc1-cma00uzf0-intelligence-agentic-models.vercel.app [url:domains.txt]
 
@@ -1457,6 +1464,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : 239v-dsvdfbbfsdb-fnghmhjmdfbsd.vercel.app [url:domains.txt]
 
+  WL : *.googleusercontent.com [static]  covers subdomain
+  BL : 240.122.205.35.bc.googleusercontent.com [url:abuse.ch-threatfox-hostfile.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : 24h-79eyiushdf7t8seiudf7iuhjg.vercel.app [url:domains.txt]
 
@@ -1517,9 +1527,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : 2c10cbmx.vercel.app [url:domains.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : 2d4e5f6-7a8b-4c2d-9e1f-3b5a7c8d9e0fc.s3.us-east-1.amazonaws.com [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : 2dbe4f.netlify.app [url:domains.txt]
 
@@ -1573,6 +1580,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : 2y-vjnkfgnfgrekjnvnkdreregee3df.vercel.app [url:domains.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : 3004purple.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : 30309499033334.netlify.app [url:domains.txt]
@@ -1759,6 +1769,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : 45454454545.vercel.app [url:domains.txt]
+
+  WL : *.cloudflarestorage.com [static]  covers subdomain
+  BL : 45ac42900299a815ee30206d536249d3.r2.cloudflarestorage.com [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : 472392h02-roaiemrteasrfmfloasinfieu.vercel.app [url:domains.txt]
@@ -2423,6 +2436,9 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : 7d3e329f-5.b-cdn.net [url:domains.txt]
 
+  WL : *.azure.com [static]  covers subdomain
+  BL : 7ddjwtbrlthni2.postgres.cosmos.azure.com [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : 7fwb-casefb899856.vercel.app [url:domains.txt]
 
@@ -2440,9 +2456,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : 7lgpmc4yq2ff93xdk8u5gzjl8z9.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : 7lkbcr8idc.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : 7ng6v3lu3c.execute-api.us-east-1.amazonaws.com [url:filter_1.txt]
@@ -2674,9 +2687,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : 90nb-csdvsavjsbvsdfv-nbmsnbvkcbsv.vercel.app [url:domains.txt]
-
-  WL : *.googleusercontent.com [static]  covers subdomain
-  BL : 91.13.85.34.bc.googleusercontent.com [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : 92920casobuzon2828.vercel.app [url:domains.txt]
@@ -2924,6 +2934,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : a7-psi.vercel.app [url:domains.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : a7nou50uk9.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : a826c2s-d-mu4d97e5abj-c-sy34dc6.vercel.app [url:domains.txt]
 
@@ -2980,12 +2993,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : aaron-rent-ab.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : aave-connect-dapp-layer-v124.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : aave-dapp-connect-interface-v114.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : aave-pi.vercel.app [url:domains.txt]
@@ -3811,6 +3818,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : ach-linyqd8-qswebmail-tqn2blumj-links-mail-version.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : achaofertasdalu.vercel.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : aconacionalbr.netlify.app [url:domains.txt]
@@ -5010,6 +5020,9 @@
   BL : airbnb-clone-n6ggrnt54-mahadi61.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
+  BL : airbnb-clone-nar2.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
   BL : airbnb-clone-nine-beta.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -5035,6 +5048,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : airbnb-clone-reelinfinity.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : airbnb-clone-riyadh-dev.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : airbnb-clone-rose.vercel.app [url:domains.txt]
@@ -5294,9 +5310,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : aji-gl.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : ajij-rahaman-portfolio.netlify.app [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : ajippibeimou-7524.vercel.app [url:domains.txt]
 
@@ -5377,9 +5390,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : albinjoby-iphone15pro.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : alcohol.4b3a91fd1b35ab2d023f5d71713a6c00.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : aleamemberglobememberloginmails.vercel.app [url:domains.txt]
@@ -6680,9 +6690,6 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : amicrosofthelps.b-cdn.net [url:domains.txt]
 
-  WL : *.azure.com [static]  covers subdomain
-  BL : amigo.mexicocentral.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : aminu-gal-expenses.netlify.app [url:domains.txt]
 
@@ -7001,9 +7008,6 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : annrandvu.b-cdn.net [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : annual.mwbwu.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : annulation-espace-sg-particulier.vercel.app [url:domains.txt]
 
@@ -7112,23 +7116,8 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : api-web3-auth.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : api.adriance.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : api.aiservices.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : api.federickcasto.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : api.groundexpressdispatch.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : apienidqltct8hpqm5klwdiiklg1owarsf6-cg1108s.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : apigoogle-ashen.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : apk-amazon-clone.netlify.app [url:domains.txt]
@@ -7917,9 +7906,6 @@
   BL : application-revew-me.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : application-revew-o.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : application-revew-suite-v3ol.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -8099,9 +8085,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : apply-here-for-remove-restriction.vercel.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : apply-here-free-verified.netlify.app [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : apply-here-get-verified-badge-now.vercel.app [url:domains.txt]
 
@@ -8272,6 +8255,9 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : appraisalewo.b-cdn.net [url:domains.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : appropriateyellow.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : approutera.vercel.app [url:domains.txt]
@@ -9102,15 +9088,6 @@
   BL : auth-blockchain.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : auth-confirm-eight.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : auth-confirm-seven.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : auth-confirm-two.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : auth-confirmation-meta.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -9118,9 +9095,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : auth-credential-check-token-no-546738201007.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : auth-den-tdu.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : auth-dhl-shipping-eight.vercel.app [url:domains.txt]
@@ -9142,9 +9116,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : auth-midrivers.netlify.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : auth-rho-dun.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : auth-secure-portal.vercel.app [url:domains.txt]
@@ -9686,9 +9657,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : ballrisewa.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : bam.csmq.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : bammellohauho-7557.vercel.app [url:domains.txt]
 
@@ -9925,9 +9893,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : banzo-id686103-t6fv.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : baqebohu.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : barbel-bergerhoff-wodopia.netlify.app [url:domains.txt]
@@ -10195,6 +10160,9 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : beautiful-kitten-eb83cf.netlify.app [url:domains.txt]
+
+  WL : *.netlify.app [static]  covers subdomain
+  BL : beautiful-pastelito-54315f.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : beawmsyeus.vercel.app [url:domains.txt]
@@ -10559,6 +10527,12 @@
   WL : bigcattracks.com [url:whitelist-referral.txt]
   BL : bigcattracks.com [url:filter_1.txt]
 
+  WL : *.firebaseio.com [static]  covers subdomain
+  BL : bigdata2-habn.firebaseio.com [url:domains.txt]
+
+  WL : *.firebaseio.com [static]  covers subdomain
+  BL : bigdata3-habn.firebaseio.com [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : bigentra.vercel.app [url:domains.txt]
 
@@ -10768,6 +10742,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : blockchain-claimtoken.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : blockchain-com-clone.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : blockchain-connect-server.vercel.app [url:domains.txt]
@@ -11321,9 +11298,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : booksmarts.vercel.app [url:doh-vpn-proxy-bypass.txt]
 
-  WL : *.azure.com [static]  covers subdomain
-  BL : bool.eastasia.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : boomflix-rosy.vercel.app [url:domains.txt]
 
@@ -11362,9 +11336,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : borirecouhou-6958.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : borrow.vuulh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : borsvarlden-banners.azurewebsites.net [url:filter_1.txt]
@@ -11996,12 +11967,6 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : bs-adserver.b-cdn.net [url:small.oisd.nl]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : bs-deliver-e817.61d8f0e6ac62c139abd08ba5.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.railway.app [static]  covers subdomain
-  BL : bs-production.up.railway.app [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.b-cdn.net [static]  covers subdomain
   BL : bs-static.b-cdn.net [url:doh-vpn-proxy-bypass.txt]
 
@@ -12037,6 +12002,12 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : bsrewh4hgwe4-hiep21cv-case1002bvup12ufri9987v.vercel.app [url:domains.txt]
+
+  WL : *.azure.com [static]  covers subdomain
+  BL : bst-513d2202-d115-42de-a21e-215c3f21d183.bastion.azure.com [url:domains.txt]
+
+  WL : *.azure.com [static]  covers subdomain
+  BL : bst-ff6a5312-fcbd-4f61-93b7-fc0af93d997e.bastion.azure.com [url:domains.txt]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : btc4animals.com.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
@@ -12092,9 +12063,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : build-amazon-front.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : build-asdasd.4b3a91fd1b35ab2d023f5d71713a6c00.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : build-something-blue.vercel.app [url:domains.txt]
 
@@ -12128,9 +12096,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : bujeihufessu-4797.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : bulb.aeafh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : bulk-metadata-refresh-opensea.vercel.app [url:domains.txt]
 
@@ -12142,9 +12107,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : bundle-admin.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : burden.aeafh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : burrvillees.org.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
@@ -12425,6 +12387,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : bwgy96f-h17f.vercel.app [url:domains.txt]
 
+  WL : *.cloudflare.net [static]  covers subdomain
+  BL : bwin.com.cdn.cloudflare.net [url:gambling.mini.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : bwok.vercel.app [url:domains.txt]
 
@@ -12659,9 +12624,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : cammatrajoxe.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : camp.4b3a91fd1b35ab2d023f5d71713a6c00.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : campaign-digital-ads-report.vercel.app [url:domains.txt]
 
@@ -12871,6 +12833,9 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : capable-vacherin-899ffd.netlify.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : capchadao2405-fxs5.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : capchpl2305-12hr.vercel.app [url:domains.txt]
@@ -13757,12 +13722,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : cdn-static-icons.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : cdn.clintonpqfg-adriance.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : cdn.mcsq.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.b-cdn.net [static]  covers subdomain
   BL : cdntrex-jav.b-cdn.net [url:nsfw.txt]
 
@@ -13961,9 +13920,6 @@
   WL : *.cloudflare.net [static]  covers subdomain
   BL : cevanu.ripley.com.pe.cdn.cloudflare.net [url:filter_1.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : cewiluji.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : cewixequeko.vercel.app [url:domains.txt]
 
@@ -13976,8 +13932,8 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : cfconfiglogin.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : cfd.fins.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
+  WL : *.azure.com [static]  covers subdomain
+  BL : cfgsync-relay.eastus.cloudapp.azure.com [url:domains.txt]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : cfisd.mathforkids.buzz.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
@@ -14213,14 +14169,11 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : check-your-activity-here.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : check.adriance.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : check.mcsq.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : checkaccount-help24h51237453490012.netlify.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : checkallyournotifications.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : checkamlusdt.vercel.app [url:domains.txt]
@@ -14898,7 +14851,7 @@
   BL : classy-torte-12cd09.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : claude-flare-verification.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
+  BL : claude-flare-verification.vercel.app [url:domains.txt]
 
   WL : *.railway.app [static]  covers subdomain
   BL : claudeadsback-production-67c1.up.railway.app [url:domains.txt]
@@ -14920,9 +14873,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : clean-and-restore-fbsx.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : clean.csmq.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : cleanup-log-scheduler.vercel.app [url:domains.txt]
@@ -15464,9 +15414,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : cluster-monitor-task.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : cms.csmq.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.azurefd.net [static]  covers subdomain
   BL : cnca-g0eranh2gtdpcpac.z03.azurefd.net [url:domains.txt]
 
@@ -15577,9 +15524,6 @@
 
   WL : *.wordpress.com [static]  covers subdomain
   BL : coensqrlogi.wordpress.com [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : coffee.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : cofroproubebro-4402.vercel.app [url:domains.txt]
@@ -16445,20 +16389,11 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : conncast.vercel.app [url:domains.txt]
 
-  WL : *.b-cdn.net [static]  covers subdomain
-  BL : connect-fastserver-after-verfying.b-cdn.net [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : connect-validator.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : connect.defenders.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.cloudflare.net [static]  covers subdomain
   BL : connect.info.north-kazakhstan.su.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : connect.mcfind.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : connect2claim.netlify.app [url:domains.txt]
@@ -16799,9 +16734,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : convocatoria-laboral.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : cookie-xi-seven.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : cookiemon-analytics.azurewebsites.net [url:small.oisd.nl]
 
@@ -17072,9 +17004,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : couu2.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : cov-mocha.vercel.app [url:domains.txt]
-
   WL : *.firebaseio.com [static]  covers subdomain
   BL : covid-19-6538f.firebaseio.com [url:domains.txt]
 
@@ -17156,17 +17085,11 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : crackstuff.pages.dev [url:doh-vpn-proxy-bypass.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : craft.zjkgx.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : crallifroucasoi-3433.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : crammeujeffoimmau.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : crane.ncsgo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : cranesxa.vercel.app [url:domains.txt]
@@ -17363,12 +17286,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : crownofglorybiz-eight-psi.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : crs.aiservices.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : crs.defenders.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : crubilloippunnu-3345.vercel.app [url:domains.txt]
 
@@ -17434,6 +17351,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : cryptopunksnft.vercel.app [url:domains.txt]
+
+  WL : *.netlify.com [static]  covers subdomain
+  BL : cryptown.netlify.com [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : crystalhorizoni.vercel.app [url:domains.txt]
@@ -17512,9 +17432,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : cuo12-rho.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : cup.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : cupilloposss-git-main-mantoritras.vercel.app [url:domains.txt]
@@ -17715,6 +17632,9 @@
   BL : d10g3hyu3zeg91.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d10lpgp6xz60nq.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d10lpsik1i8c69.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -17841,6 +17761,9 @@
   BL : d12eqwiz49ne6p.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d12lysxt2c11pc.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d12nvv2jqzsaax.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -17893,6 +17816,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d13r2gmqlqb3hr.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d13s98z2lzti92.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d13uuni3ez26ye.cloudfront.net [url:domains.txt]
@@ -18015,7 +17941,7 @@
   BL : d15skjf5hy9xr6.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d15voiknbupdf5.cloudfront.net [url:domains.txt]
+  BL : d15voiknbupdf5.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d15yg5thi9b6xv.cloudfront.net [url:tif.mini.txt]
@@ -18108,6 +18034,9 @@
   BL : d180xyfowi6kif.cloudfront.net [url:nsfw.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d182p0mo6pnsdg.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d18390wdgenrs6.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -18189,6 +18118,9 @@
   BL : d192r5l88wrng7.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d194zjmj02lpmi.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d196fri2z18sm.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -18235,9 +18167,6 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1a3jb5hjny5s4.cloudfront.net [url:tif.mini.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
-  BL : d1a5blym15569s.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1a9ce6x1iba5r.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -18448,6 +18377,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1dh1gvx7p0imm.cloudfront.net [url:filter_1.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1dh1ip0i1pv81.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1diqetif5itzx.cloudfront.net [url:tif.mini.txt]
@@ -18696,6 +18628,9 @@
   BL : d1hrntjl3nif0z.cloudfront.net [url:gambling.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1hutb2zpucj7p.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1hwgqswo3ntzz.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -18796,6 +18731,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1jd9usa22o1l7.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1jemqk05k0kst.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1jgl0ynvyddya.cloudfront.net [url:domains.txt]
@@ -18921,6 +18859,9 @@
   BL : d1lxhc4jvstzrp.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1m383qkjwdfx0.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1m4ettuq4ezj0.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -19003,6 +18944,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1n3aexzs37q4s.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1n3g6gayr311x.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1n3tk65esqc4k.cloudfront.net [url:tif.mini.txt]
@@ -19149,6 +19093,9 @@
   BL : d1pdf4c3hchi80.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1pg391qb4gheb.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1pgxq9y8ffyek.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -19186,6 +19133,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1q2jk0wk5ot6e.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1q3y8y1gdsoni.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1q4x2p7t0gq14.cloudfront.net [url:tif.mini.txt]
@@ -19234,6 +19184,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1qpxk1wfeh8v1.cloudfront.net [url:filter_1.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1qrypy5hib3wm.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1qtf1avwa1wvl.cloudfront.net [url:tif.mini.txt]
@@ -19305,6 +19258,9 @@
   BL : d1rsh847opos9y.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1rxb2fb709exm.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1rxcmewslna2u.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -19336,6 +19292,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1sjz3r2x2vk2u.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1smhlexuyv537.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1snv67wdds0p2.cloudfront.net [url:small.oisd.nl]
@@ -19473,6 +19432,9 @@
   BL : d1ue5xz1lnqk0d.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1ugea0fewof2r.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d1ugiptma3cglb.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -19492,6 +19454,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1uzjiv6zzdlbc.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d1v4b6pbk0kwvw.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d1v7zp4iefx112.cloudfront.net [url:domains.txt]
@@ -19785,6 +19750,9 @@
   BL : d20tam5f2v19bf.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d20tk7ygz8ugsj.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d20vwa69zln1wj.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -19813,6 +19781,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d21i49aag6le6s.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d21isfuwnko22a.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d21iu6sqimbb2.cloudfront.net [url:domains.txt]
@@ -20121,6 +20092,9 @@
   BL : d26p9ecwyy9zqv.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d26r44l4vrn00m.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d26syz1dd3hcx1.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -20245,6 +20219,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d29mhxfd390ueb.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d29mvmlv0uf9l3.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d29mxewlidfjg1.cloudfront.net [url:tif.mini.txt]
@@ -20406,6 +20383,9 @@
   BL : d2cx10dsi4ptcz.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2d5qtzhuezfmk.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2d6cf2do9znht.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -20431,6 +20411,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2dq2ahtl5zl1z.cloudfront.net [url:small.oisd.nl]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2dsya5bkwoi1u.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2dxy39sqorbhv.cloudfront.net [url:small.oisd.nl]
@@ -20475,6 +20458,9 @@
   BL : d2enprlhqqv4jf.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2eo7zet2mgnnn.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2epnp0vokbtl7.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -20485,6 +20471,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2ers4gi7coxau.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2ewlfde9nvzf.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2eyuq8th0eqll.cloudfront.net [url:tif.mini.txt]
@@ -20622,6 +20611,9 @@
   BL : d2gt9oovykfp1z.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2gtzq6vrs67vv.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2gvl5uc8ok149.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -20632,6 +20624,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2h69mua84zahq.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2h7014tid4d1y.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2h7xgu48ne6by.cloudfront.net [url:tif.mini.txt]
@@ -20692,6 +20687,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2it3a9l98tmsr.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2it5qvo5v7f26.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2iypyj4211qbd.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -20784,6 +20782,9 @@
   BL : d2kadvyeq051an.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2kb8sccbn3wgs.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2kcdt2f2esbdy.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -20793,7 +20794,19 @@
   BL : d2kdl5wcwrtj90.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2kdonxe8bcvjv.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2kdqj6gjm17ok.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2kecuadujf2df.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2keeghmxuwkh3.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2keqa7g0xnve6.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2kgzdmv0vdycp.cloudfront.net [url:small.oisd.nl]
@@ -20895,6 +20908,9 @@
   BL : d2lzu2a5ishr7o.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2m54y8a2kdtj1.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2m6mzhbzc72b5.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -20917,6 +20933,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2mic0r0bo3i6z.cloudfront.net [url:small.oisd.nl]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2mlls8dsnofna.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2moz0h55szev9.cloudfront.net [url:small.oisd.nl]
@@ -20947,6 +20966,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2n5v45616cm6u.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2n9osbflux4k6.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2n9qkpchzjl21.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -21144,6 +21166,9 @@
   BL : d2qqc8ssywi4j6.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2qqkq2ozhynzf.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2quc4oxlcm8y8.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -21228,6 +21253,9 @@
   BL : d2s4z2ai7kg189.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2s6z1m6xnp5uj.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2s9nyc35a225l.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -21240,7 +21268,7 @@
   BL : d2sffavqvyl9dp.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2sisrr9r7t0z4.cloudfront.net [url:tif.mini.txt]
+  BL : d2sisrr9r7t0z4.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2sj2q93t0dtyb.cloudfront.net [url:tif.mini.txt]
@@ -21303,6 +21331,9 @@
   BL : d2tgfbvjf3q6hn.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2tha2b8l1annb.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2tkdzior84vck.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -21315,9 +21346,6 @@
   BL : d2tvgfsghnrkwb.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d2txuyvgupvxmq.cloudfront.net [url:domains.txt]
-
-  WL : *.cloudfront.net [static]  covers subdomain
   BL : d2u02fwhj4jdjy.cloudfront.net [url:gambling.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -21328,6 +21356,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2u4fn5ca4m3v6.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2u9nuq84jlbj2.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2u9rmrrifg8yn.cloudfront.net [url:domains.txt]
@@ -21382,6 +21413,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2vamvrhffvqwc.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2vd3rtal66yy0.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2vmavw0uawm2t.cloudfront.net [url:tif.mini.txt]
@@ -21475,6 +21509,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2x19ia47o8gwm.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d2x5yrfkfit2z0.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d2x86d5t89hffs.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -21783,6 +21820,12 @@
   BL : d32kwu6pkckni5.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d32my1g7y42nkk.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d32pfsnllezjue.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d32r49xyei4vz6.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -21966,6 +22009,9 @@
   BL : d36c9jy3famfie.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d36e0jkwnyz61b.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d36e2om8vek7xa.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -21985,6 +22031,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d36lv9781gxp5z.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d36nbgnuno71tn.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d36owq118pjty7.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -22137,6 +22186,9 @@
   BL : d39b2npo77gjq2.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d39cp68dh0b83l.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d39hdzmeufnl50.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -22215,6 +22267,9 @@
   BL : d3akmxskpi6zai.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3al52d8cojds7.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3apzcqz3ghyay.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -22287,6 +22342,9 @@
   BL : d3bviecoc049je.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3c0hjeoqmryl5.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3c3cq33003psk.cloudfront.net [url:filter_1.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -22336,6 +22394,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3cod80thn7qnd.cloudfront.net [url:filter_1.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3codndcrka2un.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3colg264292pl.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -22512,7 +22573,10 @@
   BL : d3g4zswpacwtfb.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3g5ovfngjw9bw.cloudfront.net [url:filter_1.txt]
+  BL : d3g5ovfngjw9bw.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3g9jzjodi4z8o.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3gaegctu6cvoa.cloudfront.net [url:tif.mini.txt]
@@ -22528,6 +22592,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3gi6isrskhoq.cloudfront.net [url:filter_1.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3gkjjeyt8tmlg.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3glbzj5024wpt.cloudfront.net [url:tif.mini.txt]
@@ -22551,7 +22618,7 @@
   BL : d3h88i27t2k9za.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3ha0drt130222.cloudfront.net [url:tif.mini.txt]
+  BL : d3ha0drt130222.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3ha4i87b4lyo0.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -22719,6 +22786,9 @@
   BL : d3kpkrgd3aj4o7.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3ktcnc1w6pd1f.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3kuse4dk8esyh.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -22738,6 +22808,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3l3lkinz3f56t.cloudfront.net [url:small.oisd.nl]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3l4l87i1ykapf.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3l4x84u2vpev8.cloudfront.net [url:gambling.mini.txt]
@@ -22761,6 +22834,9 @@
   BL : d3lliyjbt3afgo.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3llu4686fshym.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3ln1qrnwms3rd.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -22776,7 +22852,7 @@
   BL : d3lvevsl94g13d.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
-  BL : d3lvr7yuk4uaui.cloudfront.net [url:filter_1.txt]
+  BL : d3lvr7yuk4uaui.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3lw2k94jnkvbs.cloudfront.net [url:tif.mini.txt]
@@ -22795,6 +22871,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3m6crjuedf6o.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3m6daqa7jwjsk.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3m6sept6cnil5.cloudfront.net [url:small.oisd.nl]
@@ -22893,6 +22972,9 @@
   BL : d3nzjdpxgg0m8j.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3o92sis0yji3x.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3o9njeb29ydop.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -22960,6 +23042,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3p9nm1ictat1y.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3pa7i465rtx1n.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3pcx41g7mhiud.cloudfront.net [url:domains.txt]
@@ -23118,6 +23203,9 @@
   BL : d3rjndf2qggsna.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3rjsaqi5btg9e.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3rkkddryl936d.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -23247,6 +23335,9 @@
   BL : d3u0wd7ppfhcxv.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3u1re909noqg0.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d3u1yxdryk60a0.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -23344,6 +23435,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3vxb7dmujve5i.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : d3w0arvvki19jt.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : d3w0jzdrix74az.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
@@ -23601,6 +23695,9 @@
   BL : d8ibkp93x84mq.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : d8k8yw18dq88h.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : d8lmy5wyiokrq.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -23746,6 +23843,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : dalix-rwpd.vercel.app [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : dam64p5y4r7q5.cloudfront.net [url:domains.txt]
 
   WL : *.azurefd.net [static]  covers subdomain
   BL : damanthinestochastic-f6bcgzgya3cggqct.z03.azurefd.net [url:domains.txt]
@@ -23945,9 +24045,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : dapsupport.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : daptools.vercel.app [url:domains.txt]
-
   WL : *.cloudfront.net [static]  covers subdomain
   BL : daq0d0aotgq0f.cloudfront.net [url:filter_1.txt]
 
@@ -24050,9 +24147,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : data-collection-neon.vercel.app [url:domains.txt]
 
-  WL : *.b-cdn.net [static]  covers subdomain
-  BL : data-image-svg--base64.b-cdn.net [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : data-kappa.vercel.app [url:domains.txt]
 
@@ -24119,9 +24213,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : datadrivensync.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : datafluxworker.system-telemetry.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : dataprotectionzone.vercel.app [url:domains.txt]
 
@@ -24130,6 +24221,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : datasecurity-review-status.vercel.app [url:domains.txt]
+
+  WL : *.azure.com [static]  covers subdomain
+  BL : datatimes.centralus.cloudapp.azure.com [url:tif.mini.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : datatwine.vercel.app [url:domains.txt]
@@ -24169,9 +24263,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : dawiteewnetu-uxgr-l5fvt75j7-dawite-ewnetus-projects.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : dawn.ssybd.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : dawnpatha.vercel.app [url:domains.txt]
@@ -24232,6 +24323,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : db033pq6bj64g.cloudfront.net [url:tif.mini.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : db4djqkh4h9v0.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : db4zl9wffwnmb.cloudfront.net [url:tif.mini.txt]
@@ -24325,6 +24419,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : dcpste-electrtexxhtconnexes.vercel.app [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : dct4jph3as9lp.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dcv2rnj2ograe.cloudfront.net [url:tif.mini.txt]
@@ -24467,9 +24564,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : decameroncolombia-new.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : decapiwo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : decentralized-points.vercel.app [url:domains.txt]
 
@@ -24505,6 +24599,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : deesty-disco.vercel.app [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : def30qw5ks4uw.cloudfront.net [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : default-configuration-sandy.vercel.app [url:domains.txt]
@@ -24550,9 +24647,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : deft-souffle-977b26.netlify.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : defy.3ce7ab2da45404231f376cac66904a01.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : defz.netlify.app [url:domains.txt]
@@ -24682,9 +24776,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : deoctubreiniciar.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : depart.aasya.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : departementale-assitance-service.netlify.app [url:domains.txt]
@@ -24860,9 +24951,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : dev-smart-contract.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : dev-vic.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.cloudflare.net [static]  covers subdomain
   BL : dev.desmos.live.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
@@ -24970,9 +25058,6 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dfck9uqiatqhh.cloudfront.net [url:tif.mini.txt]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : dfdghfhddhdhfhdfhdfyhdfdfh.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : dfgchvjvjb.vercel.app [url:domains.txt]
@@ -25089,6 +25174,9 @@
   BL : dgyrizngtcfck.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : dh00566nnvh04.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : dh0c1bz67fuho.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -25102,6 +25190,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dh4694oqun6pp.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : dh5rg5aebo6yx.cloudfront.net [url:domains.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dh6dm31izb875.cloudfront.net [url:tif.mini.txt]
@@ -25120,9 +25211,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : dhd-hygf.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : dheya.dheya.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : dhfwo457232.vercel.app [url:domains.txt]
@@ -25210,9 +25298,6 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dic9vgwbkxd8r.cloudfront.net [url:tif.mini.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : dice.1467dd4e407bdff28460ad05765f04e0.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : dickhandjob.pages.dev [url:nsfw.txt]
@@ -25643,6 +25728,9 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dk57sacpbi4by.cloudfront.net [url:tif.mini.txt]
 
+  WL : *.netlify.app [static]  covers subdomain
+  BL : dkbank.netlify.app [url:domains.txt]
+
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dkgp834o9n8xl.cloudfront.net [url:tif.mini.txt]
 
@@ -25758,6 +25846,9 @@
   BL : dm0t14ck8pg86.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : dm0toycgkhhzb.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : dm46l3i5mnhr0.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -25808,6 +25899,9 @@
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dmmzkfd82wayn.cloudfront.net [url:tif.mini.txt]
 
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : dmobd90auod5w.cloudfront.net [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : dmpmnnu-smoky-96.vercel.app [url:domains.txt]
 
@@ -25845,6 +25939,9 @@
   BL : dn3uy6cx65ujf.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : dn4d1v1ofq2j1.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : dn666andut2j1.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
@@ -25876,6 +25973,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : dnhfi5nn2dt67.cloudfront.net [url:filter_1.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : dnht95ajef6hr.cloudfront.net [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : dnid-two.vercel.app [url:domains.txt]
@@ -26153,9 +26253,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : doujeucrumoufau-8054.vercel.app [url:domains.txt]
 
-  WL : *.amazonaws.com [static]  covers subdomain
-  BL : downcry.s3.ap-east-1.amazonaws.com [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : download-crop.vercel.app [url:domains.txt]
 
@@ -26177,9 +26274,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : download-wetransferr-access-login-token-magi-89iuj3wesd9iuj.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : download.logltech.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : downloadhere.vercel.app [url:domains.txt]
 
@@ -26191,9 +26285,6 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : downloadshi.b-cdn.net [url:small.oisd.nl]
-
-  WL : *.azure.com [static]  covers subdomain
-  BL : downloadupdate.centralus.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : doyoulikefun.info.north-kazakhstan.su.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
@@ -26453,9 +26544,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : drilling-call.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : drip.mwbwu.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : drive-dgdp-gov-bd-confidential-files.netlify.app [url:domains.txt]
 
@@ -26670,6 +26758,9 @@
   BL : du4rq1xqh3i1k.cloudfront.net [url:small.oisd.nl]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : du7wh8bicca0t.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : du8aqpqj1sfsd.cloudfront.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.azurefd.net [static]  covers subdomain
@@ -26692,6 +26783,9 @@
 
   WL : *.cloudfront.net [static]  covers subdomain
   BL : duh0b8nl8uhfn.cloudfront.net [url:small.oisd.nl]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : duiwcg72w56ze.cloudfront.net [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : dukevittd-j6r1.vercel.app [url:domains.txt]
@@ -27039,6 +27133,9 @@
   BL : dzv1ekshu2vbs.cloudfront.net [url:tif.mini.txt]
 
   WL : *.cloudfront.net [static]  covers subdomain
+  BL : dzxcwfh7qvufz.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
   BL : dzxr711a4yw31.cloudfront.net [url:tif.mini.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -27109,9 +27206,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : earnest-smakager-47d52f.netlify.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : earniverse-mvp.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : earno-celo.vercel.app [url:domains.txt]
@@ -27453,10 +27547,16 @@
   BL : ebz-omega.vercel.app [url:domains.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
+  BL : ec2-13-185-9-23.us-east-2.compute.amazonaws.com [url:abuse.ch-threatfox-hostfile.txt]
+
+  WL : *.amazonaws.com [static]  covers subdomain
   BL : ec2-34-194-122-51.compute-1.amazonaws.com [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : ec2-44-233-143-239.us-west-2.compute.amazonaws.com [url:small.oisd.nl]
+
+  WL : *.amazonaws.com [static]  covers subdomain
+  BL : ec2-52-14-78-149.us-east-2.compute.amazonaws.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : ecd31356-d.b-cdn.net [url:domains.txt]
@@ -27580,9 +27680,6 @@
 
   WL : *.trafficmanager.net [static]  covers subdomain
   BL : edgex.trafficmanager.net [url:doh-vpn-proxy-bypass.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : edit.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : editorsettings.vercel.app [url:domains.txt]
@@ -27822,7 +27919,7 @@
   BL : elnemipoloisd-git-main-mantoritras.vercel.app [url:domains.txt]
 
   WL : *.onelogin.com [static]  covers subdomain
-  BL : eloqua.onelogin.com [url:filter_1.txt]
+  BL : eloqua.onelogin.com [url:tif.mini.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : eloquent-almeida-2adbca.netlify.app [url:domains.txt]
@@ -27923,9 +28020,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : empathize-local-manage-id3020031489.vercel.app [url:domains.txt]
 
-  WL : *.azurefd.net [static]  covers subdomain
-  BL : employeenotifierdevice-cha9g0g9g4hebmea.z02.azurefd.net [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : empower-intention-clarification.vercel.app [url:domains.txt]
 
@@ -27985,9 +28079,6 @@
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : endis.org.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : endorse8767.lrndn.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : endpoint-fail.vercel.app [url:domains.txt]
@@ -28151,9 +28242,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : eng650.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : engage.aeafh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : engage.windows.com [url:whitelist-referral.txt]
   BL : engage.windows.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
@@ -28206,9 +28294,6 @@
   BL : ensure-compliance-xks4.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : entcnonmc.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : entcu-secure.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -28228,6 +28313,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : entencent.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : enter-your-account-key-mu.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : enterprisedigitalcampaign-managemen.vercel.app [url:domains.txt]
@@ -28544,9 +28632,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : esrqnbbirstv.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : essence.ncsgo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : essentialexecutor.netlify.app [url:domains.txt]
 
@@ -28698,13 +28783,7 @@
   BL : evergreenbuildingsolutionscrownconstruction.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : everplay-mvp.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : everydaynodechecker-39143n.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : evil.mwbwu.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : evm-ck.netlify.app [url:domains.txt]
@@ -28714,9 +28793,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : evm-oo.netlify.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : evoke.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : evolution-local-git-main-uid9128356.vercel.app [url:domains.txt]
@@ -28759,9 +28835,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : excel-zuccutto.netlify.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : excite.aeafh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : excluded-gate.vercel.app [url:domains.txt]
@@ -28864,9 +28937,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : exemption-git-ads-local-032254.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : exercise.mwbwu.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : exmf-casefb442696.vercel.app [url:domains.txt]
@@ -29807,9 +29877,6 @@
   WL : *.cloudflare.net [static]  covers subdomain
   BL : fallbreaksover.info.north-kazakhstan.su.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : false.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : falseclaimbrandbuilder.vercel.app [url:domains.txt]
 
@@ -29884,9 +29951,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : farm-rio-outlet.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : farm.aeafh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : farmapay-eight.vercel.app [url:domains.txt]
@@ -30154,15 +30218,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : fb-helppline-service.vercel.app [url:domains.txt]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : fb-login-acccount-center-helps-meta-verifyesz.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : fb-login-acccount-center-helps-meta-verifyeszz.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : fb-login-acccount-center-helps-meta-verifyx.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : fb-login-clone.vercel.app [url:domains.txt]
@@ -30503,9 +30558,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : fepreuquoixaune-6124.vercel.app [url:domains.txt]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : fern-song.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.cloudflare.net [static]  covers subdomain
   BL : ferny.pxi-fusion.com.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
@@ -30710,9 +30762,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : finaslayilbasikampanyasi.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : find.csmq.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.pages.dev [static]  covers subdomain
   BL : finderkeep.pages.dev [url:doh-vpn-proxy-bypass.txt]
 
@@ -30793,9 +30842,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : fishing-app.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : fit.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : fitness-main-id1006732508.vercel.app [url:domains.txt]
@@ -31019,9 +31065,6 @@
   WL : *.firebaseio.com [static]  covers subdomain
   BL : flutter-covid19.firebaseio.com [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : fly.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : flybuysinfo.netlify.app [url:domains.txt]
 
@@ -31042,9 +31085,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : fnqbnisr.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : fnrh-v92w.mileyjimena72123.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : fns-onlinebasvurularbasladik.vercel.app [url:domains.txt]
@@ -31093,9 +31133,6 @@
 
   WL : *.github.io [static]  covers subdomain
   BL : fontonwonton.github.io [url:doh-vpn-proxy-bypass.txt]
-
-  WL : *.b-cdn.net [static]  covers subdomain
-  BL : fonts-css2-sans.b-cdn.net [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : footcoreac.vercel.app [url:domains.txt]
@@ -31153,9 +31190,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : formulario-facebook.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : fortesting-alpha.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : fortunemail.vercel.app [url:domains.txt]
@@ -31287,6 +31321,9 @@
   BL : free-robloz-beta.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
+  BL : free-url.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
   BL : free-verified-badge-form0-service.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -31402,9 +31439,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : freipezaquammou.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : frequent.adam-46c.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : freshatl.azurewebsites.net [url:small.oisd.nl]
@@ -31559,9 +31593,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : frouhasannojo-5200.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : frown76.hxjcj-klolko.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : frowubronegi-2681.vercel.app [url:domains.txt]
 
@@ -31675,9 +31706,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : funny-souffle-079879.netlify.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : funtar.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : fuprafrippase-9249.vercel.app [url:domains.txt]
@@ -31860,9 +31888,6 @@
   BL : galxy.autos.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : gamboracle.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : ganadero-sage.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -31945,6 +31970,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : garrantikreddisi.vercel.app [url:domains.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : gate-fender.luftribka.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : gateway-local-manage-main1639428705.vercel.app [url:domains.txt]
@@ -32507,6 +32535,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : gg1s.vercel.app [url:domains.txt]
 
+  WL : *.azure.com [static]  covers subdomain
+  BL : gg6thadbp4pjim.postgres.cosmos.azure.com [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : ggbell.vercel.app [url:domains.txt]
 
@@ -32531,17 +32562,11 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : ghilngy.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : ghost-relay.stk-cdn-07.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.cloudflare.net [static]  covers subdomain
   BL : ghost-town.partedu.club.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : ghost32-bifrost.netlify.app [url:domains.txt]
-
-  WL : *.firebaseio.com [static]  covers subdomain
-  BL : ghostx-panel-default-rtdb.firebaseio.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : ghostyvine.vercel.app [url:domains.txt]
@@ -32675,9 +32700,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : glittery-torte-ff923c.netlify.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : glmdw02885.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : global-check-business-it.azurewebsites.net [url:domains.txt]
 
@@ -32713,9 +32735,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : globaltestlogin.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : globe.aeafh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : glok-casefb099626.vercel.app [url:domains.txt]
@@ -32778,7 +32797,7 @@
   BL : go2cloud.org [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
   WL : go2jump.org [url:whitelist-referral.txt]
-  BL : go2jump.org [url:filter_1.txt]
+  BL : go2jump.org [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : goal-validate-explication.vercel.app [url:domains.txt]
@@ -32951,9 +32970,6 @@
   WL : *.azurefd.net [static]  covers subdomain
   BL : grab5-azhub4fqc4chavac.z02.azurefd.net [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : grace.aeafh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : graceful-otter-a187bb.netlify.app [url:domains.txt]
 
@@ -33025,6 +33041,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : graph-networks-app.vercel.app [url:domains.txt]
+
+  WL : *.netlify.app [static]  covers subdomain
+  BL : grasse.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : grauddoikalaga.vercel.app [url:domains.txt]
@@ -33372,6 +33391,9 @@
   BL : h3v9p8x2q1r7-agckaeh6g2ehcaes.*.azurewebsites.net [url:filter_1.txt]
 
   WL : *.vercel.app [static]  covers subdomain
+  BL : h6ptzx-6s1zz8007-intelligence-agentic-models.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
   BL : h8pqictl-cg14.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -33451,9 +33473,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : happy-tesla-2d9664.netlify.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : hapyzi.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : hardcore-euler-429bcd.netlify.app [url:domains.txt]
@@ -33542,6 +33561,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : havredufaubourg.vercel.app [url:domains.txt]
 
+  WL : *.firebaseio.com [static]  covers subdomain
+  BL : hawkshaw-cae48.firebaseio.com [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : hazaq.vercel.app [url:domains.txt]
 
@@ -33556,9 +33578,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : hdc-ia9c.vercel.app [url:domains.txt]
-
-  WL : *.firebaseio.com [static]  covers subdomain
-  BL : hdfc-bank-8ab58-default-rtdb.firebaseio.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : hdfc-sec-kohl-newoip.vercel.app [url:domains.txt]
@@ -33786,9 +33805,6 @@
   BL : help-ledger-live-login-wallet-suppo-two.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : help-ledger-live-loginwallet-suppor.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : help-ledger-login.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -33883,12 +33899,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : help-trustwalletsweb.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : help.mcsq.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : help1.mcsq.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : help8877999.vercel.app [url:domains.txt]
@@ -34526,9 +34536,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : huloc6.vercel.app [url:domains.txt]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : human-verify-second.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : humdiscordtest.netlify.app [url:domains.txt]
 
@@ -34570,9 +34577,6 @@
 
   WL : *.firebaseio.com [static]  covers subdomain
   BL : hunza-project-default-rtdb.firebaseio.com [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : husband.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : hushbutton.vercel.app [url:domains.txt]
@@ -34821,6 +34825,9 @@
   BL : ifj5zymzpstto15d7glrn1qslacax8b5vosf47-cg1108s.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
+  BL : ifps62-3z5gdauwq-arcadawebapps2.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
   BL : ifps62-59405pzmo-arcadawebapps2.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -35038,6 +35045,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : immobilier-documentaire.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : immoprestme.vercel.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : immoscout24-fr.netlify.app [url:domains.txt]
@@ -35426,9 +35436,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : ingressingresa.netlify.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : inherit.zjkgx.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : inicial-instagram.vercel.app [url:domains.txt]
 
@@ -35470,9 +35477,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : inj-openseanft9.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : injury.vuulh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.cloudflare.net [static]  covers subdomain
   BL : inmkayandisuck.info.north-kazakhstan.su.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
@@ -36384,6 +36388,9 @@
   BL : instagram-post-77486qets.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
+  BL : instagram-profile-789.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
   BL : instagram-profile-analyzer12.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -36954,9 +36961,6 @@
   BL : iotconnect-singtel-live.azurewebsites.net [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : ip-ap-check.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : ip-api-check-nine.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -36990,31 +36994,10 @@
   BL : ip-check-wh.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : ip-checking-notification-firebase-2.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : ip-checking-notification-firebase111.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : ip-checking-notification-kgm.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : ip-regions-check.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : ip-testcheck.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : ip-vm.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : ipcheck-six.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : ipcheck-vm.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : ipconfig-ten.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : ipfs-url-validator.vercel.app [url:domains.txt]
@@ -37042,9 +37025,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : irlivesupport.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : iron.qdzibqajika.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : irs-gov-report.netlify.app [url:domains.txt]
@@ -37144,9 +37124,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : itauu.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : item.ikevbhm-gitch.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : iteration-eloi-projects-frei.vercel.app [url:domains.txt]
@@ -37742,6 +37719,9 @@
   WL : *.fastly.net [static]  covers subdomain
   BL : jrdnmath.global.ssl.fastly.net [url:doh-vpn-proxy-bypass.txt]
 
+  WL : *.supabase.co [static]  covers subdomain
+  BL : jrjetdnzmlqtpvumxrru.supabase.co [url:domains.txt]
+
   WL : *.pages.dev [static]  covers subdomain
   BL : jscdnweb.pages.dev [url:small.oisd.nl]
 
@@ -37978,9 +37958,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : karma-local-manage-051736284-mu.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : kasogomo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : katana-airdrop.vercel.app [url:domains.txt]
@@ -38384,6 +38361,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : krypton-tau.vercel.app [url:doh-vpn-proxy-bypass.txt]
 
+  WL : *.netlify.app [static]  covers subdomain
+  BL : kryptonhub.netlify.app [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : krzo-bmmanager962662.vercel.app [url:domains.txt]
 
@@ -38410,6 +38390,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : kuda-clone-two.vercel.app [url:domains.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : kudefy.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : kudeucrucinei-3582.vercel.app [url:domains.txt]
@@ -38716,6 +38699,9 @@
 
   WL : *.netlify.com [static]  covers subdomain
   BL : laughing-lichterman-cf5866.netlify.com [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : laughing-octo-bay.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : laughing-octo-succotash-eta.vercel.app [url:domains.txt]
@@ -39100,9 +39086,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : leipeleufreyo.vercel.app [url:domains.txt]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : lemon-hill7.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : lendingtreeusa.vercel.app [url:domains.txt]
@@ -39677,9 +39660,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : literate-sniffle-rho.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : little.vwgze.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : liuy2-lioewis-projects.vercel.app [url:domains.txt]
 
@@ -40250,9 +40230,6 @@
   WL : *.azureedge.net [static]  covers subdomain
   BL : loader-cdn.azureedge.net [url:small.oisd.nl]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : lobster.aeafh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : local-sex-friends-whatsapp.netlify.app [url:domains.txt]
 
@@ -40525,9 +40502,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : loquacious-pixie-f0c6fd.netlify.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : loranolo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : lordgimmeasign.vercel.app [url:domains.txt]
@@ -41024,9 +40998,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : lyei3-ligugefs-projects.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : lygawuqu.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : m-facebook-beige.vercel.app [url:domains.txt]
 
@@ -41068,9 +41039,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : mabnpparbas.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : machine.ncsgo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.azurefd.net [static]  covers subdomain
   BL : macrogjzbtp75e-cphyb5gkd3e7amcc.z01.azurefd.net [url:domains.txt]
@@ -41143,6 +41111,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : magazinelouiza.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : magazineluiza-blackfriday.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : magazineluiza-ofertas.vercel.app [url:domains.txt]
@@ -41243,9 +41214,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : mail-verificationauth.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : mail.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : mail3outlook.vercel.app [url:domains.txt]
 
@@ -41323,9 +41291,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : majestic-torte-94f883.netlify.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : make.thbwi.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : makerdeo.vercel.app [url:domains.txt]
@@ -41528,9 +41493,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : mashrq.vercel.app [url:domains.txt]
 
-  WL : *.apple-dns.net [static]  covers subdomain
-  BL : mask-api.fe.apple-dns.net [url:doh-vpn-proxy-bypass.txt]
-
   WL : *.icloud.com [static]  covers subdomain
   BL : mask-canary.icloud.com [url:doh-vpn-proxy-bypass.txt]
 
@@ -41554,12 +41516,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : matching-tree.vercel.app [url:domains.txt]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : matefalls.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : matefallsbeta.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : material-local-ads-manage-idd369852.vercel.app [url:domains.txt]
@@ -41722,9 +41678,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : meet-google-clone.netlify.app [url:domains.txt]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : meet-google776846673678.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : meetherwalle.vercel.app [url:domains.txt]
@@ -42016,9 +41969,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : message-sever-support-reboot.netlify.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : message.uljhs.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : messaging-local-ads-main-574128963.vercel.app [url:domains.txt]
@@ -43940,6 +43890,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : mitigate-breach-impact.vercel.app [url:domains.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : mitoqaqi.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : mivercel.vercel.app [url:domains.txt]
 
@@ -44833,6 +44786,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : my-docs-space-vaxgu-danielwabphghcwakva-8741s-projects.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : my-ethereum-ai.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : my-first-instagram-application.vercel.app [url:domains.txt]
@@ -46204,6 +46160,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : nazeigetrodoi-2919.vercel.app [url:domains.txt]
+
+  WL : *.netlify.app [static]  covers subdomain
+  BL : nb111f69b96af.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : nb4-nsdu.vercel.app [url:domains.txt]
@@ -48311,6 +48270,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : netlearna.vercel.app [url:domains.txt]
 
+  WL : *.netlify.app [static]  covers subdomain
+  BL : netlfix-clone-cinte-dyns.netlify.app [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : netlfix-clone-one.vercel.app [url:domains.txt]
 
@@ -49313,9 +49275,6 @@
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : nidlogin.azurewebsites.net [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : nietflix-omega.vercel.app [url:domains.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : nifty-colden-cb70e4.netlify.app [url:domains.txt]
 
@@ -49500,9 +49459,6 @@
   BL : nobohg7d.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : node-cryptopunks-site-git-main-infinitenode.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : noderectificationsprotocol.vercel.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
@@ -49546,9 +49502,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : nomo-nu-apotofinan.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : nomolezo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : nonstoppartner.net [url:whitelist-referral.txt]
   BL : nonstoppartner.net [url:filter_1.txt]
@@ -49639,9 +49592,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : noticia-virid.vercel.app [url:domains.txt]
-
-  WL : *.github.io [static]  covers subdomain
-  BL : notificacionesfiscalescol.github.io [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : notification-account-quarantine.vercel.app [url:domains.txt]
@@ -49781,6 +49731,9 @@
   WL : *.b-cdn.net [static]  covers subdomain
   BL : nshs098.b-cdn.net [url:domains.txt]
 
+  WL : *.azure.com [static]  covers subdomain
+  BL : nsx.7f2ff6457733427eac69f9.eastus2.avsstage.azure.com [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : nt-ni9o.vercel.app [url:domains.txt]
 
@@ -49843,6 +49796,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : nuxt-movie-app-rosy.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : nvidia-poc.vercel.app [url:domains.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : nvmfjgko.b-cdn.net [url:domains.txt]
@@ -49975,9 +49931,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : occdentebncoprtaltrnsccional.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : occur.aeafh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : ochrona-profil.vercel.app [url:domains.txt]
@@ -50156,9 +50109,6 @@
   WL : *.googleapis.com [static]  covers subdomain
   BL : ogads-pa.googleapis.com [url:small.oisd.nl]
 
-  WL : *.azure.com [static]  covers subdomain
-  BL : oh26j6trorljqk.postgres.cosmos.azure.com [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : oiadoiada.vercel.app [url:domains.txt]
 
@@ -50242,9 +50192,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : olx-pay-tan.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : olympic.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : olyp.vercel.app [url:domains.txt]
@@ -50339,9 +50286,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : oneinch.vercel.app [url:domains.txt]
 
-  WL : *.azure.com [static]  covers subdomain
-  BL : onetasknext.eastasia.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : onjourneydsfg.vercel.app [url:domains.txt]
 
@@ -50433,9 +50377,6 @@
   BL : open-mystery75.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : open-mystery7i.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : open-pattern-7567-4812.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -50470,9 +50411,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : open-sessionpreview-online.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : open.csmq.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : openaseabox.vercel.app [url:domains.txt]
@@ -52271,9 +52209,6 @@
   WL : *.pages.dev [static]  covers subdomain
   BL : paccbet.pages.dev [url:gambling.mini.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : packet.mwbwu.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : pacom001.vercel.app [url:domains.txt]
 
@@ -52651,9 +52586,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : pakt-casefb338824.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : palace.mdlrh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : palettoa.vercel.app [url:domains.txt]
@@ -53048,9 +52980,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : peach-analytics.vercel.app [url:small.oisd.nl]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : peanut.aeafh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : peciffouvannau-2970.vercel.app [url:domains.txt]
 
@@ -53249,9 +53178,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : pertamina-pemesanan-ia.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : pet.ncsgo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : petacom2.vercel.app [url:domains.txt]
 
@@ -53277,6 +53203,9 @@
   BL : peutteddesama-7357.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
+  BL : pexel.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
   BL : peypal.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -53299,6 +53228,15 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : pgagdag2-liard.vercel.app [url:domains.txt]
+
+  WL : *.azure.com [static]  covers subdomain
+  BL : pgmongo-synth-20261122-31cjaa60.data.global.mongocluster.cosmos.azure.com [url:domains.txt]
+
+  WL : *.azure.com [static]  covers subdomain
+  BL : pgmongo-synth-20261122-31cjaa60.mongocluster.cosmos.azure.com [url:domains.txt]
+
+  WL : *.azure.com [static]  covers subdomain
+  BL : pgmongo-synth-20261122-u70jheyi.mongocluster.cosmos.azure.com [url:domains.txt]
 
   WL : pgpartner.com [url:allowlist.txt]
   BL : pgpartner.com [url:small.oisd.nl]
@@ -53447,6 +53385,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : phobo.vercel.app [url:domains.txt]
 
+  WL : *.firebaseio.com [static]  covers subdomain
+  BL : phoenix-panel.firebaseio.com [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : phokaka9.vercel.app [url:domains.txt]
 
@@ -53533,6 +53474,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : picturez.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : picugwgydugdr5443456.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : pidderadotre-3728.vercel.app [url:domains.txt]
@@ -53647,9 +53591,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : plaermoxred.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : plain-wood-6829.aasya.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : plamenbankso.b-cdn.net [url:domains.txt]
@@ -53885,9 +53826,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : pokyloopbox.vercel.app [url:domains.txt]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : polar-willow-comet.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : poli-i7h2-julios-projects-dc171c1b.vercel.app [url:domains.txt]
 
@@ -54115,9 +54053,6 @@
 
   WL : *.pages.dev [static]  covers subdomain
   BL : pooinc-7dw.pages.dev [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
-
-  WL : *.azure.com [static]  covers subdomain
-  BL : pool.swedencentral.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : poosta.vercel.app [url:domains.txt]
@@ -54668,12 +54603,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : prkgilrs-usdt-draner-frant.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : pro-2734.protexweer.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : pro-d63a.protexweer.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : pro-titanx4-rbx.netlify.app [url:domains.txt]
 
@@ -54739,9 +54668,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : proclaimbreach-two.vercel.app [url:domains.txt]
-
-  WL : *.azure.com [static]  covers subdomain
-  BL : procuducts.southafricanorth.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.workers.dev [static]  covers subdomain
   BL : prod-blocking.workers.dev [url:filter_1.txt]
@@ -55298,9 +55224,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : protectyourcontentconversionx.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : protexweer.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : protisec-seicoin-dn7v.vercel.app [url:domains.txt]
 
@@ -55655,6 +55578,9 @@
   WL : qksrv.net [url:whitelist-referral.txt]
   BL : qksrv.net [url:filter_1.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : qlsjk94464.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : qmm8.vercel.app [url:domains.txt]
 
@@ -55888,9 +55814,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : quammegrappoile-6746.vercel.app [url:domains.txt]
-
-  WL : *.pages.dev [static]  covers subdomain
-  BL : quantum-auth.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : quapazouketo-5739.vercel.app [url:domains.txt]
@@ -56201,9 +56124,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : railgunn.netlify.app [url:domains.txt]
 
-  WL : *.railway.app [static]  covers subdomain
-  BL : railway-production-1649.up.railway.app [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : rainbow-froyo-3f8212.netlify.app [url:domains.txt]
 
@@ -56233,9 +56153,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : rakuten-two.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : rally.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : ramiltons-finance.azurewebsites.net [url:domains.txt]
@@ -56274,10 +56191,10 @@
   BL : rassoujaumeufa-3435.vercel.app [url:domains.txt]
 
   WL : *.google.com [static]  covers subdomain
-  BL : rate-limited-proxy-74-125-151-97.google.com [url:abuse.ch-threatfox-hostfile.txt]
+  BL : rate-limited-proxy-66-249-89-229.google.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.google.com [static]  covers subdomain
-  BL : rate-limited-proxy-74-125-151-98.google.com [url:abuse.ch-threatfox-hostfile.txt]
+  BL : rate-limited-proxy-74-125-151-97.google.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : rauceugrapaxa.vercel.app [url:domains.txt]
@@ -56311,6 +56228,9 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : rblx-create.netlify.app [url:domains.txt]
+
+  WL : *.supabase.co [static]  covers subdomain
+  BL : rborofioabjmzlgvkgxw.supabase.co [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : rbox10.netlify.app [url:domains.txt]
@@ -56651,9 +56571,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : ree6.netlify.app [url:domains.txt]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : reef-swan-lagoon.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : reelworld.vercel.app [url:domains.txt]
 
@@ -56695,9 +56612,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : regemanubi.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : region8879.hxjcj-klolko.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.redhat.com [static]  covers subdomain
   BL : register.redhat.com [url:filter_1.txt]
@@ -56789,15 +56703,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : relaxed-tarsier-0db791.netlify.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : relay-3f9c71.kartohaantoha36-6a9.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : relay-mirror.kartohaantoha36-6a9.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : relay.pettnittiprague.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : relevance-root.vercel.app [url:domains.txt]
 
@@ -56858,9 +56763,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : remedy-issue-case-hdh3.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : remember.ncsgo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : reminded-flag.vercel.app [url:domains.txt]
 
@@ -56899,9 +56801,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : renato-viva.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : render.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : renew-form-b98045ibo2.vercel.app [url:domains.txt]
@@ -57476,9 +57375,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : ret-o5bllzmoy-tessenwout-gmailcom.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : retire.qdzibqajika.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : retrieval-case-34985io12.vercel.app [url:domains.txt]
 
@@ -57722,9 +57618,6 @@
   WL : *.azurefd.net [static]  covers subdomain
   BL : ri5-cbfga3eueneqa2g8.z02.azurefd.net [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : rich.aasya.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : richard-id7948-vwxs.vercel.app [url:domains.txt]
 
@@ -57736,9 +57629,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : rifrescup-git-main-lasvivis.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : right.4b3a91fd1b35ab2d023f5d71713a6c00.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : rightsabusecontentgurus.vercel.app [url:domains.txt]
@@ -57857,6 +57747,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : rilemon-git-main-lasvivis.vercel.app [url:domains.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : rililyde.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : rima-rouge.vercel.app [url:domains.txt]
 
@@ -57865,9 +57758,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : rise-branch-store.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : rising-vercel.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : risk-watch-nows.vercel.app [url:domains.txt]
@@ -57926,14 +57816,8 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : rnn7-casefb422741.vercel.app [url:domains.txt]
 
-  WL : *.pages.dev [static]  covers subdomain
-  BL : rnt-update.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : rnwri-lm-e4-el-qu-i12eu-i7.vercel.app [url:domains.txt]
-
-  WL : *.azure.com [static]  covers subdomain
-  BL : road.swedencentral.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : roadwayxa.vercel.app [url:domains.txt]
@@ -58192,9 +58076,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : rom2-nine.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : romance.aasya.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : romantic-haibt-4ea4e3.netlify.app [url:domains.txt]
@@ -59123,6 +59004,12 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : sbpro-y15x.vercel.app [url:domains.txt]
 
+  WL : *.azure.com [static]  covers subdomain
+  BL : sbzez0o2jne1onf.westindia.atlas.cloudapp.azure.com [url:domains.txt]
+
+  WL : *.azure.com [static]  covers subdomain
+  BL : sbzgu0pg6eyhost.westindia.atlas.cloudapp.azure.com [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : scaffold-bitcoin2-nextjs-6xvx-git-main-nadai2010s-projects.vercel.app [url:domains.txt]
 
@@ -59156,17 +59043,11 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : scapesmania.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : scare.zedqo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : schfd.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : school-ilove.vercel.app [url:doh-vpn-proxy-bypass.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : school.ncsgo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : schoolsuscks.vercel.app [url:doh-vpn-proxy-bypass.txt]
@@ -59261,9 +59142,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : sdfonmdop.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : sdh-c373.persephonegloria44235.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.cloudflare.net [static]  covers subdomain
   BL : sdiybt.info.north-kazakhstan.su.cdn.cloudflare.net [url:doh-vpn-proxy-bypass.txt]
 
@@ -59278,9 +59156,6 @@
 
   WL : *.digicert.com [static]  covers subdomain
   BL : seal.digicert.com [url:filter_1.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : search.csmq.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : seasonalairdrop01.vercel.app [url:domains.txt]
@@ -59308,9 +59183,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : seasonalairdrop09.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : seat.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : secbedoejahnatemxxelkrre.vercel.app [url:domains.txt]
@@ -59720,17 +59592,35 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : servants-yaml.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : serve-cookie.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : servedby.o2.co.uk [url:whitelist-referral.txt]
   BL : servedby.o2.co.uk [url:filter_1.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : server-dch23456789045678.vercel.app [url:domains.txt]
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : server-108-138-199-45.mxp64.r.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : server-108-138-199-8.mxp64.r.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : server-108-138-199-83.mxp64.r.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : server-108-138-199-94.mxp64.r.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : server-13-225-78-19.fra2.r.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : server-13-225-78-30.fra2.r.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : server-13-225-78-60.fra2.r.cloudfront.net [url:domains.txt]
+
+  WL : *.cloudfront.net [static]  covers subdomain
+  BL : server-13-225-78-98.fra2.r.cloudfront.net [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : server-victory5.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
+  BL : server-dch23456789045678.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : servi-sucurvirtual.vercel.app [url:domains.txt]
@@ -59797,9 +59687,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : serwis-logowania.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : serwis-o2.netlify.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : serwis-techniczna.netlify.app [url:domains.txt]
@@ -60164,9 +60051,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : singularitydao-asi.netlify.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : siren.aeafh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.azurewebsites.net [static]  covers subdomain
   BL : sistema-ekg3h4htc0h0ggdh.canadacentral-01.azurewebsites.net [url:domains.txt]
 
@@ -60221,9 +60105,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : slacktodo1.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : slam.ssybd.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : sleepyparrot.vercel.app [url:domains.txt]
 
@@ -60236,17 +60117,11 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : small-billedotherworldness.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : small-morning-8be0.fsocietyandtools.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : smart-contract-toolkit.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : smart-lilac.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : smart.ikevbhm-gitch.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : smartdappsprotocol.vercel.app [url:domains.txt]
@@ -60416,9 +60291,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : sodlmac.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : soft-feather-0c50.alladinbarry.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : soft-swan-70c94b.netlify.app [url:domains.txt]
 
@@ -60442,9 +60314,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : software-manage-git-main-id43651289.vercel.app [url:domains.txt]
-
-  WL : *.azure.com [static]  covers subdomain
-  BL : softwarecube.eastus.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : softwindev.vercel.app [url:domains.txt]
@@ -60674,17 +60543,11 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : solid-potato-gamma.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : solid.mwbwu.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : solidifymidify.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : solo-dev-clone.netlify.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : soloahoratudescuento.netlify.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : solucionesenlinea-itau.vercel.app [url:domains.txt]
@@ -60730,6 +60593,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : sorvekin-dax095372618.vercel.app [url:domains.txt]
+
+  WL : *.supabase.co [static]  covers subdomain
+  BL : soswwsvunulnhlcitpwl.supabase.co [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : sound-sonic.vercel.app [url:domains.txt]
@@ -61142,17 +61008,11 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : spottifyy.netlify.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : spray.mwbwu.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.amazonaws.com [static]  covers subdomain
   BL : sprocket-ping.s3.amazonaws.com [url:small.oisd.nl]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : spt-cee-last-fe2a.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : sqg-nf9a4.mckennaeleanor69537.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : sqnbirksy.vercel.app [url:domains.txt]
@@ -61177,12 +61037,6 @@
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : srate34.b-cdn.net [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : src.mcfind.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : src.mcsq.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : srilw.vercel.app [url:domains.txt]
@@ -61300,9 +61154,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : start-walliet-trezor.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : start.csmq.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : starting-cli.vercel.app [url:domains.txt]
@@ -61462,9 +61313,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : still-clickto-to.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : still-snow-667e.protexweer.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.firebaseio.com [static]  covers subdomain
   BL : stockbook-ads.firebaseio.com [url:small.oisd.nl]
@@ -61801,9 +61649,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : sugarcoatedbinacle.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : suggest.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : sui-ido.vercel.app [url:domains.txt]
@@ -62261,9 +62106,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : svrbancolombianeg.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : swampfak.hxjcj-klolko.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : swan-pearl-ocean.vercel.app [url:domains.txt]
 
@@ -62344,9 +62186,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : syncshelp.netlify.app [url:domains.txt]
-
-  WL : *.azure.com [static]  covers subdomain
-  BL : synctime.australiaeast.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : synfutures-v2.vercel.app [url:domains.txt]
@@ -62450,9 +62289,6 @@
   WL : t.mmtrkr.com [url:whitelist-referral.txt]
   BL : t.mmtrkr.com [url:serverlist.php?hostformat=hosts&showintro=0&mimetype=plainte]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : t.vwgze.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : t0idey-page-account-verification-support.vercel.app [url:domains.txt]
 
@@ -62521,9 +62357,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : tailwind-version-four.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : takedownactiontoolmediainsight.vercel.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : taktolk.netlify.app [url:domains.txt]
@@ -62648,6 +62481,9 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : tcg-del-home.netlify.app [url:domains.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : tcnbb19766.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : tcsdemonic.vercel.app [url:domains.txt]
 
@@ -62662,6 +62498,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : tdtufdd.vercel.app [url:domains.txt]
+
+  WL : *.workers.dev [static]  covers subdomain
+  BL : tdwpypia5x.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : teachbeate.vercel.app [url:domains.txt]
@@ -62698,9 +62537,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : tebeuhameha-4799.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : tech0204vercelapp.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : techbytegr.vercel.app [url:domains.txt]
@@ -62773,9 +62609,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : telekmvoicmailpmw.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : telemetry-relay.kartohaantoha36-6a9.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.canva.com [static]  covers subdomain
   BL : telemetry.canva.com [url:small.oisd.nl]
@@ -62892,13 +62725,7 @@
   BL : test-uio.vercel.app [url:domains.txt]
 
   WL : *.workers.dev [static]  covers subdomain
-  BL : test.adriance.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
   BL : test.cors.workers.dev [url:doh-vpn-proxy-bypass.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : test.mcfind.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : test12-pi-ten.vercel.app [url:domains.txt]
@@ -62957,17 +62784,11 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : thanglong-mem869665.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : thank.ncsgo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : the-amazon-clone.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : the-verify-account-id4364364365432435.vercel.app [url:domains.txt]
-
-  WL : *.github.io [static]  covers subdomain
-  BL : theajack.github.io [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : theamazon.vercel.app [url:domains.txt]
@@ -62992,6 +62813,9 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : thecourierguydept.netlify.app [url:domains.txt]
+
+  WL : *.netlify.com [static]  covers subdomain
+  BL : thelifeisbinary.netlify.com [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : them-popup.vercel.app [url:domains.txt]
@@ -63068,9 +62892,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : tiger-ngui.netlify.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : tight-dew-df89.esbpomiqpz.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : tikclone.vercel.app [url:domains.txt]
 
@@ -63095,20 +62916,14 @@
   WL : *.azureedge.net [static]  covers subdomain
   BL : tiktokmallnow.azureedge.net [url:tif.mini.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : tilt.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
+  WL : *.azureedge.net [static]  covers subdomain
+  BL : tiktoksv.azureedge.net [url:tif.mini.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : timarunik.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : time-case-5wzp.vercel.app [url:domains.txt]
-
-  WL : *.azure.com [static]  covers subdomain
-  BL : time.austriaeast.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.azure.com [static]  covers subdomain
-  BL : timesync.westus2.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : tino.pages.dev [url:doh-vpn-proxy-bypass.txt]
@@ -63148,9 +62963,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : tioxshie93-roieiaxzkasvc.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : tissue.ncsgo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : titansxac.vercel.app [url:domains.txt]
@@ -63193,9 +63005,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : tmpoverapprehensively.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : tms.vwgze.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.pages.dev [static]  covers subdomain
   BL : tmt-asi.pages.dev [url:doh-vpn-proxy-bypass.txt]
@@ -63323,9 +63132,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : tomarket-rewards.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : tomato.ncsgo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : tommbtaq.vercel.app [url:domains.txt]
 
@@ -63348,6 +63154,12 @@
   BL : tonbinnew.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
+  BL : tonicomaga.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
+  BL : tonicopoderosomagal.vercel.app [url:domains.txt]
+
+  WL : *.vercel.app [static]  covers subdomain
   BL : tonkeeper-battery-sigma.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -63358,15 +63170,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : tonsquare-dapp.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : too.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : tool.mdlrh.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : tool.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : toolnews.vercel.app [url:domains.txt]
@@ -63529,6 +63332,9 @@
 
   WL : *.amazonaws.com [static]  covers subdomain
   BL : trafficfuelpixel.s3-us-west-2.amazonaws.com [url:small.oisd.nl]
+
+  WL : *.firebaseio.com [static]  covers subdomain
+  BL : trafik-borc-odeme.firebaseio.com [url:domains.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : trafikteklif.b-cdn.net [url:domains.txt]
@@ -63739,9 +63545,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : triangle-lilac.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : trickgs-demo.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : tricolor-kappa.vercel.app [url:domains.txt]
@@ -64168,6 +63971,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : trustvipcard.vercel.app [url:domains.txt]
+
+  WL : *.railway.app [static]  covers subdomain
+  BL : trustwall.up.railway.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : trustwallebep20.netlify.app [url:domains.txt]
@@ -64760,9 +64566,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : understood-local-manage-37812645.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : undo.ssybd.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : uni-bielefeld.vercel.app [url:domains.txt]
 
@@ -64792,12 +64595,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : uniswap-clone-psi.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : uniswap-interface-connect-dapp-v151.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : uniswap-interface-connect-dapp-v496.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : uniswap-interface.vercel.app [url:domains.txt]
@@ -64870,9 +64667,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : update-ssl.netlify.app [url:domains.txt]
-
-  WL : *.azure.com [static]  covers subdomain
-  BL : update.norwayeast.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : updatefix.netlify.app [url:domains.txt]
@@ -64948,9 +64742,6 @@
 
   WL : *.netlify.app [static]  covers subdomain
   BL : upold.netlify.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : upon.zedqo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : uppeyuyfhd.vercel.app [url:domains.txt]
@@ -65430,9 +65221,6 @@
   BL : vakifumrekatilimbasvuru.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : valid-dep.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : validate-business-page-request-if-git-d3da4d-verify-4763135879.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -65500,6 +65288,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : vaqtoataejeka.vercel.app [url:domains.txt]
+
+  WL : *.railway.app [static]  covers subdomain
+  BL : variational-omnio.up.railway.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : vastlightav.vercel.app [url:domains.txt]
@@ -66026,9 +65817,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : verifiedbadgehub.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : verifiedcarrier.alladinbarry.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : verifikasi.vercel.app [url:domains.txt]
 
@@ -66260,6 +66048,12 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : video7566.vercel.app [url:domains.txt]
 
+  WL : *.pages.dev [static]  covers subdomain
+  BL : videoavarii17-sbs.pages.dev [url:abuse.ch-threatfox-hostfile.txt]
+
+  WL : *.netlify.app [static]  covers subdomain
+  BL : videoflix.netlify.app [url:domains.txt]
+
   WL : *.netlify.app [static]  covers subdomain
   BL : view-secure-doc.netlify.app [url:domains.txt]
 
@@ -66336,9 +66130,6 @@
   BL : viralimpacterrorreport.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : viralmarketingstrategy.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : virgopureq.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -66352,9 +66143,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : virtualnegbancolo.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : virtualpangea-mvp.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : virtualpersonasbgota.vercel.app [url:domains.txt]
@@ -66546,12 +66334,6 @@
   BL : vscode-check-mo1.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
-  BL : vscode-check-mo2.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : vscode-check-mo4-ten.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
   BL : vscode-clone.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
@@ -66619,12 +66401,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : vscode-settings-0511.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : vscode-settings-0618.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : vscode-settings-8140-self.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : vscode-settings-bootstrap.vercel.app [url:domains.txt]
@@ -66905,9 +66681,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : walletsynchronizer.netlify.app [url:domains.txt]
 
-  WL : *.netlify.app [static]  covers subdomain
-  BL : walliet-fghjkhtrez.netlify.app [url:domains.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : walliet-ledger-login.vercel.app [url:domains.txt]
 
@@ -66928,9 +66701,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : wan1cghebysv66lrkje5mtzbjo1wqtbbyysf39-cg1108s.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : wandering-field-2b83.aasya.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.azurefd.net [static]  covers subdomain
   BL : wang1-hhg8cfabceg7c4b6.z02.azurefd.net [url:domains.txt]
@@ -67604,9 +67374,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : winaccess-proj9.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : winchanger-api.asiriswin.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : wind-tiger-azure.vercel.app [url:domains.txt]
 
@@ -67633,9 +67400,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : wirexswap.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : wise.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.azurefd.net [static]  covers subdomain
   BL : wiskz2dkal2-aaa4cmapdehzc3bk.z02.azurefd.net [url:domains.txt]
@@ -67772,12 +67536,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : wqmz39-hbk14.vercel.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : wreck.wiwgf.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : write567.hxjcj-klolko.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : writedine.vercel.app [url:domains.txt]
 
@@ -67789,6 +67547,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : wrxrbrewetkw.vercel.app [url:domains.txt]
+
+  WL : *.supabase.co [static]  covers subdomain
+  BL : wryayaiepgptsutffdly.supabase.co [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : wsparcie-identyfikacja-sesja.vercel.app [url:domains.txt]
@@ -67825,9 +67586,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : wuyhuy-v6lp.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : wvat5jzlpr.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : wvhzrgbdlmnl48pnt320i9aze6xykafou-hh28b.vercel.app [url:domains.txt]
@@ -67867,9 +67625,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : www-id-ib.vercel.app [url:domains.txt]
-
-  WL : *.netlify.app [static]  covers subdomain
-  BL : www-instagrarn-com.netlify.app [url:domains.txt]
 
   WL : *.netlify.app [static]  covers subdomain
   BL : www-qubatics.netlify.app [url:domains.txt]
@@ -68152,6 +67907,9 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : www.fakeflix-lemon-six.vercel.app [url:domains.txt]
+
+  WL : *.b-cdn.net [static]  covers subdomain
+  BL : www.faktypolska7.b-cdn.net [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : www.fantastic-invention-alpha.vercel.app [url:domains.txt]
@@ -68485,9 +68243,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : www.sekrsdoc.vercel.app [url:domains.txt]
-
-  WL : *.vercel.app [static]  covers subdomain
-  BL : www.session0penseapr29.vercel.app [url:domains.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : www.smmrgv.vercel.app [url:domains.txt]
@@ -68918,9 +68673,6 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : y-hazel-ten.vercel.app [url:domains.txt]
 
-  WL : *.vercel.app [static]  covers subdomain
-  BL : y-lilac-sigma.vercel.app [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.netlify.app [static]  covers subdomain
   BL : y0mai110-i010-ta2xb1rs-31rs2i-230e2.netlify.app [url:domains.txt]
 
@@ -68996,11 +68748,11 @@
   WL : *.azurefd.net [static]  covers subdomain
   BL : ye2-d0frejhccgh3f7cg.z03.azurefd.net [url:domains.txt]
 
+  WL : *.netlify.com [static]  covers subdomain
+  BL : yedek10gb.netlify.com [url:domains.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : yehofadeppoi.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : yellow-smoke-3d0d.yellow-smoke.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.b-cdn.net [static]  covers subdomain
   BL : yenissitem.b-cdn.net [url:domains.txt]
@@ -69176,6 +68928,9 @@
   WL : *.vercel.app [static]  covers subdomain
   BL : zabezpieczenia-poczta.vercel.app [url:domains.txt]
 
+  WL : *.workers.dev [static]  covers subdomain
+  BL : zacydo.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
+
   WL : *.vercel.app [static]  covers subdomain
   BL : zalanta.vercel.app [url:domains.txt]
 
@@ -69196,9 +68951,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : zara-self-kappa.vercel.app [url:domains.txt]
-
-  WL : *.workers.dev [static]  covers subdomain
-  BL : zarox.karatasyasin058.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : zarqon.vercel.app [url:domains.txt]
@@ -69269,9 +69021,6 @@
   WL : *.netlify.app [static]  covers subdomain
   BL : zen-clarke-60eae9.netlify.app [url:domains.txt]
 
-  WL : *.workers.dev [static]  covers subdomain
-  BL : zen.ayxandevgang.workers.dev [url:abuse.ch-threatfox-hostfile.txt]
-
   WL : *.vercel.app [static]  covers subdomain
   BL : zenith-freefireold-dash.vercel.app [url:domains.txt]
 
@@ -69316,12 +69065,6 @@
 
   WL : *.vercel.app [static]  covers subdomain
   BL : zibauraukajei.vercel.app [url:domains.txt]
-
-  WL : *.azure.com [static]  covers subdomain
-  BL : zigbee.eastus.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
-
-  WL : *.azure.com [static]  covers subdomain
-  BL : zigfree.eastus.cloudapp.azure.com [url:abuse.ch-threatfox-hostfile.txt]
 
   WL : *.vercel.app [static]  covers subdomain
   BL : zijineibulla.vercel.app [url:domains.txt]
